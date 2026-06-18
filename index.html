@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gridiron Guru — NFL Week 0 (2026)</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#0d1117; color:#e6edf3; font-family:'Segoe UI',system-ui,sans-serif; }
+  .header { background:linear-gradient(135deg,#1a3a1a 0%,#0d2b0d 60%,#1a1a1a 100%);
+             padding:32px 24px; text-align:center; border-bottom:2px solid #2ea043; }
+  .header h1 { font-size:2.4rem; color:#7ee787; letter-spacing:2px; }
+  .header p  { color:#8b949e; margin-top:6px; }
+  .container { max-width:1200px; margin:0 auto; padding:24px 16px; }
+  h2 { color:#7ee787; font-size:1.3rem; margin:32px 0 16px; border-bottom:1px solid #21262d; padding-bottom:8px; }
+  h3 { color:#ccc; font-size:1rem; }
+
+  .games-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px; }
+  .game-chip { background:#161b22; border:1px solid #30363d; border-radius:8px;
+                padding:12px 16px; font-size:13px; min-width:220px; }
+
+  .pos-section { margin-bottom:32px; }
+  .pos-header { display:inline-block; background:#238636; color:#fff;
+                 padding:4px 14px; border-radius:12px; font-size:0.85rem;
+                 letter-spacing:1px; margin-bottom:10px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  thead tr { background:#161b22; }
+  th { text-align:left; padding:8px 10px; color:#8b949e; font-weight:500; }
+  td { padding:8px 10px; border-bottom:1px solid #21262d; }
+  tr:hover td { background:#161b22; }
+
+  .grade { display:inline-block; padding:2px 8px; border-radius:10px;
+            font-weight:bold; font-size:12px; }
+  .grade-A { background:#0f5132; color:#75c492; }
+  .grade-B { background:#664d03; color:#ffc107; }
+  .grade-C { background:#58151c; color:#f85149; }
+  .grade-D { background:#3d0000; color:#ff6666; }
+
+  .lineups { display:flex; flex-wrap:wrap; gap:24px; }
+  .lineup-card { flex:1; min-width:300px; background:#161b22;
+                  border-radius:10px; padding:20px; }
+  .sal-remaining { margin-top:12px; color:#8b949e; font-size:13px; }
+
+  .footer { text-align:center; padding:32px; color:#484f58; font-size:12px; }
+  .badge { display:inline-block; background:#21262d; border-radius:20px;
+            padding:4px 14px; font-size:12px; color:#8b949e; margin:4px; }
+
+  .inj-badge { display:inline-block; padding:1px 7px; border-radius:8px;
+                font-size:11px; font-weight:bold; cursor:default;
+                vertical-align:middle; margin-left:4px; }
+  .hidden-row { display:none; }
+  .show-all-btn {
+    margin-top:10px; padding:7px 20px; background:#21262d; color:#8b949e;
+    border:1px solid #30363d; border-radius:6px; cursor:pointer; font-size:13px;
+  }
+  .show-all-btn:hover { background:#30363d; color:#e6edf3; }
+  .grade-X { background:#3d0000; color:#ff4444; }
+</style>
+<script>
+function toggleRows(tableId, btn) {
+  var rows = document.querySelectorAll('#' + tableId + ' .hidden-row');
+  var showing = btn.dataset.showing === '1';
+  rows.forEach(function(r) { r.style.display = showing ? 'none' : 'table-row'; });
+  btn.dataset.showing = showing ? '0' : '1';
+  var total = parseInt(btn.textContent.match(/\d+/)[0]);
+  btn.textContent = showing
+    ? 'Show All (' + total + ' players)'
+    : 'Show Less';
+}
+</script>
+</head>
+<body>
+<div class="header">
+  <h1>🏈 GRIDIRON GURU</h1>
+  <p>DraftKings NFL DFS Dashboard &nbsp;|&nbsp; Season 2026 &nbsp;|&nbsp; Week 0</p>
+  <p style="margin-top:8px;font-size:13px;color:#484f58">Generated 2026-06-18 06:40 PM</p>
+</div>
+
+<div class="container">
+
+  <h2>📅 This Week's Slate</h2>
+  <div class="games-row">
+        <div class="game-chip">
+          <strong>Buffalo Bills</strong> @ <strong>Kansas City Chiefs</strong><br>
+          <small>Thu Sep 10  08:20 PM ET</small><br>
+          <small style="color:#aaa">Arrowhead Stadium</small>
+        </div>
+        <div class="game-chip">
+          <strong>Philadelphia Eagles</strong> @ <strong>Dallas Cowboys</strong><br>
+          <small>Sun Sep 13  05:00 PM ET</small><br>
+          <small style="color:#aaa">AT&T Stadium</small>
+        </div>
+        <div class="game-chip">
+          <strong>Los Angeles Rams</strong> @ <strong>San Francisco 49ers</strong><br>
+          <small>Sun Sep 13  08:25 PM ET</small><br>
+          <small style="color:#aaa">Levi's Stadium</small>
+        </div>
+        <div class="game-chip">
+          <strong>New England Patriots</strong> @ <strong>Miami Dolphins</strong><br>
+          <small>Sun Sep 13  05:00 PM ET</small><br>
+          <small style="color:#aaa">Hard Rock Stadium</small>
+        </div>
+        <div class="game-chip">
+          <strong>Chicago Bears</strong> @ <strong>Green Bay Packers</strong><br>
+          <small>Sun Sep 13  01:00 PM ET</small><br>
+          <small style="color:#aaa">Lambeau Field</small>
+        </div></div>
+
+  <h2>📊 Player Rankings</h2>
+  
+        <div class="pos-section">
+          <h3 class="pos-header">QB</h3>
+          <table id="pos_QB">
+            <thead>
+              <tr>
+                <th>#</th><th>Player</th><th>Grade</th>
+                <th>Guru</th><th>Salary</th><th>Value</th><th>Scout Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="color:#aaa">1</td>
+              <td>
+                <strong>Josh Allen</strong><br>
+                <small style="color:#aaa">BUF vs KC &bull; Away</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">7.0</strong></td>
+              <td>$7,900</td>
+              <td style="color:#7fc">0.88</td>
+              <td style="color:#ccc;font-size:12px">hot recent form</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">2</td>
+              <td>
+                <strong>Jalen Hurts</strong><br>
+                <small style="color:#aaa">PHI vs DAL &bull; Away</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">6.9</strong></td>
+              <td>$7,900</td>
+              <td style="color:#7fc">0.87</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | soft matchup vs DAL</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">3</td>
+              <td>
+                <strong>Brock Purdy</strong><br>
+                <small style="color:#aaa">SF vs LAR &bull; Home</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">6.8</strong></td>
+              <td>$7,900</td>
+              <td style="color:#7fc">0.86</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | soft matchup vs LAR | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">4</td>
+              <td>
+                <strong>Patrick Mahomes</strong><br>
+                <small style="color:#aaa">KC vs BUF &bull; Home</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">6.6</strong></td>
+              <td>$7,800</td>
+              <td style="color:#7fc">0.85</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">5</td>
+              <td>
+                <strong>Dak Prescott</strong><br>
+                <small style="color:#aaa">DAL vs PHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B+</span></td>
+              <td><strong style="color:#f0c040">6.4</strong></td>
+              <td>$7,800</td>
+              <td style="color:#7fc">0.82</td>
+              <td style="color:#ccc;font-size:12px">home field edge</td>
+            </tr></tbody>
+          </table>
+          
+        </div>
+        <div class="pos-section">
+          <h3 class="pos-header">RB</h3>
+          <table id="pos_RB">
+            <thead>
+              <tr>
+                <th>#</th><th>Player</th><th>Grade</th>
+                <th>Guru</th><th>Salary</th><th>Value</th><th>Scout Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="color:#aaa">1</td>
+              <td>
+                <strong>Christian McCaffrey</strong> <span class="inj-badge" style="background:#7a5c00;color:#ffc107" title="Hamstring — limited practice Wed">Questionable</span><br>
+                <small style="color:#aaa">SF vs LAR &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B+</span></td>
+              <td><strong style="color:#f0c040">6.4</strong></td>
+              <td>$6,700</td>
+              <td style="color:#7fc">0.95</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">2</td>
+              <td>
+                <strong>Saquon Barkley</strong><br>
+                <small style="color:#aaa">PHI vs DAL &bull; Away</small>
+              </td>
+              <td><span class="grade grade-B">B+</span></td>
+              <td><strong style="color:#f0c040">6.2</strong></td>
+              <td>$6,700</td>
+              <td style="color:#7fc">0.93</td>
+              <td style="color:#ccc;font-size:12px">Neutral matchup</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">3</td>
+              <td>
+                <strong>Derrick Henry</strong><br>
+                <small style="color:#aaa">DAL vs PHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B+</span></td>
+              <td><strong style="color:#f0c040">5.8</strong></td>
+              <td>$6,500</td>
+              <td style="color:#7fc">0.88</td>
+              <td style="color:#ccc;font-size:12px">home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">4</td>
+              <td>
+                <strong>Isiah Pacheco</strong><br>
+                <small style="color:#aaa">KC vs BUF &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B</span></td>
+              <td><strong style="color:#f0c040">5.2</strong></td>
+              <td>$6,300</td>
+              <td style="color:#7fc">0.82</td>
+              <td style="color:#ccc;font-size:12px">home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">5</td>
+              <td>
+                <strong>Raheem Mostert</strong> <span class="inj-badge" style="background:#6b1a1a;color:#ff9999" title="Knee — did not practice">Doubtful</span><br>
+                <small style="color:#aaa">MIA vs NE &bull; Home</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">4.1</strong></td>
+              <td>$5,900</td>
+              <td style="color:#7fc">0.69</td>
+              <td style="color:#ccc;font-size:12px">home field edge</td>
+            </tr></tbody>
+          </table>
+          
+        </div>
+        <div class="pos-section">
+          <h3 class="pos-header">WR</h3>
+          <table id="pos_WR">
+            <thead>
+              <tr>
+                <th>#</th><th>Player</th><th>Grade</th>
+                <th>Guru</th><th>Salary</th><th>Value</th><th>Scout Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="color:#aaa">1</td>
+              <td>
+                <strong>CeeDee Lamb</strong><br>
+                <small style="color:#aaa">DAL vs PHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">7.5</strong></td>
+              <td>$7,200</td>
+              <td style="color:#7fc">1.04</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | soft matchup vs PHI | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">2</td>
+              <td>
+                <strong>Tyreek Hill</strong><br>
+                <small style="color:#aaa">MIA vs NE &bull; Home</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">7.4</strong></td>
+              <td>$7,200</td>
+              <td style="color:#7fc">1.03</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | soft matchup vs NE | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">3</td>
+              <td>
+                <strong>A.J. Brown</strong><br>
+                <small style="color:#aaa">PHI vs DAL &bull; Away</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">7.3</strong></td>
+              <td>$7,200</td>
+              <td style="color:#7fc">1.02</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | soft matchup vs DAL</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">4</td>
+              <td>
+                <strong>Davante Adams</strong><br>
+                <small style="color:#aaa">GB vs CHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">7.2</strong></td>
+              <td>$7,100</td>
+              <td style="color:#7fc">1.01</td>
+              <td style="color:#ccc;font-size:12px">soft matchup vs CHI | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">5</td>
+              <td>
+                <strong>Deebo Samuel</strong><br>
+                <small style="color:#aaa">SF vs LAR &bull; Home</small>
+              </td>
+              <td><span class="grade grade-A">A</span></td>
+              <td><strong style="color:#f0c040">6.8</strong></td>
+              <td>$6,900</td>
+              <td style="color:#7fc">0.98</td>
+              <td style="color:#ccc;font-size:12px">soft matchup vs LAR | home field edge</td>
+            </tr>
+            <tr class="hidden-row">
+              <td style="color:#aaa">6</td>
+              <td>
+                <strong>Stefon Diggs</strong> <span class="inj-badge" style="background:#3d0000;color:#ff4444" title="ACL — season ending">Out</span><br>
+                <small style="color:#aaa">BUF vs KC &bull; Away</small>
+              </td>
+              <td><span class="grade grade-X">X</span></td>
+              <td><strong style="color:#f0c040">0.0</strong></td>
+              <td>$3,500</td>
+              <td style="color:#7fc">0.00</td>
+              <td style="color:#ccc;font-size:12px">Neutral matchup</td>
+            </tr></tbody>
+          </table>
+          
+          <button class="show-all-btn" onclick="toggleRows('pos_WR', this)">
+            Show All (6 players)
+          </button>
+        </div>
+        <div class="pos-section">
+          <h3 class="pos-header">TE</h3>
+          <table id="pos_TE">
+            <thead>
+              <tr>
+                <th>#</th><th>Player</th><th>Grade</th>
+                <th>Guru</th><th>Salary</th><th>Value</th><th>Scout Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="color:#aaa">1</td>
+              <td>
+                <strong>Evan Engram</strong><br>
+                <small style="color:#aaa">GB vs CHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B+</span></td>
+              <td><strong style="color:#f0c040">5.8</strong></td>
+              <td>$5,300</td>
+              <td style="color:#7fc">1.09</td>
+              <td style="color:#ccc;font-size:12px">home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">2</td>
+              <td>
+                <strong>Travis Kelce</strong> <span class="inj-badge" style="background:#7a5c00;color:#ffc107" title="Ankle — full practice Thu">Questionable</span><br>
+                <small style="color:#aaa">KC vs BUF &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B+</span></td>
+              <td><strong style="color:#f0c040">5.6</strong></td>
+              <td>$5,200</td>
+              <td style="color:#7fc">1.08</td>
+              <td style="color:#ccc;font-size:12px">hot recent form | tough D vs BUF | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">3</td>
+              <td>
+                <strong>Sam LaPorta</strong><br>
+                <small style="color:#aaa">DAL vs PHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B</span></td>
+              <td><strong style="color:#f0c040">5.3</strong></td>
+              <td>$5,100</td>
+              <td style="color:#7fc">1.05</td>
+              <td style="color:#ccc;font-size:12px">tough D vs PHI | home field edge</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">4</td>
+              <td>
+                <strong>Darren Waller</strong><br>
+                <small style="color:#aaa">MIA vs NE &bull; Home</small>
+              </td>
+              <td><span class="grade grade-B">B</span></td>
+              <td><strong style="color:#f0c040">4.9</strong></td>
+              <td>$5,000</td>
+              <td style="color:#7fc">0.98</td>
+              <td style="color:#ccc;font-size:12px">tough D vs NE | home field edge</td>
+            </tr></tbody>
+          </table>
+          
+        </div>
+        <div class="pos-section">
+          <h3 class="pos-header">DST</h3>
+          <table id="pos_DST">
+            <thead>
+              <tr>
+                <th>#</th><th>Player</th><th>Grade</th>
+                <th>Guru</th><th>Salary</th><th>Value</th><th>Scout Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="color:#aaa">1</td>
+              <td>
+                <strong>Kansas City Chiefs D/ST</strong><br>
+                <small style="color:#aaa">KC vs BUF &bull; Home</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.8</strong></td>
+              <td>$3,400</td>
+              <td style="color:#7fc">1.10</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">2</td>
+              <td>
+                <strong>Los Angeles Rams D/ST</strong><br>
+                <small style="color:#aaa">LAR vs SF &bull; Away</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.6</strong></td>
+              <td>$3,400</td>
+              <td style="color:#7fc">1.06</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">3</td>
+              <td>
+                <strong>Buffalo Bills D/ST</strong><br>
+                <small style="color:#aaa">BUF vs KC &bull; Away</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.5</strong></td>
+              <td>$3,400</td>
+              <td style="color:#7fc">1.03</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">4</td>
+              <td>
+                <strong>Miami Dolphins D/ST</strong><br>
+                <small style="color:#aaa">MIA vs NE &bull; Home</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.4</strong></td>
+              <td>$3,300</td>
+              <td style="color:#7fc">1.02</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr>
+              <td style="color:#aaa">5</td>
+              <td>
+                <strong>Dallas Cowboys D/ST</strong><br>
+                <small style="color:#aaa">DAL vs PHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.2</strong></td>
+              <td>$3,300</td>
+              <td style="color:#7fc">0.98</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr class="hidden-row">
+              <td style="color:#aaa">6</td>
+              <td>
+                <strong>Chicago Bears D/ST</strong><br>
+                <small style="color:#aaa">CHI vs GB &bull; Away</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.2</strong></td>
+              <td>$3,300</td>
+              <td style="color:#7fc">0.98</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr class="hidden-row">
+              <td style="color:#aaa">7</td>
+              <td>
+                <strong>San Francisco 49ers D/ST</strong><br>
+                <small style="color:#aaa">SF vs LAR &bull; Home</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.1</strong></td>
+              <td>$3,300</td>
+              <td style="color:#7fc">0.94</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr class="hidden-row">
+              <td style="color:#aaa">8</td>
+              <td>
+                <strong>Philadelphia Eagles D/ST</strong><br>
+                <small style="color:#aaa">PHI vs DAL &bull; Away</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">3.0</strong></td>
+              <td>$3,200</td>
+              <td style="color:#7fc">0.92</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr class="hidden-row">
+              <td style="color:#aaa">9</td>
+              <td>
+                <strong>Green Bay Packers D/ST</strong><br>
+                <small style="color:#aaa">GB vs CHI &bull; Home</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">2.8</strong></td>
+              <td>$3,200</td>
+              <td style="color:#7fc">0.88</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr>
+            <tr class="hidden-row">
+              <td style="color:#aaa">10</td>
+              <td>
+                <strong>New England Patriots D/ST</strong><br>
+                <small style="color:#aaa">NE vs MIA &bull; Away</small>
+              </td>
+              <td><span class="grade grade-C">C</span></td>
+              <td><strong style="color:#f0c040">2.7</strong></td>
+              <td>$3,200</td>
+              <td style="color:#7fc">0.84</td>
+              <td style="color:#ccc;font-size:12px">Opp implied total 24.0</td>
+            </tr></tbody>
+          </table>
+          
+          <button class="show-all-btn" onclick="toggleRows('pos_DST', this)">
+            Show All (10 players)
+          </button>
+        </div>
+
+  <h2>🎯 Suggested Lineups</h2>
+  <div class="lineups">
+        <div class="lineup-card" style="border-top:3px solid #3ec">
+          <h3>💰 CASH Lineup (safe/floor)</h3>
+          <table>
+            <thead><tr><th>Slot</th><th>Player</th><th>Guru</th><th>Salary</th></tr></thead>
+            <tbody>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">QB</td>
+              <td><strong>Josh Allen</strong> <small>(BUF)</small></td>
+              <td style="color:#7fc">7.0</td>
+              <td>$7,900</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">RB</td>
+              <td><strong>Christian McCaffrey</strong> <small>(SF)</small></td>
+              <td style="color:#7fc">6.4</td>
+              <td>$6,700</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">RB</td>
+              <td><strong>Saquon Barkley</strong> <small>(PHI)</small></td>
+              <td style="color:#7fc">6.2</td>
+              <td>$6,700</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">WR</td>
+              <td><strong>CeeDee Lamb</strong> <small>(DAL)</small></td>
+              <td style="color:#7fc">7.5</td>
+              <td>$7,200</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">WR</td>
+              <td><strong>Tyreek Hill</strong> <small>(MIA)</small></td>
+              <td style="color:#7fc">7.4</td>
+              <td>$7,200</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">WR</td>
+              <td><strong>A.J. Brown</strong> <small>(PHI)</small></td>
+              <td style="color:#7fc">7.3</td>
+              <td>$7,200</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">TE</td>
+              <td><strong>Evan Engram</strong> <small>(GB)</small></td>
+              <td style="color:#7fc">5.8</td>
+              <td>$5,300</td>
+            </tr></tbody>
+          </table>
+          <p class="sal-remaining">
+            Total: $48,200 &nbsp;|&nbsp; Remaining: $1,800
+          </p>
+        </div>
+        <div class="lineup-card" style="border-top:3px solid #f90">
+          <h3>🚀 GPP Lineup (tournament/upside)</h3>
+          <table>
+            <thead><tr><th>Slot</th><th>Player</th><th>Guru</th><th>Salary</th></tr></thead>
+            <tbody>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">QB</td>
+              <td><strong>Josh Allen</strong> <small>(BUF)</small></td>
+              <td style="color:#7fc">7.0</td>
+              <td>$7,900</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">RB</td>
+              <td><strong>Christian McCaffrey</strong> <small>(SF)</small></td>
+              <td style="color:#7fc">6.4</td>
+              <td>$6,700</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">RB</td>
+              <td><strong>Saquon Barkley</strong> <small>(PHI)</small></td>
+              <td style="color:#7fc">6.2</td>
+              <td>$6,700</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">WR</td>
+              <td><strong>CeeDee Lamb</strong> <small>(DAL)</small></td>
+              <td style="color:#7fc">7.5</td>
+              <td>$7,200</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">WR</td>
+              <td><strong>Tyreek Hill</strong> <small>(MIA)</small></td>
+              <td style="color:#7fc">7.4</td>
+              <td>$7,200</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">WR</td>
+              <td><strong>A.J. Brown</strong> <small>(PHI)</small></td>
+              <td style="color:#7fc">7.3</td>
+              <td>$7,200</td>
+            </tr>
+            <tr>
+              <td style="color:#f0c040;font-weight:bold">TE</td>
+              <td><strong>Evan Engram</strong> <small>(GB)</small></td>
+              <td style="color:#7fc">5.8</td>
+              <td>$5,300</td>
+            </tr></tbody>
+          </table>
+          <p class="sal-remaining">
+            Total: $48,200 &nbsp;|&nbsp; Remaining: $1,800
+          </p>
+        </div></div>
+
+  <h2>📖 How to Use</h2>
+  <table>
+    <tr><td><strong>Guru Score</strong></td><td>0–10 composite rating. 7.5+ = elite play.</td></tr>
+    <tr><td><strong>Value</strong></td><td>Guru score ÷ salary (thousands). Higher = more pts per dollar.</td></tr>
+    <tr><td><strong>CASH mode</strong></td><td>Pick highest Guru scores. Safe, consistent. Best for 50/50s and H2H.</td></tr>
+    <tr><td><strong>GPP mode</strong></td><td>Pick highest Value scores. Risky upside. Best for large tournaments.</td></tr>
+    <tr><td><strong>Salary note</strong></td><td>Salaries here are simulated. Import the real DK CSV each Thursday when it drops.</td></tr>
+  </table>
+
+</div>
+<div class="footer">
+  <span class="badge">Gridiron Guru v1.0</span>
+  <span class="badge">DraftKings NFL DFS</span>
+  <span class="badge">Not financial advice</span>
+  <p style="margin-top:12px">Data: ESPN (free) · Vegas: The Odds API · Scores: DraftKings standard</p>
+</div>
+</body>
+</html>
