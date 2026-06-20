@@ -3,10 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Gridiron Guru">
+<meta name="theme-color" content="#0d1117">
 <title>Gridiron Guru -- NFL Week 0</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz4KICA8ZWxsaXBzZSBjeD0nNTAnIGN5PSc1MCcgcng9JzQyJyByeT0nMjYnIGZpbGw9JyM4QjQ1MTMnLz4KICA8ZWxsaXBzZSBjeD0nNTAnIGN5PSc1MCcgcng9JzQyJyByeT0nMjYnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2ZmZicgc3Ryb2tlLXdpZHRoPScyLjUnLz4KICA8bGluZSB4MT0nOCcgeTE9JzUwJyB4Mj0nOTInIHkyPSc1MCcgc3Ryb2tlPScjZmZmJyBzdHJva2Utd2lkdGg9JzIuNScvPgogIDxsaW5lIHgxPSc1MCcgeTE9JzI0JyB4Mj0nNTAnIHkyPSc3Nicgc3Ryb2tlPScjZmZmJyBzdHJva2Utd2lkdGg9JzInLz4KICA8bGluZSB4MT0nMzUnIHkxPScyNicgeDI9JzM1JyB5Mj0nNzQnIHN0cm9rZT0nI2ZmZicgc3Ryb2tlLXdpZHRoPScxLjUnLz4KICA8bGluZSB4MT0nNjUnIHkxPScyNicgeDI9JzY1JyB5Mj0nNzQnIHN0cm9rZT0nI2ZmZicgc3Ryb2tlLXdpZHRoPScxLjUnLz4KPC9zdmc+">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz4KICA8ZWxsaXBzZSBjeD0nNTAnIGN5PSc1MCcgcng9JzQyJyByeT0nMjYnIGZpbGw9JyM4QjQ1MTMnLz4KICA8ZWxsaXBzZSBjeD0nNTAnIGN5PSc1MCcgcng9JzQyJyByeT0nMjYnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2ZmZicgc3Ryb2tlLXdpZHRoPScyLjUnLz4KICA8bGluZSB4MT0nOCcgeTE9JzUwJyB4Mj0nOTInIHkyPSc1MCcgc3Ryb2tlPScjZmZmJyBzdHJva2Utd2lkdGg9JzIuNScvPgogIDxsaW5lIHgxPSc1MCcgeTE9JzI0JyB4Mj0nNTAnIHkyPSc3Nicgc3Ryb2tlPScjZmZmJyBzdHJva2Utd2lkdGg9JzInLz4KICA8bGluZSB4MT0nMzUnIHkxPScyNicgeDI9JzM1JyB5Mj0nNzQnIHN0cm9rZT0nI2ZmZicgc3Ryb2tlLXdpZHRoPScxLjUnLz4KICA8bGluZSB4MT0nNjUnIHkxPScyNicgeDI9JzY1JyB5Mj0nNzQnIHN0cm9rZT0nI2ZmZicgc3Ryb2tlLXdpZHRoPScxLjUnLz4KPC9zdmc+">
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
 body { background:#0d1117; color:#e6edf3; font-family:'Segoe UI',system-ui,sans-serif; line-height:1.5; }
+
+/* ── Splash screen ─────────────────────────────────────── */
+#splash {
+  position:fixed; inset:0; z-index:9999;
+  background:radial-gradient(ellipse at center, #0a1f0a 0%, #050f05 60%, #000 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  transition:opacity 0.8s ease;
+}
+#splash.fade-out { opacity:0; pointer-events:none; }
+.splash-title {
+  font-size:2.8rem; font-weight:900; letter-spacing:6px;
+  color:#3fb950; text-shadow:0 0 40px #3fb95088;
+  margin-top:24px; animation:glow 2s ease-in-out infinite alternate;
+}
+.splash-sub {
+  font-size:1rem; color:#8b949e; letter-spacing:3px;
+  margin-top:8px; text-transform:uppercase;
+}
+.crowd-text {
+  position:absolute; bottom:48px; font-size:13px;
+  color:#3fb95055; letter-spacing:2px; animation:crowd 1.5s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow:0 0 20px #3fb95066; }
+  to   { text-shadow:0 0 60px #3fb950cc, 0 0 100px #3fb95044; }
+}
+@keyframes crowd {
+  from { opacity:0.3; letter-spacing:2px; }
+  to   { opacity:0.9; letter-spacing:4px; }
+}
+@keyframes ballArc {
+  0%   { transform:translate(0,0) rotate(0deg);   opacity:0; }
+  10%  { opacity:1; }
+  60%  { transform:translate(120px,-90px) rotate(180deg); }
+  100% { transform:translate(200px,20px) rotate(300deg); opacity:0.2; }
+}
+@keyframes qbThrow {
+  0%,40% { transform:rotate(0deg); }
+  60%    { transform:rotate(-18deg); }
+  80%    { transform:rotate(8deg); }
+  100%   { transform:rotate(0deg); }
+}
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.splash-scene { position:relative; width:260px; height:200px; }
+.qb-figure   { position:absolute; bottom:10px; left:20px; animation:qbThrow 1.8s ease-in-out infinite; transform-origin:50% 80%; }
+.football    { position:absolute; bottom:90px; left:80px; animation:ballArc 1.8s ease-in-out infinite; }
+.crowd-wave  { position:absolute; bottom:0; left:0; right:0; }
+</style>
 
 .header { background:linear-gradient(135deg,#0f2a0f,#0d1117 70%);
            padding:36px 24px; text-align:center; border-bottom:2px solid #238636; }
@@ -81,10 +137,78 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 </head>
 <body>
 
+<div id="splash">
+  <div class="splash-scene">
+    <!-- Crowd in background -->
+    <svg class="crowd-wave" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#1a3a1a" opacity="0.7">
+        <rect x="0"  y="40" width="18" height="20" rx="3"/>
+        <rect x="22" y="32" width="18" height="28" rx="3"/>
+        <rect x="44" y="38" width="18" height="22" rx="3"/>
+        <rect x="66" y="28" width="18" height="32" rx="3"/>
+        <rect x="88" y="36" width="18" height="24" rx="3"/>
+        <rect x="110" y="30" width="18" height="30" rx="3"/>
+        <rect x="132" y="42" width="18" height="18" rx="3"/>
+        <rect x="154" y="34" width="18" height="26" rx="3"/>
+        <rect x="176" y="26" width="18" height="34" rx="3"/>
+        <rect x="198" y="38" width="18" height="22" rx="3"/>
+        <rect x="220" y="32" width="18" height="28" rx="3"/>
+        <rect x="242" y="44" width="18" height="16" rx="3"/>
+      </g>
+      <!-- Arms raised -->
+      <g stroke="#3fb950" stroke-width="2" opacity="0.5">
+        <line x1="9"   y1="40" x2="2"  y2="28"/>
+        <line x1="9"   y1="40" x2="16" y2="26"/>
+        <line x1="31"  y1="32" x2="24" y2="20"/>
+        <line x1="31"  y1="32" x2="38" y2="18"/>
+        <line x1="75"  y1="28" x2="68" y2="16"/>
+        <line x1="75"  y1="28" x2="82" y2="14"/>
+        <line x1="119" y1="30" x2="112" y2="18"/>
+        <line x1="119" y1="30" x2="126" y2="16"/>
+        <line x1="185" y1="26" x2="178" y2="14"/>
+        <line x1="185" y1="26" x2="192" y2="12"/>
+      </g>
+    </svg>
+
+    <!-- QB figure -->
+    <svg class="qb-figure" width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Jersey -->
+      <ellipse cx="40" cy="42" rx="18" ry="22" fill="#238636"/>
+      <!-- Helmet -->
+      <ellipse cx="40" cy="18" rx="14" ry="13" fill="#1a6e2e"/>
+      <rect x="26" y="22" width="28" height="5" rx="2" fill="#0d1117"/>
+      <!-- Facemask -->
+      <path d="M26 24 Q24 30 28 32" stroke="#aaa" stroke-width="2" fill="none"/>
+      <!-- Throwing arm raised -->
+      <line x1="58" y1="30" x2="74" y2="10" stroke="#1a6e2e" stroke-width="8" stroke-linecap="round"/>
+      <!-- Other arm -->
+      <line x1="22" y1="38" x2="10" y2="52" stroke="#1a6e2e" stroke-width="8" stroke-linecap="round"/>
+      <!-- Legs -->
+      <line x1="34" y1="62" x2="28" y2="90" stroke="#0d2b1a" stroke-width="10" stroke-linecap="round"/>
+      <line x1="46" y1="62" x2="52" y2="90" stroke="#0d2b1a" stroke-width="10" stroke-linecap="round"/>
+      <!-- Number -->
+      <text x="40" y="48" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">12</text>
+    </svg>
+
+    <!-- Football -->
+    <svg class="football" width="28" height="18" viewBox="0 0 28 18" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="14" cy="9" rx="13" ry="8" fill="#8B4513"/>
+      <line x1="1" y1="9" x2="27" y2="9" stroke="#fff" stroke-width="1.5"/>
+      <line x1="14" y1="1" x2="14" y2="17" stroke="#fff" stroke-width="1"/>
+      <line x1="9"  y1="2" x2="9"  y2="16" stroke="#fff" stroke-width="0.8"/>
+      <line x1="19" y1="2" x2="19" y2="16" stroke="#fff" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <div class="splash-title">GRIDIRON GURU</div>
+  <div class="splash-sub">NFL Matchup Intelligence</div>
+  <div class="crowd-text">TOUCHDOWN &nbsp;&bull;&nbsp; THE CROWD GOES WILD</div>
+</div>
+
 <div class="header">
   <h1>GRIDIRON GURU</h1>
   <p>NFL Matchup Cheat Sheet &bull; Season 2026 &bull; Week 0</p>
-  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-06-19 09:01 PM</p>
+  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-06-20 08:46 AM</p>
 </div>
 
 <div class="container">
@@ -299,7 +423,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">70F  Wind 10.6 mph  Clear</div>
+                <div class="stat-val">67F  Wind 7.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -309,7 +433,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">GB offense: Moderate pace (63 plays/gm) | CHI defense: Moderate pace (64 plays/gm) | Outdoor: 70F, wind 10.6 mph</div>
+            <div class="card-scout">GB offense: Moderate pace (63 plays/gm) | CHI defense: Moderate pace (64 plays/gm) | Outdoor: 67F, wind 7.7 mph</div>
           </div>
           <div class="card-score" style="color:#00e676">7.9</div>
         </div>
@@ -358,7 +482,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">66F  Wind 9.9 mph  Clear</div>
+                <div class="stat-val">64F  Wind 2.8 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -368,7 +492,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SF offense: Moderate pace (63 plays/gm) | LAR defense: Fast pace (67 plays/gm) | Hot streak -- 264.0 PPR avg last 3 weeks | Outdoor: 66F, wind 9.9 mph</div>
+            <div class="card-scout">SF offense: Moderate pace (63 plays/gm) | LAR defense: Fast pace (67 plays/gm) | Hot streak -- 264.0 PPR avg last 3 weeks | Outdoor: 64F, wind 2.8 mph</div>
           </div>
           <div class="card-score" style="color:#00e676">7.7</div>
         </div>
@@ -476,7 +600,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">91F  Wind 9.2 mph  Clear</div>
+                <div class="stat-val">90F  Wind 4.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -486,7 +610,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Hot streak -- 293.0 PPR avg last 3 weeks | Outdoor: 91F, wind 9.2 mph</div>
+            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Hot streak -- 293.0 PPR avg last 3 weeks | Outdoor: 90F, wind 4.7 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">5.8</div>
         </div>
@@ -535,7 +659,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">82F  Wind 4.0 mph  Clear</div>
+                <div class="stat-val">83F  Wind 2.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -545,7 +669,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: BUF D ranks #8 vs QB | KC offense: Fast pace (66 plays/gm) | BUF defense: Fast pace (64 plays/gm) | Hot streak -- 305.0 PPR avg last 3 weeks | Outdoor: 82F, wind 4.0 mph</div>
+            <div class="card-scout">Tough: BUF D ranks #8 vs QB | KC offense: Fast pace (66 plays/gm) | BUF defense: Fast pace (64 plays/gm) | Hot streak -- 305.0 PPR avg last 3 weeks | Outdoor: 83F, wind 2.7 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.2</div>
         </div>
@@ -594,7 +718,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">82F  Wind 4.0 mph  Clear</div>
+                <div class="stat-val">83F  Wind 2.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -604,7 +728,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: KC D ranks #4 vs QB | BUF offense: Fast pace (67 plays/gm) | KC defense: Fast pace (66 plays/gm) | Hot streak -- 313.0 PPR avg last 3 weeks | Outdoor: 82F, wind 4.0 mph</div>
+            <div class="card-scout">Tough: KC D ranks #4 vs QB | BUF offense: Fast pace (67 plays/gm) | KC defense: Fast pace (66 plays/gm) | Hot streak -- 313.0 PPR avg last 3 weeks | Outdoor: 83F, wind 2.7 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.2</div>
         </div>
@@ -653,7 +777,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">66F  Wind 9.9 mph  Clear</div>
+                <div class="stat-val">64F  Wind 2.8 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -663,7 +787,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SF D ranks #6 vs QB | LAR offense: Moderate pace (65 plays/gm) | SF defense: Moderate pace (62 plays/gm) | Cold stretch -- 248.0 PPR avg last 3 weeks | Outdoor: 66F, wind 9.9 mph</div>
+            <div class="card-scout">Tough: SF D ranks #6 vs QB | LAR offense: Moderate pace (65 plays/gm) | SF defense: Moderate pace (62 plays/gm) | Cold stretch -- 248.0 PPR avg last 3 weeks | Outdoor: 64F, wind 2.8 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.6</div>
         </div></div>
@@ -776,7 +900,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">66F  Wind 9.9 mph  Clear</div>
+                <div class="stat-val">64F  Wind 2.8 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -786,7 +910,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SF offense: Moderate pace (63 plays/gm) | LAR defense: Fast pace (67 plays/gm) | Hot streak -- 103.0 PPR avg last 3 weeks | Outdoor: 66F, wind 9.9 mph</div>
+            <div class="card-scout">SF offense: Moderate pace (63 plays/gm) | LAR defense: Fast pace (67 plays/gm) | Hot streak -- 103.0 PPR avg last 3 weeks | Outdoor: 64F, wind 2.8 mph</div>
           </div>
           <div class="card-score" style="color:#69f0ae">7.5</div>
         </div>
@@ -835,7 +959,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">91F  Wind 9.2 mph  Clear</div>
+                <div class="stat-val">90F  Wind 4.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -845,7 +969,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Hot streak -- 88.0 PPR avg last 3 weeks | Outdoor: 91F, wind 9.2 mph</div>
+            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Hot streak -- 88.0 PPR avg last 3 weeks | Outdoor: 90F, wind 4.7 mph</div>
           </div>
           <div class="card-score" style="color:#69f0ae">6.6</div>
         </div>
@@ -894,7 +1018,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">82F  Wind 4.0 mph  Clear</div>
+                <div class="stat-val">83F  Wind 2.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -904,7 +1028,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">KC offense: Fast pace (66 plays/gm) | BUF defense: Fast pace (64 plays/gm) | Outdoor: 82F, wind 4.0 mph</div>
+            <div class="card-scout">KC offense: Fast pace (66 plays/gm) | BUF defense: Fast pace (64 plays/gm) | Outdoor: 83F, wind 2.7 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">5.7</div>
         </div>
@@ -1017,7 +1141,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">70F  Wind 10.6 mph  Clear</div>
+                <div class="stat-val">67F  Wind 7.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1027,7 +1151,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">GB offense: Moderate pace (63 plays/gm) | CHI defense: Moderate pace (64 plays/gm) | Hot streak -- 101.0 PPR avg last 3 weeks | Outdoor: 70F, wind 10.6 mph</div>
+            <div class="card-scout">GB offense: Moderate pace (63 plays/gm) | CHI defense: Moderate pace (64 plays/gm) | Hot streak -- 101.0 PPR avg last 3 weeks | Outdoor: 67F, wind 7.7 mph</div>
           </div>
           <div class="card-score" style="color:#00e676">8.4</div>
         </div>
@@ -1135,7 +1259,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">66F  Wind 9.9 mph  Clear</div>
+                <div class="stat-val">64F  Wind 2.8 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1145,7 +1269,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SF offense: Moderate pace (63 plays/gm) | LAR defense: Fast pace (67 plays/gm) | Outdoor: 66F, wind 9.9 mph</div>
+            <div class="card-scout">SF offense: Moderate pace (63 plays/gm) | LAR defense: Fast pace (67 plays/gm) | Outdoor: 64F, wind 2.8 mph</div>
           </div>
           <div class="card-score" style="color:#00e676">8.1</div>
         </div>
@@ -1253,7 +1377,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">91F  Wind 9.2 mph  Clear</div>
+                <div class="stat-val">90F  Wind 4.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1263,7 +1387,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Outdoor: 91F, wind 9.2 mph</div>
+            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Outdoor: 90F, wind 4.7 mph</div>
           </div>
           <div class="card-score" style="color:#69f0ae">6.7</div>
         </div>
@@ -1312,7 +1436,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">66F  Wind 9.9 mph  Clear</div>
+                <div class="stat-val">64F  Wind 2.8 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1322,7 +1446,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SF D ranks #8 vs WR | LAR offense: Moderate pace (65 plays/gm) | SF defense: Moderate pace (62 plays/gm) | Cold stretch -- 85.0 PPR avg last 3 weeks | Outdoor: 66F, wind 9.9 mph</div>
+            <div class="card-scout">Tough: SF D ranks #8 vs WR | LAR offense: Moderate pace (65 plays/gm) | SF defense: Moderate pace (62 plays/gm) | Cold stretch -- 85.0 PPR avg last 3 weeks | Outdoor: 64F, wind 2.8 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.5</div>
         </div>
@@ -1371,7 +1495,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">82F  Wind 4.0 mph  Clear</div>
+                <div class="stat-val">83F  Wind 2.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1381,7 +1505,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: KC D ranks #5 vs WR | BUF offense: Fast pace (67 plays/gm) | KC defense: Fast pace (66 plays/gm) | Outdoor: 82F, wind 4.0 mph</div>
+            <div class="card-scout">Tough: KC D ranks #5 vs WR | BUF offense: Fast pace (67 plays/gm) | KC defense: Fast pace (66 plays/gm) | Outdoor: 83F, wind 2.7 mph</div>
           </div>
           <div class="card-score" style="color:#ff4444">0.0</div>
         </div></div>
@@ -1435,7 +1559,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">70F  Wind 10.6 mph  Clear</div>
+                <div class="stat-val">67F  Wind 7.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1445,7 +1569,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">GB offense: Moderate pace (63 plays/gm) | CHI defense: Moderate pace (64 plays/gm) | Outdoor: 70F, wind 10.6 mph</div>
+            <div class="card-scout">GB offense: Moderate pace (63 plays/gm) | CHI defense: Moderate pace (64 plays/gm) | Outdoor: 67F, wind 7.7 mph</div>
           </div>
           <div class="card-score" style="color:#00e676">8.2</div>
         </div>
@@ -1553,7 +1677,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">91F  Wind 9.2 mph  Clear</div>
+                <div class="stat-val">90F  Wind 4.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1563,7 +1687,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Cold stretch -- 59.0 PPR avg last 3 weeks | Outdoor: 91F, wind 9.2 mph</div>
+            <div class="card-scout">MIA offense: Fast pace (71 plays/gm) | NE defense: Slow pace (61 plays/gm) | Cold stretch -- 59.0 PPR avg last 3 weeks | Outdoor: 90F, wind 4.7 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">6.4</div>
         </div>
@@ -1612,7 +1736,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">82F  Wind 4.0 mph  Clear</div>
+                <div class="stat-val">83F  Wind 2.7 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -1622,7 +1746,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">KC offense: Fast pace (66 plays/gm) | BUF defense: Fast pace (64 plays/gm) | Outdoor: 82F, wind 4.0 mph</div>
+            <div class="card-scout">KC offense: Fast pace (66 plays/gm) | BUF defense: Fast pace (64 plays/gm) | Outdoor: 83F, wind 2.7 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">5.9</div>
         </div></div>
@@ -1637,6 +1761,17 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 </div>
 
 <script>
+// Splash screen — dismiss after 2.8s or on tap
+(function() {
+  var splash = document.getElementById('splash');
+  function dismiss() {
+    splash.classList.add('fade-out');
+    setTimeout(function() { splash.style.display='none'; }, 900);
+  }
+  setTimeout(dismiss, 2800);
+  splash.addEventListener('click', dismiss);
+})();
+
 function toggleCards(secId, btn) {
   var sec    = document.getElementById(secId);
   var cards  = sec.querySelectorAll('.player-card[data-hidden="1"]');
