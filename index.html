@@ -220,7 +220,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 <div class="header">
   <h1>GRIDIRON GURU</h1>
   <p>NFL Matchup Cheat Sheet &bull; Season 2026 &bull; Week 1</p>
-  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-08-06 09:04 PM</p>
+  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-08-06 09:08 PM</p>
 </div>
 
 <div class="container">
@@ -1810,7 +1810,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div></div>
-          <button class="show-btn" onclick="toggleCards('sec_QB',this)">Show All (24 players)</button>
+          <button class="show-btn" data-total="24" data-open="0" onclick="toggleCards('sec_QB',this)">Show All (24 players)</button>
         </div>
         <div class="pos-section" id="sec_RB">
           <h2 class="pos-header">Running Backs</h2>
@@ -3231,7 +3231,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div></div>
-          <button class="show-btn" onclick="toggleCards('sec_RB',this)">Show All (24 players)</button>
+          <button class="show-btn" data-total="24" data-open="0" onclick="toggleCards('sec_RB',this)">Show All (24 players)</button>
         </div>
         <div class="pos-section" id="sec_WR">
           <h2 class="pos-header">Wide Receivers</h2>
@@ -6658,7 +6658,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ff4444">0.0</div>
         </div></div>
-          <button class="show-btn" onclick="toggleCards('sec_WR',this)">Show All (58 players)</button>
+          <button class="show-btn" data-total="58" data-open="0" onclick="toggleCards('sec_WR',this)">Show All (58 players)</button>
         </div>
         <div class="pos-section" id="sec_TE">
           <h2 class="pos-header">Tight Ends</h2>
@@ -7784,7 +7784,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ff5252">3.5</div>
         </div></div>
-          <button class="show-btn" onclick="toggleCards('sec_TE',this)">Show All (19 players)</button>
+          <button class="show-btn" data-total="19" data-open="0" onclick="toggleCards('sec_TE',this)">Show All (19 players)</button>
         </div>
 
 </div>
@@ -7870,8 +7870,7 @@ function filterGame(chip, away, home) {
 function toggleCards(secId, btn) {
   var open = btn.dataset.open === '1';
   btn.dataset.open = open ? '0' : '1';
-  var n = parseInt(btn.textContent.match(/\d+/)[0]);
-  btn.textContent  = open ? 'Show All (' + n + ' players)' : 'Show Less';
+  btn.textContent  = open ? 'Show All (' + btn.dataset.total + ' players)' : 'Show Less';
   applyVisibility();
 }
 </script>
