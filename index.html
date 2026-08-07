@@ -78,10 +78,21 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 /* Games slate */
 .games-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:32px; }
 .game-chip { background:#161b22; border:1px solid #30363d; border-radius:10px;
-              padding:14px 18px; min-width:200px; }
+              padding:14px 18px; min-width:200px;
+              cursor:pointer; user-select:none;
+              transition:border-color .15s, background .15s, transform .1s; }
+.game-chip:hover { border-color:#238636; background:#1c2128; }
+.game-chip:active { transform:scale(.98); }
+.game-chip.active { border-color:#00e676; background:#0f2417;
+                     box-shadow:0 0 0 1px #00e67655; }
+.game-chip.active .game-teams { color:#00e676; }
+.all-chip { min-width:150px; }
 .game-teams { font-size:1rem; font-weight:700; color:#e6edf3; }
 .game-time  { font-size:12px; color:#8b949e; margin-top:3px; }
 .game-meta  { font-size:11px; color:#484f58; margin-top:2px; }
+.filter-banner { display:none; background:#0f2417; border:1px solid #00e67655;
+                  border-radius:8px; padding:10px 16px; margin-bottom:24px;
+                  color:#00e676; font-size:13px; font-weight:600; }
 
 /* Top 10 */
 .top10 { background:#161b22; border:1px solid #30363d; border-radius:12px;
@@ -209,156 +220,164 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 <div class="header">
   <h1>GRIDIRON GURU</h1>
   <p>NFL Matchup Cheat Sheet &bull; Season 2026 &bull; Week 1</p>
-  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-08-06 08:57 PM</p>
+  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-08-06 09:04 PM</p>
 </div>
 
 <div class="container">
 
-  <h2 class="section-title">This Week's Slate</h2>
+  <h2 class="section-title" id="slate-section">This Week's Slate</h2>
   <div class="games-row">
-        <div class="game-chip">
+        <div class="game-chip all-chip active" onclick="filterGame(this,'','')">
+          <div class="game-teams"><strong>All Games</strong></div>
+          <div class="game-time">Full board</div>
+          <div class="game-meta">Tap any game to focus it</div>
+        </div>
+        <div class="game-chip" onclick="filterGame(this,'NE','SEA')">
           <div class="game-teams"><strong>NE</strong> @ <strong>SEA</strong></div>
           <div class="game-time">Thu Sep 10  12:20 AM ET</div>
           <div class="game-meta">Lumen Field &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'SF','LAR')">
           <div class="game-teams"><strong>SF</strong> @ <strong>LAR</strong></div>
           <div class="game-time">Fri Sep 11  12:35 AM ET</div>
           <div class="game-meta">Melbourne Cricket Ground &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'TB','CIN')">
           <div class="game-teams"><strong>TB</strong> @ <strong>CIN</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">Paycor Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'NO','DET')">
           <div class="game-teams"><strong>NO</strong> @ <strong>DET</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">Ford Field &bull; Dome</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'NYJ','TEN')">
           <div class="game-teams"><strong>NYJ</strong> @ <strong>TEN</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">Nissan Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'BAL','IND')">
           <div class="game-teams"><strong>BAL</strong> @ <strong>IND</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">Lucas Oil Stadium &bull; Dome</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'ATL','PIT')">
           <div class="game-teams"><strong>ATL</strong> @ <strong>PIT</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">Acrisure Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'CHI','CAR')">
           <div class="game-teams"><strong>CHI</strong> @ <strong>CAR</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">Bank of America Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'CLE','JAX')">
           <div class="game-teams"><strong>CLE</strong> @ <strong>JAX</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">EverBank Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'BUF','HOU')">
           <div class="game-teams"><strong>BUF</strong> @ <strong>HOU</strong></div>
           <div class="game-time">Sun Sep 13  05:00 PM ET</div>
           <div class="game-meta">NRG Stadium &bull; Dome</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'MIA','LV')">
           <div class="game-teams"><strong>MIA</strong> @ <strong>LV</strong></div>
           <div class="game-time">Sun Sep 13  08:25 PM ET</div>
           <div class="game-meta">Allegiant Stadium &bull; Dome</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'GB','MIN')">
           <div class="game-teams"><strong>GB</strong> @ <strong>MIN</strong></div>
           <div class="game-time">Sun Sep 13  08:25 PM ET</div>
           <div class="game-meta">U.S. Bank Stadium &bull; Dome</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'WSH','PHI')">
           <div class="game-teams"><strong>WSH</strong> @ <strong>PHI</strong></div>
           <div class="game-time">Sun Sep 13  08:25 PM ET</div>
           <div class="game-meta">Lincoln Financial Field &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'ARI','LAC')">
           <div class="game-teams"><strong>ARI</strong> @ <strong>LAC</strong></div>
           <div class="game-time">Sun Sep 13  08:25 PM ET</div>
           <div class="game-meta">SoFi Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'DAL','NYG')">
           <div class="game-teams"><strong>DAL</strong> @ <strong>NYG</strong></div>
           <div class="game-time">Mon Sep 14  12:20 AM ET</div>
           <div class="game-meta">MetLife Stadium &bull; Outdoor</div>
         </div>
-        <div class="game-chip">
+        <div class="game-chip" onclick="filterGame(this,'DEN','KC')">
           <div class="game-teams"><strong>DEN</strong> @ <strong>KC</strong></div>
           <div class="game-time">Tue Sep 15  12:15 AM ET</div>
           <div class="game-meta">GEHA Field at Arrowhead Stadium &bull; Outdoor</div>
         </div></div>
+  <div id="filter-banner" class="filter-banner"></div>
 
-  <h2 class="section-title">Top 10 Players to Watch This Week</h2>
-  <div class="top10"><div class="top10-row" style="border-left:3px solid #00e676">
+  <div id="top10-section">
+    <h2 class="section-title">Top 10 Players to Watch This Week</h2>
+    <div class="top10"><div class="top10-row" data-team="DAL" style="border-left:3px solid #00e676">
           <span class="top10-rank" style="color:#00e676">1</span>
           <span class="top10-name"><strong>Javonte Williams</strong> <small style="color:#8b949e">RB &bull; DAL vs NYG</small></span>
           <span class="top10-grade" style="color:#00e676">A+</span>
           <span class="top10-score" style="color:#00e676">7.8</span>
           <span class="top10-label" style="color:#8b949e">NYG D ranks #31 -- allows 145.3 YPG to RBs</span>
-        </div><div class="top10-row" style="border-left:3px solid #00e676">
+        </div><div class="top10-row" data-team="PHI" style="border-left:3px solid #00e676">
           <span class="top10-rank" style="color:#00e676">2</span>
           <span class="top10-name"><strong>Saquon Barkley</strong> <small style="color:#8b949e">RB &bull; PHI vs WSH</small></span>
           <span class="top10-grade" style="color:#00e676">A+</span>
           <span class="top10-score" style="color:#00e676">7.6</span>
           <span class="top10-label" style="color:#8b949e">WSH D ranks #30 -- allows 141.8 YPG to RBs</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="TEN" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">3</span>
           <span class="top10-name"><strong>Tony Pollard</strong> <small style="color:#8b949e">RB &bull; TEN vs NYJ</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">7.4</span>
           <span class="top10-label" style="color:#8b949e">NYJ D ranks #29 -- allows 139.5 YPG to RBs</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="IND" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">4</span>
           <span class="top10-name"><strong>Daniel Jones</strong> <small style="color:#8b949e">QB &bull; IND vs BAL</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">7.4</span>
           <span class="top10-label" style="color:#8b949e">BAL D ranks #30 -- allows 247.9 YPG to QBs</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="LV" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">5</span>
           <span class="top10-name"><strong>Ashton Jeanty</strong> <small style="color:#8b949e">RB &bull; LV vs MIA</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">7.3</span>
           <span class="top10-label" style="color:#8b949e">MIA D ranks #26 -- allows 132.4 YPG to RBs</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="PIT" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">6</span>
           <span class="top10-name"><strong>Rico Dowdle</strong> <small style="color:#8b949e">RB &bull; PIT vs ATL</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">7.2</span>
           <span class="top10-label" style="color:#8b949e">PIT offense: Slow pace (58.1 plays/gm)</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="PIT" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">7</span>
           <span class="top10-name"><strong>Jaylen Warren</strong> <small style="color:#8b949e">RB &bull; PIT vs ATL</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">7.1</span>
           <span class="top10-label" style="color:#8b949e">PIT offense: Slow pace (58.1 plays/gm)</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="DET" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">8</span>
           <span class="top10-name"><strong>Jahmyr Gibbs</strong> <small style="color:#8b949e">RB &bull; DET vs NO</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">7.1</span>
           <span class="top10-label" style="color:#8b949e">High-scoring game (total 50, DET implied 27.0)</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="BAL" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">9</span>
           <span class="top10-name"><strong>Lamar Jackson</strong> <small style="color:#8b949e">QB &bull; BAL vs IND</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">6.9</span>
           <span class="top10-label" style="color:#8b949e">IND D ranks #31 -- allows 247.9 YPG to QBs</span>
-        </div><div class="top10-row" style="border-left:3px solid #69f0ae">
+        </div><div class="top10-row" data-team="CHI" style="border-left:3px solid #69f0ae">
           <span class="top10-rank" style="color:#69f0ae">10</span>
           <span class="top10-name"><strong>D'Andre Swift</strong> <small style="color:#8b949e">RB &bull; CHI vs CAR</small></span>
           <span class="top10-grade" style="color:#69f0ae">A</span>
           <span class="top10-score" style="color:#69f0ae">6.8</span>
           <span class="top10-label" style="color:#8b949e">CHI offense: Moderate pace (64.9 plays/gm)</span>
         </div></div>
+  </div>
 
   <h2 class="section-title">Full Matchup Breakdown by Position</h2>
 
@@ -375,7 +394,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         <div class="pos-section" id="sec_QB">
           <h2 class="pos-header">Quarterbacks</h2>
           <div class="cards">
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="IND">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #1 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -434,7 +453,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.4</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="BAL">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #2 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -493,7 +512,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">6.9</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="LAR">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #3 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -552,7 +571,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">6.6</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="PHI">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #4 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -611,7 +630,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.4</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="CIN">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #5 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -670,7 +689,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ATL">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #6 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -729,7 +748,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #7 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -788,7 +807,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="TB">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #8 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -847,7 +866,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NYJ">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #9 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -906,7 +925,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CAR">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #10 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -965,7 +984,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #11 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -1024,7 +1043,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DAL">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #12 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -1083,7 +1102,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="JAX">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #13 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -1142,7 +1161,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="KC">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #14 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -1201,7 +1220,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #15 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -1260,7 +1279,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SEA">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #16 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -1319,7 +1338,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="HOU">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #17 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1378,7 +1397,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="TEN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #18 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1437,7 +1456,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ARI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #19 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1496,7 +1515,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #20 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1555,7 +1574,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #21 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1614,7 +1633,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="GB">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #22 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1673,7 +1692,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="BUF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #23 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1732,7 +1751,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DEN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #24 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -1796,7 +1815,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         <div class="pos-section" id="sec_RB">
           <h2 class="pos-header">Running Backs</h2>
           <div class="cards">
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="DAL">
           <div class="card-rank" style="background:#00e67622;color:#00e676;border:1px solid #00e67644">
             #1 &nbsp;<strong style="font-size:1.1rem">A+</strong>
           </div>
@@ -1855,7 +1874,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#00e676">7.8</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="PHI">
           <div class="card-rank" style="background:#00e67622;color:#00e676;border:1px solid #00e67644">
             #2 &nbsp;<strong style="font-size:1.1rem">A+</strong>
           </div>
@@ -1914,7 +1933,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#00e676">7.6</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="TEN">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #3 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -1973,7 +1992,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.4</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="LV">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #4 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -2032,7 +2051,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.3</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="PIT">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #5 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -2091,7 +2110,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #6 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -2150,7 +2169,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #7 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -2209,7 +2228,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #8 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -2268,7 +2287,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">6.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="GB">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #9 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
@@ -2327,7 +2346,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">6.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #10 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2386,7 +2405,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="WSH">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #11 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2445,7 +2464,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="MIA">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #12 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2504,7 +2523,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ATL">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #13 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2563,7 +2582,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NO">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #14 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2622,7 +2641,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NYJ">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #15 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2681,7 +2700,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="IND">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #16 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -2740,7 +2759,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAR">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #17 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -2799,7 +2818,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SF">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #18 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -2858,7 +2877,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="BAL">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #19 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -2917,7 +2936,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CIN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #20 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -2976,7 +2995,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="BUF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #21 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -3035,7 +3054,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="KC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #22 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -3094,7 +3113,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #23 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -3153,7 +3172,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CLE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #24 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -3217,7 +3236,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         <div class="pos-section" id="sec_WR">
           <h2 class="pos-header">Wide Receivers</h2>
           <div class="cards">
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="IND">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #1 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -3276,7 +3295,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.8</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="BAL">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #2 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -3335,7 +3354,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.6</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="CIN">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #3 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3394,7 +3413,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.5</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="LAR">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #4 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3453,7 +3472,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.5</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="IND">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #5 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3512,7 +3531,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NYG">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #6 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3571,7 +3590,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ATL">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #7 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3630,7 +3649,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CIN">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #8 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3689,7 +3708,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SEA">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #9 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3748,7 +3767,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="PHI">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #10 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3807,7 +3826,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #11 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3866,7 +3885,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAR">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #12 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3925,7 +3944,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="PHI">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #13 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -3984,7 +4003,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #14 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -4043,7 +4062,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DAL">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #15 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4102,7 +4121,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DAL">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #16 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4161,7 +4180,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="KC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #17 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4220,7 +4239,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #18 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4279,7 +4298,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="HOU">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #19 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4338,7 +4357,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="JAX">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #20 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4397,7 +4416,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #21 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4456,7 +4475,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="JAX">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #22 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4515,7 +4534,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="JAX">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #23 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4574,7 +4593,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #24 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4633,7 +4652,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #25 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4692,7 +4711,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="TB">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #26 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4751,7 +4770,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NO">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #27 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4810,7 +4829,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CAR">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #28 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4869,7 +4888,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #29 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4928,7 +4947,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="MIN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #30 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -4987,7 +5006,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #31 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5046,7 +5065,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #32 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5105,7 +5124,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SEA">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #33 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5164,7 +5183,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SEA">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #34 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5223,7 +5242,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="TEN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #35 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5282,7 +5301,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="GB">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #36 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5341,7 +5360,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ARI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #37 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5400,7 +5419,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #38 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5459,7 +5478,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="KC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #39 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5518,7 +5537,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #40 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5577,7 +5596,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #41 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5636,7 +5655,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #42 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5695,7 +5714,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #43 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5754,7 +5773,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ARI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #44 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5813,7 +5832,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="MIN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #45 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5872,7 +5891,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="MIN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #46 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5931,7 +5950,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="HOU">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #47 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -5990,7 +6009,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.7</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #48 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6049,7 +6068,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DEN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #49 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6108,7 +6127,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="WSH">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #50 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6167,7 +6186,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DEN">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #51 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6226,7 +6245,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LV">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #52 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6285,7 +6304,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="BUF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #53 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6344,7 +6363,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="ARI">
           <div class="card-rank" style="background:#ff525222;color:#ff5252;border:1px solid #ff525244">
             #54 &nbsp;<strong style="font-size:1.1rem">D</strong>
           </div>
@@ -6403,7 +6422,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ff5252">3.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CLE">
           <div class="card-rank" style="background:#ff525222;color:#ff5252;border:1px solid #ff525244">
             #55 &nbsp;<strong style="font-size:1.1rem">D</strong>
           </div>
@@ -6462,7 +6481,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ff5252">3.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="BUF">
           <div class="card-rank" style="background:#ff525222;color:#ff5252;border:1px solid #ff525244">
             #56 &nbsp;<strong style="font-size:1.1rem">D</strong>
           </div>
@@ -6521,7 +6540,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ff5252">3.4</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DEN">
           <div class="card-rank" style="background:#ff525222;color:#ff5252;border:1px solid #ff525244">
             #57 &nbsp;<strong style="font-size:1.1rem">D</strong>
           </div>
@@ -6580,7 +6599,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ff5252">3.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ff444422;color:#ff4444;border:1px solid #ff444444">
             #58 &nbsp;<strong style="font-size:1.1rem">OUT</strong>
           </div>
@@ -6644,7 +6663,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         <div class="pos-section" id="sec_TE">
           <h2 class="pos-header">Tight Ends</h2>
           <div class="cards">
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="IND">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #1 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
@@ -6703,7 +6722,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">5.5</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="NYG">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #2 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -6762,7 +6781,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="ATL">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #3 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -6821,7 +6840,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.9</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="PHI">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #4 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -6880,7 +6899,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
-        <div class="player-card" data-hidden="0">
+        <div class="player-card" data-hidden="0" data-team="ARI">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #5 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
@@ -6939,7 +6958,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.6</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #6 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -6998,7 +7017,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="JAX">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #7 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7057,7 +7076,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.5</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="SF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #8 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7116,7 +7135,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #9 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7175,7 +7194,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="HOU">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #10 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7234,7 +7253,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="LV">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #11 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7293,7 +7312,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="NO">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #12 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7352,7 +7371,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="TB">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #13 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7411,7 +7430,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="KC">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #14 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7470,7 +7489,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #15 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7529,7 +7548,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="DAL">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #16 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7588,7 +7607,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="CLE">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #17 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7647,7 +7666,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="BUF">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #18 &nbsp;<strong style="font-size:1.1rem">C</strong>
           </div>
@@ -7706,7 +7725,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#ffb74d">3.9</div>
         </div>
-        <div class="player-card" style="display:none" data-hidden="1">
+        <div class="player-card" style="display:none" data-hidden="1" data-team="WSH">
           <div class="card-rank" style="background:#ff525222;color:#ff5252;border:1px solid #ff525244">
             #19 &nbsp;<strong style="font-size:1.1rem">D</strong>
           </div>
@@ -7787,14 +7806,73 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
   splash.addEventListener('click', dismiss);
 })();
 
+/* ---- Slate filter + expand/collapse -------------------------------
+   Both features decide the same thing (is a card visible?), so they share
+   one function. Filtering by game overrides the top-5 cap -- if you drill
+   into a matchup you want every player from it, not just five.          */
+var activeTeams = null;   // null = no game filter, else [away, home]
+
+function cardVisible(card, sectionOpen) {
+  if (activeTeams) return activeTeams.indexOf(card.dataset.team) !== -1;
+  return card.dataset.hidden === '0' || sectionOpen;
+}
+
+function applyVisibility() {
+  document.querySelectorAll('.pos-section').forEach(function(sec) {
+    var btn  = sec.querySelector('.show-btn');
+    var open = btn && btn.dataset.open === '1';
+    var shown = 0;
+    sec.querySelectorAll('.player-card').forEach(function(c) {
+      var vis = cardVisible(c, open);
+      c.style.display = vis ? 'flex' : 'none';
+      if (vis) shown++;
+    });
+    // A game only involves two teams, so some positions may have nobody
+    sec.style.display = shown ? 'block' : 'none';
+    if (btn) btn.style.display = activeTeams ? 'none' : 'block';
+  });
+
+  var t10shown = 0;
+  document.querySelectorAll('.top10-row').forEach(function(r) {
+    var vis = !activeTeams || activeTeams.indexOf(r.dataset.team) !== -1;
+    r.style.display = vis ? 'flex' : 'none';
+    if (vis) t10shown++;
+  });
+  var t10 = document.getElementById('top10-section');
+  if (t10) t10.style.display = t10shown ? 'block' : 'none';
+}
+
+function filterGame(chip, away, home) {
+  var isAll = !away && !home;
+  // Tapping the active game again clears the filter
+  if (!isAll && chip.classList.contains('active')) { isAll = true; chip = null; }
+
+  activeTeams = isAll ? null : [away, home];
+  document.querySelectorAll('.game-chip').forEach(function(c) { c.classList.remove('active'); });
+  if (isAll) {
+    var allChip = document.querySelector('.all-chip');
+    if (allChip) allChip.classList.add('active');
+  } else {
+    chip.classList.add('active');
+  }
+
+  var banner = document.getElementById('filter-banner');
+  if (banner) {
+    banner.style.display = isAll ? 'none' : 'block';
+    if (!isAll) banner.textContent = 'Showing only ' + away + ' @ ' + home + ' -- tap again or "All Games" to clear';
+  }
+
+  applyVisibility();
+  var anchor = document.getElementById(isAll ? 'slate-section' : 'top10-section');
+  if (anchor) anchor.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
 function toggleCards(secId, btn) {
-  var sec    = document.getElementById(secId);
-  var cards  = sec.querySelectorAll('.player-card[data-hidden="1"]');
-  var open   = btn.dataset.open === '1';
-  cards.forEach(function(c) { c.style.display = open ? 'none' : 'flex'; });
+  var open = btn.dataset.open === '1';
   btn.dataset.open = open ? '0' : '1';
   var n = parseInt(btn.textContent.match(/\d+/)[0]);
   btn.textContent  = open ? 'Show All (' + n + ' players)' : 'Show Less';
+  applyVisibility();
 }
 </script>
 
