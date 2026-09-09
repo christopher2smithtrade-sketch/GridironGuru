@@ -94,6 +94,34 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
                   border-radius:8px; padding:10px 16px; margin-bottom:24px;
                   color:#00e676; font-size:13px; font-weight:600; }
 
+/* "How this works" explainer. Open on a first visit, collapsed after that --
+   the boys read it once, then it should get out of the way. */
+.about { margin:0 0 26px; }
+.about-bar { width:100%; display:flex; justify-content:space-between; align-items:center;
+              gap:12px; background:#161b22; border:1px solid #30363d; border-radius:12px;
+              padding:13px 17px; color:#c9d1d9; font-size:13px; text-align:left;
+              cursor:pointer; font-family:inherit; }
+.about-bar:hover { border-color:#3fb950; }
+.about-bar strong { color:#3fb950; }
+.about-caret { color:#8b949e; transition:transform .18s; }
+.about.closed .about-caret { transform:rotate(-90deg); }
+.about.closed .about-body { display:none; }
+.about-body { background:#161b22; border:1px solid #30363d; border-top:none;
+               border-radius:0 0 12px 12px; margin-top:-12px; padding:20px 20px 16px;
+               color:#c9d1d9; font-size:13px; line-height:1.6; }
+.about-body p { margin:0 0 12px; }
+.about-lede { color:#e6edf3; font-size:1.05rem; font-weight:700; }
+.about-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+               gap:18px; margin:16px 0; }
+.about-grid h4 { margin:0 0 8px; font-size:.78rem; letter-spacing:1px;
+                  text-transform:uppercase; color:#3fb950; }
+.about-grid ul, .about-grid ol { margin:0; padding-left:18px; }
+.about-grid li { margin-bottom:5px; }
+.about-body b { color:#e6edf3; }
+.about-sub { color:#8b949e; font-size:12px; }
+.about-fine { color:#484f58; font-size:11px; border-top:1px solid #21262d;
+               padding-top:10px; margin-top:14px !important; }
+
 /* Matchup previews -- the plain-English read on each game */
 .section-note { color:#8b949e; font-size:12px; margin:-8px 0 14px; }
 .previews { display:grid; grid-template-columns:repeat(auto-fit,minmax(430px,1fr));
@@ -225,6 +253,9 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
   .top10       { padding:12px; }
   .previews    { grid-template-columns:1fr; gap:10px; }
   .pl-grid     { grid-template-columns:1fr; gap:10px; }
+  .about-grid  { grid-template-columns:1fr; gap:14px; }
+  .about-body  { padding:15px 14px 12px; font-size:12.5px; }
+  .about-bar   { font-size:12px; padding:11px 14px; }
   .pl-card     { padding:12px 13px; }
   .pl-proj     { min-width:56px; font-size:.95rem; }
   .pl-td       { min-width:46px; font-size:.85rem; }
@@ -334,10 +365,60 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 <div class="header">
   <h1>GRIDIRON GURU</h1>
   <p>NFL Matchup Cheat Sheet &bull; Season 2026 &bull; Week 1</p>
-  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-09-09 05:18 PM</p>
+  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-09-09 05:43 PM</p>
 </div>
 
 <div class="container">
+
+  <div class="about" id="about">
+    <button class="about-bar" onclick="toggleAbout()">
+      <span><strong>How this works</strong> &mdash; what the grades mean and where the numbers come from</span>
+      <span class="about-caret" id="about-caret">&#9662;</span>
+    </button>
+    <div class="about-body" id="about-body">
+      <p class="about-lede">Who's set up for a big week &mdash; and why.</p>
+
+      <p>A weekly cheat sheet. We grade every starting quarterback, running back,
+      receiver, tight end and defense on how good their <em>spot</em> is this week &mdash;
+      not how good the player is. A star facing a shutdown defense in a slow,
+      low-scoring game can be a worse play than a solid guy facing a leaky defense
+      in a shootout. This finds those spots.</p>
+
+      <div class="about-grid">
+        <div>
+          <h4>How to read a card</h4>
+          <ul>
+            <li><b>Grade A+ &rarr; D</b> &mdash; how favorable the matchup is. A+ = elite spot, D = avoid.</li>
+            <li><b>Big number (0&ndash;10)</b> &mdash; the same thing as a score. Higher is better.</li>
+            <li><b>Projected yards</b> &mdash; what we expect this week, adjusted for pace, matchup and expected points.</li>
+            <li><b>TD chance</b> &mdash; odds he finds the end zone at least once.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>The five things behind every grade</h4>
+          <ol>
+            <li><b>Matchup</b> &mdash; how generous that defense is to this position</li>
+            <li><b>Scoring environment</b> &mdash; how many points Vegas expects</li>
+            <li><b>Production</b> &mdash; what he actually did last season</li>
+            <li><b>Pace</b> &mdash; how many plays the game should run <em>(more plays = more chances)</em></li>
+            <li><b>Usage</b> &mdash; how much of his team's work he really gets</li>
+          </ol>
+          <p class="about-sub">Then adjusted for injuries, weather and wind.</p>
+        </div>
+      </div>
+
+      <p><b>How to use it:</b> tap any game in the slate below to zero in on just those
+      two teams. <b>&ldquo;Who Has the Edge&rdquo;</b> gives a plain-English read on every
+      matchup &mdash; who's favored and where each side wins.</p>
+
+      <p class="about-sub"><b>Where the numbers come from:</b> ESPN (schedule, stats,
+      injuries, DraftKings lines) &middot; nflverse (snap counts, efficiency) &middot;
+      Open-Meteo (weather). All free, refreshed every time it runs.</p>
+
+      <p class="about-fine">Matchup analysis, not betting advice. Lines are shown for
+      reference &mdash; place anything you like on DraftKings.</p>
+    </div>
+  </div>
 
   <h2 class="section-title" id="slate-section">This Week's Slate</h2>
   <div class="games-row">
@@ -2821,7 +2902,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -2831,7 +2912,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.5</div>
         </div>
@@ -2941,7 +3022,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -2951,7 +3032,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Productive -- 258.5 Pass Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Productive -- 258.5 Pass Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.2</div>
         </div>
@@ -3361,7 +3442,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -3371,7 +3452,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -3901,7 +3982,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -3911,7 +3992,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 3.0 Pass Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 3.0 Pass Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
@@ -4631,7 +4712,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rush Yds <strong>56.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>14.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
+                <div class="stat-val">Rush Yds <strong>56.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>14.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>1.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -4811,7 +4892,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rush Yds <strong>31.5</strong></div>
+                <div class="stat-val">Rush Yds <strong>31.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>9.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>1.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -4931,7 +5012,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rush Yds <strong>22.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>22.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
+                <div class="stat-val">Rush Yds <strong>22.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>21.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -7211,7 +7292,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rush Yds <strong>56.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>18.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
+                <div class="stat-val">Rush Yds <strong>56.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>16.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -7566,17 +7647,17 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rush Yds <strong>54.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>8.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>1.5</strong></div>
+                <div class="stat-val">Rush Yds <strong>53.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>8.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>1.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
 
-            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
@@ -8646,7 +8727,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -8656,7 +8737,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 29.2 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 29.2 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.5</div>
         </div>
@@ -9186,7 +9267,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -9196,7 +9277,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 6.6 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 6.6 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
@@ -9606,7 +9687,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -9616,7 +9697,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 43.1 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 43.1 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
@@ -9966,7 +10047,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -9976,7 +10057,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 14.5 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 14.5 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ff5252">3.3</div>
         </div>
@@ -10206,7 +10287,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -10216,7 +10297,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ff4444">0.0</div>
         </div></div>
@@ -11356,7 +11437,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>28.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
+                <div class="stat-val">Rec Yds <strong>29.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -11536,7 +11617,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>41.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
+                <div class="stat-val">Rec Yds <strong>40.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -12016,7 +12097,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>34.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
+                <div class="stat-val">Rec Yds <strong>33.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -13511,17 +13592,17 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>81.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>6.5</strong></div>
+                <div class="stat-val">Rec Yds <strong>82.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>6.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Productive -- 105.5 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Productive -- 105.5 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">5.7</div>
         </div>
@@ -15131,17 +15212,17 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>63.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>5.5</strong></div>
+                <div class="stat-val">Rec Yds <strong>64.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>5.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -15251,7 +15332,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15261,7 +15342,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 38.2 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 38.2 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -15311,7 +15392,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15321,7 +15402,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 37.1 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 37.1 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -15671,7 +15752,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15681,7 +15762,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.4</div>
         </div>
@@ -15851,7 +15932,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15861,7 +15942,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 36.7 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 36.7 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
@@ -16271,7 +16352,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -16281,7 +16362,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 26.3 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 26.3 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
@@ -16631,7 +16712,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -16641,7 +16722,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 20.1 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 20.1 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
@@ -17356,7 +17437,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>18.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
+                <div class="stat-val">Rec Yds <strong>17.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>2.5</strong></div>
                 <div class="stat-sub">Lines via DraftKings -- place on DK</div>
               </div>
             </div>
@@ -17672,7 +17753,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           <div class="card-body">
             <div class="card-name">
               <span style="color:#00338D;font-size:1.1rem;font-weight:700">Keon Coleman</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Foot Sprain">Questionable</span>
+               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Coleman (foot) is listed as one of three starting receivers on the Bills' unofficial depth">Questionable</span>
               <span style="color:#8b949e;font-size:11px;margin-left:6px">WR3</span>
               <span style="color:#8b949e;font-size:13px;margin-left:8px">BUF (Away) vs HOU</span>
             </div>
@@ -20476,7 +20557,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20486,7 +20567,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 30.5 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 30.5 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.8</div>
         </div>
@@ -20536,7 +20617,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20546,7 +20627,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -20596,7 +20677,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20606,7 +20687,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -21076,7 +21157,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
+                <div class="stat-val">76F  Wind 5.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -21086,7 +21167,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 2.8 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 2.8 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 5.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
@@ -22515,7 +22596,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               <div class="stat-block">
                 <div class="stat-label">Defensive TDs (2025)</div>
                 <div class="stat-val">6</div>
-                <div class="stat-sub">6.2 mph wind</div>
+                <div class="stat-sub">5.2 mph wind</div>
               </div>
             </div>
 
@@ -22995,7 +23076,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               <div class="stat-block">
                 <div class="stat-label">Defensive TDs (2025)</div>
                 <div class="stat-val">7</div>
-                <div class="stat-sub">6.2 mph wind</div>
+                <div class="stat-sub">5.2 mph wind</div>
               </div>
             </div>
 
@@ -23402,6 +23483,20 @@ function filterGame(chip, away, home) {
   var anchor = document.getElementById(isAll ? 'slate-section' : 'top10-section');
   if (anchor) anchor.scrollIntoView({behavior:'smooth', block:'start'});
 }
+
+function toggleAbout() {
+  var el = document.getElementById('about');
+  var closed = el.classList.toggle('closed');
+  // Remember the choice, but never let a storage failure break the page
+  try { localStorage.setItem('gg_about_closed', closed ? '1' : '0'); } catch (e) {}
+}
+(function () {
+  try {
+    if (localStorage.getItem('gg_about_closed') === '1') {
+      document.getElementById('about').classList.add('closed');
+    }
+  } catch (e) {}
+})();
 
 function toggleCards(secId, btn) {
   var open = btn.dataset.open === '1';
