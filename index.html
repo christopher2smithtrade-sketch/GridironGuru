@@ -94,6 +94,29 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
                   border-radius:8px; padding:10px 16px; margin-bottom:24px;
                   color:#00e676; font-size:13px; font-weight:600; }
 
+/* Matchup previews -- the plain-English read on each game */
+.section-note { color:#8b949e; font-size:12px; margin:-8px 0 14px; }
+.previews { display:grid; grid-template-columns:repeat(auto-fit,minmax(430px,1fr));
+             gap:14px; margin-bottom:32px; }
+.preview-card { background:#161b22; border:1px solid #30363d; border-radius:12px;
+                 padding:16px 18px; }
+.pv-head { display:flex; justify-content:space-between; align-items:baseline;
+            margin-bottom:8px; }
+.pv-title { font-size:1.05rem; font-weight:800; color:#e6edf3; }
+.pv-ko { font-size:11px; color:#8b949e; }
+.pv-headline { color:#00e676; font-weight:700; font-size:.95rem; margin-bottom:6px; }
+.pv-body { color:#c9d1d9; font-size:13px; line-height:1.5; }
+.pv-vegas { color:#8b949e; font-size:12px; margin-top:6px; font-style:italic; }
+.pv-rows { margin-top:12px; border-top:1px solid #21262d; padding-top:10px; }
+.pv-row { display:flex; align-items:center; gap:6px; font-size:11px;
+           color:#8b949e; padding:3px 0; }
+.pv-pos { min-width:96px; color:#c9d1d9; font-weight:600; }
+.pv-num { min-width:26px; text-align:center; color:#e6edf3; }
+.pv-vs  { min-width:66px; text-align:center; color:#484f58; font-size:10px; }
+.pv-bar { flex:1; height:5px; background:#21262d; border-radius:3px; overflow:hidden; }
+.pv-bar b { display:block; height:100%; background:#3fb950; }
+.pv-edge { min-width:104px; text-align:right; font-weight:600; }
+
 /* Top 10 */
 .top10 { background:#161b22; border:1px solid #30363d; border-radius:12px;
           padding:20px; margin-bottom:32px; }
@@ -177,6 +200,12 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
   .top10-name  { flex:1 0 100%; order:-1; }
   .top10-label { flex:1 0 100%; font-size:11px; }
   .top10       { padding:12px; }
+  .previews    { grid-template-columns:1fr; gap:10px; }
+  .preview-card { padding:13px 14px; }
+  .pv-bar      { display:none; }
+  .pv-pos      { min-width:78px; }
+  .pv-vs       { min-width:56px; }
+  .pv-edge     { flex:1; }
   .legend      { gap:6px; }
   .legend-item { font-size:11px; }
 }
@@ -278,7 +307,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 <div class="header">
   <h1>GRIDIRON GURU</h1>
   <p>NFL Matchup Cheat Sheet &bull; Season 2026 &bull; Week 1</p>
-  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-09-09 04:32 PM</p>
+  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-09-09 04:40 PM</p>
 </div>
 
 <div class="container">
@@ -371,6 +400,172 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           <div class="game-meta">Arrowhead Stadium &bull; Outdoor</div>
         </div></div>
   <div id="filter-banner" class="filter-banner"></div>
+
+  <div id="preview-section">
+    <h2 class="section-title">Who Has the Edge -- Plain English</h2>
+    <p class="section-note">Each game compared position by position. Higher number = better spot this week.</p>
+    <div class="previews">
+        <div class="preview-card" data-teams="NE|SEA">
+          <div class="pv-head">
+            <span class="pv-title">NE @ SEA</span>
+            <span class="pv-ko">Thu Sep 10 12:20 AM ET</span>
+          </div>
+          <div class="pv-headline">SEA vs NE looks close to even.</div>
+          <div class="pv-body">SEA has the better running game and receivers. NE answers at defense.</div>
+          <div class="pv-vegas">Vegas favors SEA by 3, but our numbers see this as close to even.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-num">5.2</span><span class="pv-vs">NE v SEA</span><span class="pv-num">5.5</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:36%"></b></span><span class="pv-num">3.6</span><span class="pv-vs">NE v SEA</span><span class="pv-num">4.8</span><span class="pv-bar"><b style="width:48%"></b></span><span class="pv-edge" style="color:#69f0ae">SEA edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:46%"></b></span><span class="pv-num">4.6</span><span class="pv-vs">NE v SEA</span><span class="pv-num">5.4</span><span class="pv-bar"><b style="width:54%"></b></span><span class="pv-edge" style="color:#69f0ae">SEA edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:47%"></b></span><span class="pv-num">4.7</span><span class="pv-vs">NE v SEA</span><span class="pv-num">4.6</span><span class="pv-bar"><b style="width:46%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-num">5.2</span><span class="pv-vs">NE v SEA</span><span class="pv-num">4.1</span><span class="pv-bar"><b style="width:41%"></b></span><span class="pv-edge" style="color:#69f0ae">NE edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="SF|LAR">
+          <div class="pv-head">
+            <span class="pv-title">SF @ LAR</span>
+            <span class="pv-ko">Fri Sep 11 12:35 AM ET</span>
+          </div>
+          <div class="pv-headline">LAR has the clear advantage over SF.</div>
+          <div class="pv-body">LAR has the better quarterback, receivers, tight end, and defense.</div>
+          <div class="pv-vegas">Vegas agrees, favoring LAR by 3.5.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:60%"></b></span><span class="pv-num">6.0</span><span class="pv-vs">SF v LAR</span><span class="pv-num">8.0</span><span class="pv-bar"><b style="width:80%"></b></span><span class="pv-edge" style="color:#00e676">LAR big edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-num">5.2</span><span class="pv-vs">SF v LAR</span><span class="pv-num">5.9</span><span class="pv-bar"><b style="width:59%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-num">5.5</span><span class="pv-vs">SF v LAR</span><span class="pv-num">7.8</span><span class="pv-bar"><b style="width:78%"></b></span><span class="pv-edge" style="color:#00e676">LAR big edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:53%"></b></span><span class="pv-num">5.3</span><span class="pv-vs">SF v LAR</span><span class="pv-num">7.0</span><span class="pv-bar"><b style="width:70%"></b></span><span class="pv-edge" style="color:#00e676">LAR big edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:13%"></b></span><span class="pv-num">1.3</span><span class="pv-vs">SF v LAR</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#00e676">LAR big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="TB|CIN">
+          <div class="pv-head">
+            <span class="pv-title">TB @ CIN</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">TB has the slight edge over CIN.</div>
+          <div class="pv-body">TB has the better running game.</div>
+          <div class="pv-vegas">Worth noting: Vegas favors CIN by 3.5, which is the opposite of what our numbers say.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:75%"></b></span><span class="pv-num">7.5</span><span class="pv-vs">TB v CIN</span><span class="pv-num">7.6</span><span class="pv-bar"><b style="width:76%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:74%"></b></span><span class="pv-num">7.4</span><span class="pv-vs">TB v CIN</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#00e676">TB big edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:72%"></b></span><span class="pv-num">7.2</span><span class="pv-vs">TB v CIN</span><span class="pv-num">7.3</span><span class="pv-bar"><b style="width:73%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:69%"></b></span><span class="pv-num">6.9</span><span class="pv-vs">TB v CIN</span><span class="pv-num">6.7</span><span class="pv-bar"><b style="width:67%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:47%"></b></span><span class="pv-num">4.7</span><span class="pv-vs">TB v CIN</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="NO|DET">
+          <div class="pv-head">
+            <span class="pv-title">NO @ DET</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">DET looks like the better side against NO.</div>
+          <div class="pv-body">DET has the better defense. NO answers at tight end.</div>
+          <div class="pv-vegas">Vegas agrees, favoring DET by 7.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:60%"></b></span><span class="pv-num">6.0</span><span class="pv-vs">NO v DET</span><span class="pv-num">5.6</span><span class="pv-bar"><b style="width:56%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:51%"></b></span><span class="pv-num">5.1</span><span class="pv-vs">NO v DET</span><span class="pv-num">5.6</span><span class="pv-bar"><b style="width:56%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:58%"></b></span><span class="pv-num">5.8</span><span class="pv-vs">NO v DET</span><span class="pv-num">5.2</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:57%"></b></span><span class="pv-num">5.7</span><span class="pv-vs">NO v DET</span><span class="pv-num">5.0</span><span class="pv-bar"><b style="width:50%"></b></span><span class="pv-edge" style="color:#69f0ae">NO edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:33%"></b></span><span class="pv-num">3.3</span><span class="pv-vs">NO v DET</span><span class="pv-num">8.6</span><span class="pv-bar"><b style="width:86%"></b></span><span class="pv-edge" style="color:#00e676">DET big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="NYJ|TEN">
+          <div class="pv-head">
+            <span class="pv-title">NYJ @ TEN</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">TEN vs NYJ looks close to even.</div>
+          <div class="pv-body">TEN has the better running game and defense.</div>
+          <div class="pv-vegas">Vegas favors TEN by 1.5, but our numbers see this as close to even.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:69%"></b></span><span class="pv-num">6.9</span><span class="pv-vs">NYJ v TEN</span><span class="pv-num">6.5</span><span class="pv-bar"><b style="width:65%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-num">5.2</span><span class="pv-vs">NYJ v TEN</span><span class="pv-num">6.9</span><span class="pv-bar"><b style="width:69%"></b></span><span class="pv-edge" style="color:#00e676">TEN big edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:67%"></b></span><span class="pv-num">6.7</span><span class="pv-vs">NYJ v TEN</span><span class="pv-num">6.5</span><span class="pv-bar"><b style="width:64%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-num">6.6</span><span class="pv-vs">NYJ v TEN</span><span class="pv-num">5.9</span><span class="pv-bar"><b style="width:59%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:58%"></b></span><span class="pv-num">5.8</span><span class="pv-vs">NYJ v TEN</span><span class="pv-num">6.6</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-edge" style="color:#69f0ae">TEN edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="BAL|IND">
+          <div class="pv-head">
+            <span class="pv-title">BAL @ IND</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">IND has the slight edge over BAL.</div>
+          <div class="pv-body">IND has the better defense.</div>
+          <div class="pv-vegas">Worth noting: Vegas favors BAL by 3.5, which is the opposite of what our numbers say.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:73%"></b></span><span class="pv-num">7.3</span><span class="pv-vs">BAL v IND</span><span class="pv-num">7.7</span><span class="pv-bar"><b style="width:77%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:49%"></b></span><span class="pv-num">4.9</span><span class="pv-vs">BAL v IND</span><span class="pv-num">5.3</span><span class="pv-bar"><b style="width:53%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:71%"></b></span><span class="pv-num">7.1</span><span class="pv-vs">BAL v IND</span><span class="pv-num">7.2</span><span class="pv-bar"><b style="width:72%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-num">6.6</span><span class="pv-vs">BAL v IND</span><span class="pv-num">7.1</span><span class="pv-bar"><b style="width:71%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:30%"></b></span><span class="pv-num">3.0</span><span class="pv-vs">BAL v IND</span><span class="pv-num">4.7</span><span class="pv-bar"><b style="width:47%"></b></span><span class="pv-edge" style="color:#00e676">IND big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="ATL|PIT">
+          <div class="pv-head">
+            <span class="pv-title">ATL @ PIT</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">PIT vs ATL looks close to even.</div>
+          <div class="pv-body">ATL has the better quarterback, receivers, and tight end. PIT answers at running game and defense.</div>
+          <div class="pv-vegas">Vegas favors PIT by 3.5, but our numbers see this as close to even.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:68%"></b></span><span class="pv-num">6.8</span><span class="pv-vs">ATL v PIT</span><span class="pv-num">5.5</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-edge" style="color:#69f0ae">ATL edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-num">5.5</span><span class="pv-vs">ATL v PIT</span><span class="pv-num">6.5</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-edge" style="color:#69f0ae">PIT edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:67%"></b></span><span class="pv-num">6.7</span><span class="pv-vs">ATL v PIT</span><span class="pv-num">5.2</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-edge" style="color:#00e676">ATL big edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-num">6.6</span><span class="pv-vs">ATL v PIT</span><span class="pv-num">4.9</span><span class="pv-bar"><b style="width:49%"></b></span><span class="pv-edge" style="color:#00e676">ATL big edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-num">5.5</span><span class="pv-vs">ATL v PIT</span><span class="pv-num">8.0</span><span class="pv-bar"><b style="width:80%"></b></span><span class="pv-edge" style="color:#00e676">PIT big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="CHI|CAR">
+          <div class="pv-head">
+            <span class="pv-title">CHI @ CAR</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">CHI has the slight edge over CAR.</div>
+          <div class="pv-body">CHI has the better defense.</div>
+          <div class="pv-vegas">Vegas agrees, favoring CHI by 3.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:65%"></b></span><span class="pv-num">6.5</span><span class="pv-vs">CHI v CAR</span><span class="pv-num">6.4</span><span class="pv-bar"><b style="width:64%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:64%"></b></span><span class="pv-num">6.5</span><span class="pv-vs">CHI v CAR</span><span class="pv-num">6.1</span><span class="pv-bar"><b style="width:61%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:61%"></b></span><span class="pv-num">6.1</span><span class="pv-vs">CHI v CAR</span><span class="pv-num">6.1</span><span class="pv-bar"><b style="width:61%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:60%"></b></span><span class="pv-num">6.0</span><span class="pv-vs">CHI v CAR</span><span class="pv-num">5.6</span><span class="pv-bar"><b style="width:56%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:74%"></b></span><span class="pv-num">7.4</span><span class="pv-vs">CHI v CAR</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#00e676">CHI big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="CLE|JAX">
+          <div class="pv-head">
+            <span class="pv-title">CLE @ JAX</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">JAX looks like the better side against CLE.</div>
+          <div class="pv-body">JAX has the better running game and defense.</div>
+          <div class="pv-vegas">Vegas agrees, favoring JAX by 8.5.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:48%"></b></span><span class="pv-num">4.8</span><span class="pv-vs">CLE v JAX</span><span class="pv-num">4.7</span><span class="pv-bar"><b style="width:47%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:36%"></b></span><span class="pv-num">3.5</span><span class="pv-vs">CLE v JAX</span><span class="pv-num">5.1</span><span class="pv-bar"><b style="width:51%"></b></span><span class="pv-edge" style="color:#00e676">JAX big edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:48%"></b></span><span class="pv-num">4.8</span><span class="pv-vs">CLE v JAX</span><span class="pv-num">4.2</span><span class="pv-bar"><b style="width:42%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:45%"></b></span><span class="pv-num">4.5</span><span class="pv-vs">CLE v JAX</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-num">4.4</span><span class="pv-vs">CLE v JAX</span><span class="pv-num">10.0</span><span class="pv-bar"><b style="width:100%"></b></span><span class="pv-edge" style="color:#00e676">JAX big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="BUF|HOU">
+          <div class="pv-head">
+            <span class="pv-title">BUF @ HOU</span>
+            <span class="pv-ko">Sun Sep 13 05:00 PM ET</span>
+          </div>
+          <div class="pv-headline">HOU vs BUF looks close to even.</div>
+          <div class="pv-body">HOU has the better running game. BUF answers at defense.</div>
+          <div class="pv-vegas">Vegas favors BUF by 1.5, but our numbers see this as close to even.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:46%"></b></span><span class="pv-num">4.6</span><span class="pv-vs">BUF v HOU</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:45%"></b></span><span class="pv-num">4.5</span><span class="pv-vs">BUF v HOU</span><span class="pv-num">7.1</span><span class="pv-bar"><b style="width:71%"></b></span><span class="pv-edge" style="color:#00e676">HOU big edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:39%"></b></span><span class="pv-num">3.9</span><span class="pv-vs">BUF v HOU</span><span class="pv-num">4.1</span><span class="pv-bar"><b style="width:41%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:42%"></b></span><span class="pv-num">4.2</span><span class="pv-vs">BUF v HOU</span><span class="pv-num">3.9</span><span class="pv-bar"><b style="width:39%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:58%"></b></span><span class="pv-num">5.8</span><span class="pv-vs">BUF v HOU</span><span class="pv-num">4.9</span><span class="pv-bar"><b style="width:49%"></b></span><span class="pv-edge" style="color:#69f0ae">BUF edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="MIA|LV">
+          <div class="pv-head">
+            <span class="pv-title">MIA @ LV</span>
+            <span class="pv-ko">Sun Sep 13 08:25 PM ET</span>
+          </div>
+          <div class="pv-headline">LV vs MIA looks close to even.</div>
+          <div class="pv-body">MIA has the better defense. LV answers at quarterback, running game, and receivers.</div>
+          <div class="pv-vegas">Vegas favors LV by 3, but our numbers see this as close to even.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:54%"></b></span><span class="pv-num">5.5</span><span class="pv-vs">MIA v LV</span><span class="pv-num">6.3</span><span class="pv-bar"><b style="width:63%"></b></span><span class="pv-edge" style="color:#69f0ae">LV edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:52%"></b></span><span class="pv-num">5.2</span><span class="pv-vs">MIA v LV</span><span class="pv-num">6.5</span><span class="pv-bar"><b style="width:65%"></b></span><span class="pv-edge" style="color:#69f0ae">LV edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:54%"></b></span><span class="pv-num">5.5</span><span class="pv-vs">MIA v LV</span><span class="pv-num">6.2</span><span class="pv-bar"><b style="width:62%"></b></span><span class="pv-edge" style="color:#69f0ae">LV edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:54%"></b></span><span class="pv-num">5.4</span><span class="pv-vs">MIA v LV</span><span class="pv-num">5.7</span><span class="pv-bar"><b style="width:57%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:86%"></b></span><span class="pv-num">8.6</span><span class="pv-vs">MIA v LV</span><span class="pv-num">5.5</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-edge" style="color:#00e676">MIA big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="GB|MIN">
+          <div class="pv-head">
+            <span class="pv-title">GB @ MIN</span>
+            <span class="pv-ko">Sun Sep 13 08:25 PM ET</span>
+          </div>
+          <div class="pv-headline">MIN has the slight edge over GB.</div>
+          <div class="pv-body">MIN has the better quarterback, receivers, and tight end. GB answers at defense.</div>
+          <div class="pv-vegas">Vegas agrees, favoring MIN by 1.5.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:43%"></b></span><span class="pv-num">4.3</span><span class="pv-vs">GB v MIN</span><span class="pv-num">5.7</span><span class="pv-bar"><b style="width:57%"></b></span><span class="pv-edge" style="color:#69f0ae">MIN edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:53%"></b></span><span class="pv-num">5.3</span><span class="pv-vs">GB v MIN</span><span class="pv-num">5.6</span><span class="pv-bar"><b style="width:56%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:38%"></b></span><span class="pv-num">3.8</span><span class="pv-vs">GB v MIN</span><span class="pv-num">5.5</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-edge" style="color:#00e676">MIN big edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:38%"></b></span><span class="pv-num">3.8</span><span class="pv-vs">GB v MIN</span><span class="pv-num">5.1</span><span class="pv-bar"><b style="width:51%"></b></span><span class="pv-edge" style="color:#69f0ae">MIN edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:77%"></b></span><span class="pv-num">7.7</span><span class="pv-vs">GB v MIN</span><span class="pv-num">4.9</span><span class="pv-bar"><b style="width:49%"></b></span><span class="pv-edge" style="color:#00e676">GB big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="WSH|PHI">
+          <div class="pv-head">
+            <span class="pv-title">WSH @ PHI</span>
+            <span class="pv-ko">Sun Sep 13 08:25 PM ET</span>
+          </div>
+          <div class="pv-headline">PHI has the clear advantage over WSH.</div>
+          <div class="pv-body">PHI has the better quarterback, running game, receivers, tight end, and defense.</div>
+          <div class="pv-vegas">Vegas agrees, favoring PHI by 5.5.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:42%"></b></span><span class="pv-num">4.2</span><span class="pv-vs">WSH v PHI</span><span class="pv-num">7.9</span><span class="pv-bar"><b style="width:79%"></b></span><span class="pv-edge" style="color:#00e676">PHI big edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:55%"></b></span><span class="pv-num">5.5</span><span class="pv-vs">WSH v PHI</span><span class="pv-num">7.5</span><span class="pv-bar"><b style="width:76%"></b></span><span class="pv-edge" style="color:#00e676">PHI big edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:42%"></b></span><span class="pv-num">4.2</span><span class="pv-vs">WSH v PHI</span><span class="pv-num">7.7</span><span class="pv-bar"><b style="width:77%"></b></span><span class="pv-edge" style="color:#00e676">PHI big edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:38%"></b></span><span class="pv-num">3.8</span><span class="pv-vs">WSH v PHI</span><span class="pv-num">7.4</span><span class="pv-bar"><b style="width:74%"></b></span><span class="pv-edge" style="color:#00e676">PHI big edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:38%"></b></span><span class="pv-num">3.8</span><span class="pv-vs">WSH v PHI</span><span class="pv-num">7.4</span><span class="pv-bar"><b style="width:74%"></b></span><span class="pv-edge" style="color:#00e676">PHI big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="ARI|LAC">
+          <div class="pv-head">
+            <span class="pv-title">ARI @ LAC</span>
+            <span class="pv-ko">Sun Sep 13 08:25 PM ET</span>
+          </div>
+          <div class="pv-headline">LAC has the clear advantage over ARI.</div>
+          <div class="pv-body">LAC has the better quarterback, running game, receivers, tight end, and defense.</div>
+          <div class="pv-vegas">Vegas agrees, favoring LAC by 9.5.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-num">4.4</span><span class="pv-vs">ARI v LAC</span><span class="pv-num">7.9</span><span class="pv-bar"><b style="width:79%"></b></span><span class="pv-edge" style="color:#00e676">LAC big edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:39%"></b></span><span class="pv-num">3.9</span><span class="pv-vs">ARI v LAC</span><span class="pv-num">6.6</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-edge" style="color:#00e676">LAC big edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:39%"></b></span><span class="pv-num">3.9</span><span class="pv-vs">ARI v LAC</span><span class="pv-num">7.3</span><span class="pv-bar"><b style="width:73%"></b></span><span class="pv-edge" style="color:#00e676">LAC big edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:42%"></b></span><span class="pv-num">4.2</span><span class="pv-vs">ARI v LAC</span><span class="pv-num">7.0</span><span class="pv-bar"><b style="width:70%"></b></span><span class="pv-edge" style="color:#00e676">LAC big edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:47%"></b></span><span class="pv-num">4.7</span><span class="pv-vs">ARI v LAC</span><span class="pv-num">7.7</span><span class="pv-bar"><b style="width:77%"></b></span><span class="pv-edge" style="color:#00e676">LAC big edge</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="DAL|NYG">
+          <div class="pv-head">
+            <span class="pv-title">DAL @ NYG</span>
+            <span class="pv-ko">Mon Sep 14 12:20 AM ET</span>
+          </div>
+          <div class="pv-headline">NYG has the slight edge over DAL.</div>
+          <div class="pv-body">NYG has the better quarterback, receivers, and tight end. DAL answers at running game.</div>
+          <div class="pv-vegas">Worth noting: Vegas favors DAL by 3, which is the opposite of what our numbers say.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:68%"></b></span><span class="pv-num">6.8</span><span class="pv-vs">DAL v NYG</span><span class="pv-num">7.8</span><span class="pv-bar"><b style="width:78%"></b></span><span class="pv-edge" style="color:#69f0ae">NYG edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:78%"></b></span><span class="pv-num">7.8</span><span class="pv-vs">DAL v NYG</span><span class="pv-num">6.8</span><span class="pv-bar"><b style="width:68%"></b></span><span class="pv-edge" style="color:#69f0ae">DAL edge</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:66%"></b></span><span class="pv-num">6.5</span><span class="pv-vs">DAL v NYG</span><span class="pv-num">7.7</span><span class="pv-bar"><b style="width:77%"></b></span><span class="pv-edge" style="color:#69f0ae">NYG edge</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:59%"></b></span><span class="pv-num">5.9</span><span class="pv-vs">DAL v NYG</span><span class="pv-num">7.4</span><span class="pv-bar"><b style="width:74%"></b></span><span class="pv-edge" style="color:#00e676">NYG big edge</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:24%"></b></span><span class="pv-num">2.4</span><span class="pv-vs">DAL v NYG</span><span class="pv-num">1.9</span><span class="pv-bar"><b style="width:19%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div></div>
+        </div>
+        <div class="preview-card" data-teams="DEN|KC">
+          <div class="pv-head">
+            <span class="pv-title">DEN @ KC</span>
+            <span class="pv-ko">Tue Sep 15 12:15 AM ET</span>
+          </div>
+          <div class="pv-headline">DEN has the slight edge over KC.</div>
+          <div class="pv-body">DEN has the better quarterback.</div>
+          <div class="pv-vegas">Worth noting: Vegas favors KC by 3, which is the opposite of what our numbers say.</div>
+          <div class="pv-rows"><div class="pv-row"><span class="pv-pos">Quarterback</span><span class="pv-bar"><b style="width:49%"></b></span><span class="pv-num">4.9</span><span class="pv-vs">DEN v KC</span><span class="pv-num">4.0</span><span class="pv-bar"><b style="width:40%"></b></span><span class="pv-edge" style="color:#69f0ae">DEN edge</span></div><div class="pv-row"><span class="pv-pos">Running Game</span><span class="pv-bar"><b style="width:49%"></b></span><span class="pv-num">4.9</span><span class="pv-vs">DEN v KC</span><span class="pv-num">4.4</span><span class="pv-bar"><b style="width:44%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Receivers</span><span class="pv-bar"><b style="width:45%"></b></span><span class="pv-num">4.5</span><span class="pv-vs">DEN v KC</span><span class="pv-num">4.1</span><span class="pv-bar"><b style="width:41%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Tight End</span><span class="pv-bar"><b style="width:41%"></b></span><span class="pv-num">4.1</span><span class="pv-vs">DEN v KC</span><span class="pv-num">3.9</span><span class="pv-bar"><b style="width:38%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div><div class="pv-row"><span class="pv-pos">Defense</span><span class="pv-bar"><b style="width:74%"></b></span><span class="pv-num">7.4</span><span class="pv-vs">DEN v KC</span><span class="pv-num">6.9</span><span class="pv-bar"><b style="width:69%"></b></span><span class="pv-edge" style="color:#8b949e">Even</span></div></div>
+        </div></div>
+  </div>
 
   <div id="top10-section">
     <h2 class="section-title">Top 10 Players to Watch This Week</h2>
@@ -2132,9 +2327,69 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.0</div>
         </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/sf.png')" data-hidden="1" data-team="SF">
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #29 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+          </div>
+          <div class="card-body">
+            <div class="card-name">
+              <span style="color:#0C2340;font-size:1.1rem;font-weight:700">Mitchell Trubisky</span>
+              
+              <span style="color:#8b949e;font-size:11px;margin-left:6px">QB2</span>
+              <span style="color:#8b949e;font-size:13px;margin-left:8px">TEN (Home) vs NYJ</span>
+            </div>
+            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
+
+            <div class="card-stats">
+              <div class="stat-block">
+                <div class="stat-label">Matchup</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:74%"></div></div> 7.4/10</div>
+                <div class="stat-sub">Opp allows 216.1 YPG to QBs &bull; Rank #17 &bull; +0.253 EPA/play allowed</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Scoring Env</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:57%"></div></div> 5.7/10</div>
+                <div class="stat-sub">Game total 38 &bull; TEN implied 20.0 pts</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Game Pace</div>
+                <div class="stat-val"><span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.1 plays/gm &nbsp;<span style="color:#484f58">(TEN offense)</span></div>
+                <div class="stat-sub">Opp (NYJ) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.5 plays/gm &bull; Outdoor</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Offense</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:48%"></div></div> 16.7 PPG</div>
+                <div class="stat-sub">Red zone efficiency 55%</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Production (2025 season avg)</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff5252;height:8px;border-radius:4px;width:22%"></div></div> 78 avg Pass Yds/gm &nbsp;<span style="color:#ff5252;font-weight:bold">Cold</span></div>
+                <div class="stat-sub">Pass Yds/gm: 313 total over 4 games</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Usage (2025 season)</div>
+                <div class="stat-val">6% of team pass att &bull; 8.8 att/gm &bull; 33% snaps</div>
+                <div class="stat-sub">Split/backup snaps</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Weather</div>
+                <div class="stat-val">92F  Wind 3.8 mph  Clear</div>
+                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">DraftKings Props</div>
+                <div class="stat-val">—</div>
+                <div class="stat-sub">Not posted yet</div>
+              </div>
+            </div>
+
+            <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Low volume -- 78.2 Pass Yds/gm/gm in 2025 | Outdoor: 92F, wind 3.8 mph</div>
+          </div>
+          <div class="card-score" style="color:#b9f6ca">5.9</div>
+        </div>
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/sf.png')" data-hidden="1" data-team="SF">
+          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
+            #30 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -2194,7 +2449,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/min.png')" data-hidden="1" data-team="MIN">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #30 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #31 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -2254,7 +2509,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/no.png')" data-hidden="1" data-team="NO">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #31 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #32 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -2314,7 +2569,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/det.png')" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #32 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #33 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -2374,7 +2629,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/min.png')" data-hidden="1" data-team="MIN">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #33 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #34 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -2434,7 +2689,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/pit.png')" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #34 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #35 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -2489,66 +2744,6 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
             </div>
 
             <div class="card-scout">PIT offense: Slow pace (58.1 plays/gm) | ATL defense: Moderate pace (61.9 plays/gm) | Outdoor: 81F, wind 5.6 mph</div>
-          </div>
-          <div class="card-score" style="color:#b9f6ca">5.5</div>
-        </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
-          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #35 &nbsp;<strong style="font-size:1.1rem">B+</strong>
-          </div>
-          <div class="card-body">
-            <div class="card-name">
-              <span style="color:#0C2340;font-size:1.1rem;font-weight:700">Mitchell Trubisky</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Biceps">Questionable</span>
-              <span style="color:#8b949e;font-size:11px;margin-left:6px">QB2</span>
-              <span style="color:#8b949e;font-size:13px;margin-left:8px">TEN (Home) vs NYJ</span>
-            </div>
-            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
-
-            <div class="card-stats">
-              <div class="stat-block">
-                <div class="stat-label">Matchup</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:74%"></div></div> 7.4/10</div>
-                <div class="stat-sub">Opp allows 216.1 YPG to QBs &bull; Rank #17 &bull; +0.253 EPA/play allowed</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Scoring Env</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:57%"></div></div> 5.7/10</div>
-                <div class="stat-sub">Game total 38 &bull; TEN implied 20.0 pts</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Game Pace</div>
-                <div class="stat-val"><span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.1 plays/gm &nbsp;<span style="color:#484f58">(TEN offense)</span></div>
-                <div class="stat-sub">Opp (NYJ) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.5 plays/gm &bull; Outdoor</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Offense</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:48%"></div></div> 16.7 PPG</div>
-                <div class="stat-sub">Red zone efficiency 55%</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Production (2025 season avg)</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff5252;height:8px;border-radius:4px;width:22%"></div></div> 78 avg Pass Yds/gm &nbsp;<span style="color:#ff5252;font-weight:bold">Cold</span></div>
-                <div class="stat-sub">Pass Yds/gm: 313 total over 4 games</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Usage (2025 season)</div>
-                <div class="stat-val">6% of team pass att &bull; 8.8 att/gm &bull; 33% snaps</div>
-                <div class="stat-sub">Split/backup snaps</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Weather</div>
-                <div class="stat-val">92F  Wind 3.8 mph  Clear</div>
-                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">—</div>
-                <div class="stat-sub">Not posted yet</div>
-              </div>
-            </div>
-
-            <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Low volume -- 78.2 Pass Yds/gm/gm in 2025 | Outdoor: 92F, wind 3.8 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">5.5</div>
         </div>
@@ -2658,7 +2853,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -2668,7 +2863,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.5</div>
         </div>
@@ -2778,7 +2973,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -2788,7 +2983,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Productive -- 258.5 Pass Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Productive -- 258.5 Pass Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.2</div>
         </div>
@@ -3198,7 +3393,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -3208,7 +3403,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -3738,7 +3933,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -3748,7 +3943,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 3.0 Pass Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 3.0 Pass Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
@@ -5017,9 +5212,69 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">6.8</div>
         </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/phi.png')" data-hidden="1" data-team="PHI">
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png')" data-hidden="1" data-team="NYG">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #13 &nbsp;<strong style="font-size:1.1rem">A</strong>
+          </div>
+          <div class="card-body">
+            <div class="card-name">
+              <span style="color:#0B2265;font-size:1.1rem;font-weight:700">Tyrone Tracy Jr.</span>
+              
+              <span style="color:#8b949e;font-size:11px;margin-left:6px">RB3</span>
+              <span style="color:#8b949e;font-size:13px;margin-left:8px">NYG (Home) vs DAL</span>
+            </div>
+            <div class="card-label" style="color:#69f0ae">Strong Play</div>
+
+            <div class="card-stats">
+              <div class="stat-block">
+                <div class="stat-label">Matchup</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:81%"></div></div> 8.1/10</div>
+                <div class="stat-sub">Opp allows 125.5 YPG to RBs &bull; Rank #23 &bull; +0.095 EPA/play allowed</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Scoring Env</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:65%"></div></div> 6.5/10</div>
+                <div class="stat-sub">Game total 48 &bull; NYG implied 22.8 pts</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Game Pace</div>
+                <div class="stat-val"><span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.8 plays/gm &nbsp;<span style="color:#484f58">(NYG offense)</span></div>
+                <div class="stat-sub">Opp (DAL) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 61.4 plays/gm &bull; Outdoor</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Offense</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:64%"></div></div> 22.4 PPG</div>
+                <div class="stat-sub">Red zone efficiency 55%</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Production (2025 season avg)</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ffc107;height:8px;border-radius:4px;width:38%"></div></div> 49 avg Rush Yds/gm &nbsp;<span style="color:#ffc107;font-weight:bold">Neutral</span></div>
+                <div class="stat-sub">Rush Yds/gm: 740 total over 15 games</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Usage (2025 season)</div>
+                <div class="stat-val">34% carry share &bull; 14.1 touch/gm &bull; 54% snaps</div>
+                <div class="stat-sub">High usage -- volume is there</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Weather</div>
+                <div class="stat-val">78F  Wind 2.9 mph  Clear</div>
+                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">DraftKings Props</div>
+                <div class="stat-val">—</div>
+                <div class="stat-sub">Not posted yet</div>
+              </div>
+            </div>
+
+            <div class="card-scout">NYG offense: Moderate pace (63.8 plays/gm) | DAL defense: Moderate pace (61.4 plays/gm) | Outdoor: 78F, wind 2.9 mph</div>
+          </div>
+          <div class="card-score" style="color:#69f0ae">6.8</div>
+        </div>
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/phi.png')" data-hidden="1" data-team="PHI">
+          <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
+            #14 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5079,7 +5334,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lac.png')" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #14 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #15 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5139,7 +5394,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lv.png')" data-hidden="1" data-team="LV">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #15 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #16 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5199,7 +5454,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/pit.png')" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #16 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #17 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5259,7 +5514,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/chi.png')" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #17 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #18 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5319,7 +5574,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/pit.png')" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #18 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #19 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5379,7 +5634,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/tb.png')" data-hidden="1" data-team="TB">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #19 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #20 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5439,7 +5694,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/pit.png')" data-hidden="1" data-team="PIT">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #20 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #21 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5499,7 +5754,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lac.png')" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #21 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #22 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -5556,66 +5811,6 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
             <div class="card-scout">ARI D ranks #25 -- allows 126.9 YPG to RBs | High-scoring game (total 48, LAC implied 28.5) | LAC offense: Moderate pace (64.4 plays/gm) | ARI defense: Moderate pace (64.2 plays/gm) | Outdoor: 79F, wind 9.0 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">6.5</div>
-        </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png')" data-hidden="1" data-team="NYG">
-          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #22 &nbsp;<strong style="font-size:1.1rem">B+</strong>
-          </div>
-          <div class="card-body">
-            <div class="card-name">
-              <span style="color:#0B2265;font-size:1.1rem;font-weight:700">Tyrone Tracy Jr.</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Neck">Questionable</span>
-              <span style="color:#8b949e;font-size:11px;margin-left:6px">RB3</span>
-              <span style="color:#8b949e;font-size:13px;margin-left:8px">NYG (Home) vs DAL</span>
-            </div>
-            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
-
-            <div class="card-stats">
-              <div class="stat-block">
-                <div class="stat-label">Matchup</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:81%"></div></div> 8.1/10</div>
-                <div class="stat-sub">Opp allows 125.5 YPG to RBs &bull; Rank #23 &bull; +0.095 EPA/play allowed</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Scoring Env</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:65%"></div></div> 6.5/10</div>
-                <div class="stat-sub">Game total 48 &bull; NYG implied 22.8 pts</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Game Pace</div>
-                <div class="stat-val"><span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.8 plays/gm &nbsp;<span style="color:#484f58">(NYG offense)</span></div>
-                <div class="stat-sub">Opp (DAL) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 61.4 plays/gm &bull; Outdoor</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Offense</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:64%"></div></div> 22.4 PPG</div>
-                <div class="stat-sub">Red zone efficiency 55%</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Production (2025 season avg)</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ffc107;height:8px;border-radius:4px;width:38%"></div></div> 49 avg Rush Yds/gm &nbsp;<span style="color:#ffc107;font-weight:bold">Neutral</span></div>
-                <div class="stat-sub">Rush Yds/gm: 740 total over 15 games</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Usage (2025 season)</div>
-                <div class="stat-val">34% carry share &bull; 14.1 touch/gm &bull; 54% snaps</div>
-                <div class="stat-sub">High usage -- volume is there</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Weather</div>
-                <div class="stat-val">78F  Wind 2.9 mph  Clear</div>
-                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">—</div>
-                <div class="stat-sub">Not posted yet</div>
-              </div>
-            </div>
-
-            <div class="card-scout">NYG offense: Moderate pace (63.8 plays/gm) | DAL defense: Moderate pace (61.4 plays/gm) | Outdoor: 78F, wind 2.9 mph</div>
-          </div>
-          <div class="card-score" style="color:#b9f6ca">6.4</div>
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png')" data-hidden="1" data-team="NYG">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
@@ -7403,7 +7598,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -7413,7 +7608,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">5.0</div>
         </div>
@@ -7597,9 +7792,69 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.9</div>
         </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/buf.png')" data-hidden="1" data-team="BUF">
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/jax.png')" data-hidden="1" data-team="JAX">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
             #56 &nbsp;<strong style="font-size:1.1rem">B</strong>
+          </div>
+          <div class="card-body">
+            <div class="card-name">
+              <span style="color:#006778;font-size:1.1rem;font-weight:700">Bhayshul Tuten</span>
+              
+              <span style="color:#8b949e;font-size:11px;margin-left:6px">RB1</span>
+              <span style="color:#8b949e;font-size:13px;margin-left:8px">JAX (Home) vs CLE</span>
+            </div>
+            <div class="card-label" style="color:#fff176">Decent Option</div>
+
+            <div class="card-stats">
+              <div class="stat-block">
+                <div class="stat-label">Matchup</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:34%"></div></div> 3.4/10</div>
+                <div class="stat-sub">Opp allows 116.4 YPG to RBs &bull; Rank #16 &bull; -0.053 EPA/play allowed</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Scoring Env</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:70%"></div></div> 7.0/10</div>
+                <div class="stat-sub">Game total 40 &bull; JAX implied 24.5 pts</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Game Pace</div>
+                <div class="stat-val"><span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 64.3 plays/gm &nbsp;<span style="color:#484f58">(JAX offense)</span></div>
+                <div class="stat-sub">Opp (CLE) defense pace: <span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.7 plays/gm &bull; Outdoor</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Offense</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:80%"></div></div> 27.9 PPG</div>
+                <div class="stat-sub">Red zone efficiency 55%</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Production (2025 season avg)</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff5252;height:8px;border-radius:4px;width:16%"></div></div> 20 avg Rush Yds/gm &nbsp;<span style="color:#ff5252;font-weight:bold">Cold</span></div>
+                <div class="stat-sub">Rush Yds/gm: 307 total over 15 games</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Usage (2025 season)</div>
+                <div class="stat-val">17% carry share &bull; 6.2 touch/gm &bull; 21% snaps</div>
+                <div class="stat-sub">Moderate usage</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Weather</div>
+                <div class="stat-val">97F  Wind 4.5 mph  Clear</div>
+                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">DraftKings Props</div>
+                <div class="stat-val">Rush Yds <strong>49.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>11.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>1.5</strong></div>
+                <div class="stat-sub">Lines via DraftKings -- place on DK</div>
+              </div>
+            </div>
+
+            <div class="card-scout">JAX offense: Moderate pace (64.3 plays/gm) | CLE defense: Slow pace (59.7 plays/gm) | Low volume -- 20.5 Rush Yds/gm/gm in 2025 | Outdoor: 97F, wind 4.5 mph</div>
+          </div>
+          <div class="card-score" style="color:#fff176">4.9</div>
+        </div>
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/buf.png')" data-hidden="1" data-team="BUF">
+          <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
+            #57 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -7659,7 +7914,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/det.png')" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #57 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #58 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -7719,7 +7974,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/det.png')" data-hidden="1" data-team="DET">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #58 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #59 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -7779,7 +8034,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png')" data-hidden="1" data-team="WSH">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #59 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #60 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -7839,7 +8094,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/atl.png')" data-hidden="1" data-team="ATL">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #60 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #61 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -7899,7 +8154,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/den.png')" data-hidden="1" data-team="DEN">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #61 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #62 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -7959,7 +8214,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png')" data-hidden="1" data-team="NYJ">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #62 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #63 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8019,7 +8274,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/gb.png')" data-hidden="1" data-team="GB">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #63 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #64 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8079,7 +8334,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/gb.png')" data-hidden="1" data-team="GB">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #64 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #65 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8139,7 +8394,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png')" data-hidden="1" data-team="NYJ">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #65 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #66 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8199,7 +8454,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/cin.png')" data-hidden="1" data-team="CIN">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #66 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #67 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8259,7 +8514,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/no.png')" data-hidden="1" data-team="NO">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #67 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #68 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8319,7 +8574,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/mia.png')" data-hidden="1" data-team="MIA">
           <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #68 &nbsp;<strong style="font-size:1.1rem">B</strong>
+            #69 &nbsp;<strong style="font-size:1.1rem">B</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -8377,66 +8632,6 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#fff176">4.6</div>
         </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/jax.png')" data-hidden="1" data-team="JAX">
-          <div class="card-rank" style="background:#fff17622;color:#fff176;border:1px solid #fff17644">
-            #69 &nbsp;<strong style="font-size:1.1rem">B</strong>
-          </div>
-          <div class="card-body">
-            <div class="card-name">
-              <span style="color:#006778;font-size:1.1rem;font-weight:700">Bhayshul Tuten</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="questionable">Questionable</span>
-              <span style="color:#8b949e;font-size:11px;margin-left:6px">RB1</span>
-              <span style="color:#8b949e;font-size:13px;margin-left:8px">JAX (Home) vs CLE</span>
-            </div>
-            <div class="card-label" style="color:#fff176">Decent Option</div>
-
-            <div class="card-stats">
-              <div class="stat-block">
-                <div class="stat-label">Matchup</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:34%"></div></div> 3.4/10</div>
-                <div class="stat-sub">Opp allows 116.4 YPG to RBs &bull; Rank #16 &bull; -0.053 EPA/play allowed</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Scoring Env</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:70%"></div></div> 7.0/10</div>
-                <div class="stat-sub">Game total 40 &bull; JAX implied 24.5 pts</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Game Pace</div>
-                <div class="stat-val"><span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 64.3 plays/gm &nbsp;<span style="color:#484f58">(JAX offense)</span></div>
-                <div class="stat-sub">Opp (CLE) defense pace: <span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.7 plays/gm &bull; Outdoor</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Offense</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:80%"></div></div> 27.9 PPG</div>
-                <div class="stat-sub">Red zone efficiency 55%</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Production (2025 season avg)</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff5252;height:8px;border-radius:4px;width:16%"></div></div> 20 avg Rush Yds/gm &nbsp;<span style="color:#ff5252;font-weight:bold">Cold</span></div>
-                <div class="stat-sub">Rush Yds/gm: 307 total over 15 games</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Usage (2025 season)</div>
-                <div class="stat-val">17% carry share &bull; 6.2 touch/gm &bull; 21% snaps</div>
-                <div class="stat-sub">Moderate usage</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Weather</div>
-                <div class="stat-val">97F  Wind 4.5 mph  Clear</div>
-                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rush Yds <strong>49.5</strong> &nbsp;&bull;&nbsp; Rec Yds <strong>11.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>1.5</strong></div>
-                <div class="stat-sub">Lines via DraftKings -- place on DK</div>
-              </div>
-            </div>
-
-            <div class="card-scout">JAX offense: Moderate pace (64.3 plays/gm) | CLE defense: Slow pace (59.7 plays/gm) | Low volume -- 20.5 Rush Yds/gm/gm in 2025 | Outdoor: 97F, wind 4.5 mph</div>
-          </div>
-          <div class="card-score" style="color:#fff176">4.5</div>
-        </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/sea.png')" data-hidden="1" data-team="SEA">
           <div class="card-rank" style="background:#ffb74d22;color:#ffb74d;border:1px solid #ffb74d44">
             #70 &nbsp;<strong style="font-size:1.1rem">C</strong>
@@ -8483,7 +8678,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -8493,7 +8688,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 29.2 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 29.2 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.5</div>
         </div>
@@ -8744,7 +8939,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           <div class="card-body">
             <div class="card-name">
               <span style="color:#006778;font-size:1.1rem;font-weight:700">LeQuint Allen Jr.</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Undisclosed">Questionable</span>
+               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Hip">Questionable</span>
               <span style="color:#8b949e;font-size:11px;margin-left:6px">RB3</span>
               <span style="color:#8b949e;font-size:13px;margin-left:8px">JAX (Home) vs CLE</span>
             </div>
@@ -9023,7 +9218,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -9033,7 +9228,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 6.6 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">Tough: NE D ranks #6 vs RB | SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 6.6 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
@@ -9443,7 +9638,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -9453,7 +9648,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 43.1 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 43.1 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">3.8</div>
         </div>
@@ -9803,7 +9998,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -9813,7 +10008,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 14.5 Rush Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 14.5 Rush Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ff5252">3.3</div>
         </div>
@@ -10043,7 +10238,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -10053,7 +10248,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">Tough: SEA D ranks #3 vs RB | NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ff4444">0.0</div>
         </div></div>
@@ -12102,9 +12297,69 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.5</div>
         </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/bal.png')" data-hidden="1" data-team="BAL">
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
             #35 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+          </div>
+          <div class="card-body">
+            <div class="card-name">
+              <span style="color:#0C2340;font-size:1.1rem;font-weight:700">Carnell Tate</span>
+              
+              <span style="color:#8b949e;font-size:11px;margin-left:6px">WR1</span>
+              <span style="color:#8b949e;font-size:13px;margin-left:8px">TEN (Home) vs NYJ</span>
+            </div>
+            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
+
+            <div class="card-stats">
+              <div class="stat-block">
+                <div class="stat-label">Matchup</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:74%"></div></div> 7.4/10</div>
+                <div class="stat-sub">Opp allows 134.0 YPG to WRs &bull; Rank #17 &bull; +0.253 EPA/play allowed</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Scoring Env</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:57%"></div></div> 5.7/10</div>
+                <div class="stat-sub">Game total 38 &bull; TEN implied 20.0 pts</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Game Pace</div>
+                <div class="stat-val"><span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.1 plays/gm &nbsp;<span style="color:#484f58">(TEN offense)</span></div>
+                <div class="stat-sub">Opp (NYJ) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.5 plays/gm &bull; Outdoor</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Offense</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:48%"></div></div> 16.7 PPG</div>
+                <div class="stat-sub">Red zone efficiency 55%</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Production (2025 season avg)</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ffc107;height:8px;border-radius:4px;width:50%"></div></div> 0 avg Rec Yds/gm &nbsp;<span style="color:#ffc107;font-weight:bold">No 2025 data</span></div>
+                <div class="stat-sub">Rec Yds/gm: No 2025 stats -- rookie or did not play</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Usage (2025 season)</div>
+                <div class="stat-val">—</div>
+                <div class="stat-sub">Usage data not available</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Weather</div>
+                <div class="stat-val">92F  Wind 3.8 mph  Clear</div>
+                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">DraftKings Props</div>
+                <div class="stat-val">Rec Yds <strong>38.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
+                <div class="stat-sub">Lines via DraftKings -- place on DK</div>
+              </div>
+            </div>
+
+            <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Outdoor: 92F, wind 3.8 mph</div>
+          </div>
+          <div class="card-score" style="color:#b9f6ca">6.5</div>
+        </div>
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/bal.png')" data-hidden="1" data-team="BAL">
+          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
+            #36 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12162,9 +12417,69 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#b9f6ca">6.4</div>
         </div>
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
+          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
+            #37 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+          </div>
+          <div class="card-body">
+            <div class="card-name">
+              <span style="color:#0C2340;font-size:1.1rem;font-weight:700">Wan'Dale Robinson</span>
+              
+              <span style="color:#8b949e;font-size:11px;margin-left:6px">WR2</span>
+              <span style="color:#8b949e;font-size:13px;margin-left:8px">TEN (Home) vs NYJ</span>
+            </div>
+            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
+
+            <div class="card-stats">
+              <div class="stat-block">
+                <div class="stat-label">Matchup</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:74%"></div></div> 7.4/10</div>
+                <div class="stat-sub">Opp allows 134.0 YPG to WRs &bull; Rank #17 &bull; +0.253 EPA/play allowed</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Scoring Env</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:57%"></div></div> 5.7/10</div>
+                <div class="stat-sub">Game total 38 &bull; TEN implied 20.0 pts</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Game Pace</div>
+                <div class="stat-val"><span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.1 plays/gm &nbsp;<span style="color:#484f58">(TEN offense)</span></div>
+                <div class="stat-sub">Opp (NYJ) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.5 plays/gm &bull; Outdoor</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Offense</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:48%"></div></div> 16.7 PPG</div>
+                <div class="stat-sub">Red zone efficiency 55%</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Production (2025 season avg)</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ffc107;height:8px;border-radius:4px;width:49%"></div></div> 63 avg Rec Yds/gm &nbsp;<span style="color:#ffc107;font-weight:bold">Neutral</span></div>
+                <div class="stat-sub">Rec Yds/gm: 1,014 total over 16 games</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Usage (2025 season)</div>
+                <div class="stat-val">26% target share &bull; 8.8 tgt/gm &bull; 91% snaps</div>
+                <div class="stat-sub">High usage -- volume is there</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Weather</div>
+                <div class="stat-val">92F  Wind 3.8 mph  Clear</div>
+                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">DraftKings Props</div>
+                <div class="stat-val">Rec Yds <strong>43.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>4.5</strong></div>
+                <div class="stat-sub">Lines via DraftKings -- place on DK</div>
+              </div>
+            </div>
+
+            <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Outdoor: 92F, wind 3.8 mph</div>
+          </div>
+          <div class="card-score" style="color:#b9f6ca">6.4</div>
+        </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lac.png')" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #36 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #38 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12224,7 +12539,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/atl.png')" data-hidden="1" data-team="ATL">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #37 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #39 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12284,7 +12599,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lv.png')" data-hidden="1" data-team="LV">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #38 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #40 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12344,7 +12659,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/car.png')" data-hidden="1" data-team="CAR">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #39 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #41 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12404,7 +12719,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/chi.png')" data-hidden="1" data-team="CHI">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #40 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #42 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12464,7 +12779,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png')" data-hidden="1" data-team="NYJ">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #41 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #43 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12524,7 +12839,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #42 &nbsp;<strong style="font-size:1.1rem">B+</strong>
+            #44 &nbsp;<strong style="font-size:1.1rem">B+</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -12581,126 +12896,6 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
             <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Outdoor: 92F, wind 3.8 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">6.1</div>
-        </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
-          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #43 &nbsp;<strong style="font-size:1.1rem">B+</strong>
-          </div>
-          <div class="card-body">
-            <div class="card-name">
-              <span style="color:#0C2340;font-size:1.1rem;font-weight:700">Carnell Tate</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Undisclosed">Questionable</span>
-              <span style="color:#8b949e;font-size:11px;margin-left:6px">WR1</span>
-              <span style="color:#8b949e;font-size:13px;margin-left:8px">TEN (Home) vs NYJ</span>
-            </div>
-            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
-
-            <div class="card-stats">
-              <div class="stat-block">
-                <div class="stat-label">Matchup</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:74%"></div></div> 7.4/10</div>
-                <div class="stat-sub">Opp allows 134.0 YPG to WRs &bull; Rank #17 &bull; +0.253 EPA/play allowed</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Scoring Env</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:57%"></div></div> 5.7/10</div>
-                <div class="stat-sub">Game total 38 &bull; TEN implied 20.0 pts</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Game Pace</div>
-                <div class="stat-val"><span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.1 plays/gm &nbsp;<span style="color:#484f58">(TEN offense)</span></div>
-                <div class="stat-sub">Opp (NYJ) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.5 plays/gm &bull; Outdoor</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Offense</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:48%"></div></div> 16.7 PPG</div>
-                <div class="stat-sub">Red zone efficiency 55%</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Production (2025 season avg)</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ffc107;height:8px;border-radius:4px;width:50%"></div></div> 0 avg Rec Yds/gm &nbsp;<span style="color:#ffc107;font-weight:bold">No 2025 data</span></div>
-                <div class="stat-sub">Rec Yds/gm: No 2025 stats -- rookie or did not play</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Usage (2025 season)</div>
-                <div class="stat-val">—</div>
-                <div class="stat-sub">Usage data not available</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Weather</div>
-                <div class="stat-val">92F  Wind 3.8 mph  Clear</div>
-                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>38.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>3.5</strong></div>
-                <div class="stat-sub">Lines via DraftKings -- place on DK</div>
-              </div>
-            </div>
-
-            <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Outdoor: 92F, wind 3.8 mph</div>
-          </div>
-          <div class="card-score" style="color:#b9f6ca">6.1</div>
-        </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ten.png')" data-hidden="1" data-team="TEN">
-          <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
-            #44 &nbsp;<strong style="font-size:1.1rem">B+</strong>
-          </div>
-          <div class="card-body">
-            <div class="card-name">
-              <span style="color:#0C2340;font-size:1.1rem;font-weight:700">Wan'Dale Robinson</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Head">Questionable</span>
-              <span style="color:#8b949e;font-size:11px;margin-left:6px">WR2</span>
-              <span style="color:#8b949e;font-size:13px;margin-left:8px">TEN (Home) vs NYJ</span>
-            </div>
-            <div class="card-label" style="color:#b9f6ca">Solid Play</div>
-
-            <div class="card-stats">
-              <div class="stat-block">
-                <div class="stat-label">Matchup</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:74%"></div></div> 7.4/10</div>
-                <div class="stat-sub">Opp allows 134.0 YPG to WRs &bull; Rank #17 &bull; +0.253 EPA/play allowed</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Scoring Env</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:57%"></div></div> 5.7/10</div>
-                <div class="stat-sub">Game total 38 &bull; TEN implied 20.0 pts</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Game Pace</div>
-                <div class="stat-val"><span style="background:#1a1a1a;color:#ff7043;border:1px solid #ff7043;border-radius:10px;padding:2px 10px;font-size:11px">Slow Pace</span> 59.1 plays/gm &nbsp;<span style="color:#484f58">(TEN offense)</span></div>
-                <div class="stat-sub">Opp (NYJ) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.5 plays/gm &bull; Outdoor</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Offense</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:48%"></div></div> 16.7 PPG</div>
-                <div class="stat-sub">Red zone efficiency 55%</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Production (2025 season avg)</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ffc107;height:8px;border-radius:4px;width:49%"></div></div> 63 avg Rec Yds/gm &nbsp;<span style="color:#ffc107;font-weight:bold">Neutral</span></div>
-                <div class="stat-sub">Rec Yds/gm: 1,014 total over 16 games</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Usage (2025 season)</div>
-                <div class="stat-val">26% target share &bull; 8.8 tgt/gm &bull; 91% snaps</div>
-                <div class="stat-sub">High usage -- volume is there</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Weather</div>
-                <div class="stat-val">92F  Wind 3.8 mph  Clear</div>
-                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">Rec Yds <strong>43.5</strong> &nbsp;&bull;&nbsp; Receptions <strong>4.5</strong></div>
-                <div class="stat-sub">Lines via DraftKings -- place on DK</div>
-              </div>
-            </div>
-
-            <div class="card-scout">TEN offense: Slow pace (59.1 plays/gm) | NYJ defense: Moderate pace (63.5 plays/gm) | Outdoor: 92F, wind 3.8 mph</div>
-          </div>
-          <div class="card-score" style="color:#b9f6ca">6.0</div>
         </div>
         <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/atl.png')" data-hidden="1" data-team="ATL">
           <div class="card-rank" style="background:#b9f6ca22;color:#b9f6ca;border:1px solid #b9f6ca44">
@@ -13348,7 +13543,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -13358,7 +13553,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Productive -- 105.5 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Productive -- 105.5 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#b9f6ca">5.7</div>
         </div>
@@ -14908,7 +15103,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -14918,7 +15113,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -15028,7 +15223,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15038,7 +15233,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 38.2 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 38.2 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -15088,7 +15283,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15098,7 +15293,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 37.1 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 37.1 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -15508,7 +15703,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15518,7 +15713,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.4</div>
         </div>
@@ -15688,7 +15883,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -15698,7 +15893,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 36.7 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 36.7 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.3</div>
         </div>
@@ -16108,7 +16303,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -16118,7 +16313,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 26.3 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Low volume -- 26.3 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.1</div>
         </div>
@@ -16468,7 +16663,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -16478,7 +16673,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 20.1 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 20.1 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.0</div>
         </div>
@@ -16729,7 +16924,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           <div class="card-body">
             <div class="card-name">
               <span style="color:#006778;font-size:1.1rem;font-weight:700">Jakobi Meyers</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Hand">Questionable</span>
+               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Thumb">Questionable</span>
               <span style="color:#8b949e;font-size:11px;margin-left:6px">WR3</span>
               <span style="color:#8b949e;font-size:13px;margin-left:8px">JAX (Home) vs CLE</span>
             </div>
@@ -17807,9 +18002,69 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#00e676">7.6</div>
         </div>
-        <div class="player-card" style="--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ind.png')" data-hidden="0" data-team="IND">
+        <div class="player-card" style="--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png')" data-hidden="0" data-team="NYG">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
             #2 &nbsp;<strong style="font-size:1.1rem">A</strong>
+          </div>
+          <div class="card-body">
+            <div class="card-name">
+              <span style="color:#0B2265;font-size:1.1rem;font-weight:700">Theo Johnson</span>
+              
+              <span style="color:#8b949e;font-size:11px;margin-left:6px">TE2</span>
+              <span style="color:#8b949e;font-size:13px;margin-left:8px">NYG (Home) vs DAL</span>
+            </div>
+            <div class="card-label" style="color:#69f0ae">Strong Play</div>
+
+            <div class="card-stats">
+              <div class="stat-block">
+                <div class="stat-label">Matchup</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:100%"></div></div> 10.0/10</div>
+                <div class="stat-sub">Opp allows 50.3 YPG to TEs &bull; Rank #32 &bull; +0.221 EPA/play allowed</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Scoring Env</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:65%"></div></div> 6.5/10</div>
+                <div class="stat-sub">Game total 48 &bull; NYG implied 22.8 pts</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Game Pace</div>
+                <div class="stat-val"><span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.8 plays/gm &nbsp;<span style="color:#484f58">(NYG offense)</span></div>
+                <div class="stat-sub">Opp (DAL) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 61.4 plays/gm &bull; Outdoor</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Offense</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:64%"></div></div> 22.4 PPG</div>
+                <div class="stat-sub">Red zone efficiency 55%</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Production (2025 season avg)</div>
+                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff5252;height:8px;border-radius:4px;width:39%"></div></div> 35 avg Rec Yds/gm &nbsp;<span style="color:#ff5252;font-weight:bold">Cold</span></div>
+                <div class="stat-sub">Rec Yds/gm: 528 total over 15 games</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Usage (2025 season)</div>
+                <div class="stat-val">15% target share &bull; 4.9 tgt/gm &bull; 87% snaps</div>
+                <div class="stat-sub">Low usage -- boom/bust risk</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">Weather</div>
+                <div class="stat-val">78F  Wind 2.9 mph  Clear</div>
+                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label">DraftKings Props</div>
+                <div class="stat-val">—</div>
+                <div class="stat-sub">Not posted yet</div>
+              </div>
+            </div>
+
+            <div class="card-scout">DAL D ranks #32 -- allows 50.3 YPG to TEs | NYG offense: Moderate pace (63.8 plays/gm) | DAL defense: Moderate pace (61.4 plays/gm) | Low volume -- 35.2 Rec Yds/gm/gm in 2025 | Outdoor: 78F, wind 2.9 mph</div>
+          </div>
+          <div class="card-score" style="color:#69f0ae">7.5</div>
+        </div>
+        <div class="player-card" style="--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/ind.png')" data-hidden="0" data-team="IND">
+          <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
+            #3 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -17869,7 +18124,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png')" data-hidden="0" data-team="NYG">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #3 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #4 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -17929,7 +18184,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
         </div>
         <div class="player-card" style="--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/tb.png')" data-hidden="0" data-team="TB">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #4 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #5 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -17987,9 +18242,9 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           </div>
           <div class="card-score" style="color:#69f0ae">7.1</div>
         </div>
-        <div class="player-card" style="--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lac.png')" data-hidden="0" data-team="LAC">
+        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/lac.png')" data-hidden="1" data-team="LAC">
           <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #5 &nbsp;<strong style="font-size:1.1rem">A</strong>
+            #6 &nbsp;<strong style="font-size:1.1rem">A</strong>
           </div>
           <div class="card-body">
             <div class="card-name">
@@ -18044,66 +18299,6 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
             </div>
 
             <div class="card-scout">High-scoring game (total 48, LAC implied 28.5) | LAC offense: Moderate pace (64.4 plays/gm) | ARI defense: Moderate pace (64.2 plays/gm) | Low volume -- 24.4 Rec Yds/gm/gm in 2025 | Outdoor: 79F, wind 9.0 mph</div>
-          </div>
-          <div class="card-score" style="color:#69f0ae">7.1</div>
-        </div>
-        <div class="player-card" style="display:none;--logo:url('https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png')" data-hidden="1" data-team="NYG">
-          <div class="card-rank" style="background:#69f0ae22;color:#69f0ae;border:1px solid #69f0ae44">
-            #6 &nbsp;<strong style="font-size:1.1rem">A</strong>
-          </div>
-          <div class="card-body">
-            <div class="card-name">
-              <span style="color:#0B2265;font-size:1.1rem;font-weight:700">Theo Johnson</span>
-               <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:bold;cursor:default" title="Shoulder">Questionable</span>
-              <span style="color:#8b949e;font-size:11px;margin-left:6px">TE2</span>
-              <span style="color:#8b949e;font-size:13px;margin-left:8px">NYG (Home) vs DAL</span>
-            </div>
-            <div class="card-label" style="color:#69f0ae">Strong Play</div>
-
-            <div class="card-stats">
-              <div class="stat-block">
-                <div class="stat-label">Matchup</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#4caf50;height:8px;border-radius:4px;width:100%"></div></div> 10.0/10</div>
-                <div class="stat-sub">Opp allows 50.3 YPG to TEs &bull; Rank #32 &bull; +0.221 EPA/play allowed</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Scoring Env</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2196f3;height:8px;border-radius:4px;width:65%"></div></div> 6.5/10</div>
-                <div class="stat-sub">Game total 48 &bull; NYG implied 22.8 pts</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Game Pace</div>
-                <div class="stat-val"><span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 63.8 plays/gm &nbsp;<span style="color:#484f58">(NYG offense)</span></div>
-                <div class="stat-sub">Opp (DAL) defense pace: <span style="background:#1a1a1a;color:#ffc107;border:1px solid #ffc107;border-radius:10px;padding:2px 10px;font-size:11px">Moderate Pace</span> 61.4 plays/gm &bull; Outdoor</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Offense</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff9800;height:8px;border-radius:4px;width:64%"></div></div> 22.4 PPG</div>
-                <div class="stat-sub">Red zone efficiency 55%</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Production (2025 season avg)</div>
-                <div class="stat-val"><div style="background:#21262d;border-radius:4px;height:8px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff5252;height:8px;border-radius:4px;width:39%"></div></div> 35 avg Rec Yds/gm &nbsp;<span style="color:#ff5252;font-weight:bold">Cold</span></div>
-                <div class="stat-sub">Rec Yds/gm: 528 total over 15 games</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Usage (2025 season)</div>
-                <div class="stat-val">15% target share &bull; 4.9 tgt/gm &bull; 87% snaps</div>
-                <div class="stat-sub">Low usage -- boom/bust risk</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">Weather</div>
-                <div class="stat-val">78F  Wind 2.9 mph  Clear</div>
-                <div class="stat-sub" style="color:#8b949e">Good conditions</div>
-              </div>
-              <div class="stat-block">
-                <div class="stat-label">DraftKings Props</div>
-                <div class="stat-val">—</div>
-                <div class="stat-sub">Not posted yet</div>
-              </div>
-            </div>
-
-            <div class="card-scout">DAL D ranks #32 -- allows 50.3 YPG to TEs | NYG offense: Moderate pace (63.8 plays/gm) | DAL defense: Moderate pace (61.4 plays/gm) | Low volume -- 35.2 Rec Yds/gm/gm in 2025 | Outdoor: 78F, wind 2.9 mph</div>
           </div>
           <div class="card-score" style="color:#69f0ae">7.1</div>
         </div>
@@ -20313,7 +20508,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20323,7 +20518,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 30.5 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 30.5 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.8</div>
         </div>
@@ -20373,7 +20568,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20383,7 +20578,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -20433,7 +20628,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20443,7 +20638,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">NE offense: Moderate pace (61.4 plays/gm) | SEA defense: Moderate pace (62.6 plays/gm) | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#fff176">4.7</div>
         </div>
@@ -20913,7 +21108,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
               <div class="stat-block">
                 <div class="stat-label">Weather</div>
-                <div class="stat-val">76F  Wind 6.5 mph  Clear</div>
+                <div class="stat-val">75F  Wind 6.2 mph  Clear</div>
                 <div class="stat-sub" style="color:#8b949e">Good conditions</div>
               </div>
               <div class="stat-block">
@@ -20923,7 +21118,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               </div>
             </div>
 
-            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 2.8 Rec Yds/gm/gm in 2025 | Outdoor: 76F, wind 6.5 mph</div>
+            <div class="card-scout">SEA offense: Slow pace (59.7 plays/gm) | NE defense: Slow pace (57.2 plays/gm) | Low volume -- 2.8 Rec Yds/gm/gm in 2025 | Outdoor: 75F, wind 6.2 mph</div>
           </div>
           <div class="card-score" style="color:#ffb74d">4.2</div>
         </div>
@@ -22352,7 +22547,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               <div class="stat-block">
                 <div class="stat-label">Defensive TDs (2025)</div>
                 <div class="stat-val">6</div>
-                <div class="stat-sub">6.5 mph wind</div>
+                <div class="stat-sub">6.2 mph wind</div>
               </div>
             </div>
 
@@ -22832,7 +23027,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
               <div class="stat-block">
                 <div class="stat-label">Defensive TDs (2025)</div>
                 <div class="stat-val">7</div>
-                <div class="stat-sub">6.5 mph wind</div>
+                <div class="stat-sub">6.2 mph wind</div>
               </div>
             </div>
 
@@ -23175,6 +23370,18 @@ function applyVisibility() {
     sec.style.display = shown ? 'block' : 'none';
     if (btn) btn.style.display = activeTeams ? 'none' : 'block';
   });
+
+  var pvShown = 0;
+  document.querySelectorAll('.preview-card').forEach(function(c) {
+    var teams = (c.dataset.teams || '').split('|');
+    // A preview belongs to a game, so show it only when BOTH its teams match
+    var vis = !activeTeams ||
+              (teams.indexOf(activeTeams[0]) !== -1 && teams.indexOf(activeTeams[1]) !== -1);
+    c.style.display = vis ? 'block' : 'none';
+    if (vis) pvShown++;
+  });
+  var pvSec = document.getElementById('preview-section');
+  if (pvSec) pvSec.style.display = pvShown ? 'block' : 'none';
 
   var t10shown = 0;
   document.querySelectorAll('.top10-row').forEach(function(r) {
