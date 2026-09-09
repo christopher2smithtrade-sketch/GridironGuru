@@ -145,6 +145,19 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 .pv-bar b { display:block; height:100%; background:#3fb950; }
 .pv-edge { min-width:104px; text-align:right; font-weight:600; }
 
+/* Accuracy -- did the calls actually work */
+.ac-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:14px; margin-bottom:32px; }
+.ac-card { background:#161b22; border:1px solid #30363d; border-radius:12px; padding:14px 16px; }
+.ac-sum { color:#8b949e; font-size:12px; margin-bottom:10px; }
+.ac-sum b { color:#e6edf3; }
+.ac-row { display:flex; align-items:center; gap:10px; padding:5px 8px;
+           background:#0d1117; border-radius:7px; margin-bottom:3px; font-size:12px; }
+.ac-g { font-weight:800; min-width:26px; }
+.ac-n { color:#484f58; min-width:34px; font-size:11px; }
+.ac-v { flex:1; text-align:right; color:#e6edf3; font-weight:700; }
+.ac-v small { display:block; font-size:9px; font-weight:400; color:#8b949e; text-transform:uppercase; }
+
 /* Projected leaders -- top 5 per position */
 .pl-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
             gap:14px; margin-bottom:32px; }
@@ -253,6 +266,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
   .top10       { padding:12px; }
   .previews    { grid-template-columns:1fr; gap:10px; }
   .pl-grid     { grid-template-columns:1fr; gap:10px; }
+  .ac-grid     { grid-template-columns:1fr; gap:10px; }
   .about-grid  { grid-template-columns:1fr; gap:14px; }
   .about-body  { padding:15px 14px 12px; font-size:12.5px; }
   .about-bar   { font-size:12px; padding:11px 14px; }
@@ -365,7 +379,7 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
 <div class="header">
   <h1>GRIDIRON GURU</h1>
   <p>NFL Matchup Cheat Sheet &bull; Season 2026 &bull; Week 1</p>
-  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-09-09 07:25 PM</p>
+  <p style="font-size:12px;margin-top:6px;color:#484f58">Generated 2026-09-09 07:28 PM</p>
 </div>
 
 <div class="container">
@@ -508,6 +522,8 @@ h2.section-title { color:#3fb950; font-size:1.2rem; margin:36px 0 16px;
           <div class="game-meta">Arrowhead Stadium &bull; Outdoor</div>
         </div></div>
   <div id="filter-banner" class="filter-banner"></div>
+
+  
 
   <div id="preview-section">
     <h2 class="section-title">Who Has the Edge -- Plain English</h2>
