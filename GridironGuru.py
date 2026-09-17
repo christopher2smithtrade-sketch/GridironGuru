@@ -1093,11 +1093,14 @@ def build_pool_from_depth_charts(offense_stats, nv=None, season=STAT_SEASON,
             "season_total": round(total),
             "games":        int(games),
         }
-        time.sleep(DELAY)
+        # (the ESPN courtesy pause now lives inside _athlete_season_stats and
+        #  only fires on a real fetch -- 350 cached players used to cost 105 s
+        #  of sleeping for zero requests)
 
     gaps = [f"{t} {p}" for t in TEAM_IDS for p in ("QB", "RB", "WR", "TE")
             if counts.get((t, p), 0) == 0]
     rookies = sum(1 for v in recent_form.values() if not v["games"])
+    flush_athlete_cache()
     print(f"  Pool: {len(players)} players from depth charts "
           f"({rookies} with no {season} stats)")
     if gaps:
@@ -1225,11 +1228,26 @@ def build_player_pool(offense_stats, nv=None, season=STAT_SEASON, refresh=False)
     return players, recent_form
 
 
+_ATHLETE_CACHE = {}          # pid -> stats, loaded once per run
+_ATHLETE_CACHE_DIRTY = False
+
+
 def _athlete_season_stats(pid, season):
     """
     Flatten an athlete's season stat lines into one {stat_name: value} dict.
     Categories overlap on gamesPlayed, so the max wins. Returns {} on failure.
+
+    Cached to disk per season: a completed season's numbers never change, and
+    the pool rebuild was making ~350 of these calls every time the depth chart
+    moved -- a 7-minute run from GitHub Actions for data that is static.
     """
+    global _ATHLETE_CACHE_DIRTY
+    key = f"athletes_{season}"
+    if not _ATHLETE_CACHE:
+        _ATHLETE_CACHE.update(cache_load(key) or {"_season": season})
+    if str(pid) in _ATHLETE_CACHE:
+        return dict(_ATHLETE_CACHE[str(pid)])
+
     out = {}
     try:
         r = requests.get(
@@ -1251,9 +1269,20 @@ def _athlete_season_stats(pid, season):
                         out[k] = max(out.get(k, 0), val)
                     else:
                         out[k] = val
+        _ATHLETE_CACHE[str(pid)] = dict(out)
+        _ATHLETE_CACHE_DIRTY = True
+        time.sleep(DELAY)          # be polite to ESPN -- but only when we actually called it
     except Exception:
         pass
     return out
+
+
+def flush_athlete_cache():
+    """Write newly fetched athlete stats to disk (called once after pool build)."""
+    if _ATHLETE_CACHE_DIRTY:
+        season = _ATHLETE_CACHE.get("_season", STAT_SEASON)
+        cache_save(f"athletes_{season}", _ATHLETE_CACHE)
+        print(f"  Athlete stat cache: {len(_ATHLETE_CACHE) - 1} players saved")
 
 
 def _usage(pos, stats, team, offense_stats):
