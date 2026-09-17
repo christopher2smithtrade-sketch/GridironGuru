@@ -1,0 +1,79 @@
+name: Gridiron Guru
+
+# Times are UTC. NFL season runs in Eastern time (EDT = UTC-4 until Nov 1 2026,
+# then EST = UTC-5 -- bump every hour below by +1 when DST ends).
+#
+# GitHub's free cron runs 30-60 min late, so each slot is aimed early and has a
+# backup trigger, same pattern as H-Bomb. Slots are chosen around when the data
+# actually changes:
+#   Wed 20:30 UTC = 4:30 PM ET   Thu-night final injury report is out
+#   Thu 22:30 UTC = 6:30 PM ET   TNF inactives (kick 8:15)
+#   Fri 22:30 UTC = 6:30 PM ET   Sunday final injury designations
+#   Sun 15:00 UTC = 11:00 AM ET  early-game inactives (kick 1:00)
+#   Sun 19:00 UTC = 3:00 PM ET   late-game inactives (kick 4:25)
+#   Sun 22:30 UTC = 6:30 PM ET   SNF inactives (kick 8:20)
+#   Mon 22:30 UTC = 6:30 PM ET   MNF inactives
+#   Tue 14:00 UTC = 10:00 AM ET  score the finished week, roll to next week
+#
+# Or tap "Run workflow" in the GitHub app any time -- nothing here is metered.
+on:
+  schedule:
+    - cron: '30 20 * * 3'   # Wed 4:30 PM ET
+    - cron: '55 20 * * 3'   #     backup
+    - cron: '30 22 * * 4'   # Thu 6:30 PM ET
+    - cron: '55 22 * * 4'   #     backup
+    - cron: '30 22 * * 5'   # Fri 6:30 PM ET
+    - cron: '55 22 * * 5'   #     backup
+    - cron: '0 15 * * 0'    # Sun 11:00 AM ET
+    - cron: '25 15 * * 0'   #     backup
+    - cron: '0 19 * * 0'    # Sun 3:00 PM ET
+    - cron: '30 22 * * 0'   # Sun 6:30 PM ET
+    - cron: '30 22 * * 1'   # Mon 6:30 PM ET
+    - cron: '0 14 * * 2'    # Tue 10:00 AM ET
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gridiron-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Gridiron Guru and deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYTHONIOENCODING: utf-8
+        run: python GridironGuru.py
+
+      # The script pushes index.html and the prediction log through the API.
+      # The season-stat cache is committed here so the next run is warm
+      # (~20 s) instead of cold (~8 min of ESPN box-score calls).
+      - name: Commit refreshed cache
+        run: |
+          git config user.name  "gridiron-bot"
+          git config user.email "gridiron-bot@users.noreply.github.com"
+          git add cache/ || true
+          if git diff --cached --quiet; then
+            echo "cache unchanged"
+          else
+            git commit -m "Refresh season cache [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi
