@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-17T23:25:03",
+ "logged_at": "2026-09-17T23:44:03",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -3573,7 +3573,7 @@
    "team": "SEA",
    "opp": "ARI",
    "grade": "B+",
-   "composite": 5.74,
+   "composite": 6.14,
    "proj_yards": 41,
    "td_pct": 15,
    "stat": "Rec Yds",
