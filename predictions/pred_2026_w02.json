@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-17T22:52:40",
+ "logged_at": "2026-09-17T23:25:03",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -436,12 +436,8 @@
    "position": "RB",
    "team": "BUF",
    "opp": "DET",
-   "grade": "C",
-   "composite": 4.34,
-   "proj_yards": 20,
-   "td_pct": 25,
-   "stat": "Rush Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Dalton Kincaid",
@@ -808,8 +804,8 @@
    "position": "RB",
    "team": "CIN",
    "opp": "HOU",
-   "grade": "C",
-   "composite": 3.74,
+   "grade": "D",
+   "composite": 3.34,
    "proj_yards": 28,
    "td_pct": 20,
    "stat": "Rush Yds",
@@ -4492,7 +4488,7 @@
    "favorite": "HOU",
    "strength": "clear lean",
    "margin": 1.46,
-   "model_margin": 2.39,
+   "model_margin": 2.41,
    "vegas_margin": 0.83,
    "spread": -2.5
   },
