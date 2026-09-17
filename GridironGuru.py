@@ -448,19 +448,27 @@ def get_weather(games):
                     "impact": "Too far out -- check back within 16 days",
                 }
                 continue
-            r = requests.get(
-                "https://api.open-meteo.com/v1/forecast",
-                params={
-                    "latitude": coords[0], "longitude": coords[1],
-                    "hourly": "temperature_2m,windspeed_10m,precipitation",
-                    "temperature_unit": "fahrenheit",
-                    "windspeed_unit": "mph",
-                    "start_date": game_date, "end_date": game_date,
-                    "timezone": "America/New_York",
-                },
-                timeout=10,
-            )
-            r.raise_for_status()
+            # Open-Meteo is slow from GitHub's runners -- three venues timed
+            # out at 10 s on the first Actions run. Longer timeout, one retry.
+            wx_params = {
+                "latitude": coords[0], "longitude": coords[1],
+                "hourly": "temperature_2m,windspeed_10m,precipitation",
+                "temperature_unit": "fahrenheit",
+                "windspeed_unit": "mph",
+                "start_date": game_date, "end_date": game_date,
+                "timezone": "America/New_York",
+            }
+            r = None
+            for attempt in (1, 2):
+                try:
+                    r = requests.get("https://api.open-meteo.com/v1/forecast",
+                                     params=wx_params, timeout=25)
+                    r.raise_for_status()
+                    break
+                except requests.RequestException:
+                    if attempt == 2:
+                        raise
+                    time.sleep(2)
             data = r.json().get("hourly", {})
             # Read the forecast at actual kickoff -- a 8:15pm game is much cooler
             # and usually calmer than the 1pm slot this used to assume.
@@ -3637,7 +3645,9 @@ def deploy(html):
 
 def run():
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-    timestamp    = datetime.now().strftime("%Y-%m-%d %I:%M %p")
+    # Eastern, not the machine clock -- GitHub's runners are UTC and the page
+    # read "Generated 10:48 PM" at 6:48 PM New York time.
+    timestamp    = datetime.now(EASTERN).strftime("%Y-%m-%d %I:%M %p %Z")
     season, week = get_current_week()
 
     print(f"\n[GRIDIRON GURU] NFL {season} Week {week}  --  {timestamp}\n")
