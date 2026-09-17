@@ -100,6 +100,59 @@ GITHUB_TOKEN  = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_USER   = "christopher2smithtrade-sketch"
 GITHUB_REPO   = "GridironGuru"
 GITHUB_BRANCH = "main"
+PAGES_URL     = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/"
+ACTIONS_URL   = f"https://github.com/{GITHUB_USER}/{GITHUB_REPO}/actions/workflows/gridiron.yml"
+
+# -- ntfy push notifications (same app as H-Bomb) ---------------------------
+# Subscribe to this topic in the ntfy app. Every push carries a "Run workflow"
+# button that opens the Actions page, so a stale or failed run is one tap from
+# a re-run -- same fallback H-Bomb has.
+NTFY_ENABLED        = True
+NTFY_TOPIC          = "gridiron-guru"
+NTFY_NOTIFY_SUCCESS = True      # False = alert only when something breaks
+
+
+def notify(title, message, tags="", priority="default", click=None, run_button=True):
+    """Push via ntfy.sh. A notification failure must never break a run."""
+    if not NTFY_ENABLED:
+        return
+    try:
+        headers = {"Title": title.encode("utf-8"), "Priority": priority}
+        if tags:
+            headers["Tags"] = tags
+        if click:
+            headers["Click"] = click
+        actions = []
+        if click:
+            actions.append(f"view, Open board, {click}")
+        if run_button:
+            actions.append(f"view, Run workflow, {ACTIONS_URL}")
+        if actions:
+            headers["Actions"] = "; ".join(actions)
+        requests.post(f"https://ntfy.sh/{NTFY_TOPIC}", data=message.encode("utf-8"),
+                      headers=headers, timeout=15)
+    except Exception as e:
+        print(f"  [!] Notify error: {e}")
+
+
+def verify_live(timestamp, tries=4):
+    """
+    Confirm the live Pages site actually shows this run. A successful API push
+    does not guarantee Pages rebuilt -- H-Bomb hit exactly this, and a stale
+    board with no warning is worse than a failed run.
+    """
+    for attempt in range(1, tries + 1):
+        try:
+            time.sleep(20 if attempt > 1 else 8)
+            r = requests.get(PAGES_URL, params={"cb": int(time.time())},
+                             headers={"Cache-Control": "no-cache"}, timeout=20)
+            if r.status_code == 200 and timestamp in r.text:
+                print(f"  [OK] Live site verified (attempt {attempt})")
+                return True
+        except Exception as e:
+            print(f"  verify attempt {attempt}/{tries}: {e}")
+    print("  [!] LIVE SITE NOT UPDATED -- push succeeded but Pages is stale")
+    return False
 
 # Players shown per position before "Show All"
 TOP_PER_POS = 5
@@ -3634,9 +3687,10 @@ def deploy(html):
     # Deploy main HTML
     ok = deploy_file(html.encode(), "index.html", headers, msg)
     if ok:
-        print(f"  [OK] Deployed --> https://{GITHUB_USER}.github.io/{GITHUB_REPO}/")
+        print(f"  [OK] Deployed --> {PAGES_URL}")
     else:
         print(f"  [!] Deploy failed")
+    return ok
 
 
 # ============================================================
@@ -3750,7 +3804,30 @@ def run():
         f.write(html)
     print(f"  [OK] Saved: {fpath}")
 
-    deploy(html)
+    deployed = deploy(html)
+
+    top_skill = sorted((p for p in scored if p["position"] != "DEF"),
+                       key=lambda x: x["composite"], reverse=True)
+    if deployed:
+        if verify_live(timestamp):
+            if NTFY_NOTIFY_SUCCESS:
+                t = top_skill[0] if top_skill else None
+                pr = project_player(t) if t else None
+                line = (f"Top play: {t['name']} ({t['team']} {'vs' if t['is_home'] else '@'} {t['opp']}) "
+                        f"{t['grade']}" + (f" -- proj {pr['yards']} {pr['label'].lower()}" if pr else "")
+                        ) if t else "Board updated."
+                notify(f"Gridiron Guru updated -- Week {week}",
+                       f"{line} | {len(games)} games, {len(scored)} cards.",
+                       tags="football", priority="high", click=PAGES_URL, run_button=False)
+        else:
+            notify("Gridiron Guru site is STALE",
+                   f"Week {week} pushed to GitHub but the live board has not updated. "
+                   f"Tap Run workflow to retry.",
+                   tags="warning", priority="high", click=PAGES_URL)
+    else:
+        notify("Gridiron Guru deploy FAILED",
+               f"Week {week} report built but the push to GitHub failed. Tap Run workflow to retry.",
+               tags="rotating_light", priority="urgent")
 
     # Summary
     # Skill players and defenses are scored on separate scales, so they are
@@ -3777,4 +3854,14 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    try:
+        run()
+    except SystemExit:
+        raise
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        notify("Gridiron Guru run FAILED",
+               f"{type(e).__name__}: {str(e)[:200]} -- tap Run workflow to retry.",
+               tags="rotating_light", priority="urgent")
+        raise
