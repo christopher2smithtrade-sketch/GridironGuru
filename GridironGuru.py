@@ -3741,7 +3741,10 @@ SCHEDULE_ET = [
 ]
 SKIP_IF_FRESHER_THAN_MIN = 40    # backup cron exits if the board is this fresh
 RUN_CHECK_GRACE_MIN      = 55    # GitHub cron runs 30-60 min late; check after that
-NTFY_RUN_CHECKS          = True  # book the silent "did it run?" message
+NTFY_RUN_CHECKS          = True  # book the "did it run?" message after each scheduled run
+# ntfy priorities: min = list only, no alert | low = alert, no sound |
+# default = alert + sound | high = sound + vibrate | urgent = bypasses Do Not Disturb
+RUN_CHECK_PRIORITY       = "default"
 
 
 def is_scheduled_run():
@@ -3799,7 +3802,9 @@ def book_run_check(now_et):
     try:
         headers = {
             "Title": f"Did the {slot.strftime('%a %I:%M %p')} run happen?".encode("utf-8"),
-            "Priority": "min",
+            # "default" = a normal notification with sound. "min" was tried
+            # first and shows nothing at all -- a check nobody sees is no check.
+            "Priority": RUN_CHECK_PRIORITY,
             "Tags": "hourglass",
             "Delay": str(int(fire.timestamp())),
             "Actions": f"view, Run workflow, {ACTIONS_URL}; view, Open board, {PAGES_URL}",
