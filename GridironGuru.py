@@ -3726,8 +3726,107 @@ def deploy(html):
 #  MAIN
 # ============================================================
 
+# Scheduled slots, Eastern time, matching .github/workflows/gridiron.yml.
+# (weekday: Mon=0 .. Sun=6, hour, minute). Used to work out the NEXT expected
+# run so a "did it run?" check can be booked for just after it.
+SCHEDULE_ET = [
+    (2, 16, 30),   # Wed 4:30 PM  TNF final injury report
+    (3, 18, 30),   # Thu 6:30 PM  TNF inactives
+    (4, 18, 30),   # Fri 6:30 PM  Sunday final designations
+    (6, 11,  0),   # Sun 11:00 AM early inactives
+    (6, 15,  0),   # Sun 3:00 PM  late inactives
+    (6, 18, 30),   # Sun 6:30 PM  SNF inactives
+    (0, 18, 30),   # Mon 6:30 PM  MNF inactives
+    (1, 10,  0),   # Tue 10:00 AM score the week
+]
+SKIP_IF_FRESHER_THAN_MIN = 40    # backup cron exits if the board is this fresh
+RUN_CHECK_GRACE_MIN      = 55    # GitHub cron runs 30-60 min late; check after that
+NTFY_RUN_CHECKS          = True  # book the silent "did it run?" message
+
+
+def is_scheduled_run():
+    return os.environ.get("GITHUB_EVENT_NAME", "") == "schedule"
+
+
+def live_board_age_minutes():
+    """Minutes since index.html was last committed, or None if unknown."""
+    if not GITHUB_TOKEN:
+        return None
+    try:
+        from datetime import timezone
+        h = {"Authorization": f"token {GITHUB_TOKEN}",
+             "Accept": "application/vnd.github.v3+json"}
+        c = requests.get(f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/commits",
+                         params={"path": "index.html", "per_page": 1}, headers=h,
+                         timeout=15).json()
+        last = datetime.strptime(c[0]["commit"]["committer"]["date"],
+                                 "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - last).total_seconds() / 60
+    except Exception as e:
+        print(f"  board-age check failed ({e}) -- running anyway")
+        return None
+
+
+def next_scheduled_slot(now_et):
+    """The next (datetime) slot in SCHEDULE_ET strictly after now_et."""
+    from datetime import timedelta
+    best = None
+    for wd, hh, mm in SCHEDULE_ET:
+        days_ahead = (wd - now_et.weekday()) % 7
+        cand = now_et.replace(hour=hh, minute=mm, second=0, microsecond=0)                + timedelta(days=days_ahead)
+        if cand <= now_et:
+            cand += timedelta(days=7)
+        if best is None or cand < best:
+            best = cand
+    return best
+
+
+def book_run_check(now_et):
+    """
+    Schedule a SILENT ntfy message for shortly after the next expected run.
+
+    If GitHub's cron never fires, nothing runs, so nothing can alert you --
+    this is the only piece that works from outside GitHub. It cannot be
+    cancelled once booked, so it always arrives; it is sent at minimum
+    priority (no buzz) and worded as a check: if an "updated" push already
+    came, ignore it. It carries the Run workflow button either way.
+    """
+    if not (NTFY_ENABLED and NTFY_RUN_CHECKS):
+        return
+    from datetime import timedelta
+    slot = next_scheduled_slot(now_et)
+    fire = slot + timedelta(minutes=RUN_CHECK_GRACE_MIN)
+    try:
+        headers = {
+            "Title": f"Did the {slot.strftime('%a %I:%M %p')} run happen?".encode("utf-8"),
+            "Priority": "min",
+            "Tags": "hourglass",
+            "Delay": str(int(fire.timestamp())),
+            "Actions": f"view, Run workflow, {ACTIONS_URL}; view, Open board, {PAGES_URL}",
+        }
+        body = (f"A scheduled run was due {slot.strftime('%a %I:%M %p ET')}. "
+                f"If you got an 'updated' push since then, ignore this. "
+                f"If not, GitHub is behind -- tap Run workflow.")
+        requests.post(f"https://ntfy.sh/{NTFY_TOPIC}", data=body.encode("utf-8"),
+                      headers=headers, timeout=15)
+        print(f"  Booked run-check for {fire.strftime('%a %I:%M %p ET')}")
+    except Exception as e:
+        print(f"  [!] Could not book run-check: {e}")
+
+
 def run():
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+
+    # Backup cron triggers fire 25 min after the primary. If the primary
+    # already deployed, exit quietly -- no double work, no double push. Only
+    # applies to scheduled runs; a manual tap always runs.
+    if is_scheduled_run():
+        age = live_board_age_minutes()
+        if age is not None and age < SKIP_IF_FRESHER_THAN_MIN:
+            print(f"Scheduled run: board deployed {age:.0f} min ago -- skipping (backup trigger).")
+            return
+        if age is not None:
+            print(f"Scheduled run: board is {age:.0f} min old -- running.")
     # Eastern, not the machine clock -- GitHub's runners are UTC and the page
     # read "Generated 10:48 PM" at 6:48 PM New York time.
     timestamp    = datetime.now(EASTERN).strftime("%Y-%m-%d %I:%M %p %Z")
