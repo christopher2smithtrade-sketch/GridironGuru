@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-19T00:32:17",
+ "logged_at": "2026-09-19T12:07:29",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -466,15 +466,6 @@
    "opp": "DET",
    "grade": "OUT",
    "composite": 0
-  },
-  {
-   "name": "Frank Gore Jr.",
-   "position": "RB",
-   "team": "BUF",
-   "opp": "DET",
-   "grade": "B",
-   "composite": 4.87,
-   "late": true
   },
   {
    "name": "Dalton Kincaid",
