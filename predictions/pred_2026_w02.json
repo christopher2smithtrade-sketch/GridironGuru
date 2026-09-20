@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-20T17:52:21",
+ "logged_at": "2026-09-20T20:43:37",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1104,6 +1104,19 @@
    "estimated": false
   },
   {
+   "name": "Malik Davis",
+   "position": "RB",
+   "team": "DAL",
+   "opp": "WSH",
+   "grade": "B+",
+   "composite": 6.19,
+   "late": true,
+   "proj_yards": 35,
+   "td_pct": 17,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
    "name": "Jake Ferguson",
    "position": "TE",
    "team": "DAL",
@@ -1230,6 +1243,19 @@
    "td_pct": 42,
    "stat": "Rush Yds",
    "estimated": true
+  },
+  {
+   "name": "Tyler Badie",
+   "position": "RB",
+   "team": "DEN",
+   "opp": "JAX",
+   "grade": "D",
+   "composite": 3.05,
+   "late": true,
+   "proj_yards": 10,
+   "td_pct": 5,
+   "stat": "Rush Yds",
+   "estimated": false
   },
   {
    "name": "Evan Engram",
@@ -4239,96 +4265,6 @@
    "estimated": false
   },
   {
-   "name": "ATL Defense",
-   "position": "DEF",
-   "team": "ATL",
-   "opp": "CAR",
-   "grade": "A+",
-   "composite": 8.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CAR Defense",
-   "position": "DEF",
-   "team": "CAR",
-   "opp": "ATL",
-   "grade": "A",
-   "composite": 6.9,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CHI Defense",
-   "position": "DEF",
-   "team": "CHI",
-   "opp": "MIN",
-   "grade": "A+",
-   "composite": 8.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "MIN Defense",
-   "position": "DEF",
-   "team": "MIN",
-   "opp": "CHI",
-   "grade": "B",
-   "composite": 5.4,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "TEN Defense",
-   "position": "DEF",
-   "team": "TEN",
-   "opp": "PHI",
-   "grade": "B",
-   "composite": 4.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "PHI Defense",
-   "position": "DEF",
-   "team": "PHI",
-   "opp": "TEN",
-   "grade": "A+",
-   "composite": 9.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NE Defense",
-   "position": "DEF",
-   "team": "NE",
-   "opp": "PIT",
-   "grade": "A",
-   "composite": 6.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "PIT Defense",
-   "position": "DEF",
-   "team": "PIT",
-   "opp": "NE",
-   "grade": "D",
-   "composite": 3.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NYJ Defense",
-   "position": "DEF",
-   "team": "NYJ",
-   "opp": "GB",
-   "grade": "D",
-   "composite": 2.1,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "GB Defense",
-   "position": "DEF",
-   "team": "GB",
-   "opp": "NYJ",
-   "grade": "A+",
-   "composite": 7.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "TB Defense",
    "position": "DEF",
    "team": "TB",
@@ -4344,42 +4280,6 @@
    "opp": "TB",
    "grade": "B+",
    "composite": 6.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "BAL Defense",
-   "position": "DEF",
-   "team": "BAL",
-   "opp": "NO",
-   "grade": "A+",
-   "composite": 8.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NO Defense",
-   "position": "DEF",
-   "team": "NO",
-   "opp": "BAL",
-   "grade": "B",
-   "composite": 5.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "HOU Defense",
-   "position": "DEF",
-   "team": "HOU",
-   "opp": "CIN",
-   "grade": "A+",
-   "composite": 7.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CIN Defense",
-   "position": "DEF",
-   "team": "CIN",
-   "opp": "HOU",
-   "grade": "B",
-   "composite": 4.5,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4473,6 +4373,132 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "ATL Defense",
+   "position": "DEF",
+   "team": "ATL",
+   "opp": "CAR",
+   "grade": "A+",
+   "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "CAR Defense",
+   "position": "DEF",
+   "team": "CAR",
+   "opp": "ATL",
+   "grade": "A",
+   "composite": 6.9,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "CHI Defense",
+   "position": "DEF",
+   "team": "CHI",
+   "opp": "MIN",
+   "grade": "A+",
+   "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "MIN Defense",
+   "position": "DEF",
+   "team": "MIN",
+   "opp": "CHI",
+   "grade": "B",
+   "composite": 5.4,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "TEN Defense",
+   "position": "DEF",
+   "team": "TEN",
+   "opp": "PHI",
+   "grade": "B",
+   "composite": 4.7,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "PHI Defense",
+   "position": "DEF",
+   "team": "PHI",
+   "opp": "TEN",
+   "grade": "A+",
+   "composite": 9.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NE Defense",
+   "position": "DEF",
+   "team": "NE",
+   "opp": "PIT",
+   "grade": "A",
+   "composite": 6.7,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "PIT Defense",
+   "position": "DEF",
+   "team": "PIT",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 3.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYJ Defense",
+   "position": "DEF",
+   "team": "NYJ",
+   "opp": "GB",
+   "grade": "D",
+   "composite": 2.1,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "GB Defense",
+   "position": "DEF",
+   "team": "GB",
+   "opp": "NYJ",
+   "grade": "A+",
+   "composite": 7.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "BAL Defense",
+   "position": "DEF",
+   "team": "BAL",
+   "opp": "NO",
+   "grade": "A+",
+   "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NO Defense",
+   "position": "DEF",
+   "team": "NO",
+   "opp": "BAL",
+   "grade": "B",
+   "composite": 5.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "HOU Defense",
+   "position": "DEF",
+   "team": "HOU",
+   "opp": "CIN",
+   "grade": "A+",
+   "composite": 7.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "CIN Defense",
+   "position": "DEF",
+   "team": "CIN",
+   "opp": "HOU",
+   "grade": "B",
+   "composite": 4.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "KC Defense",
    "position": "DEF",
    "team": "KC",
@@ -4529,61 +4555,6 @@
  ],
  "leans": [
   {
-   "game_id": "401872933",
-   "home": "ATL",
-   "away": "CAR",
-   "favorite": "CAR",
-   "strength": "slight lean",
-   "margin": -0.24,
-   "model_margin": 0.66,
-   "vegas_margin": -0.83,
-   "spread": 2.5
-  },
-  {
-   "game_id": "401872937",
-   "home": "CHI",
-   "away": "MIN",
-   "favorite": "CHI",
-   "strength": "slight lean",
-   "margin": 0.76,
-   "model_margin": -0.35,
-   "vegas_margin": 1.5,
-   "spread": -4.5
-  },
-  {
-   "game_id": "401872939",
-   "home": "TEN",
-   "away": "PHI",
-   "favorite": "PHI",
-   "strength": "strong lean",
-   "margin": -2.44,
-   "model_margin": -2.61,
-   "vegas_margin": -2.33,
-   "spread": 7.0
-  },
-  {
-   "game_id": "401872946",
-   "home": "NE",
-   "away": "PIT",
-   "favorite": "NE",
-   "strength": "strong lean",
-   "margin": 2.0,
-   "model_margin": 2.25,
-   "vegas_margin": 1.83,
-   "spread": -5.5
-  },
-  {
-   "game_id": "401872936",
-   "home": "NYJ",
-   "away": "GB",
-   "favorite": "GB",
-   "strength": "clear lean",
-   "margin": -1.48,
-   "model_margin": -1.95,
-   "vegas_margin": -1.17,
-   "spread": 3.5
-  },
-  {
    "game_id": "401872935",
    "home": "TB",
    "away": "CLE",
@@ -4593,28 +4564,6 @@
    "model_margin": 0.12,
    "vegas_margin": 2.83,
    "spread": -8.5
-  },
-  {
-   "game_id": "401872938",
-   "home": "BAL",
-   "away": "NO",
-   "favorite": "BAL",
-   "strength": "strong lean",
-   "margin": 1.59,
-   "model_margin": -0.27,
-   "vegas_margin": 2.83,
-   "spread": -8.5
-  },
-  {
-   "game_id": "401872934",
-   "home": "HOU",
-   "away": "CIN",
-   "favorite": "HOU",
-   "strength": "strong lean",
-   "margin": 1.51,
-   "model_margin": 2.28,
-   "vegas_margin": 1.0,
-   "spread": -3.0
   },
   {
    "game_id": "401872940",
@@ -4670,6 +4619,83 @@
    "model_margin": 1.68,
    "vegas_margin": 4.5,
    "spread": -13.5
+  },
+  {
+   "game_id": "401872933",
+   "home": "ATL",
+   "away": "CAR",
+   "favorite": "CAR",
+   "strength": "slight lean",
+   "margin": -0.24,
+   "model_margin": 0.66,
+   "vegas_margin": -0.83,
+   "spread": 2.5
+  },
+  {
+   "game_id": "401872937",
+   "home": "CHI",
+   "away": "MIN",
+   "favorite": "CHI",
+   "strength": "slight lean",
+   "margin": 0.76,
+   "model_margin": -0.35,
+   "vegas_margin": 1.5,
+   "spread": -4.5
+  },
+  {
+   "game_id": "401872939",
+   "home": "TEN",
+   "away": "PHI",
+   "favorite": "PHI",
+   "strength": "strong lean",
+   "margin": -2.44,
+   "model_margin": -2.61,
+   "vegas_margin": -2.33,
+   "spread": 7.0
+  },
+  {
+   "game_id": "401872946",
+   "home": "NE",
+   "away": "PIT",
+   "favorite": "NE",
+   "strength": "strong lean",
+   "margin": 2.0,
+   "model_margin": 2.25,
+   "vegas_margin": 1.83,
+   "spread": -5.5
+  },
+  {
+   "game_id": "401872936",
+   "home": "NYJ",
+   "away": "GB",
+   "favorite": "GB",
+   "strength": "clear lean",
+   "margin": -1.48,
+   "model_margin": -1.95,
+   "vegas_margin": -1.17,
+   "spread": 3.5
+  },
+  {
+   "game_id": "401872938",
+   "home": "BAL",
+   "away": "NO",
+   "favorite": "BAL",
+   "strength": "strong lean",
+   "margin": 1.59,
+   "model_margin": -0.27,
+   "vegas_margin": 2.83,
+   "spread": -8.5
+  },
+  {
+   "game_id": "401872934",
+   "home": "HOU",
+   "away": "CIN",
+   "favorite": "HOU",
+   "strength": "strong lean",
+   "margin": 1.51,
+   "model_margin": 2.28,
+   "vegas_margin": 1.0,
+   "spread": -3.0
   },
   {
    "game_id": "401872945",
