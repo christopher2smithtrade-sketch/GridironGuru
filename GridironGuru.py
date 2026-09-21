@@ -2407,6 +2407,18 @@ def sync_predictions_up(path):
         print(f"  [!] Could not push {rel} to repo")
 
 
+def _logged_out_players(season, week):
+    """Names logged as OUT in this week's file before the current run. None if no file."""
+    path = os.path.join(PREDICTIONS_FOLDER, f"pred_{season}_w{week:02d}.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            return {r["name"] for r in json.load(f).get("predictions", []) if r.get("grade") == "OUT"}
+    except Exception:
+        return None
+
+
 def log_predictions(season, week, scored, games):
     """
     Save this week's calls so they can be graded later.
@@ -3726,20 +3738,26 @@ def deploy(html):
 #  MAIN
 # ============================================================
 
-# Scheduled slots, Eastern time, matching .github/workflows/gridiron.yml.
-# (weekday: Mon=0 .. Sun=6, hour, minute). Used to work out the NEXT expected
-# run so a "did it run?" check can be booked for just after it.
+# The moments the board NEEDS to be fresh, Eastern time (weekday Mon=0..Sun=6,
+# hour, minute). These are NOT the cron times -- GitHub's free cron ran 2-3 h
+# late all of Week 2, so the yml fires several crons ahead of each window and
+# the skip/quiet logic sorts out the duplicates. A "did it run?" check is
+# booked for RUN_CHECK_GRACE_MIN after each of these.
 SCHEDULE_ET = [
-    (2, 16, 30),   # Wed 4:30 PM  TNF final injury report
-    (3, 18, 30),   # Thu 6:30 PM  TNF inactives
-    (4, 18, 30),   # Fri 6:30 PM  Sunday final designations
-    (6, 11,  0),   # Sun 11:00 AM early inactives
-    (6, 15,  0),   # Sun 3:00 PM  late inactives
-    (6, 18, 30),   # Sun 6:30 PM  SNF inactives
-    (0, 18, 30),   # Mon 6:30 PM  MNF inactives
-    (1, 10,  0),   # Tue 10:00 AM score the week
+    (2, 17,  0),   # Wed 5:00 PM  TNF final injury report is out
+    (3, 18, 45),   # Thu 6:45 PM  TNF inactives
+    (4, 18,  0),   # Fri 6:00 PM  Sunday final designations
+    (6, 11, 30),   # Sun 11:30 AM early-game inactives
+    (6, 14, 55),   # Sun 2:55 PM  late-game inactives
+    (6, 18, 50),   # Sun 6:50 PM  SNF inactives
+    (0, 18, 45),   # Mon 6:45 PM  MNF inactives
+    (1,  9,  0),   # Tue 9:00 AM  score the finished week
 ]
-SKIP_IF_FRESHER_THAN_MIN = 40    # backup cron exits if the board is this fresh
+SKIP_IF_FRESHER_THAN_MIN = 20    # a scheduled run exits if the board is this fresh
+# A quiet refresh (nothing newly ruled out, board recently pushed) does not
+# earn a phone ping. Only the first deploy in a while, or a change in who is
+# OUT, does -- otherwise dense Sunday crons would mean six identical pushes.
+NOTIFY_QUIET_REFRESH_MIN = 120
 RUN_CHECK_GRACE_MIN      = 55    # GitHub cron runs 30-60 min late; check after that
 NTFY_RUN_CHECKS          = True  # book the "did it run?" message after each scheduled run
 # ntfy priorities: min = list only, no alert | low = alert, no sound |
@@ -3799,9 +3817,20 @@ def book_run_check(now_et):
     from datetime import timedelta
     slot = next_scheduled_slot(now_et)
     fire = slot + timedelta(minutes=RUN_CHECK_GRACE_MIN)
+    # Several crons now serve each window; only the first of them books the
+    # check. State lives in cache/ which the workflow commits back.
+    state_path = os.path.join(CACHE_FOLDER, "run_check_state.json")
+    try:
+        with open(state_path, encoding="utf-8") as f:
+            booked = json.load(f).get("booked", "")
+    except Exception:
+        booked = ""
+    if booked == slot.isoformat():
+        print(f"  Run-check for {slot.strftime('%a %I:%M %p')} already booked")
+        return
     try:
         headers = {
-            "Title": f"Did the {slot.strftime('%a %I:%M %p')} run happen?".encode("utf-8"),
+            "Title": f"Fresh after {slot.strftime('%a %I:%M %p')}?".encode("utf-8"),
             # "default" = a normal notification with sound. "min" was tried
             # first and shows nothing at all -- a check nobody sees is no check.
             "Priority": RUN_CHECK_PRIORITY,
@@ -3809,12 +3838,15 @@ def book_run_check(now_et):
             "Delay": str(int(fire.timestamp())),
             "Actions": f"view, Run workflow, {ACTIONS_URL}; view, Open board, {PAGES_URL}",
         }
-        body = (f"A scheduled run was due {slot.strftime('%a %I:%M %p ET')}. "
-                f"If you got an 'updated' push since then, ignore this. "
+        body = (f"The board should have refreshed after {slot.strftime('%a %I:%M %p ET')}. "
+                f"If you got an 'updated' or 'ruled OUT' push since then, ignore this. "
                 f"If not, GitHub is behind -- tap Run workflow.")
         requests.post(f"https://ntfy.sh/{NTFY_TOPIC}", data=body.encode("utf-8"),
                       headers=headers, timeout=15)
         print(f"  Booked run-check for {fire.strftime('%a %I:%M %p ET')}")
+        os.makedirs(CACHE_FOLDER, exist_ok=True)
+        with open(state_path, "w", encoding="utf-8") as f:
+            json.dump({"booked": slot.isoformat()}, f)
     except Exception as e:
         print(f"  [!] Could not book run-check: {e}")
 
@@ -3919,8 +3951,12 @@ def run():
     print("  Rendering dashboard...")
     print("  Logging predictions for later scoring...")
     sync_predictions_down(season, week)
+    prev_out = _logged_out_players(season, week)
+    board_age = live_board_age_minutes()
     pred_path = log_predictions(season, week, scored, games)
     sync_predictions_up(pred_path)
+    now_out  = {p["name"] for p in scored if p.get("grade") == "OUT"}
+    newly_out = sorted(now_out - prev_out) if prev_out is not None else []
     # Include the CURRENT week too -- a week runs Thursday to Monday, so by
     # Sunday there are finished games worth showing rather than making everyone
     # wait until next week's report.
@@ -3943,15 +3979,24 @@ def run():
                        key=lambda x: x["composite"], reverse=True)
     if deployed:
         if verify_live(timestamp):
-            if NTFY_NOTIFY_SUCCESS:
+            quiet = (board_age is not None and board_age < NOTIFY_QUIET_REFRESH_MIN
+                     and not newly_out and is_scheduled_run())
+            if NTFY_NOTIFY_SUCCESS and not quiet:
                 t = top_skill[0] if top_skill else None
                 pr = project_player(t) if t else None
                 line = (f"Top play: {t['name']} ({t['team']} {'vs' if t['is_home'] else '@'} {t['opp']}) "
                         f"{t['grade']}" + (f" -- proj {pr['yards']} {pr['label'].lower()}" if pr else "")
                         ) if t else "Board updated."
-                notify(f"Gridiron Guru updated -- Week {week}",
-                       f"{line} | {len(games)} games, {len(scored)} cards.",
+                if newly_out:
+                    # The thing the boys actually want to know at inactives time
+                    title = f"Week {week}: {len(newly_out)} newly ruled OUT"
+                    line  = "OUT: " + ", ".join(newly_out[:8]) + (" ..." if len(newly_out) > 8 else "")                             + f" | {line}"
+                else:
+                    title = f"Gridiron Guru updated -- Week {week}"
+                notify(title, f"{line} | {len(games)} games, {len(scored)} cards.",
                        tags="football", priority="high", click=PAGES_URL, run_button=False)
+            elif quiet:
+                print(f"  Quiet refresh (board {board_age:.0f} min old, nothing newly OUT) -- no push")
         else:
             notify("Gridiron Guru site is STALE",
                    f"Week {week} pushed to GitHub but the live board has not updated. "
