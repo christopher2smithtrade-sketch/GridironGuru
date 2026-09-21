@@ -3987,10 +3987,19 @@ def run():
                 line = (f"Top play: {t['name']} ({t['team']} {'vs' if t['is_home'] else '@'} {t['opp']}) "
                         f"{t['grade']}" + (f" -- proj {pr['yards']} {pr['label'].lower()}" if pr else "")
                         ) if t else "Board updated."
+                # A week that just closed gets its report card in the push
+                done = [r for r in (history or []) if not r.get("partial") and r["week"] == week - 1]
+                if done:
+                    r = done[0]
+                    line = (f"Week {r['week']} scored: {r['matched']} calls, typical miss "
+                            f"{r['mae']:.0f} yds, TDs called {r['td_predicted']:.0f} vs {r['td_actual']} actual"
+                            f" | {line}")
                 if newly_out:
                     # The thing the boys actually want to know at inactives time
                     title = f"Week {week}: {len(newly_out)} newly ruled OUT"
                     line  = "OUT: " + ", ".join(newly_out[:8]) + (" ..." if len(newly_out) > 8 else "")                             + f" | {line}"
+                elif done:
+                    title = f"Week {week} board is up -- Week {week-1} scored"
                 else:
                     title = f"Gridiron Guru updated -- Week {week}"
                 notify(title, f"{line} | {len(games)} games, {len(scored)} cards.",
