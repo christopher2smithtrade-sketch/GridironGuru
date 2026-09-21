@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-21T00:22:17",
+ "logged_at": "2026-09-21T17:29:12",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -388,6 +388,19 @@
    "estimated": false
   },
   {
+   "name": "Chris Moore",
+   "position": "WR",
+   "team": "BAL",
+   "opp": "NO",
+   "grade": "C",
+   "composite": 3.98,
+   "late": true,
+   "proj_yards": 22,
+   "td_pct": 8,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Elijah Sarratt",
    "position": "WR",
    "team": "BAL",
@@ -398,18 +411,6 @@
    "td_pct": 28,
    "stat": "Rec Yds",
    "estimated": true
-  },
-  {
-   "name": "LaJohntay Wester",
-   "position": "WR",
-   "team": "BAL",
-   "opp": "NO",
-   "grade": "D",
-   "composite": 3.48,
-   "proj_yards": 10,
-   "td_pct": 12,
-   "stat": "Rec Yds",
-   "estimated": false
   },
   {
    "name": "Josh Allen",
@@ -682,6 +683,15 @@
    "opp": "MIN",
    "grade": "D",
    "composite": 2.82
+  },
+  {
+   "name": "Case Keenum",
+   "position": "QB",
+   "team": "CHI",
+   "opp": "MIN",
+   "grade": "OUT",
+   "composite": 0,
+   "late": true
   },
   {
    "name": "D'Andre Swift",
@@ -1942,18 +1952,6 @@
    "estimated": true
   },
   {
-   "name": "Brian Thomas Jr.",
-   "position": "WR",
-   "team": "JAX",
-   "opp": "DEN",
-   "grade": "B",
-   "composite": 5.14,
-   "proj_yards": 48,
-   "td_pct": 20,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Parker Washington",
    "position": "WR",
    "team": "JAX",
@@ -1962,6 +1960,18 @@
    "composite": 5.08,
    "proj_yards": 50,
    "td_pct": 24,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Brian Thomas Jr.",
+   "position": "WR",
+   "team": "JAX",
+   "opp": "DEN",
+   "grade": "B",
+   "composite": 5.14,
+   "proj_yards": 48,
+   "td_pct": 20,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3104,6 +3114,18 @@
    "estimated": false
   },
   {
+   "name": "Najee Harris",
+   "position": "RB",
+   "team": "NYG",
+   "opp": "LAR",
+   "grade": "C",
+   "composite": 3.71,
+   "proj_yards": 34,
+   "td_pct": 5,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
    "name": "Devin Singletary",
    "position": "RB",
    "team": "NYG",
@@ -3112,18 +3134,6 @@
    "composite": 4.32,
    "proj_yards": 28,
    "td_pct": 24,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
-   "name": "Tyrone Tracy Jr.",
-   "position": "RB",
-   "team": "NYG",
-   "opp": "LAR",
-   "grade": "B",
-   "composite": 5.09,
-   "proj_yards": 46,
-   "td_pct": 26,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3500,16 +3510,17 @@
    "estimated": false
   },
   {
-   "name": "Eli Heidenreich",
+   "name": "Travis Homer",
    "position": "RB",
    "team": "PIT",
    "opp": "NE",
-   "grade": "C",
-   "composite": 3.85,
-   "proj_yards": 11,
-   "td_pct": 34,
+   "grade": "D",
+   "composite": 3.06,
+   "late": true,
+   "proj_yards": 13,
+   "td_pct": 5,
    "stat": "Rush Yds",
-   "estimated": true
+   "estimated": false
   },
   {
    "name": "Darnell Washington",
@@ -4154,6 +4165,15 @@
    "composite": 5.94
   },
   {
+   "name": "Athan Kaliakmanis",
+   "position": "QB",
+   "team": "WSH",
+   "opp": "DAL",
+   "grade": "OUT",
+   "composite": 0,
+   "late": true
+  },
+  {
    "name": "Jacory Croskey-Merritt",
    "position": "RB",
    "team": "WSH",
@@ -4268,6 +4288,42 @@
    "td_pct": 9,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "LAR Defense",
+   "position": "DEF",
+   "team": "LAR",
+   "opp": "NYG",
+   "grade": "A",
+   "composite": 6.9,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYG Defense",
+   "position": "DEF",
+   "team": "NYG",
+   "opp": "LAR",
+   "grade": "D",
+   "composite": 2.1,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "BUF Defense",
+   "position": "DEF",
+   "team": "BUF",
+   "opp": "DET",
+   "grade": "B",
+   "composite": 4.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "DET Defense",
+   "position": "DEF",
+   "team": "DET",
+   "opp": "BUF",
+   "grade": "D",
+   "composite": 3.0,
+   "proj_pts_allowed": 22.0
   },
   {
    "name": "ATL Defense",
@@ -4520,45 +4576,31 @@
    "grade": "B",
    "composite": 5.0,
    "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "BUF Defense",
-   "position": "DEF",
-   "team": "BUF",
-   "opp": "DET",
-   "grade": "B",
-   "composite": 4.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "DET Defense",
-   "position": "DEF",
-   "team": "DET",
-   "opp": "BUF",
-   "grade": "D",
-   "composite": 3.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "LAR Defense",
-   "position": "DEF",
-   "team": "LAR",
-   "opp": "NYG",
-   "grade": "A",
-   "composite": 6.9,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NYG Defense",
-   "position": "DEF",
-   "team": "NYG",
-   "opp": "LAR",
-   "grade": "D",
-   "composite": 2.1,
-   "proj_pts_allowed": 22.0
   }
  ],
  "leans": [
+  {
+   "game_id": "401872947",
+   "home": "LAR",
+   "away": "NYG",
+   "favorite": "LAR",
+   "strength": "strong lean",
+   "margin": 2.31,
+   "model_margin": 2.53,
+   "vegas_margin": 2.17,
+   "spread": -6.5
+  },
+  {
+   "game_id": "401872932",
+   "home": "BUF",
+   "away": "DET",
+   "favorite": "BUF",
+   "strength": "strong lean",
+   "margin": 1.54,
+   "model_margin": 1.09,
+   "vegas_margin": 1.83,
+   "spread": -5.5
+  },
   {
    "game_id": "401872933",
    "home": "ATL",
@@ -4712,28 +4754,6 @@
    "model_margin": 0.99,
    "vegas_margin": 2.0,
    "spread": -6.0
-  },
-  {
-   "game_id": "401872932",
-   "home": "BUF",
-   "away": "DET",
-   "favorite": "BUF",
-   "strength": "strong lean",
-   "margin": 1.54,
-   "model_margin": 1.09,
-   "vegas_margin": 1.83,
-   "spread": -5.5
-  },
-  {
-   "game_id": "401872947",
-   "home": "LAR",
-   "away": "NYG",
-   "favorite": "LAR",
-   "strength": "strong lean",
-   "margin": 2.29,
-   "model_margin": 2.46,
-   "vegas_margin": 2.17,
-   "spread": -6.5
   }
  ]
 }
