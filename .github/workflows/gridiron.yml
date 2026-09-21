@@ -3,33 +3,54 @@ name: Gridiron Guru
 # Times are UTC. NFL season runs in Eastern time (EDT = UTC-4 until Nov 1 2026,
 # then EST = UTC-5 -- bump every hour below by +1 when DST ends).
 #
-# GitHub's free cron runs 30-60 min late, so each slot is aimed early and has a
-# backup trigger, same pattern as H-Bomb. Slots are chosen around when the data
-# actually changes:
-#   Wed 20:30 UTC = 4:30 PM ET   Thu-night final injury report is out
-#   Thu 22:30 UTC = 6:30 PM ET   TNF inactives (kick 8:15)
-#   Fri 22:30 UTC = 6:30 PM ET   Sunday final injury designations
-#   Sun 15:00 UTC = 11:00 AM ET  early-game inactives (kick 1:00)
-#   Sun 19:00 UTC = 3:00 PM ET   late-game inactives (kick 4:25)
-#   Sun 22:30 UTC = 6:30 PM ET   SNF inactives (kick 8:20)
-#   Mon 22:30 UTC = 6:30 PM ET   MNF inactives
-#   Tue 14:00 UTC = 10:00 AM ET  score the finished week, roll to next week
+# GitHub's free cron ran 1h50m-2h50m LATE on every scheduled slot in Week 2
+# (Sun 11:00 fired at 1:49 PM, after the 1:00 kickoffs). No single aim point
+# survives that, so each window gets several crons spaced 30 min apart, aimed
+# ~2-3 h ahead. Whatever lands, lands. The script handles the pile-up:
+#   - a scheduled run exits in seconds if the board is <20 min old
+#   - a quiet refresh (nothing newly OUT, board <2 h old) sends no phone push
+#   - a "fresh after X?" check is booked once per window, not once per cron
+# Minutes are :17 / :47 -- GitHub's queue jams at :00 and :30 (H-Bomb lesson).
+#
+#   Sun 11:30 inactives (1:00 kick)  crons 9:17 / 9:47 / 10:17 / 10:47 ET
+#   Sun  2:55 inactives (4:25 kick)  crons 12:47 / 1:17 / 1:47 ET
+#   Sun  6:50 inactives (8:20 kick)  crons 4:47 / 5:17 / 5:47 ET
+#   Thu + Mon 6:45 inactives          crons 4:47 / 5:17 / 5:47 ET
+#   Fri final designations            crons 5:17 / 6:17 ET
+#   Wed TNF final report              cron  3:17 PM ET
+#   Tue score the finished week       cron  7:17 AM ET
 #
 # Or tap "Run workflow" in the GitHub app any time -- nothing here is metered.
 on:
   schedule:
-    - cron: '30 20 * * 3'   # Wed 4:30 PM ET
-    - cron: '55 20 * * 3'   #     backup
-    - cron: '30 22 * * 4'   # Thu 6:30 PM ET
-    - cron: '55 22 * * 4'   #     backup
-    - cron: '30 22 * * 5'   # Fri 6:30 PM ET
-    - cron: '55 22 * * 5'   #     backup
-    - cron: '0 15 * * 0'    # Sun 11:00 AM ET
-    - cron: '25 15 * * 0'   #     backup
-    - cron: '0 19 * * 0'    # Sun 3:00 PM ET
-    - cron: '30 22 * * 0'   # Sun 6:30 PM ET
-    - cron: '30 22 * * 1'   # Mon 6:30 PM ET
-    - cron: '0 14 * * 2'    # Tue 10:00 AM ET
+    # Sunday early slate (UTC = ET + 4)
+    - cron: '17 13 * * 0'
+    - cron: '47 13 * * 0'
+    - cron: '17 14 * * 0'
+    - cron: '47 14 * * 0'
+    # Sunday late slate
+    - cron: '47 16 * * 0'
+    - cron: '17 17 * * 0'
+    - cron: '47 17 * * 0'
+    # Sunday night
+    - cron: '47 20 * * 0'
+    - cron: '17 21 * * 0'
+    - cron: '47 21 * * 0'
+    # Thursday night
+    - cron: '47 20 * * 4'
+    - cron: '17 21 * * 4'
+    - cron: '47 21 * * 4'
+    # Monday night
+    - cron: '47 20 * * 1'
+    - cron: '17 21 * * 1'
+    - cron: '47 21 * * 1'
+    # Friday designations
+    - cron: '17 21 * * 5'
+    - cron: '17 22 * * 5'
+    # Wednesday TNF report
+    - cron: '17 19 * * 3'
+    # Tuesday scoring
+    - cron: '17 11 * * 2'
   workflow_dispatch:
 
 permissions:
@@ -63,8 +84,8 @@ jobs:
         run: python GridironGuru.py
 
       # The script pushes index.html and the prediction log through the API.
-      # The season-stat cache is committed here so the next run is warm
-      # (~20 s) instead of cold (~8 min of ESPN box-score calls).
+      # The season-stat cache (and the run-check state) is committed here so
+      # the next run is warm.
       - name: Commit refreshed cache
         run: |
           git config user.name  "gridiron-bot"
