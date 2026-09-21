@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-21T17:29:12",
+ "logged_at": "2026-09-21T23:40:56",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -158,14 +158,6 @@
    "td_pct": 45,
    "stat": "Total Yds",
    "estimated": false
-  },
-  {
-   "name": "Jack Strand",
-   "position": "QB",
-   "team": "ATL",
-   "opp": "CAR",
-   "grade": "B",
-   "composite": 4.7
   },
   {
    "name": "Bijan Robinson",
@@ -588,6 +580,19 @@
    "grade": "B",
    "composite": 4.55,
    "proj_yards": 23,
+   "td_pct": 5,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "Trevor Etienne",
+   "position": "RB",
+   "team": "CAR",
+   "opp": "ATL",
+   "grade": "B",
+   "composite": 4.53,
+   "late": true,
+   "proj_yards": 14,
    "td_pct": 5,
    "stat": "Rush Yds",
    "estimated": false
@@ -1110,19 +1115,6 @@
    "composite": 5.74,
    "proj_yards": 17,
    "td_pct": 6,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
-   "name": "Malik Davis",
-   "position": "RB",
-   "team": "DAL",
-   "opp": "WSH",
-   "grade": "B+",
-   "composite": 6.19,
-   "late": true,
-   "proj_yards": 35,
-   "td_pct": 17,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2212,12 +2204,8 @@
    "position": "WR",
    "team": "LAR",
    "opp": "NYG",
-   "grade": "A",
-   "composite": 7.49,
-   "proj_yards": 105,
-   "td_pct": 50,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Davante Adams",
@@ -2236,12 +2224,8 @@
    "position": "WR",
    "team": "LAR",
    "opp": "NYG",
-   "grade": "C",
-   "composite": 4.18,
-   "proj_yards": 20,
-   "td_pct": 3,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Konata Mumpfield",
@@ -2264,6 +2248,18 @@
    "composite": 5.31,
    "proj_yards": 28,
    "td_pct": 3,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Tutu Atwell",
+   "position": "WR",
+   "team": "LAR",
+   "opp": "NYG",
+   "grade": "B",
+   "composite": 5.29,
+   "proj_yards": 31,
+   "td_pct": 10,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2344,6 +2340,19 @@
    "composite": 4.92,
    "proj_yards": 25,
    "td_pct": 25,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Oronde Gadsden",
+   "position": "TE",
+   "team": "LAC",
+   "opp": "LV",
+   "grade": "B",
+   "composite": 5.44,
+   "late": true,
+   "proj_yards": 40,
+   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2684,14 +2693,6 @@
    "estimated": false
   },
   {
-   "name": "J.J. McCarthy",
-   "position": "QB",
-   "team": "MIN",
-   "opp": "CHI",
-   "grade": "B",
-   "composite": 4.9
-  },
-  {
    "name": "Aaron Jones Sr.",
    "position": "RB",
    "team": "MIN",
@@ -2806,15 +2807,6 @@
    "td_pct": 10,
    "stat": "Rec Yds",
    "estimated": false
-  },
-  {
-   "name": "Dillon Bell",
-   "position": "WR",
-   "team": "MIN",
-   "opp": "CHI",
-   "grade": "B+",
-   "composite": 5.53,
-   "late": true
   },
   {
    "name": "Drake Maye",
@@ -2999,15 +2991,6 @@
    "td_pct": 11,
    "stat": "Rush Yds",
    "estimated": false
-  },
-  {
-   "name": "CJ Donaldson",
-   "position": "RB",
-   "team": "NO",
-   "opp": "BAL",
-   "grade": "C",
-   "composite": 4.07,
-   "late": true
   },
   {
    "name": "Juwan Johnson",
@@ -3416,6 +3399,15 @@
    "td_pct": 3,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "E.J. Jenkins",
+   "position": "TE",
+   "team": "PHI",
+   "opp": "TEN",
+   "grade": "B+",
+   "composite": 5.55,
+   "late": true
   },
   {
    "name": "DeVonta Smith",
@@ -3874,19 +3866,6 @@
    "grade": "OUT",
    "composite": 0,
    "late": true
-  },
-  {
-   "name": "KhaDarel Hodge",
-   "position": "WR",
-   "team": "SF",
-   "opp": "MIA",
-   "grade": "C",
-   "composite": 4.24,
-   "late": true,
-   "proj_yards": 15,
-   "td_pct": 3,
-   "stat": "Rec Yds",
-   "estimated": false
   },
   {
    "name": "Baker Mayfield",
@@ -4585,8 +4564,8 @@
    "away": "NYG",
    "favorite": "LAR",
    "strength": "strong lean",
-   "margin": 2.31,
-   "model_margin": 2.53,
+   "margin": 2.23,
+   "model_margin": 2.33,
    "vegas_margin": 2.17,
    "spread": -6.5
   },
