@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "logged_at": "2026-09-22T00:10:23",
+ "logged_at": "2026-09-22T15:35:05",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1015,16 +1015,16 @@
    "estimated": false
   },
   {
-   "name": "Jerry Jeudy",
+   "name": "Denzel Boston",
    "position": "WR",
    "team": "CLE",
    "opp": "TB",
-   "grade": "B+",
-   "composite": 5.92,
-   "proj_yards": 37,
-   "td_pct": 14,
+   "grade": "B",
+   "composite": 5.25,
+   "proj_yards": 26,
+   "td_pct": 19,
    "stat": "Rec Yds",
-   "estimated": false
+   "estimated": true
   },
   {
    "name": "KC Concepcion",
@@ -1039,16 +1039,16 @@
    "estimated": true
   },
   {
-   "name": "Denzel Boston",
+   "name": "Jerry Jeudy",
    "position": "WR",
    "team": "CLE",
    "opp": "TB",
-   "grade": "B",
-   "composite": 5.25,
-   "proj_yards": 26,
-   "td_pct": 19,
+   "grade": "B+",
+   "composite": 5.92,
+   "proj_yards": 37,
+   "td_pct": 14,
    "stat": "Rec Yds",
-   "estimated": true
+   "estimated": false
   },
   {
    "name": "Isaiah Bond",
@@ -1844,6 +1844,19 @@
    "estimated": false
   },
   {
+   "name": "Darius Slayton",
+   "position": "WR",
+   "team": "IND",
+   "opp": "KC",
+   "grade": "B",
+   "composite": 5.08,
+   "late": true,
+   "proj_yards": 40,
+   "td_pct": 11,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Ashton Dulin",
    "position": "WR",
    "team": "IND",
@@ -1876,12 +1889,13 @@
    "estimated": false
   },
   {
-   "name": "Nick Mullens",
+   "name": "Quinn Ewers",
    "position": "QB",
    "team": "JAX",
    "opp": "DEN",
-   "grade": "D",
-   "composite": 2.78
+   "grade": "C",
+   "composite": 3.6,
+   "late": true
   },
   {
    "name": "Bhayshul Tuten",
@@ -2320,6 +2334,19 @@
    "estimated": false
   },
   {
+   "name": "Oronde Gadsden",
+   "position": "TE",
+   "team": "LAC",
+   "opp": "LV",
+   "grade": "B",
+   "composite": 5.44,
+   "late": true,
+   "proj_yards": 40,
+   "td_pct": 19,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Charlie Kolar",
    "position": "TE",
    "team": "LAC",
@@ -2340,19 +2367,6 @@
    "composite": 4.92,
    "proj_yards": 25,
    "td_pct": 25,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "Oronde Gadsden",
-   "position": "TE",
-   "team": "LAC",
-   "opp": "LV",
-   "grade": "B",
-   "composite": 5.44,
-   "late": true,
-   "proj_yards": 40,
-   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3502,16 +3516,28 @@
    "estimated": false
   },
   {
-   "name": "Travis Homer",
+   "name": "Eli Heidenreich",
    "position": "RB",
    "team": "PIT",
    "opp": "NE",
-   "grade": "D",
-   "composite": 3.06,
+   "grade": "C",
+   "composite": 4.14,
    "late": true,
-   "proj_yards": 13,
-   "td_pct": 5,
+   "proj_yards": 11,
+   "td_pct": 42,
    "stat": "Rush Yds",
+   "estimated": true
+  },
+  {
+   "name": "Pat Freiermuth",
+   "position": "TE",
+   "team": "PIT",
+   "opp": "NE",
+   "grade": "B",
+   "composite": 5.04,
+   "proj_yards": 26,
+   "td_pct": 15,
+   "stat": "Rec Yds",
    "estimated": false
   },
   {
@@ -3523,18 +3549,6 @@
    "composite": 4.87,
    "proj_yards": 22,
    "td_pct": 7,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "Pat Freiermuth",
-   "position": "TE",
-   "team": "PIT",
-   "opp": "NE",
-   "grade": "B",
-   "composite": 5.04,
-   "proj_yards": 26,
-   "td_pct": 15,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3635,18 +3649,6 @@
    "estimated": true
   },
   {
-   "name": "George Holani",
-   "position": "RB",
-   "team": "SEA",
-   "opp": "ARI",
-   "grade": "B",
-   "composite": 4.53,
-   "proj_yards": 18,
-   "td_pct": 10,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Emanuel Wilson",
    "position": "RB",
    "team": "SEA",
@@ -3655,6 +3657,18 @@
    "composite": 5.5,
    "proj_yards": 33,
    "td_pct": 21,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "George Holani",
+   "position": "RB",
+   "team": "SEA",
+   "opp": "ARI",
+   "grade": "B",
+   "composite": 4.53,
+   "proj_yards": 18,
+   "td_pct": 10,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -4112,14 +4126,15 @@
    "estimated": false
   },
   {
-   "name": "Chimere Dike",
+   "name": "Elic Ayomanor",
    "position": "WR",
    "team": "TEN",
    "opp": "PHI",
-   "grade": "C",
-   "composite": 4.32,
-   "proj_yards": 27,
-   "td_pct": 16,
+   "grade": "B",
+   "composite": 5.08,
+   "late": true,
+   "proj_yards": 35,
+   "td_pct": 23,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -4197,24 +4212,24 @@
    "composite": 0
   },
   {
-   "name": "John Bates",
-   "position": "TE",
-   "team": "WSH",
-   "opp": "DAL",
-   "grade": "B",
-   "composite": 4.99,
-   "proj_yards": 11,
-   "td_pct": 7,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Ben Sinnott",
    "position": "TE",
    "team": "WSH",
    "opp": "DAL",
    "grade": "B",
    "composite": 4.83,
+   "proj_yards": 11,
+   "td_pct": 7,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "John Bates",
+   "position": "TE",
+   "team": "WSH",
+   "opp": "DAL",
+   "grade": "B",
+   "composite": 4.99,
    "proj_yards": 11,
    "td_pct": 7,
    "stat": "Rec Yds",
@@ -4267,24 +4282,6 @@
    "td_pct": 9,
    "stat": "Rec Yds",
    "estimated": false
-  },
-  {
-   "name": "LAR Defense",
-   "position": "DEF",
-   "team": "LAR",
-   "opp": "NYG",
-   "grade": "A",
-   "composite": 6.9,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NYG Defense",
-   "position": "DEF",
-   "team": "NYG",
-   "opp": "LAR",
-   "grade": "D",
-   "composite": 2.1,
-   "proj_pts_allowed": 22.0
   },
   {
    "name": "BUF Defense",
@@ -4555,20 +4552,27 @@
    "grade": "B",
    "composite": 5.0,
    "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "LAR Defense",
+   "position": "DEF",
+   "team": "LAR",
+   "opp": "NYG",
+   "grade": "A",
+   "composite": 6.9,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYG Defense",
+   "position": "DEF",
+   "team": "NYG",
+   "opp": "LAR",
+   "grade": "D",
+   "composite": 2.1,
+   "proj_pts_allowed": 22.0
   }
  ],
  "leans": [
-  {
-   "game_id": "401872947",
-   "home": "LAR",
-   "away": "NYG",
-   "favorite": "LAR",
-   "strength": "strong lean",
-   "margin": 2.23,
-   "model_margin": 2.33,
-   "vegas_margin": 2.17,
-   "spread": -6.5
-  },
   {
    "game_id": "401872932",
    "home": "BUF",
@@ -4733,6 +4737,17 @@
    "model_margin": 0.99,
    "vegas_margin": 2.0,
    "spread": -6.0
+  },
+  {
+   "game_id": "401872947",
+   "home": "LAR",
+   "away": "NYG",
+   "favorite": "LAR",
+   "strength": "strong lean",
+   "margin": 2.23,
+   "model_margin": 2.33,
+   "vegas_margin": 2.17,
+   "spread": -6.5
   }
  ]
 }
