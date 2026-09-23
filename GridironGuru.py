@@ -2085,6 +2085,13 @@ ROOKIE_BASELINE = {
 # a real rate of 23.9%.
 TD_BASE = {"QB": 1.62, "RB": 0.51, "WR": 0.27, "TE": 0.27}
 
+# Residual scale on expected TDs, fitted on real results. TD_BASE was measured
+# on players who were INVOLVED (10+ att / 5+ carries / 2+ targets); applied to a
+# full depth-chart pool it still runs hot even after the usage fix.
+# Fitted on Week 2 after the usage fix (325 players): 1.00 -> 1.30x over,
+# 0.70 -> 1.01x. Week 1 independently wanted ~0.70 too, so both weeks agree.
+TD_CALIBRATION = 0.70
+
 # Typical usage share at each position, used to scale a player up or down
 # from that positional average
 TD_USAGE_NORM = {"QB": 1.0, "RB": 0.40, "WR": 0.18, "TE": 0.18}
@@ -2166,8 +2173,18 @@ def project_player(p):
     # not run away with it. His own rate already includes rushing scores, which
     # is how a running quarterback keeps his edge without being double counted.
     norm   = TD_USAGE_NORM.get(pos, 0.18)
-    usage  = p.get("usage_share") or norm
-    umult  = 1.0 if pos == "QB" else max(0.25, min(2.0, usage / norm))
+    usage  = p.get("usage_share") or 0.0
+    if pos == "QB":
+        umult = 1.0
+    elif usage > 0:
+        umult = max(0.25, min(2.0, usage / norm))
+    else:
+        # No usage history. This used to default to the league norm, handing a
+        # depth-chart WR4 a full starter's touchdown rate -- those players were
+        # over-called 3.4x (55 of them, 13.4 TDs expected, 4 scored). Fall back
+        # to what their depth rank implies instead, on the same scale as
+        # role_score (a depth-1 starter scores 6.0 there).
+        umult = max(0.15, ROLE_BY_DEPTH.get(pos, {}).get(p.get("depth_rank") or 9, 1.0) / 6.0)
     pos_rate = TD_BASE.get(pos, 0.3) * umult
 
     gp = p.get("form_games") or 0
@@ -2175,7 +2192,7 @@ def project_player(p):
         + (p.get("rec_tds", 0) or 0)
     rate = (0.6 * (own_tds / gp) + 0.4 * pos_rate) if gp else pos_rate
 
-    exp_td = max(0.0, rate * env_mult)
+    exp_td = max(0.0, rate * env_mult) * TD_CALIBRATION
     td_pct = round((1 - pow(2.71828, -exp_td)) * 100)
 
     return {
