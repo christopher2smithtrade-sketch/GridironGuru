@@ -2411,9 +2411,10 @@ def sync_predictions_down(season, week):
 
 
 def sync_predictions_up(path):
-    """Push the prediction log back to the repo so every machine sees it."""
+    """Push the prediction log back to the repo so every machine sees it.
+    Returns True if the repo now holds this file."""
     if not GITHUB_TOKEN or not os.path.exists(path):
-        return
+        return False
     headers = {"Authorization": f"token {GITHUB_TOKEN}",
                "Accept": "application/vnd.github.v3+json"}
     with open(path, "rb") as f:
@@ -2422,6 +2423,7 @@ def sync_predictions_up(path):
     ok = deploy_file(content, rel, headers, f"Predictions {os.path.basename(path)}")
     if not ok:
         print(f"  [!] Could not push {rel} to repo")
+    return ok
 
 
 def _logged_out_players(season, week):
@@ -3971,7 +3973,7 @@ def run():
     prev_out = _logged_out_players(season, week)
     board_age = live_board_age_minutes()
     pred_path = log_predictions(season, week, scored, games)
-    sync_predictions_up(pred_path)
+    pred_synced = sync_predictions_up(pred_path)
     now_out  = {p["name"] for p in scored if p.get("grade") == "OUT"}
     newly_out = sorted(now_out - prev_out) if prev_out is not None else []
     # Include the CURRENT week too -- a week runs Thursday to Monday, so by
