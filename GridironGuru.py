@@ -4055,6 +4055,21 @@ def run():
 
     print(f"\n[DONE] Week {week} cheat sheet ready.\n")
 
+    if is_scheduled_run():
+        book_run_check(datetime.now(EASTERN))
+
+    # In CI, drop the local copy of this week's prediction log once the repo
+    # has it. The script pushes it through the API mid-run, so the workflow's
+    # `git pull --rebase` afterwards tries to check that file out over an
+    # untracked local copy and aborts -- it killed the first run of Week 3 and
+    # would kill the first run of every new week.
+    if os.environ.get("GITHUB_ACTIONS") == "true" and pred_synced:
+        try:
+            os.remove(pred_path)
+            print(f"  Removed local {pred_path} (now in repo; keeps git checkout clean)")
+        except Exception as e:
+            print(f"  [!] Could not remove {pred_path}: {e}")
+
     if AUTO_OPEN_BROWSER:
         webbrowser.open(f"file:///{os.path.abspath(fpath)}")
 
