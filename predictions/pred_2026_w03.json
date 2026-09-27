@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 3,
- "logged_at": "2026-09-27T21:08:42",
+ "logged_at": "2026-09-27T23:28:24",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1288,12 +1288,8 @@
    "position": "WR",
    "team": "DEN",
    "opp": "LAR",
-   "grade": "C",
-   "composite": 4.26,
-   "proj_yards": 27,
-   "td_pct": 8,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Pat Bryant",
@@ -1304,6 +1300,18 @@
    "composite": 4.77,
    "proj_yards": 30,
    "td_pct": 6,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Troy Franklin",
+   "position": "WR",
+   "team": "DEN",
+   "opp": "LAR",
+   "grade": "B+",
+   "composite": 5.52,
+   "proj_yards": 43,
+   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2161,7 +2169,7 @@
    "team": "LAR",
    "opp": "DEN",
    "grade": "B",
-   "composite": 5.07,
+   "composite": 5.47,
    "proj_yards": 27,
    "td_pct": 24,
    "stat": "Rec Yds",
@@ -2184,12 +2192,8 @@
    "position": "WR",
    "team": "LAR",
    "opp": "DEN",
-   "grade": "B",
-   "composite": 5.2,
-   "proj_yards": 93,
-   "td_pct": 34,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Davante Adams",
@@ -2512,6 +2516,19 @@
    "estimated": true
   },
   {
+   "name": "Dareke Young",
+   "position": "WR",
+   "team": "LV",
+   "opp": "NO",
+   "grade": "D",
+   "composite": 3.03,
+   "late": true,
+   "proj_yards": 19,
+   "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Malik Willis",
    "position": "QB",
    "team": "MIA",
@@ -2764,6 +2781,19 @@
    "composite": 4.22,
    "proj_yards": 11,
    "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Myles Price",
+   "position": "WR",
+   "team": "MIN",
+   "opp": "TB",
+   "grade": "C",
+   "composite": 4.44,
+   "late": true,
+   "proj_yards": 11,
+   "td_pct": 1,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -4248,24 +4278,6 @@
    "estimated": false
   },
   {
-   "name": "SF Defense",
-   "position": "DEF",
-   "team": "SF",
-   "opp": "ARI",
-   "grade": "B+",
-   "composite": 6.3,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "ARI Defense",
-   "position": "DEF",
-   "team": "ARI",
-   "opp": "SF",
-   "grade": "D",
-   "composite": 2.1,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "TB Defense",
    "position": "DEF",
    "team": "TB",
@@ -4482,6 +4494,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "SF Defense",
+   "position": "DEF",
+   "team": "SF",
+   "opp": "ARI",
+   "grade": "B+",
+   "composite": 6.3,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ARI Defense",
+   "position": "DEF",
+   "team": "ARI",
+   "opp": "SF",
+   "grade": "D",
+   "composite": 2.1,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "DEN Defense",
    "position": "DEF",
    "team": "DEN",
@@ -4537,17 +4567,6 @@
   }
  ],
  "leans": [
-  {
-   "game_id": "401872958",
-   "home": "SF",
-   "away": "ARI",
-   "favorite": "SF",
-   "strength": "strong lean",
-   "margin": 2.09,
-   "model_margin": 1.48,
-   "vegas_margin": 2.5,
-   "spread": -7.5
-  },
   {
    "game_id": "401872959",
    "home": "TB",
@@ -4681,13 +4700,24 @@
    "spread": -3.0
   },
   {
+   "game_id": "401872958",
+   "home": "SF",
+   "away": "ARI",
+   "favorite": "SF",
+   "strength": "strong lean",
+   "margin": 2.09,
+   "model_margin": 1.48,
+   "vegas_margin": 2.5,
+   "spread": -7.5
+  },
+  {
    "game_id": "401872962",
    "home": "DEN",
    "away": "LAR",
    "favorite": "LAR",
    "strength": "slight lean",
-   "margin": -0.32,
-   "model_margin": -0.04,
+   "margin": -0.29,
+   "model_margin": 0.02,
    "vegas_margin": -0.5,
    "spread": 1.5
   },
