@@ -4013,6 +4013,19 @@ def run():
                     line = (f"Week {r['week']} scored: {r['matched']} calls, typical miss "
                             f"{r['mae']:.0f} yds, TDs called {r['td_predicted']:.0f} vs {r['td_actual']} actual"
                             f" | {line}")
+                # Say WHICH slate this refresh covers. A bare "updated" push
+                # gives no way to tell whether the board reflects the 1:00
+                # inactives or the 4:25 ones -- the user reasonably assumed a
+                # run had been missed when it had not.
+                pending = [g for g in games if not g.get("started") and not g.get("completed")]
+                if pending:
+                    nxt = min(pending, key=lambda g: g["kickoff"])
+                    ko  = to_eastern(nxt["kickoff"])
+                    when = ko.strftime("%a %I:%M %p").replace(" 0", " ") if ko else "next"
+                    line = f"Current for {when} kickoff ({len(pending)} games left) | {line}"
+                else:
+                    line = f"All Week {week} games under way | {line}"
+
                 if newly_out:
                     # The thing the boys actually want to know at inactives time
                     title = f"Week {week}: {len(newly_out)} newly ruled OUT"
