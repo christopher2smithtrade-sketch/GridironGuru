@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 3,
- "logged_at": "2026-09-28T14:39:37",
+ "logged_at": "2026-09-28T21:57:01",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -665,9 +665,9 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "B",
-   "composite": 4.8,
-   "proj_yards": 103,
-   "td_pct": 32,
+   "composite": 4.83,
+   "proj_yards": 104,
+   "td_pct": 33,
    "stat": "Total Yds",
    "estimated": false
   },
@@ -677,7 +677,7 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "C",
-   "composite": 3.53
+   "composite": 3.56
   },
   {
    "name": "D'Andre Swift",
@@ -685,9 +685,9 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "B+",
-   "composite": 6.26,
+   "composite": 6.29,
    "proj_yards": 61,
-   "td_pct": 30,
+   "td_pct": 31,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -697,7 +697,7 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "B+",
-   "composite": 5.59,
+   "composite": 5.62,
    "proj_yards": 44,
    "td_pct": 19,
    "stat": "Rush Yds",
@@ -709,8 +709,8 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "C",
-   "composite": 3.96,
-   "proj_yards": 18,
+   "composite": 3.99,
+   "proj_yards": 17,
    "td_pct": 3,
    "stat": "Rush Yds",
    "estimated": false
@@ -721,9 +721,9 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "B",
-   "composite": 4.72,
+   "composite": 4.75,
    "proj_yards": 37,
-   "td_pct": 17,
+   "td_pct": 18,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -733,9 +733,9 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "C",
-   "composite": 3.98,
-   "proj_yards": 20,
-   "td_pct": 7,
+   "composite": 4.02,
+   "proj_yards": 21,
+   "td_pct": 8,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -745,9 +745,9 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "B",
-   "composite": 5.36,
+   "composite": 5.39,
    "proj_yards": 51,
-   "td_pct": 21,
+   "td_pct": 22,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -757,9 +757,9 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "B",
-   "composite": 4.6,
+   "composite": 4.63,
    "proj_yards": 42,
-   "td_pct": 8,
+   "td_pct": 9,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -769,8 +769,8 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "C",
-   "composite": 4.01,
-   "proj_yards": 24,
+   "composite": 4.04,
+   "proj_yards": 25,
    "td_pct": 4,
    "stat": "Rec Yds",
    "estimated": false
@@ -781,7 +781,7 @@
    "team": "CHI",
    "opp": "PHI",
    "grade": "C",
-   "composite": 4.31,
+   "composite": 4.34,
    "proj_yards": 15,
    "td_pct": 4,
    "stat": "Rec Yds",
@@ -914,6 +914,19 @@
    "td_pct": 5,
    "stat": "Rec Yds",
    "estimated": true
+  },
+  {
+   "name": "Ke'Shawn Williams",
+   "position": "WR",
+   "team": "CIN",
+   "opp": "PIT",
+   "grade": "B",
+   "composite": 4.79,
+   "late": true,
+   "proj_yards": 15,
+   "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
   },
   {
    "name": "Deshaun Watson",
@@ -1076,14 +1089,6 @@
    "estimated": false
   },
   {
-   "name": "Emari Demercado",
-   "position": "RB",
-   "team": "DAL",
-   "opp": "BAL",
-   "grade": "OUT",
-   "composite": 0
-  },
-  {
    "name": "Tyler Goodson",
    "position": "RB",
    "team": "DAL",
@@ -1096,16 +1101,12 @@
    "estimated": false
   },
   {
-   "name": "Malik Davis",
+   "name": "Emari Demercado",
    "position": "RB",
    "team": "DAL",
    "opp": "BAL",
-   "grade": "C",
-   "composite": 4.13,
-   "proj_yards": 31,
-   "td_pct": 13,
-   "stat": "Rush Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Jake Ferguson",
@@ -1836,22 +1837,6 @@
    "estimated": false
   },
   {
-   "name": "Ashton Dulin",
-   "position": "WR",
-   "team": "IND",
-   "opp": "HOU",
-   "grade": "OUT",
-   "composite": 0
-  },
-  {
-   "name": "Deion Burks",
-   "position": "WR",
-   "team": "IND",
-   "opp": "HOU",
-   "grade": "C",
-   "composite": 3.85
-  },
-  {
    "name": "Trevor Lawrence",
    "position": "QB",
    "team": "JAX",
@@ -1944,18 +1929,6 @@
    "estimated": false
   },
   {
-   "name": "Brian Thomas Jr.",
-   "position": "WR",
-   "team": "JAX",
-   "opp": "NE",
-   "grade": "B",
-   "composite": 5.15,
-   "proj_yards": 49,
-   "td_pct": 16,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Jakobi Meyers",
    "position": "WR",
    "team": "JAX",
@@ -1963,6 +1936,18 @@
    "grade": "B",
    "composite": 5.33,
    "proj_yards": 50,
+   "td_pct": 16,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Brian Thomas Jr.",
+   "position": "WR",
+   "team": "JAX",
+   "opp": "NE",
+   "grade": "B",
+   "composite": 5.15,
+   "proj_yards": 49,
    "td_pct": 16,
    "stat": "Rec Yds",
    "estimated": false
@@ -2549,18 +2534,6 @@
    "composite": 3.93
   },
   {
-   "name": "De'Von Achane",
-   "position": "RB",
-   "team": "MIA",
-   "opp": "KC",
-   "grade": "B+",
-   "composite": 5.81,
-   "proj_yards": 68,
-   "td_pct": 34,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Jaylen Wright",
    "position": "RB",
    "team": "MIA",
@@ -2577,6 +2550,18 @@
    "composite": 3.55,
    "proj_yards": 16,
    "td_pct": 12,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "De'Von Achane",
+   "position": "RB",
+   "team": "MIA",
+   "opp": "KC",
+   "grade": "B+",
+   "composite": 5.81,
+   "proj_yards": 68,
+   "td_pct": 34,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2986,6 +2971,19 @@
    "estimated": true
   },
   {
+   "name": "Kendre Miller",
+   "position": "RB",
+   "team": "NO",
+   "opp": "LV",
+   "grade": "C",
+   "composite": 4.42,
+   "late": true,
+   "proj_yards": 34,
+   "td_pct": 10,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
    "name": "Juwan Johnson",
    "position": "TE",
    "team": "NO",
@@ -3339,9 +3337,9 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "A",
-   "composite": 7.19,
-   "proj_yards": 221,
-   "td_pct": 73,
+   "composite": 7.22,
+   "proj_yards": 223,
+   "td_pct": 74,
    "stat": "Total Yds",
    "estimated": false
   },
@@ -3351,7 +3349,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B",
-   "composite": 4.59
+   "composite": 4.63
   },
   {
    "name": "Saquon Barkley",
@@ -3359,9 +3357,9 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "A",
-   "composite": 7.25,
+   "composite": 7.28,
    "proj_yards": 67,
-   "td_pct": 36,
+   "td_pct": 37,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3371,7 +3369,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B",
-   "composite": 5.16,
+   "composite": 5.19,
    "proj_yards": 26,
    "td_pct": 9,
    "stat": "Rush Yds",
@@ -3383,7 +3381,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B",
-   "composite": 4.65,
+   "composite": 4.69,
    "proj_yards": 12,
    "td_pct": 4,
    "stat": "Rush Yds",
@@ -3403,7 +3401,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "C",
-   "composite": 4.34,
+   "composite": 4.37,
    "proj_yards": 11,
    "td_pct": 2,
    "stat": "Rec Yds",
@@ -3415,7 +3413,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B",
-   "composite": 4.67
+   "composite": 4.7
   },
   {
    "name": "DeVonta Smith",
@@ -3423,9 +3421,9 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "A",
-   "composite": 7.07,
-   "proj_yards": 59,
-   "td_pct": 18,
+   "composite": 7.1,
+   "proj_yards": 60,
+   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3435,7 +3433,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B+",
-   "composite": 5.62,
+   "composite": 5.65,
    "proj_yards": 31,
    "td_pct": 10,
    "stat": "Rec Yds",
@@ -3447,7 +3445,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B+",
-   "composite": 5.91,
+   "composite": 5.94,
    "proj_yards": 29,
    "td_pct": 9,
    "stat": "Rec Yds",
@@ -3467,7 +3465,7 @@
    "team": "PHI",
    "opp": "CHI",
    "grade": "B",
-   "composite": 4.91,
+   "composite": 4.94,
    "proj_yards": 18,
    "td_pct": 2,
    "stat": "Rec Yds",
