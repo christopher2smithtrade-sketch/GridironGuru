@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 3,
- "logged_at": "2026-09-29T16:27:29",
+ "logged_at": "2026-09-29T16:57:19",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -637,18 +637,6 @@
    "composite": 2.83,
    "proj_yards": 17,
    "td_pct": 2,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "John Metchie III",
-   "position": "WR",
-   "team": "CAR",
-   "opp": "CLE",
-   "grade": "D",
-   "composite": 3.05,
-   "proj_yards": 22,
-   "td_pct": 9,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1302,18 +1290,6 @@
    "composite": 4.77,
    "proj_yards": 30,
    "td_pct": 6,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "Troy Franklin",
-   "position": "WR",
-   "team": "DEN",
-   "opp": "LAR",
-   "grade": "B+",
-   "composite": 5.52,
-   "proj_yards": 43,
-   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3520,15 +3496,6 @@
    "estimated": false
   },
   {
-   "name": "Eli Heidenreich",
-   "position": "RB",
-   "team": "PIT",
-   "opp": "CIN",
-   "grade": "B+",
-   "composite": 6.39,
-   "late": true
-  },
-  {
    "name": "Pat Freiermuth",
    "position": "TE",
    "team": "PIT",
@@ -4132,14 +4099,6 @@
    "td_pct": 50,
    "stat": "Total Yds",
    "estimated": false
-  },
-  {
-   "name": "Athan Kaliakmanis",
-   "position": "QB",
-   "team": "WSH",
-   "opp": "SEA",
-   "grade": "D",
-   "composite": 3.49
   },
   {
    "name": "Jacory Croskey-Merritt",
