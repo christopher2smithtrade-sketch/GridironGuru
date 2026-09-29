@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 3,
- "logged_at": "2026-09-28T21:57:01",
+ "logged_at": "2026-09-29T00:36:17",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -2173,6 +2173,19 @@
    "estimated": false
   },
   {
+   "name": "Davis Allen",
+   "position": "TE",
+   "team": "LAR",
+   "opp": "DEN",
+   "grade": "B",
+   "composite": 4.94,
+   "late": true,
+   "proj_yards": 15,
+   "td_pct": 10,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Puka Nacua",
    "position": "WR",
    "team": "LAR",
@@ -3990,6 +4003,19 @@
    "td_pct": 4,
    "stat": "Rec Yds",
    "estimated": true
+  },
+  {
+   "name": "Tez Johnson",
+   "position": "WR",
+   "team": "TB",
+   "opp": "MIN",
+   "grade": "C",
+   "composite": 3.59,
+   "late": true,
+   "proj_yards": 25,
+   "td_pct": 16,
+   "stat": "Rec Yds",
+   "estimated": false
   },
   {
    "name": "Cam Ward",
