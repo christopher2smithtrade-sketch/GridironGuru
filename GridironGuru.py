@@ -809,7 +809,15 @@ def get_nflverse_stats(season=STAT_SEASON, refresh=False):
     if not USE_NFLVERSE:
         return empty
 
-    cache_key = f"nflverse_{season}"
+    # The current season changes every week, so its cache is keyed by week.
+    if season >= CURRENT_SEASON:
+        try:
+            _, _wk = get_current_week()
+        except Exception:
+            _wk = 0
+        cache_key = f"nflverse_{season}_w{_wk:02d}"
+    else:
+        cache_key = f"nflverse_{season}"
     if not refresh:
         cached = cache_load(cache_key)
         if cached:
@@ -920,6 +928,28 @@ def get_nflverse_stats(season=STAT_SEASON, refresh=False):
                 out["def"].setdefault(t, {})[key] = round((r["yds"] or 0) / g, 1)
                 hits += 1
             print(f"  Real per-position receiving yards allowed: {hits} team/position rows")
+
+            # Total pass/rush yards allowed and offensive pace, straight from
+            # play-by-play. get_all_team_stats() gets these from ESPN boxscores
+            # for the completed season, but the current season needs them here
+            # too or the blend silently leaves pass_ypg/rush_ypg on last year.
+            pyd = (pbp.filter(pl.col("play_type") == "pass")
+                      .group_by("defteam").agg(pl.col("passing_yards").sum().alias("y")))
+            ryd = (pbp.filter(pl.col("play_type") == "run")
+                      .group_by("defteam").agg(pl.col("rushing_yards").sum().alias("y")))
+            plays = pbp.group_by("posteam").agg(pl.len().alias("n"))
+            pts = (pbp.group_by("posteam")
+                      .agg(pl.col("posteam_score").max().alias("s")))
+            for df, key in ((pyd, "pass_ypg"), (ryd, "rush_ypg")):
+                for row in df.iter_rows(named=True):
+                    t = NFLVERSE_TO_ESPN.get(row["defteam"], row["defteam"])
+                    g = games_by_team.get(row["defteam"], 1)
+                    out["def"].setdefault(t, {})[key] = round((row["y"] or 0) / g, 1)
+            for row in plays.iter_rows(named=True):
+                t = NFLVERSE_TO_ESPN.get(row["posteam"], row["posteam"])
+                g = games_by_team.get(row["posteam"], 1)
+                out["off"].setdefault(t, {})["plays_pg"] = round(row["n"] / g, 1)
+            print(f"  Pass/rush yards allowed + pace computed for {len(pyd)} teams")
         except Exception as e:
             print(f"  [!] Per-position receiving yards: {e} -- keeping estimates")
     except Exception as e:
@@ -1535,6 +1565,156 @@ TOUGH = {"QB": 210, "RB": 100, "WR": 140, "TE": 45}
 EPA_BAND = {}   # pos -> (best_for_defense_epa, worst) -- filled at runtime
 
 
+CURRENT_SEASON = 2026
+
+# How fast this season takes over from last. weight = games / (games + K).
+# After 3 games a team sits at 3/(3+5)=38% current, a player at 3/(3+3)=50%.
+# Usage/role stabilises fastest in the literature (~4 games), raw production
+# and team efficiency are noisier, so players lead teams.
+BLEND_K_TEAM   = 5.0
+BLEND_K_PLAYER = 3.0
+BLEND_ENABLED  = True
+
+
+def get_current_season_form(season=CURRENT_SEASON):
+    """
+    This season's production and usage per player, from nflverse weekly stats.
+
+    Returns {norm_name: {ypg, games, usage, tds}} where ypg is the same stat the
+    baseline uses for that position (QB pass+rush, RB rush, WR/TE receiving) and
+    usage is share of the team's attempts/carries/targets so far.
+    """
+    try:
+        import nflreadpy as nfl
+        import polars as pl
+    except ImportError:
+        return {}
+    try:
+        ps = nfl.load_player_stats(seasons=[season]).filter(pl.col("season_type") == "REG")
+    except Exception as e:
+        print(f"  [!] {season} player stats: {e}")
+        return {}
+    if ps.height == 0:
+        return {}
+
+    # Usage must be computed PER WEEK. Summing a player's touches over the
+    # games he played and dividing by the team's total over the whole season
+    # divides a 1-game player by 3 games of team volume -- Puka Nacua came out
+    # at 8.5% target share instead of ~28%.
+    team_wk = {}
+    for r in ps.iter_rows(named=True):
+        k = (NFLVERSE_TO_ESPN.get(r["team"], r["team"]), r["week"])
+        d = team_wk.setdefault(k, {"att": 0.0, "car": 0.0, "tgt": 0.0})
+        d["att"] += r.get("attempts") or 0
+        d["car"] += r.get("carries") or 0
+        d["tgt"] += r.get("targets") or 0
+
+    agg = {}
+    for r in ps.iter_rows(named=True):
+        nm = _norm_name(r.get("player_display_name") or "")
+        if not nm:
+            continue
+        pos = r.get("position") or ""
+        t = NFLVERSE_TO_ESPN.get(r["team"], r["team"])
+        a = agg.setdefault(nm, {"yards": 0.0, "games": 0, "tds": 0,
+                                "shares": [], "pos": pos, "team": t})
+        if pos == "QB":
+            yds = (r.get("passing_yards") or 0) + (r.get("rushing_yards") or 0)
+            own, field = (r.get("attempts") or 0), "att"
+        elif pos == "RB":
+            yds, own, field = (r.get("rushing_yards") or 0), (r.get("carries") or 0), "car"
+        else:
+            yds, own, field = (r.get("receiving_yards") or 0), (r.get("targets") or 0), "tgt"
+        a["yards"] += yds
+        a["tds"] += ((r.get("passing_tds") or 0) + (r.get("rushing_tds") or 0)
+                     + (r.get("receiving_tds") or 0))
+        a["games"] += 1
+        denom = team_wk.get((t, r["week"]), {}).get(field, 0)
+        if denom:
+            a["shares"].append(own / denom)
+
+    out = {}
+    for nm, a in agg.items():
+        g = max(1, a["games"])
+        out[nm] = {"ypg": a["yards"] / g, "games": a["games"], "tds": a["tds"],
+                   "usage": (sum(a["shares"]) / len(a["shares"])) if a["shares"] else 0.0}
+    return out
+
+
+def blend_current_season(defense_stats, offense_stats, pool, recent_form,
+                         season=CURRENT_SEASON):
+    """
+    Fade this season's numbers in on top of last season's, weighted by how many
+    games each team or player has actually played.
+
+    Week 1 has to run on last year -- there is nothing else. But by Week 4 a
+    defence that has been shredded for three straight weeks should not still be
+    graded on last October, and a receiver whose role changed should not still
+    carry his old target share. This blends rather than switches, so the model
+    never lurches on a single game.
+    """
+    if not BLEND_ENABLED:
+        return
+    cur = get_nflverse_stats(season=season, refresh=True)
+    form = get_current_season_form(season)
+    if not form and not cur.get("def"):
+        print(f"  No {season} data yet -- staying on {STAT_SEASON}")
+        return
+
+    # --- teams -------------------------------------------------------
+    gp = {}
+    try:
+        import nflreadpy as nfl
+        import polars as pl
+        sch = nfl.load_schedules(seasons=[season]).filter(pl.col("result").is_not_null())
+        for r in sch.iter_rows(named=True):
+            for t in (r["home_team"], r["away_team"]):
+                t = NFLVERSE_TO_ESPN.get(t, t)
+                gp[t] = gp.get(t, 0) + 1
+    except Exception:
+        pass
+
+    tblend = 0
+    for group, key in ((defense_stats, "def"), (offense_stats, "off")):
+        for team, curvals in cur.get(key, {}).items():
+            if team not in group:
+                continue
+            g = gp.get(team, 0)
+            if not g:
+                continue
+            w = g / (g + BLEND_K_TEAM)
+            for f, v in curvals.items():
+                if isinstance(v, (int, float)) and isinstance(group[team].get(f), (int, float)):
+                    group[team][f] = round(group[team][f] * (1 - w) + v * w, 4)
+            tblend += 1
+    if tblend:
+        sample = next(iter(gp.values())) if gp else 0
+        print(f"  Blended {season} into {tblend} team records "
+              f"(~{sample} games -> {sample/(sample+BLEND_K_TEAM)*100:.0f}% current)")
+        rank_defenses(defense_stats)
+
+    # --- players -----------------------------------------------------
+    pblend = 0
+    for p in pool:
+        c = form.get(_norm_name(p["name"]))
+        if not c or not c["games"]:
+            continue
+        w = c["games"] / (c["games"] + BLEND_K_PLAYER)
+        f = recent_form.get(p["name"])
+        if f:
+            f["avg3"] = round(f["avg3"] * (1 - w) + c["ypg"] * w, 1)
+            f["last3"] = [round(f["avg3"])] * 3
+            f["trend"] = _form_trend(p["position"], f["avg3"])
+            f["cur_games"] = c["games"]
+            f["cur_ypg"] = round(c["ypg"], 1)
+        if c["usage"] > 0 and p.get("usage_share") is not None:
+            p["usage_share"] = round(p["usage_share"] * (1 - w) + c["usage"] * w, 4)
+        pblend += 1
+    if pblend:
+        print(f"  Blended {season} form/usage into {pblend} players "
+              f"(3 games -> {3/(3+BLEND_K_PLAYER)*100:.0f}% current)")
+
+
 def merge_nflverse(defense_stats, offense_stats, nv):
     """Fold nflverse EPA onto the ESPN team stats, keyed by ESPN abbreviation."""
     for t, v in nv.get("off", {}).items():
@@ -2085,12 +2265,14 @@ ROOKIE_BASELINE = {
 # a real rate of 23.9%.
 TD_BASE = {"QB": 1.62, "RB": 0.51, "WR": 0.27, "TE": 0.27}
 
-# Residual scale on expected TDs, fitted on real results. TD_BASE was measured
-# on players who were INVOLVED (10+ att / 5+ carries / 2+ targets); applied to a
-# full depth-chart pool it still runs hot even after the usage fix.
-# Fitted on Week 2 after the usage fix (325 players): 1.00 -> 1.30x over,
-# 0.70 -> 1.01x. Week 1 independently wanted ~0.70 too, so both weeks agree.
-TD_CALIBRATION = 0.70
+# Residual scale on expected TDs, refitted on THREE weeks (235 actual scorers).
+# Raw model runs 1.19x hot overall, but the weekly ratio swings hard --
+# 1.29 / 1.37 / 0.95 -- because total TDs scored is itself volatile (87/64/84
+# on ~300 players). 0.70 was fitted on the first two weeks alone and promptly
+# under-called Week 3 by 26%. Fitting all three jointly lands on 0.80
+# (239.9 expected vs 235 actual = 1.02x). Refit on the full sample, never a
+# single week.
+TD_CALIBRATION = 0.80
 
 # Typical usage share at each position, used to scale a player up or down
 # from that positional average
@@ -3929,6 +4111,9 @@ def run():
         player_pool, recent_form = built
     else:
         player_pool, recent_form = build_player_pool(offense_stats, nv)
+    blend_current_season(defense_stats, offense_stats, player_pool, recent_form)
+    calibrate_thresholds(defense_stats)
+    calibrate_epa(defense_stats)
     set_positional_means(player_pool, recent_form)
     mark_qb_starters(player_pool, injuries)
     print()
