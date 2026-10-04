@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 4,
- "logged_at": "2026-10-04T18:13:58",
+ "logged_at": "2026-10-04T19:51:10",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -524,6 +524,19 @@
    "estimated": false
   },
   {
+   "name": "Greg Dortch",
+   "position": "WR",
+   "team": "BUF",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 3.48,
+   "late": true,
+   "proj_yards": 19,
+   "td_pct": 19,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Bryce Young",
    "position": "QB",
    "team": "CAR",
@@ -920,6 +933,19 @@
    "composite": 4.34,
    "proj_yards": 16,
    "td_pct": 9,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Andrei Iosivas",
+   "position": "WR",
+   "team": "CIN",
+   "opp": "JAX",
+   "grade": "B",
+   "composite": 4.99,
+   "late": true,
+   "proj_yards": 26,
+   "td_pct": 10,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2259,7 +2285,7 @@
    "team": "LAC",
    "opp": "SEA",
    "grade": "D",
-   "composite": 2.08
+   "composite": 2.48
   },
   {
    "name": "Omarion Hampton",
@@ -2335,7 +2361,7 @@
    "team": "LAC",
    "opp": "SEA",
    "grade": "C",
-   "composite": 4.0,
+   "composite": 4.4,
    "proj_yards": 48,
    "td_pct": 19,
    "stat": "Rec Yds",
@@ -3779,10 +3805,18 @@
    "position": "RB",
    "team": "SF",
    "opp": "DEN",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Isaac Guerendo",
+   "position": "RB",
+   "team": "SF",
+   "opp": "DEN",
    "grade": "B",
-   "composite": 4.89,
-   "proj_yards": 28,
-   "td_pct": 5,
+   "composite": 4.94,
+   "proj_yards": 10,
+   "td_pct": 3,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3816,7 +3850,7 @@
    "team": "SF",
    "opp": "DEN",
    "grade": "B",
-   "composite": 4.66,
+   "composite": 5.06,
    "proj_yards": 48,
    "td_pct": 25,
    "stat": "Rec Yds",
@@ -4696,8 +4730,8 @@
    "away": "DEN",
    "favorite": "SF",
    "strength": "slight lean",
-   "margin": 0.74,
-   "model_margin": 0.35,
+   "margin": 0.75,
+   "model_margin": 0.37,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
@@ -4707,8 +4741,8 @@
    "away": "LAC",
    "favorite": "SEA",
    "strength": "strong lean",
-   "margin": 2.15,
-   "model_margin": 1.88,
+   "margin": 2.13,
+   "model_margin": 1.83,
    "vegas_margin": 2.33,
    "spread": -7.0
   },
