@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 4,
- "logged_at": "2026-10-04T19:51:10",
+ "logged_at": "2026-10-04T20:16:08",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -338,6 +338,15 @@
    "td_pct": 3,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "Matthew Hibner",
+   "position": "TE",
+   "team": "BAL",
+   "opp": "TEN",
+   "grade": "B",
+   "composite": 4.61,
+   "late": true
   },
   {
    "name": "Zay Flowers",
@@ -1274,8 +1283,8 @@
    "position": "TE",
    "team": "DEN",
    "opp": "SF",
-   "grade": "B",
-   "composite": 5.48,
+   "grade": "B+",
+   "composite": 5.53,
    "proj_yards": 25,
    "td_pct": 8,
    "stat": "Rec Yds",
@@ -1287,7 +1296,7 @@
    "team": "DEN",
    "opp": "SF",
    "grade": "B",
-   "composite": 5.04,
+   "composite": 5.09,
    "proj_yards": 14,
    "td_pct": 5,
    "stat": "Rec Yds",
@@ -1402,8 +1411,8 @@
    "position": "TE",
    "team": "DET",
    "opp": "CAR",
-   "grade": "B+",
-   "composite": 6.44,
+   "grade": "A",
+   "composite": 6.5,
    "proj_yards": 46,
    "td_pct": 24,
    "stat": "Rec Yds",
@@ -1415,7 +1424,7 @@
    "team": "DET",
    "opp": "CAR",
    "grade": "B",
-   "composite": 4.86,
+   "composite": 4.91,
    "proj_yards": 13,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -2009,9 +2018,9 @@
    "team": "KC",
    "opp": "LV",
    "grade": "A",
-   "composite": 6.59,
-   "proj_yards": 278,
-   "td_pct": 81,
+   "composite": 6.62,
+   "proj_yards": 280,
+   "td_pct": 82,
    "stat": "Total Yds",
    "estimated": false
   },
@@ -2021,7 +2030,7 @@
    "team": "KC",
    "opp": "LV",
    "grade": "C",
-   "composite": 4.0
+   "composite": 4.03
   },
   {
    "name": "Kenneth Walker III",
@@ -2029,9 +2038,9 @@
    "team": "KC",
    "opp": "LV",
    "grade": "A",
-   "composite": 6.53,
+   "composite": 6.56,
    "proj_yards": 84,
-   "td_pct": 36,
+   "td_pct": 37,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2041,7 +2050,7 @@
    "team": "KC",
    "opp": "LV",
    "grade": "B",
-   "composite": 4.87,
+   "composite": 4.9,
    "proj_yards": 31,
    "td_pct": 11,
    "stat": "Rush Yds",
@@ -2053,7 +2062,7 @@
    "team": "KC",
    "opp": "LV",
    "grade": "C",
-   "composite": 4.19,
+   "composite": 4.22,
    "proj_yards": 13,
    "td_pct": 8,
    "stat": "Rush Yds",
@@ -2065,9 +2074,9 @@
    "team": "KC",
    "opp": "LV",
    "grade": "B+",
-   "composite": 6.04,
-   "proj_yards": 56,
-   "td_pct": 23,
+   "composite": 6.16,
+   "proj_yards": 57,
+   "td_pct": 24,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2077,7 +2086,7 @@
    "team": "KC",
    "opp": "LV",
    "grade": "C",
-   "composite": 4.15,
+   "composite": 4.26,
    "proj_yards": 16,
    "td_pct": 4,
    "stat": "Rec Yds",
@@ -2089,9 +2098,9 @@
    "team": "KC",
    "opp": "LV",
    "grade": "B+",
-   "composite": 6.03,
-   "proj_yards": 65,
-   "td_pct": 40,
+   "composite": 6.06,
+   "proj_yards": 66,
+   "td_pct": 41,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2101,9 +2110,9 @@
    "team": "KC",
    "opp": "LV",
    "grade": "B",
-   "composite": 5.4,
+   "composite": 5.44,
    "proj_yards": 36,
-   "td_pct": 11,
+   "td_pct": 12,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2113,7 +2122,7 @@
    "team": "KC",
    "opp": "LV",
    "grade": "B",
-   "composite": 4.83,
+   "composite": 4.86,
    "proj_yards": 40,
    "td_pct": 15,
    "stat": "Rec Yds",
@@ -2125,9 +2134,9 @@
    "team": "KC",
    "opp": "LV",
    "grade": "C",
-   "composite": 4.05,
+   "composite": 4.08,
    "proj_yards": 23,
-   "td_pct": 2,
+   "td_pct": 3,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2336,8 +2345,8 @@
    "position": "TE",
    "team": "LAC",
    "opp": "SEA",
-   "grade": "C",
-   "composite": 4.48,
+   "grade": "B",
+   "composite": 4.56,
    "proj_yards": 27,
    "td_pct": 11,
    "stat": "Rec Yds",
@@ -2349,7 +2358,7 @@
    "team": "LAC",
    "opp": "SEA",
    "grade": "D",
-   "composite": 3.02,
+   "composite": 3.1,
    "proj_yards": 12,
    "td_pct": 1,
    "stat": "Rec Yds",
@@ -2417,9 +2426,9 @@
    "team": "LV",
    "opp": "KC",
    "grade": "B",
-   "composite": 5.34,
-   "proj_yards": 177,
-   "td_pct": 63,
+   "composite": 5.32,
+   "proj_yards": 176,
+   "td_pct": 62,
    "stat": "Total Yds",
    "estimated": false
   },
@@ -2429,7 +2438,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "D",
-   "composite": 3.24
+   "composite": 3.23
   },
   {
    "name": "Ashton Jeanty",
@@ -2437,9 +2446,9 @@
    "team": "LV",
    "opp": "KC",
    "grade": "B+",
-   "composite": 5.94,
+   "composite": 5.92,
    "proj_yards": 56,
-   "td_pct": 42,
+   "td_pct": 41,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2449,7 +2458,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "C",
-   "composite": 4.31,
+   "composite": 4.29,
    "proj_yards": 28,
    "td_pct": 9,
    "stat": "Rush Yds",
@@ -2461,7 +2470,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "D",
-   "composite": 3.29,
+   "composite": 3.27,
    "proj_yards": 8,
    "td_pct": 4,
    "stat": "Rush Yds",
@@ -2473,7 +2482,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "B+",
-   "composite": 6.1,
+   "composite": 6.14,
    "proj_yards": 56,
    "td_pct": 31,
    "stat": "Rec Yds",
@@ -2485,7 +2494,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "B",
-   "composite": 4.6,
+   "composite": 4.64,
    "proj_yards": 25,
    "td_pct": 9,
    "stat": "Rec Yds",
@@ -2497,8 +2506,8 @@
    "team": "LV",
    "opp": "KC",
    "grade": "B",
-   "composite": 4.6,
-   "proj_yards": 48,
+   "composite": 4.59,
+   "proj_yards": 47,
    "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
@@ -2509,7 +2518,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "C",
-   "composite": 3.8,
+   "composite": 3.78,
    "proj_yards": 25,
    "td_pct": 15,
    "stat": "Rec Yds",
@@ -2521,7 +2530,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "D",
-   "composite": 2.96,
+   "composite": 2.94,
    "proj_yards": 20,
    "td_pct": 6,
    "stat": "Rec Yds",
@@ -2533,7 +2542,7 @@
    "team": "LV",
    "opp": "KC",
    "grade": "D",
-   "composite": 2.66,
+   "composite": 2.64,
    "proj_yards": 20,
    "td_pct": 2,
    "stat": "Rec Yds",
@@ -3001,7 +3010,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "B+",
-   "composite": 6.04,
+   "composite": 6.1,
    "proj_yards": 50,
    "td_pct": 16,
    "stat": "Rec Yds",
@@ -3013,7 +3022,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "C",
-   "composite": 4.21,
+   "composite": 4.27,
    "proj_yards": 22,
    "td_pct": 14,
    "stat": "Rec Yds",
@@ -3690,7 +3699,7 @@
    "team": "SEA",
    "opp": "LAC",
    "grade": "B",
-   "composite": 5.39,
+   "composite": 5.48,
    "proj_yards": 29,
    "td_pct": 25,
    "stat": "Rec Yds",
@@ -3702,7 +3711,7 @@
    "team": "SEA",
    "opp": "LAC",
    "grade": "C",
-   "composite": 3.94,
+   "composite": 4.02,
    "proj_yards": 8,
    "td_pct": 2,
    "stat": "Rec Yds",
@@ -3826,7 +3835,7 @@
    "team": "SF",
    "opp": "DEN",
    "grade": "A",
-   "composite": 6.74,
+   "composite": 6.76,
    "proj_yards": 51,
    "td_pct": 36,
    "stat": "Rec Yds",
@@ -3838,7 +3847,7 @@
    "team": "SF",
    "opp": "DEN",
    "grade": "B",
-   "composite": 4.63,
+   "composite": 4.66,
    "proj_yards": 10,
    "td_pct": 9,
    "stat": "Rec Yds",
@@ -4332,24 +4341,6 @@
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "CHI Defense",
-   "position": "DEF",
-   "team": "CHI",
-   "opp": "NYJ",
-   "grade": "A",
-   "composite": 6.9,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NYJ Defense",
-   "position": "DEF",
-   "team": "NYJ",
-   "opp": "CHI",
-   "grade": "D",
-   "composite": 1.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "CIN Defense",
    "position": "DEF",
    "team": "CIN",
@@ -4401,24 +4392,6 @@
    "opp": "PHI",
    "grade": "B+",
    "composite": 6.4,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "TB Defense",
-   "position": "DEF",
-   "team": "TB",
-   "opp": "GB",
-   "grade": "B",
-   "composite": 4.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "GB Defense",
-   "position": "DEF",
-   "team": "GB",
-   "opp": "TB",
-   "grade": "B+",
-   "composite": 6.2,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4476,6 +4449,42 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "CHI Defense",
+   "position": "DEF",
+   "team": "CHI",
+   "opp": "NYJ",
+   "grade": "A",
+   "composite": 6.9,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYJ Defense",
+   "position": "DEF",
+   "team": "NYJ",
+   "opp": "CHI",
+   "grade": "D",
+   "composite": 1.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "TB Defense",
+   "position": "DEF",
+   "team": "TB",
+   "opp": "GB",
+   "grade": "B",
+   "composite": 4.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "GB Defense",
+   "position": "DEF",
+   "team": "GB",
+   "opp": "TB",
+   "grade": "B+",
+   "composite": 6.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "MIN Defense",
    "position": "DEF",
    "team": "MIN",
@@ -4508,7 +4517,7 @@
    "team": "KC",
    "opp": "LV",
    "grade": "A+",
-   "composite": 8.7,
+   "composite": 9.0,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4517,7 +4526,7 @@
    "team": "SF",
    "opp": "DEN",
    "grade": "B",
-   "composite": 5.3,
+   "composite": 5.4,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4535,7 +4544,7 @@
    "team": "SEA",
    "opp": "LAC",
    "grade": "A+",
-   "composite": 8.9,
+   "composite": 9.2,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4544,7 +4553,7 @@
    "team": "LAC",
    "opp": "SEA",
    "grade": "B",
-   "composite": 5.0,
+   "composite": 5.1,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4562,7 +4571,7 @@
    "team": "DET",
    "opp": "CAR",
    "grade": "B+",
-   "composite": 6.2,
+   "composite": 6.3,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4589,7 +4598,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "A+",
-   "composite": 7.5,
+   "composite": 7.8,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4597,8 +4606,8 @@
    "position": "DEF",
    "team": "ATL",
    "opp": "NO",
-   "grade": "A",
-   "composite": 7.3,
+   "grade": "A+",
+   "composite": 7.5,
    "proj_pts_allowed": 22.0
   }
  ],
@@ -4613,17 +4622,6 @@
    "model_margin": 0.1,
    "vegas_margin": 2.33,
    "spread": -7.0
-  },
-  {
-   "game_id": "401872972",
-   "home": "CHI",
-   "away": "NYJ",
-   "favorite": "CHI",
-   "strength": "clear lean",
-   "margin": 1.34,
-   "model_margin": 1.61,
-   "vegas_margin": 1.17,
-   "spread": -3.5
   },
   {
    "game_id": "401872969",
@@ -4659,17 +4657,6 @@
    "spread": 3.5
   },
   {
-   "game_id": "401872968",
-   "home": "TB",
-   "away": "GB",
-   "favorite": "GB",
-   "strength": "slight lean",
-   "margin": -0.67,
-   "model_margin": -0.18,
-   "vegas_margin": -1.0,
-   "spread": 3.0
-  },
-  {
    "game_id": "401872973",
    "home": "BAL",
    "away": "TEN",
@@ -4703,6 +4690,28 @@
    "spread": 4.5
   },
   {
+   "game_id": "401872972",
+   "home": "CHI",
+   "away": "NYJ",
+   "favorite": "CHI",
+   "strength": "clear lean",
+   "margin": 1.34,
+   "model_margin": 1.61,
+   "vegas_margin": 1.17,
+   "spread": -3.5
+  },
+  {
+   "game_id": "401872968",
+   "home": "TB",
+   "away": "GB",
+   "favorite": "GB",
+   "strength": "slight lean",
+   "margin": -0.67,
+   "model_margin": -0.18,
+   "vegas_margin": -1.0,
+   "spread": 3.0
+  },
+  {
    "game_id": "401872974",
    "home": "MIN",
    "away": "MIA",
@@ -4719,10 +4728,10 @@
    "away": "KC",
    "favorite": "KC",
    "strength": "strong lean",
-   "margin": -1.64,
-   "model_margin": -1.84,
-   "vegas_margin": -1.5,
-   "spread": 4.5
+   "margin": -1.88,
+   "model_margin": -1.95,
+   "vegas_margin": -1.83,
+   "spread": 5.5
   },
   {
    "game_id": "401872975",
@@ -4730,8 +4739,8 @@
    "away": "DEN",
    "favorite": "SF",
    "strength": "slight lean",
-   "margin": 0.75,
-   "model_margin": 0.37,
+   "margin": 0.76,
+   "model_margin": 0.39,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
@@ -4741,8 +4750,8 @@
    "away": "LAC",
    "favorite": "SEA",
    "strength": "strong lean",
-   "margin": 2.13,
-   "model_margin": 1.83,
+   "margin": 2.15,
+   "model_margin": 1.88,
    "vegas_margin": 2.33,
    "spread": -7.0
   },
@@ -4752,8 +4761,8 @@
    "away": "DET",
    "favorite": "DET",
    "strength": "slight lean",
-   "margin": -0.76,
-   "model_margin": -0.15,
+   "margin": -0.77,
+   "model_margin": -0.18,
    "vegas_margin": -1.17,
    "spread": 3.5
   },
@@ -4774,8 +4783,8 @@
    "away": "ATL",
    "favorite": "NO",
    "strength": "slight lean",
-   "margin": 0.42,
-   "model_margin": 0.31,
+   "margin": 0.43,
+   "model_margin": 0.34,
    "vegas_margin": 0.5,
    "spread": -1.5
   }
