@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 4,
- "logged_at": "2026-10-04T16:12:12",
+ "logged_at": "2026-10-04T17:36:11",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -4280,24 +4280,6 @@
    "estimated": false
   },
   {
-   "name": "WSH Defense",
-   "position": "DEF",
-   "team": "WSH",
-   "opp": "IND",
-   "grade": "D",
-   "composite": 3.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "IND Defense",
-   "position": "DEF",
-   "team": "IND",
-   "opp": "WSH",
-   "grade": "B",
-   "composite": 5.3,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "BUF Defense",
    "position": "DEF",
    "team": "BUF",
@@ -4442,6 +4424,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "WSH Defense",
+   "position": "DEF",
+   "team": "WSH",
+   "opp": "IND",
+   "grade": "D",
+   "composite": 3.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "IND Defense",
+   "position": "DEF",
+   "team": "IND",
+   "opp": "WSH",
+   "grade": "B",
+   "composite": 5.3,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "MIN Defense",
    "position": "DEF",
    "team": "MIN",
@@ -4570,17 +4570,6 @@
  ],
  "leans": [
   {
-   "game_id": "401872965",
-   "home": "WSH",
-   "away": "IND",
-   "favorite": "IND",
-   "strength": "clear lean",
-   "margin": -1.38,
-   "model_margin": -1.19,
-   "vegas_margin": -1.5,
-   "spread": 4.5
-  },
-  {
    "game_id": "401872971",
    "home": "BUF",
    "away": "NE",
@@ -4667,6 +4656,17 @@
    "model_margin": 1.63,
    "vegas_margin": 1.0,
    "spread": -3.0
+  },
+  {
+   "game_id": "401872965",
+   "home": "WSH",
+   "away": "IND",
+   "favorite": "IND",
+   "strength": "clear lean",
+   "margin": -1.38,
+   "model_margin": -1.19,
+   "vegas_margin": -1.5,
+   "spread": 4.5
   },
   {
    "game_id": "401872974",
