@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 4,
- "logged_at": "2026-10-05T00:13:32",
+ "logged_at": "2026-10-05T21:38:13",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -338,15 +338,6 @@
    "td_pct": 3,
    "stat": "Rec Yds",
    "estimated": false
-  },
-  {
-   "name": "Matthew Hibner",
-   "position": "TE",
-   "team": "BAL",
-   "opp": "TEN",
-   "grade": "B",
-   "composite": 4.61,
-   "late": true
   },
   {
    "name": "Zay Flowers",
@@ -1121,18 +1112,6 @@
    "composite": 0
   },
   {
-   "name": "Malik Davis",
-   "position": "RB",
-   "team": "DAL",
-   "opp": "HOU",
-   "grade": "D",
-   "composite": 3.44,
-   "proj_yards": 28,
-   "td_pct": 13,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Jake Ferguson",
    "position": "TE",
    "team": "DAL",
@@ -1329,6 +1308,19 @@
    "composite": 4.75,
    "proj_yards": 24,
    "td_pct": 10,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Troy Franklin",
+   "position": "WR",
+   "team": "DEN",
+   "opp": "SF",
+   "grade": "B",
+   "composite": 5.21,
+   "late": true,
+   "proj_yards": 34,
+   "td_pct": 21,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1821,18 +1813,6 @@
    "estimated": false
   },
   {
-   "name": "Darius Slayton",
-   "position": "WR",
-   "team": "IND",
-   "opp": "WSH",
-   "grade": "A",
-   "composite": 7.24,
-   "proj_yards": 47,
-   "td_pct": 10,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Laquon Treadwell",
    "position": "WR",
    "team": "IND",
@@ -2099,18 +2079,6 @@
    "estimated": false
   },
   {
-   "name": "Tyquan Thornton",
-   "position": "WR",
-   "team": "KC",
-   "opp": "LV",
-   "grade": "B",
-   "composite": 4.86,
-   "proj_yards": 40,
-   "td_pct": 15,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Jalen Royals",
    "position": "WR",
    "team": "KC",
@@ -2196,18 +2164,6 @@
    "composite": 0
   },
   {
-   "name": "Davis Allen",
-   "position": "TE",
-   "team": "LAR",
-   "opp": "PHI",
-   "grade": "C",
-   "composite": 3.81,
-   "proj_yards": 14,
-   "td_pct": 11,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Tyler Higbee",
    "position": "TE",
    "team": "LAR",
@@ -2216,6 +2172,18 @@
    "composite": 4.44,
    "proj_yards": 29,
    "td_pct": 18,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Davis Allen",
+   "position": "TE",
+   "team": "LAR",
+   "opp": "PHI",
+   "grade": "C",
+   "composite": 3.81,
+   "proj_yards": 14,
+   "td_pct": 11,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2412,19 +2380,6 @@
    "estimated": false
   },
   {
-   "name": "Derius Davis",
-   "position": "WR",
-   "team": "LAC",
-   "opp": "SEA",
-   "grade": "D",
-   "composite": 2.68,
-   "late": true,
-   "proj_yards": 14,
-   "td_pct": 2,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Kirk Cousins",
    "position": "QB",
    "team": "LV",
@@ -2573,18 +2528,6 @@
    "composite": 2.92
   },
   {
-   "name": "Jaylen Wright",
-   "position": "RB",
-   "team": "MIA",
-   "opp": "MIN",
-   "grade": "C",
-   "composite": 3.52,
-   "proj_yards": 24,
-   "td_pct": 11,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Ollie Gordon II",
    "position": "RB",
    "team": "MIA",
@@ -2593,6 +2536,18 @@
    "composite": 3.75,
    "proj_yards": 20,
    "td_pct": 15,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "Jaylen Wright",
+   "position": "RB",
+   "team": "MIA",
+   "opp": "MIN",
+   "grade": "C",
+   "composite": 3.52,
+   "proj_yards": 24,
+   "td_pct": 11,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3038,7 +2993,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "A+",
-   "composite": 7.66,
+   "composite": 7.63,
    "proj_yards": 96,
    "td_pct": 36,
    "stat": "Rec Yds",
@@ -3050,7 +3005,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "B+",
-   "composite": 5.94,
+   "composite": 5.91,
    "proj_yards": 46,
    "td_pct": 14,
    "stat": "Rec Yds",
@@ -3062,7 +3017,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "B",
-   "composite": 5.47,
+   "composite": 5.44,
    "proj_yards": 30,
    "td_pct": 6,
    "stat": "Rec Yds",
@@ -3074,7 +3029,7 @@
    "team": "NO",
    "opp": "ATL",
    "grade": "B",
-   "composite": 5.16,
+   "composite": 5.13,
    "proj_yards": 30,
    "td_pct": 9,
    "stat": "Rec Yds",
@@ -3204,6 +3159,19 @@
    "grade": "B",
    "composite": 4.5,
    "proj_yards": 29,
+   "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Charlie Jones",
+   "position": "WR",
+   "team": "NYG",
+   "opp": "ARI",
+   "grade": "C",
+   "composite": 4.49,
+   "late": true,
+   "proj_yards": 13,
    "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
@@ -3822,18 +3790,6 @@
    "composite": 0
   },
   {
-   "name": "Isaac Guerendo",
-   "position": "RB",
-   "team": "SF",
-   "opp": "DEN",
-   "grade": "B",
-   "composite": 4.94,
-   "proj_yards": 10,
-   "td_pct": 3,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "George Kittle",
    "position": "TE",
    "team": "SF",
@@ -4327,6 +4283,42 @@
    "estimated": false
   },
   {
+   "name": "NO Defense",
+   "position": "DEF",
+   "team": "NO",
+   "opp": "ATL",
+   "grade": "A+",
+   "composite": 7.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ATL Defense",
+   "position": "DEF",
+   "team": "ATL",
+   "opp": "NO",
+   "grade": "A",
+   "composite": 7.3,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "CLE Defense",
+   "position": "DEF",
+   "team": "CLE",
+   "opp": "PIT",
+   "grade": "A",
+   "composite": 6.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "PIT Defense",
+   "position": "DEF",
+   "team": "PIT",
+   "opp": "CLE",
+   "grade": "A+",
+   "composite": 8.7,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "WSH Defense",
    "position": "DEF",
    "team": "WSH",
@@ -4577,45 +4569,31 @@
    "grade": "B+",
    "composite": 6.2,
    "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CLE Defense",
-   "position": "DEF",
-   "team": "CLE",
-   "opp": "PIT",
-   "grade": "A",
-   "composite": 6.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "PIT Defense",
-   "position": "DEF",
-   "team": "PIT",
-   "opp": "CLE",
-   "grade": "A+",
-   "composite": 8.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NO Defense",
-   "position": "DEF",
-   "team": "NO",
-   "opp": "ATL",
-   "grade": "A+",
-   "composite": 7.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "ATL Defense",
-   "position": "DEF",
-   "team": "ATL",
-   "opp": "NO",
-   "grade": "A",
-   "composite": 7.3,
-   "proj_pts_allowed": 22.0
   }
  ],
  "leans": [
+  {
+   "game_id": "401872979",
+   "home": "NO",
+   "away": "ATL",
+   "favorite": "NO",
+   "strength": "slight lean",
+   "margin": 0.42,
+   "model_margin": 0.3,
+   "vegas_margin": 0.5,
+   "spread": -1.5
+  },
+  {
+   "game_id": "401872964",
+   "home": "CLE",
+   "away": "PIT",
+   "favorite": "PIT",
+   "strength": "slight lean",
+   "margin": -0.51,
+   "model_margin": -0.04,
+   "vegas_margin": -0.83,
+   "spread": 2.5
+  },
   {
    "game_id": "401872965",
    "home": "WSH",
@@ -4769,28 +4747,6 @@
    "model_margin": -0.27,
    "vegas_margin": -1.5,
    "spread": 4.5
-  },
-  {
-   "game_id": "401872964",
-   "home": "CLE",
-   "away": "PIT",
-   "favorite": "PIT",
-   "strength": "slight lean",
-   "margin": -0.51,
-   "model_margin": -0.04,
-   "vegas_margin": -0.83,
-   "spread": 2.5
-  },
-  {
-   "game_id": "401872979",
-   "home": "NO",
-   "away": "ATL",
-   "favorite": "NO",
-   "strength": "slight lean",
-   "margin": 0.42,
-   "model_margin": 0.3,
-   "vegas_margin": 0.5,
-   "spread": -1.5
   }
  ]
 }
