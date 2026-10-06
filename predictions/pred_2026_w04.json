@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 4,
- "logged_at": "2026-10-06T01:56:21",
+ "logged_at": "2026-10-06T17:18:14",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1473,18 +1473,6 @@
    "composite": 4.44
   },
   {
-   "name": "Kaleb Johnson",
-   "position": "RB",
-   "team": "GB",
-   "opp": "TB",
-   "grade": "D",
-   "composite": 2.96,
-   "proj_yards": 17,
-   "td_pct": 6,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "MarShawn Lloyd",
    "position": "RB",
    "team": "GB",
@@ -1495,6 +1483,18 @@
    "td_pct": 20,
    "stat": "Rush Yds",
    "estimated": true
+  },
+  {
+   "name": "Kaleb Johnson",
+   "position": "RB",
+   "team": "GB",
+   "opp": "TB",
+   "grade": "D",
+   "composite": 2.96,
+   "proj_yards": 17,
+   "td_pct": 6,
+   "stat": "Rush Yds",
+   "estimated": false
   },
   {
    "name": "Chris Brooks",
@@ -2552,14 +2552,15 @@
    "estimated": false
   },
   {
-   "name": "Carlos Washington Jr.",
+   "name": "De'Von Achane",
    "position": "RB",
    "team": "MIA",
    "opp": "MIN",
-   "grade": "D",
-   "composite": 3.12,
-   "proj_yards": 31,
-   "td_pct": 3,
+   "grade": "B+",
+   "composite": 5.81,
+   "late": true,
+   "proj_yards": 57,
+   "td_pct": 45,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2896,14 +2897,15 @@
    "estimated": false
   },
   {
-   "name": "Kyle Williams",
+   "name": "Efton Chism III",
    "position": "WR",
    "team": "NE",
    "opp": "BUF",
    "grade": "C",
-   "composite": 4.18,
-   "proj_yards": 20,
-   "td_pct": 10,
+   "composite": 4.37,
+   "late": true,
+   "proj_yards": 26,
+   "td_pct": 8,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3366,18 +3368,6 @@
    "estimated": false
   },
   {
-   "name": "Tank Bigsby",
-   "position": "RB",
-   "team": "PHI",
-   "opp": "LAR",
-   "grade": "C",
-   "composite": 4.4,
-   "proj_yards": 20,
-   "td_pct": 9,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Will Shipley",
    "position": "RB",
    "team": "PHI",
@@ -3390,24 +3380,24 @@
    "estimated": false
   },
   {
+   "name": "Tank Bigsby",
+   "position": "RB",
+   "team": "PHI",
+   "opp": "LAR",
+   "grade": "C",
+   "composite": 4.4,
+   "proj_yards": 20,
+   "td_pct": 9,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
    "name": "Dallas Goedert",
    "position": "TE",
    "team": "PHI",
    "opp": "LAR",
    "grade": "OUT",
    "composite": 0
-  },
-  {
-   "name": "Zach Ertz",
-   "position": "TE",
-   "team": "PHI",
-   "opp": "LAR",
-   "grade": "C",
-   "composite": 3.83,
-   "proj_yards": 12,
-   "td_pct": 5,
-   "stat": "Rec Yds",
-   "estimated": true
   },
   {
    "name": "Johnny Mundt",
@@ -3420,6 +3410,18 @@
    "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "Zach Ertz",
+   "position": "TE",
+   "team": "PHI",
+   "opp": "LAR",
+   "grade": "C",
+   "composite": 3.83,
+   "proj_yards": 12,
+   "td_pct": 5,
+   "stat": "Rec Yds",
+   "estimated": true
   },
   {
    "name": "DeVonta Smith",
@@ -3891,14 +3893,6 @@
    "estimated": true
   },
   {
-   "name": "Easton Stick",
-   "position": "QB",
-   "team": "TB",
-   "opp": "GB",
-   "grade": "C",
-   "composite": 4.15
-  },
-  {
    "name": "Bucky Irving",
    "position": "RB",
    "team": "TB",
@@ -4292,24 +4286,6 @@
    "estimated": false
   },
   {
-   "name": "NO Defense",
-   "position": "DEF",
-   "team": "NO",
-   "opp": "ATL",
-   "grade": "A+",
-   "composite": 7.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "ATL Defense",
-   "position": "DEF",
-   "team": "ATL",
-   "opp": "NO",
-   "grade": "A",
-   "composite": 7.3,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "CLE Defense",
    "position": "DEF",
    "team": "CLE",
@@ -4578,20 +4554,27 @@
    "grade": "B+",
    "composite": 6.2,
    "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NO Defense",
+   "position": "DEF",
+   "team": "NO",
+   "opp": "ATL",
+   "grade": "A+",
+   "composite": 7.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ATL Defense",
+   "position": "DEF",
+   "team": "ATL",
+   "opp": "NO",
+   "grade": "A",
+   "composite": 7.3,
+   "proj_pts_allowed": 22.0
   }
  ],
  "leans": [
-  {
-   "game_id": "401872979",
-   "home": "NO",
-   "away": "ATL",
-   "favorite": "NO",
-   "strength": "slight lean",
-   "margin": 0.42,
-   "model_margin": 0.3,
-   "vegas_margin": 0.5,
-   "spread": -1.5
-  },
   {
    "game_id": "401872964",
    "home": "CLE",
@@ -4756,6 +4739,17 @@
    "model_margin": -0.27,
    "vegas_margin": -1.5,
    "spread": 4.5
+  },
+  {
+   "game_id": "401872979",
+   "home": "NO",
+   "away": "ATL",
+   "favorite": "NO",
+   "strength": "slight lean",
+   "margin": 0.42,
+   "model_margin": 0.3,
+   "vegas_margin": 0.5,
+   "spread": -1.5
   }
  ]
 }
