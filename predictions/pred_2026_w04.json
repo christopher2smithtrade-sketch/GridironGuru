@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 4,
- "logged_at": "2026-10-05T21:46:08",
+ "logged_at": "2026-10-06T01:30:40",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -2986,6 +2986,15 @@
    "td_pct": 14,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "Oscar Delp",
+   "position": "TE",
+   "team": "NO",
+   "opp": "ATL",
+   "grade": "C",
+   "composite": 4.39,
+   "late": true
   },
   {
    "name": "Chris Olave",
