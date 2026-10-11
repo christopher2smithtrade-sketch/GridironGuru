@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 5,
- "logged_at": "2026-10-11T20:36:57",
+ "logged_at": "2026-10-11T20:59:59",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -3008,19 +3008,6 @@
    "estimated": false
   },
   {
-   "name": "Jeremy Ruckert",
-   "position": "TE",
-   "team": "NYJ",
-   "opp": "CLE",
-   "grade": "B",
-   "composite": 4.66,
-   "late": true,
-   "proj_yards": 16,
-   "td_pct": 6,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Garrett Wilson",
    "position": "WR",
    "team": "NYJ",
@@ -4046,24 +4033,6 @@
    "estimated": false
   },
   {
-   "name": "WSH Defense",
-   "position": "DEF",
-   "team": "WSH",
-   "opp": "NYG",
-   "grade": "B",
-   "composite": 4.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NYG Defense",
-   "position": "DEF",
-   "team": "NYG",
-   "opp": "WSH",
-   "grade": "B",
-   "composite": 4.8,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "LAC Defense",
    "position": "DEF",
    "team": "LAC",
@@ -4262,6 +4231,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "WSH Defense",
+   "position": "DEF",
+   "team": "WSH",
+   "opp": "NYG",
+   "grade": "B",
+   "composite": 4.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYG Defense",
+   "position": "DEF",
+   "team": "NYG",
+   "opp": "WSH",
+   "grade": "B",
+   "composite": 4.8,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "ATL Defense",
    "position": "DEF",
    "team": "ATL",
@@ -4317,17 +4304,6 @@
   }
  ],
  "leans": [
-  {
-   "game_id": "401872988",
-   "home": "WSH",
-   "away": "NYG",
-   "favorite": "WSH",
-   "strength": "slight lean",
-   "margin": 0.39,
-   "model_margin": -0.77,
-   "vegas_margin": 1.17,
-   "spread": -3.5
-  },
   {
    "game_id": "401872989",
    "home": "LAC",
@@ -4448,6 +4424,17 @@
    "model_margin": 0.49,
    "vegas_margin": 1.0,
    "spread": -3.0
+  },
+  {
+   "game_id": "401872988",
+   "home": "WSH",
+   "away": "NYG",
+   "favorite": "WSH",
+   "strength": "slight lean",
+   "margin": 0.39,
+   "model_margin": -0.77,
+   "vegas_margin": 1.17,
+   "spread": -3.5
   },
   {
    "game_id": "401872993",
