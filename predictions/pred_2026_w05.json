@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 5,
- "logged_at": "2026-10-11T18:31:19",
+ "logged_at": "2026-10-11T18:59:47",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1530,6 +1530,19 @@
    "composite": 4.3,
    "proj_yards": 10,
    "td_pct": 7,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "British Brooks",
+   "position": "RB",
+   "team": "HOU",
+   "opp": "TEN",
+   "grade": "C",
+   "composite": 4.43,
+   "late": true,
+   "proj_yards": 13,
+   "td_pct": 4,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3397,6 +3410,15 @@
    "td_pct": 5,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "Kaden Wetjen",
+   "position": "WR",
+   "team": "PIT",
+   "opp": "IND",
+   "grade": "B+",
+   "composite": 5.92,
+   "late": true
   },
   {
    "name": "Sam Darnold",
