@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 5,
- "logged_at": "2026-10-12T00:03:50",
+ "logged_at": "2026-10-12T00:33:51",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1849,8 +1849,8 @@
    "team": "LAR",
    "opp": "BUF",
    "grade": "A",
-   "composite": 7.06,
-   "proj_yards": 279,
+   "composite": 7.18,
+   "proj_yards": 281,
    "td_pct": 90,
    "stat": "Total Yds",
    "estimated": false
@@ -1861,7 +1861,7 @@
    "team": "LAR",
    "opp": "BUF",
    "grade": "B",
-   "composite": 4.54
+   "composite": 4.65
   },
   {
    "name": "Kyren Williams",
@@ -1918,7 +1918,7 @@
    "opp": "BUF",
    "grade": "B",
    "composite": 5.08,
-   "proj_yards": 34,
+   "proj_yards": 35,
    "td_pct": 21,
    "stat": "Rec Yds",
    "estimated": false
@@ -1929,8 +1929,8 @@
    "team": "LAR",
    "opp": "BUF",
    "grade": "A",
-   "composite": 7.38,
-   "proj_yards": 99,
+   "composite": 7.41,
+   "proj_yards": 100,
    "td_pct": 44,
    "stat": "Rec Yds",
    "estimated": false
@@ -1941,8 +1941,8 @@
    "team": "LAR",
    "opp": "BUF",
    "grade": "A",
-   "composite": 6.86,
-   "proj_yards": 78,
+   "composite": 6.88,
+   "proj_yards": 79,
    "td_pct": 52,
    "stat": "Rec Yds",
    "estimated": false
@@ -1953,7 +1953,7 @@
    "team": "LAR",
    "opp": "BUF",
    "grade": "B",
-   "composite": 4.87,
+   "composite": 4.9,
    "proj_yards": 18,
    "td_pct": 3,
    "stat": "Rec Yds",
@@ -1965,7 +1965,7 @@
    "team": "LAR",
    "opp": "BUF",
    "grade": "B",
-   "composite": 5.02,
+   "composite": 5.05,
    "proj_yards": 27,
    "td_pct": 7,
    "stat": "Rec Yds",
@@ -4464,8 +4464,8 @@
    "away": "BUF",
    "favorite": "LAR",
    "strength": "clear lean",
-   "margin": 1.24,
-   "model_margin": 1.36,
+   "margin": 1.26,
+   "model_margin": 1.4,
    "vegas_margin": 1.17,
    "spread": -3.5
   }
