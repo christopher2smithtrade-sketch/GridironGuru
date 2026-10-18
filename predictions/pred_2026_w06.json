@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 6,
- "logged_at": "2026-10-18T22:40:11",
+ "logged_at": "2026-10-18T23:10:10",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1004,10 +1004,18 @@
    "position": "RB",
    "team": "DAL",
    "opp": "GB",
-   "grade": "B",
-   "composite": 5.4,
-   "proj_yards": 26,
-   "td_pct": 9,
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Malik Davis",
+   "position": "RB",
+   "team": "DAL",
+   "opp": "GB",
+   "grade": "B+",
+   "composite": 5.5,
+   "proj_yards": 34,
+   "td_pct": 16,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1320,8 +1328,8 @@
    "position": "WR",
    "team": "GB",
    "opp": "DAL",
-   "grade": "B",
-   "composite": 5.2,
+   "grade": "B+",
+   "composite": 5.6,
    "proj_yards": 21,
    "td_pct": 7,
    "stat": "Rec Yds",
@@ -3280,8 +3288,8 @@
    "team": "SF",
    "opp": "WSH",
    "grade": "A+",
-   "composite": 8.23,
-   "proj_yards": 55,
+   "composite": 8.2,
+   "proj_yards": 54,
    "td_pct": 39,
    "stat": "Rec Yds",
    "estimated": false
@@ -3292,7 +3300,7 @@
    "team": "SF",
    "opp": "WSH",
    "grade": "B+",
-   "composite": 6.05,
+   "composite": 6.02,
    "proj_yards": 10,
    "td_pct": 9,
    "stat": "Rec Yds",
