@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 6,
- "logged_at": "2026-10-18T18:57:43",
+ "logged_at": "2026-10-18T19:29:50",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -404,6 +404,19 @@
    "estimated": false
   },
   {
+   "name": "LaJohntay Wester",
+   "position": "WR",
+   "team": "BAL",
+   "opp": "CLE",
+   "grade": "D",
+   "composite": 3.33,
+   "late": true,
+   "proj_yards": 13,
+   "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Josh Allen",
    "position": "QB",
    "team": "BUF",
@@ -488,12 +501,8 @@
    "position": "WR",
    "team": "BUF",
    "opp": "LV",
-   "grade": "B+",
-   "composite": 6.47,
-   "proj_yards": 50,
-   "td_pct": 32,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Khalil Shakir",
@@ -524,10 +533,22 @@
    "position": "WR",
    "team": "BUF",
    "opp": "LV",
-   "grade": "B",
-   "composite": 5.46,
+   "grade": "B+",
+   "composite": 5.86,
    "proj_yards": 37,
    "td_pct": 5,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Greg Dortch",
+   "position": "WR",
+   "team": "BUF",
+   "opp": "LV",
+   "grade": "B",
+   "composite": 5.48,
+   "proj_yards": 21,
+   "td_pct": 21,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2117,8 +2138,8 @@
    "position": "WR",
    "team": "LAC",
    "opp": "KC",
-   "grade": "D",
-   "composite": 3.1,
+   "grade": "C",
+   "composite": 3.5,
    "proj_yards": 14,
    "td_pct": 4,
    "stat": "Rec Yds",
@@ -2130,7 +2151,7 @@
    "team": "LAC",
    "opp": "KC",
    "grade": "D",
-   "composite": 2.43,
+   "composite": 2.83,
    "proj_yards": 18,
    "td_pct": 5,
    "stat": "Rec Yds",
@@ -2389,6 +2410,19 @@
    "composite": 4.74,
    "proj_yards": 32,
    "td_pct": 10,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Kyle Williams",
+   "position": "WR",
+   "team": "NE",
+   "opp": "NYJ",
+   "grade": "B",
+   "composite": 4.82,
+   "late": true,
+   "proj_yards": 29,
+   "td_pct": 11,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -4112,7 +4146,7 @@
    "favorite": "BUF",
    "strength": "strong lean",
    "margin": -1.7,
-   "model_margin": -1.5,
+   "model_margin": -1.49,
    "vegas_margin": -1.83,
    "spread": 5.5
   },
