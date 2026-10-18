@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 6,
- "logged_at": "2026-10-18T16:32:40",
+ "logged_at": "2026-10-18T16:59:26",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -37,7 +37,7 @@
    "team": "ARI",
    "opp": "LAR",
    "grade": "B",
-   "composite": 5.29,
+   "composite": 5.31,
    "proj_yards": 29,
    "td_pct": 26,
    "stat": "Rush Yds",
@@ -49,7 +49,7 @@
    "team": "ARI",
    "opp": "LAR",
    "grade": "B",
-   "composite": 4.89,
+   "composite": 4.91,
    "proj_yards": 25,
    "td_pct": 21,
    "stat": "Rush Yds",
@@ -61,7 +61,7 @@
    "team": "ARI",
    "opp": "LAR",
    "grade": "C",
-   "composite": 4.34,
+   "composite": 4.37,
    "proj_yards": 22,
    "td_pct": 3,
    "stat": "Rush Yds",
@@ -145,8 +145,8 @@
    "team": "ATL",
    "opp": "CHI",
    "grade": "A",
-   "composite": 7.19,
-   "proj_yards": 232,
+   "composite": 7.13,
+   "proj_yards": 231,
    "td_pct": 69,
    "stat": "Total Yds",
    "estimated": false
@@ -157,7 +157,7 @@
    "team": "ATL",
    "opp": "CHI",
    "grade": "B",
-   "composite": 4.82
+   "composite": 4.76
   },
   {
    "name": "Bijan Robinson",
@@ -281,8 +281,8 @@
    "team": "BAL",
    "opp": "CLE",
    "grade": "B",
-   "composite": 5.25,
-   "proj_yards": 152,
+   "composite": 5.22,
+   "proj_yards": 151,
    "td_pct": 49,
    "stat": "Total Yds",
    "estimated": false
@@ -293,7 +293,7 @@
    "team": "BAL",
    "opp": "CLE",
    "grade": "C",
-   "composite": 3.53
+   "composite": 3.51
   },
   {
    "name": "Derrick Henry",
@@ -301,7 +301,7 @@
    "team": "BAL",
    "opp": "CLE",
    "grade": "A",
-   "composite": 6.93,
+   "composite": 6.96,
    "proj_yards": 83,
    "td_pct": 49,
    "stat": "Rush Yds",
@@ -313,7 +313,7 @@
    "team": "BAL",
    "opp": "CLE",
    "grade": "B",
-   "composite": 4.76,
+   "composite": 4.79,
    "proj_yards": 27,
    "td_pct": 16,
    "stat": "Rush Yds",
@@ -325,7 +325,7 @@
    "team": "BAL",
    "opp": "CLE",
    "grade": "C",
-   "composite": 4.18,
+   "composite": 4.21,
    "proj_yards": 10,
    "td_pct": 7,
    "stat": "Rush Yds",
@@ -409,8 +409,8 @@
    "team": "BUF",
    "opp": "LV",
    "grade": "A+",
-   "composite": 7.82,
-   "proj_yards": 307,
+   "composite": 7.76,
+   "proj_yards": 306,
    "td_pct": 87,
    "stat": "Total Yds",
    "estimated": false
@@ -421,7 +421,7 @@
    "team": "BUF",
    "opp": "LV",
    "grade": "B",
-   "composite": 4.6
+   "composite": 4.55
   },
   {
    "name": "James Cook III",
@@ -537,7 +537,7 @@
    "team": "CAR",
    "opp": "PHI",
    "grade": "A",
-   "composite": 6.73,
+   "composite": 6.7,
    "proj_yards": 254,
    "td_pct": 70,
    "stat": "Total Yds",
@@ -549,7 +549,7 @@
    "team": "CAR",
    "opp": "PHI",
    "grade": "C",
-   "composite": 3.62
+   "composite": 3.59
   },
   {
    "name": "Chuba Hubbard",
@@ -669,8 +669,8 @@
    "team": "CHI",
    "opp": "ATL",
    "grade": "A",
-   "composite": 7.3,
-   "proj_yards": 269,
+   "composite": 7.25,
+   "proj_yards": 268,
    "td_pct": 81,
    "stat": "Total Yds",
    "estimated": false
@@ -681,7 +681,7 @@
    "team": "CHI",
    "opp": "ATL",
    "grade": "B",
-   "composite": 4.57
+   "composite": 4.51
   },
   {
    "name": "D'Andre Swift",
@@ -805,8 +805,8 @@
    "team": "CLE",
    "opp": "BAL",
    "grade": "A",
-   "composite": 7.15,
-   "proj_yards": 208,
+   "composite": 7.06,
+   "proj_yards": 207,
    "td_pct": 65,
    "stat": "Total Yds",
    "estimated": true
@@ -817,7 +817,7 @@
    "team": "CLE",
    "opp": "BAL",
    "grade": "B",
-   "composite": 4.94
+   "composite": 4.85
   },
   {
    "name": "Quinshon Judkins",
@@ -1209,8 +1209,8 @@
    "team": "GB",
    "opp": "DAL",
    "grade": "A+",
-   "composite": 8.53,
-   "proj_yards": 289,
+   "composite": 8.48,
+   "proj_yards": 288,
    "td_pct": 78,
    "stat": "Total Yds",
    "estimated": false
@@ -1221,7 +1221,7 @@
    "team": "GB",
    "opp": "DAL",
    "grade": "B+",
-   "composite": 5.8
+   "composite": 5.74
   },
   {
    "name": "MarShawn Lloyd",
@@ -1474,8 +1474,8 @@
    "team": "IND",
    "opp": "TEN",
    "grade": "A+",
-   "composite": 7.95,
-   "proj_yards": 240,
+   "composite": 7.89,
+   "proj_yards": 239,
    "td_pct": 79,
    "stat": "Total Yds",
    "estimated": false
@@ -1486,7 +1486,7 @@
    "team": "IND",
    "opp": "TEN",
    "grade": "B",
-   "composite": 4.96
+   "composite": 4.9
   },
   {
    "name": "Jonathan Taylor",
@@ -1878,8 +1878,8 @@
    "team": "LAR",
    "opp": "ARI",
    "grade": "A+",
-   "composite": 9.14,
-   "proj_yards": 332,
+   "composite": 9.09,
+   "proj_yards": 330,
    "td_pct": 90,
    "stat": "Total Yds",
    "estimated": false
@@ -1889,8 +1889,8 @@
    "position": "QB",
    "team": "LAR",
    "opp": "ARI",
-   "grade": "A",
-   "composite": 6.55
+   "grade": "B+",
+   "composite": 6.49
   },
   {
    "name": "Kyren Williams",
@@ -2006,7 +2006,7 @@
    "team": "LAC",
    "opp": "KC",
    "grade": "B+",
-   "composite": 6.07,
+   "composite": 6.04,
    "proj_yards": 220,
    "td_pct": 66,
    "stat": "Total Yds",
@@ -2018,7 +2018,7 @@
    "team": "LAC",
    "opp": "KC",
    "grade": "C",
-   "composite": 3.86
+   "composite": 3.84
   },
   {
    "name": "Omarion Hampton",
@@ -2026,7 +2026,7 @@
    "team": "LAC",
    "opp": "KC",
    "grade": "B",
-   "composite": 4.85,
+   "composite": 4.88,
    "proj_yards": 47,
    "td_pct": 29,
    "stat": "Rush Yds",
@@ -2038,7 +2038,7 @@
    "team": "LAC",
    "opp": "KC",
    "grade": "C",
-   "composite": 3.56,
+   "composite": 3.59,
    "proj_yards": 28,
    "td_pct": 9,
    "stat": "Rush Yds",
@@ -2050,7 +2050,7 @@
    "team": "LAC",
    "opp": "KC",
    "grade": "C",
-   "composite": 4.0,
+   "composite": 4.03,
    "proj_yards": 33,
    "td_pct": 17,
    "stat": "Rush Yds",
@@ -2142,7 +2142,7 @@
    "team": "LV",
    "opp": "BUF",
    "grade": "A",
-   "composite": 6.99,
+   "composite": 6.96,
    "proj_yards": 216,
    "td_pct": 67,
    "stat": "Total Yds",
@@ -2154,7 +2154,7 @@
    "team": "LV",
    "opp": "BUF",
    "grade": "B",
-   "composite": 4.76
+   "composite": 4.73
   },
   {
    "name": "Ashton Jeanty",
@@ -2270,8 +2270,8 @@
    "team": "NE",
    "opp": "NYJ",
    "grade": "A",
-   "composite": 7.25,
-   "proj_yards": 286,
+   "composite": 7.22,
+   "proj_yards": 285,
    "td_pct": 82,
    "stat": "Total Yds",
    "estimated": false
@@ -2282,7 +2282,7 @@
    "team": "NE",
    "opp": "NYJ",
    "grade": "B",
-   "composite": 4.82
+   "composite": 4.79
   },
   {
    "name": "Rhamondre Stevenson",
@@ -2398,7 +2398,7 @@
    "team": "NO",
    "opp": "NYG",
    "grade": "A",
-   "composite": 6.64,
+   "composite": 6.62,
    "proj_yards": 250,
    "td_pct": 69,
    "stat": "Total Yds",
@@ -2410,7 +2410,7 @@
    "team": "NO",
    "opp": "NYG",
    "grade": "C",
-   "composite": 4.29
+   "composite": 4.26
   },
   {
    "name": "Alvin Kamara",
@@ -2690,7 +2690,7 @@
    "team": "NYJ",
    "opp": "NE",
    "grade": "C",
-   "composite": 4.15,
+   "composite": 4.18,
    "proj_yards": 36,
    "td_pct": 18,
    "stat": "Rush Yds",
@@ -2702,7 +2702,7 @@
    "team": "NYJ",
    "opp": "NE",
    "grade": "D",
-   "composite": 3.2,
+   "composite": 3.23,
    "proj_yards": 13,
    "td_pct": 6,
    "stat": "Rush Yds",
@@ -2714,7 +2714,7 @@
    "team": "NYJ",
    "opp": "NE",
    "grade": "D",
-   "composite": 2.9,
+   "composite": 2.93,
    "proj_yards": 12,
    "td_pct": 3,
    "stat": "Rush Yds",
@@ -2806,7 +2806,7 @@
    "team": "PHI",
    "opp": "CAR",
    "grade": "B+",
-   "composite": 6.12,
+   "composite": 6.06,
    "proj_yards": 124,
    "td_pct": 40,
    "stat": "Total Yds",
@@ -2818,7 +2818,7 @@
    "team": "PHI",
    "opp": "CAR",
    "grade": "B",
-   "composite": 4.6
+   "composite": 4.54
   },
   {
    "name": "Saquon Barkley",
@@ -2942,9 +2942,9 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "A",
-   "composite": 7.26,
-   "proj_yards": 224,
-   "td_pct": 69,
+   "composite": 7.14,
+   "proj_yards": 222,
+   "td_pct": 68,
    "stat": "Total Yds",
    "estimated": false
   },
@@ -2954,7 +2954,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "C",
-   "composite": 4.36
+   "composite": 4.25
   },
   {
    "name": "Jaylen Warren",
@@ -2962,9 +2962,9 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B",
-   "composite": 4.97,
-   "proj_yards": 61,
-   "td_pct": 36,
+   "composite": 4.94,
+   "proj_yards": 60,
+   "td_pct": 35,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2973,8 +2973,8 @@
    "position": "RB",
    "team": "PIT",
    "opp": "TB",
-   "grade": "B",
-   "composite": 4.5,
+   "grade": "C",
+   "composite": 4.47,
    "proj_yards": 40,
    "td_pct": 30,
    "stat": "Rush Yds",
@@ -2986,7 +2986,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "D",
-   "composite": 2.47,
+   "composite": 2.44,
    "proj_yards": 13,
    "td_pct": 4,
    "stat": "Rush Yds",
@@ -2998,7 +2998,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B",
-   "composite": 5.24,
+   "composite": 5.21,
    "proj_yards": 24,
    "td_pct": 6,
    "stat": "Rec Yds",
@@ -3010,7 +3010,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B+",
-   "composite": 5.56,
+   "composite": 5.52,
    "proj_yards": 30,
    "td_pct": 15,
    "stat": "Rec Yds",
@@ -3022,7 +3022,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B+",
-   "composite": 5.88,
+   "composite": 5.84,
    "proj_yards": 48,
    "td_pct": 25,
    "stat": "Rec Yds",
@@ -3034,7 +3034,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B",
-   "composite": 5.05,
+   "composite": 5.02,
    "proj_yards": 42,
    "td_pct": 9,
    "stat": "Rec Yds",
@@ -3054,7 +3054,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B",
-   "composite": 4.73,
+   "composite": 4.7,
    "proj_yards": 15,
    "td_pct": 5,
    "stat": "Rec Yds",
@@ -3066,7 +3066,7 @@
    "team": "PIT",
    "opp": "TB",
    "grade": "B",
-   "composite": 4.63
+   "composite": 4.6
   },
   {
    "name": "Sam Darnold",
@@ -3339,7 +3339,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "A",
-   "composite": 7.01,
+   "composite": 6.91,
    "proj_yards": 58,
    "td_pct": 65,
    "stat": "Total Yds",
@@ -3351,7 +3351,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B",
-   "composite": 5.01
+   "composite": 4.91
   },
   {
    "name": "Bucky Irving",
@@ -3359,7 +3359,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B+",
-   "composite": 6.17,
+   "composite": 6.18,
    "proj_yards": 61,
    "td_pct": 27,
    "stat": "Rush Yds",
@@ -3371,7 +3371,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "C",
-   "composite": 4.44,
+   "composite": 4.45,
    "proj_yards": 21,
    "td_pct": 21,
    "stat": "Rush Yds",
@@ -3391,7 +3391,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "C",
-   "composite": 3.68,
+   "composite": 3.69,
    "proj_yards": 25,
    "td_pct": 3,
    "stat": "Rush Yds",
@@ -3403,7 +3403,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B+",
-   "composite": 6.06,
+   "composite": 6.05,
    "proj_yards": 32,
    "td_pct": 9,
    "stat": "Rec Yds",
@@ -3415,7 +3415,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "C",
-   "composite": 4.09,
+   "composite": 4.08,
    "proj_yards": 6,
    "td_pct": 2,
    "stat": "Rec Yds",
@@ -3427,7 +3427,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B+",
-   "composite": 6.19,
+   "composite": 6.17,
    "proj_yards": 45,
    "td_pct": 20,
    "stat": "Rec Yds",
@@ -3439,7 +3439,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B+",
-   "composite": 5.57,
+   "composite": 5.55,
    "proj_yards": 41,
    "td_pct": 13,
    "stat": "Rec Yds",
@@ -3451,7 +3451,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B",
-   "composite": 5.27,
+   "composite": 5.25,
    "proj_yards": 27,
    "td_pct": 7,
    "stat": "Rec Yds",
@@ -3463,7 +3463,7 @@
    "team": "TB",
    "opp": "PIT",
    "grade": "B",
-   "composite": 4.95,
+   "composite": 4.93,
    "proj_yards": 30,
    "td_pct": 14,
    "stat": "Rec Yds",
@@ -3603,7 +3603,7 @@
    "team": "WSH",
    "opp": "SF",
    "grade": "A",
-   "composite": 6.76,
+   "composite": 6.71,
    "proj_yards": 222,
    "td_pct": 70,
    "stat": "Total Yds",
@@ -3623,7 +3623,7 @@
    "team": "WSH",
    "opp": "SF",
    "grade": "B",
-   "composite": 4.65
+   "composite": 4.59
   },
   {
    "name": "Jacory Croskey-Merritt",
@@ -4023,8 +4023,8 @@
    "away": "BAL",
    "favorite": "BAL",
    "strength": "slight lean",
-   "margin": -0.78,
-   "model_margin": -0.44,
+   "margin": -0.79,
+   "model_margin": -0.46,
    "vegas_margin": -1.0,
    "spread": 3.0
   },
@@ -4034,8 +4034,8 @@
    "away": "TEN",
    "favorite": "IND",
    "strength": "strong lean",
-   "margin": 1.88,
-   "model_margin": 1.44,
+   "margin": 1.87,
+   "model_margin": 1.43,
    "vegas_margin": 2.17,
    "spread": -6.5
   },
@@ -4045,8 +4045,8 @@
    "away": "NYJ",
    "favorite": "NE",
    "strength": "strong lean",
-   "margin": 2.63,
-   "model_margin": 2.82,
+   "margin": 2.62,
+   "model_margin": 2.8,
    "vegas_margin": 2.5,
    "spread": -7.5
   },
@@ -4057,7 +4057,7 @@
    "favorite": "NO",
    "strength": "slight lean",
    "margin": -0.27,
-   "model_margin": 0.07,
+   "model_margin": 0.08,
    "vegas_margin": -0.5,
    "spread": 1.5
   },
@@ -4068,7 +4068,7 @@
    "favorite": "CAR",
    "strength": "slight lean",
    "margin": -0.54,
-   "model_margin": 0.15,
+   "model_margin": 0.14,
    "vegas_margin": -1.0,
    "spread": 3.0
   },
@@ -4078,8 +4078,8 @@
    "away": "PIT",
    "favorite": "PIT",
    "strength": "slight lean",
-   "margin": -0.49,
-   "model_margin": 0.02,
+   "margin": -0.48,
+   "model_margin": 0.04,
    "vegas_margin": -0.83,
    "spread": 2.5
   },
@@ -4089,8 +4089,8 @@
    "away": "ARI",
    "favorite": "LAR",
    "strength": "strong lean",
-   "margin": 3.9,
-   "model_margin": 3.49,
+   "margin": 3.89,
+   "model_margin": 3.48,
    "vegas_margin": 4.17,
    "spread": -12.5
   },
@@ -4122,8 +4122,8 @@
    "away": "DAL",
    "favorite": "GB",
    "strength": "clear lean",
-   "margin": 0.83,
-   "model_margin": 1.32,
+   "margin": 0.82,
+   "model_margin": 1.31,
    "vegas_margin": 0.5,
    "spread": -1.5
   },
@@ -4144,8 +4144,8 @@
    "away": "WSH",
    "favorite": "SF",
    "strength": "strong lean",
-   "margin": 2.54,
-   "model_margin": 2.6,
+   "margin": 2.55,
+   "model_margin": 2.62,
    "vegas_margin": 2.5,
    "spread": -7.5
   }
