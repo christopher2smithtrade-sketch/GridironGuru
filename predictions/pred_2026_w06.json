@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 6,
- "logged_at": "2026-10-18T16:59:26",
+ "logged_at": "2026-10-18T17:25:11",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -3742,24 +3742,6 @@
    "estimated": false
   },
   {
-   "name": "JAX Defense",
-   "position": "DEF",
-   "team": "JAX",
-   "opp": "HOU",
-   "grade": "A",
-   "composite": 6.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "HOU Defense",
-   "position": "DEF",
-   "team": "HOU",
-   "opp": "JAX",
-   "grade": "B+",
-   "composite": 5.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "ATL Defense",
    "position": "DEF",
    "team": "ATL",
@@ -3886,6 +3868,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "JAX Defense",
+   "position": "DEF",
+   "team": "JAX",
+   "opp": "HOU",
+   "grade": "A",
+   "composite": 6.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "HOU Defense",
+   "position": "DEF",
+   "team": "HOU",
+   "opp": "JAX",
+   "grade": "B+",
+   "composite": 5.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "LAR Defense",
    "position": "DEF",
    "team": "LAR",
@@ -3996,17 +3996,6 @@
  ],
  "leans": [
   {
-   "game_id": "401872996",
-   "home": "JAX",
-   "away": "HOU",
-   "favorite": "JAX",
-   "strength": "slight lean",
-   "margin": 0.51,
-   "model_margin": 0.03,
-   "vegas_margin": 0.83,
-   "spread": -2.5
-  },
-  {
    "game_id": "401872999",
    "home": "ATL",
    "away": "CHI",
@@ -4082,6 +4071,17 @@
    "model_margin": 0.04,
    "vegas_margin": -0.83,
    "spread": 2.5
+  },
+  {
+   "game_id": "401872996",
+   "home": "JAX",
+   "away": "HOU",
+   "favorite": "JAX",
+   "strength": "slight lean",
+   "margin": 0.51,
+   "model_margin": 0.03,
+   "vegas_margin": 0.83,
+   "spread": -2.5
   },
   {
    "game_id": "401873004",
