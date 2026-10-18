@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 6,
- "logged_at": "2026-10-18T23:10:10",
+ "logged_at": "2026-10-18T23:43:56",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -961,8 +961,8 @@
    "team": "DAL",
    "opp": "GB",
    "grade": "A",
-   "composite": 6.61,
-   "proj_yards": 277,
+   "composite": 6.58,
+   "proj_yards": 276,
    "td_pct": 82,
    "stat": "Total Yds",
    "estimated": false
@@ -973,7 +973,7 @@
    "team": "DAL",
    "opp": "GB",
    "grade": "C",
-   "composite": 4.13
+   "composite": 4.1
   },
   {
    "name": "Javonte Williams",
@@ -3632,7 +3632,7 @@
    "team": "WSH",
    "opp": "SF",
    "grade": "A",
-   "composite": 6.87,
+   "composite": 6.85,
    "proj_yards": 224,
    "td_pct": 70,
    "stat": "Total Yds",
@@ -3652,7 +3652,7 @@
    "team": "WSH",
    "opp": "SF",
    "grade": "B",
-   "composite": 4.76
+   "composite": 4.73
   },
   {
    "name": "Jacory Croskey-Merritt",
@@ -3769,60 +3769,6 @@
    "td_pct": 9,
    "stat": "Rec Yds",
    "estimated": false
-  },
-  {
-   "name": "LAR Defense",
-   "position": "DEF",
-   "team": "LAR",
-   "opp": "ARI",
-   "grade": "A",
-   "composite": 7.4,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "ARI Defense",
-   "position": "DEF",
-   "team": "ARI",
-   "opp": "LAR",
-   "grade": "D",
-   "composite": 2.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "KC Defense",
-   "position": "DEF",
-   "team": "KC",
-   "opp": "LAC",
-   "grade": "A+",
-   "composite": 8.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "LAC Defense",
-   "position": "DEF",
-   "team": "LAC",
-   "opp": "KC",
-   "grade": "B",
-   "composite": 5.4,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "LV Defense",
-   "position": "DEF",
-   "team": "LV",
-   "opp": "BUF",
-   "grade": "D",
-   "composite": 3.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "BUF Defense",
-   "position": "DEF",
-   "team": "BUF",
-   "opp": "LV",
-   "grade": "A+",
-   "composite": 8.2,
-   "proj_pts_allowed": 22.0
   },
   {
    "name": "JAX Defense",
@@ -3969,6 +3915,60 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "LAR Defense",
+   "position": "DEF",
+   "team": "LAR",
+   "opp": "ARI",
+   "grade": "A",
+   "composite": 7.4,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ARI Defense",
+   "position": "DEF",
+   "team": "ARI",
+   "opp": "LAR",
+   "grade": "D",
+   "composite": 2.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "KC Defense",
+   "position": "DEF",
+   "team": "KC",
+   "opp": "LAC",
+   "grade": "A+",
+   "composite": 8.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "LAC Defense",
+   "position": "DEF",
+   "team": "LAC",
+   "opp": "KC",
+   "grade": "B",
+   "composite": 5.4,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "LV Defense",
+   "position": "DEF",
+   "team": "LV",
+   "opp": "BUF",
+   "grade": "D",
+   "composite": 3.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "BUF Defense",
+   "position": "DEF",
+   "team": "BUF",
+   "opp": "LV",
+   "grade": "A+",
+   "composite": 8.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "GB Defense",
    "position": "DEF",
    "team": "GB",
@@ -4024,39 +4024,6 @@
   }
  ],
  "leans": [
-  {
-   "game_id": "401873004",
-   "home": "LAR",
-   "away": "ARI",
-   "favorite": "LAR",
-   "strength": "strong lean",
-   "margin": 3.89,
-   "model_margin": 3.48,
-   "vegas_margin": 4.17,
-   "spread": -12.5
-  },
-  {
-   "game_id": "401873006",
-   "home": "KC",
-   "away": "LAC",
-   "favorite": "KC",
-   "strength": "strong lean",
-   "margin": 1.83,
-   "model_margin": 0.82,
-   "vegas_margin": 2.5,
-   "spread": -7.5
-  },
-  {
-   "game_id": "401873005",
-   "home": "LV",
-   "away": "BUF",
-   "favorite": "BUF",
-   "strength": "strong lean",
-   "margin": -1.7,
-   "model_margin": -1.49,
-   "vegas_margin": -1.83,
-   "spread": 5.5
-  },
   {
    "game_id": "401872996",
    "home": "JAX",
@@ -4146,12 +4113,45 @@
    "spread": 2.5
   },
   {
+   "game_id": "401873004",
+   "home": "LAR",
+   "away": "ARI",
+   "favorite": "LAR",
+   "strength": "strong lean",
+   "margin": 3.89,
+   "model_margin": 3.48,
+   "vegas_margin": 4.17,
+   "spread": -12.5
+  },
+  {
+   "game_id": "401873006",
+   "home": "KC",
+   "away": "LAC",
+   "favorite": "KC",
+   "strength": "strong lean",
+   "margin": 1.83,
+   "model_margin": 0.82,
+   "vegas_margin": 2.5,
+   "spread": -7.5
+  },
+  {
+   "game_id": "401873005",
+   "home": "LV",
+   "away": "BUF",
+   "favorite": "BUF",
+   "strength": "strong lean",
+   "margin": -1.7,
+   "model_margin": -1.49,
+   "vegas_margin": -1.83,
+   "spread": 5.5
+  },
+  {
    "game_id": "401873007",
    "home": "GB",
    "away": "DAL",
    "favorite": "GB",
    "strength": "slight lean",
-   "margin": 0.18,
+   "margin": 0.19,
    "model_margin": 1.21,
    "vegas_margin": -0.5,
    "spread": 1.5
@@ -4174,7 +4174,7 @@
    "favorite": "SF",
    "strength": "strong lean",
    "margin": 2.56,
-   "model_margin": 2.65,
+   "model_margin": 2.66,
    "vegas_margin": 2.5,
    "spread": -7.5
   }
