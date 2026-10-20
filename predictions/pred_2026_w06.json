@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 6,
- "logged_at": "2026-10-20T00:23:06",
+ "logged_at": "2026-10-20T15:42:16",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -56,14 +56,28 @@
    "estimated": false
   },
   {
-   "name": "Evan Hull",
+   "name": "James Conner",
    "position": "RB",
    "team": "ARI",
    "opp": "LAR",
-   "grade": "C",
-   "composite": 4.37,
-   "proj_yards": 22,
-   "td_pct": 3,
+   "grade": "B",
+   "composite": 5.26,
+   "late": true,
+   "proj_yards": 41,
+   "td_pct": 32,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "Trey Benson",
+   "position": "RB",
+   "team": "ARI",
+   "opp": "LAR",
+   "grade": "B",
+   "composite": 5.33,
+   "late": true,
+   "proj_yards": 44,
+   "td_pct": 4,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -592,12 +606,13 @@
    "estimated": false
   },
   {
-   "name": "Anthony Tyus III",
+   "name": "Jonathon Brooks",
    "position": "RB",
    "team": "CAR",
    "opp": "PHI",
-   "grade": "B",
-   "composite": 5.13
+   "grade": "B+",
+   "composite": 5.66,
+   "late": true
   },
   {
    "name": "Tommy Tremble",
@@ -724,14 +739,15 @@
    "estimated": false
   },
   {
-   "name": "Zavier Scott",
+   "name": "Brittain Brown",
    "position": "RB",
    "team": "CHI",
    "opp": "ATL",
    "grade": "C",
-   "composite": 4.0,
-   "proj_yards": 14,
-   "td_pct": 8,
+   "composite": 3.61,
+   "late": true,
+   "proj_yards": 30,
+   "td_pct": 19,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1376,19 +1392,6 @@
    "estimated": false
   },
   {
-   "name": "Jawhar Jordan",
-   "position": "RB",
-   "team": "HOU",
-   "opp": "JAX",
-   "grade": "C",
-   "composite": 3.64,
-   "late": true,
-   "proj_yards": 44,
-   "td_pct": 4,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Dare Ogunbowale",
    "position": "RB",
    "team": "HOU",
@@ -1397,6 +1400,19 @@
    "composite": 2.55,
    "proj_yards": 9,
    "td_pct": 6,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "British Brooks",
+   "position": "RB",
+   "team": "HOU",
+   "opp": "JAX",
+   "grade": "D",
+   "composite": 2.77,
+   "late": true,
+   "proj_yards": 12,
+   "td_pct": 4,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1449,14 +1465,15 @@
    "estimated": false
   },
   {
-   "name": "Kayshon Boutte",
+   "name": "Jaylin Noel",
    "position": "WR",
    "team": "HOU",
    "opp": "JAX",
    "grade": "B+",
-   "composite": 5.51,
-   "proj_yards": 38,
-   "td_pct": 20,
+   "composite": 5.54,
+   "late": true,
+   "proj_yards": 47,
+   "td_pct": 10,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1537,6 +1554,19 @@
    "composite": 0
   },
   {
+   "name": "Will Mallory",
+   "position": "TE",
+   "team": "IND",
+   "opp": "TEN",
+   "grade": "C",
+   "composite": 4.38,
+   "late": true,
+   "proj_yards": 22,
+   "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Mo Alie-Cox",
    "position": "TE",
    "team": "IND",
@@ -1545,19 +1575,6 @@
    "composite": 4.54,
    "proj_yards": 13,
    "td_pct": 5,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "Drew Ogletree",
-   "position": "TE",
-   "team": "IND",
-   "opp": "TEN",
-   "grade": "C",
-   "composite": 4.12,
-   "late": true,
-   "proj_yards": 7,
-   "td_pct": 6,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1718,18 +1735,6 @@
    "estimated": false
   },
   {
-   "name": "Brian Thomas Jr.",
-   "position": "WR",
-   "team": "JAX",
-   "opp": "HOU",
-   "grade": "B+",
-   "composite": 5.56,
-   "proj_yards": 37,
-   "td_pct": 16,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "Josh Cameron",
    "position": "WR",
    "team": "JAX",
@@ -1740,6 +1745,18 @@
    "td_pct": 6,
    "stat": "Rec Yds",
    "estimated": true
+  },
+  {
+   "name": "Brian Thomas Jr.",
+   "position": "WR",
+   "team": "JAX",
+   "opp": "HOU",
+   "grade": "B+",
+   "composite": 5.56,
+   "proj_yards": 37,
+   "td_pct": 16,
+   "stat": "Rec Yds",
+   "estimated": false
   },
   {
    "name": "Patrick Mahomes",
@@ -1866,14 +1883,14 @@
    "estimated": true
   },
   {
-   "name": "Justin Watson",
+   "name": "Nikko Remigio",
    "position": "WR",
    "team": "KC",
    "opp": "LAC",
-   "grade": "C",
-   "composite": 3.59,
+   "grade": "D",
+   "composite": 3.14,
    "late": true,
-   "proj_yards": 35,
+   "proj_yards": 12,
    "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
@@ -1967,18 +1984,6 @@
    "composite": 8.11,
    "proj_yards": 111,
    "td_pct": 45,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "Davante Adams",
-   "position": "WR",
-   "team": "LAR",
-   "opp": "ARI",
-   "grade": "A",
-   "composite": 7.43,
-   "proj_yards": 80,
-   "td_pct": 52,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2376,18 +2381,6 @@
    "estimated": false
   },
   {
-   "name": "Romeo Doubs",
-   "position": "WR",
-   "team": "NE",
-   "opp": "NYJ",
-   "grade": "B+",
-   "composite": 6.02,
-   "proj_yards": 48,
-   "td_pct": 25,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
    "name": "DeMario Douglas",
    "position": "WR",
    "team": "NE",
@@ -2753,18 +2746,6 @@
    "estimated": false
   },
   {
-   "name": "Kenyon Sadiq",
-   "position": "TE",
-   "team": "NYJ",
-   "opp": "NE",
-   "grade": "B",
-   "composite": 4.54,
-   "proj_yards": 34,
-   "td_pct": 9,
-   "stat": "Rec Yds",
-   "estimated": true
-  },
-  {
    "name": "Mason Taylor",
    "position": "TE",
    "team": "NYJ",
@@ -2775,6 +2756,18 @@
    "td_pct": 8,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "Kenyon Sadiq",
+   "position": "TE",
+   "team": "NYJ",
+   "opp": "NE",
+   "grade": "B",
+   "composite": 4.54,
+   "proj_yards": 34,
+   "td_pct": 9,
+   "stat": "Rec Yds",
+   "estimated": true
   },
   {
    "name": "Garrett Wilson",
@@ -3093,12 +3086,39 @@
    "estimated": true
   },
   {
-   "name": "Brandon Smith",
+   "name": "Michael Pittman Jr.",
+   "position": "WR",
+   "team": "PIT",
+   "opp": "TB",
+   "grade": "B+",
+   "composite": 5.67,
+   "late": true,
+   "proj_yards": 41,
+   "td_pct": 26,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Roman Wilson",
    "position": "WR",
    "team": "PIT",
    "opp": "TB",
    "grade": "B",
-   "composite": 4.6
+   "composite": 4.83,
+   "late": true,
+   "proj_yards": 34,
+   "td_pct": 12,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Cole Burgess",
+   "position": "WR",
+   "team": "PIT",
+   "opp": "TB",
+   "grade": "B",
+   "composite": 4.74,
+   "late": true
   },
   {
    "name": "Sam Darnold",
@@ -3378,14 +3398,6 @@
    "estimated": true
   },
   {
-   "name": "Easton Stick",
-   "position": "QB",
-   "team": "TB",
-   "opp": "PIT",
-   "grade": "B",
-   "composite": 4.91
-  },
-  {
    "name": "Bucky Irving",
    "position": "RB",
    "team": "TB",
@@ -3416,18 +3428,6 @@
    "opp": "PIT",
    "grade": "OUT",
    "composite": 0
-  },
-  {
-   "name": "Josh Williams",
-   "position": "RB",
-   "team": "TB",
-   "opp": "PIT",
-   "grade": "C",
-   "composite": 3.69,
-   "proj_yards": 25,
-   "td_pct": 3,
-   "stat": "Rush Yds",
-   "estimated": false
   },
   {
    "name": "Cade Otton",
@@ -3658,18 +3658,6 @@
    "composite": 4.61
   },
   {
-   "name": "Jacory Croskey-Merritt",
-   "position": "RB",
-   "team": "WSH",
-   "opp": "SF",
-   "grade": "B",
-   "composite": 4.91,
-   "proj_yards": 44,
-   "td_pct": 32,
-   "stat": "Rush Yds",
-   "estimated": false
-  },
-  {
    "name": "Rachaad White",
    "position": "RB",
    "team": "WSH",
@@ -3778,22 +3766,17 @@
    "estimated": false
   },
   {
-   "name": "SF Defense",
-   "position": "DEF",
-   "team": "SF",
-   "opp": "WSH",
-   "grade": "B+",
-   "composite": 6.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "WSH Defense",
-   "position": "DEF",
+   "name": "Dyami Brown",
+   "position": "WR",
    "team": "WSH",
    "opp": "SF",
-   "grade": "D",
-   "composite": 2.0,
-   "proj_pts_allowed": 22.0
+   "grade": "B",
+   "composite": 4.71,
+   "late": true,
+   "proj_yards": 25,
+   "td_pct": 8,
+   "stat": "Rec Yds",
+   "estimated": false
   },
   {
    "name": "DEN Defense",
@@ -4028,20 +4011,27 @@
    "grade": "D",
    "composite": 3.0,
    "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "SF Defense",
+   "position": "DEF",
+   "team": "SF",
+   "opp": "WSH",
+   "grade": "B+",
+   "composite": 6.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "WSH Defense",
+   "position": "DEF",
+   "team": "WSH",
+   "opp": "SF",
+   "grade": "D",
+   "composite": 2.0,
+   "proj_pts_allowed": 22.0
   }
  ],
  "leans": [
-  {
-   "game_id": "401873008",
-   "home": "SF",
-   "away": "WSH",
-   "favorite": "SF",
-   "strength": "strong lean",
-   "margin": 2.55,
-   "model_margin": 2.63,
-   "vegas_margin": 2.5,
-   "spread": -7.5
-  },
   {
    "game_id": "401872995",
    "home": "DEN",
@@ -4184,6 +4174,17 @@
    "model_margin": 1.21,
    "vegas_margin": -0.5,
    "spread": 1.5
+  },
+  {
+   "game_id": "401873008",
+   "home": "SF",
+   "away": "WSH",
+   "favorite": "SF",
+   "strength": "strong lean",
+   "margin": 2.55,
+   "model_margin": 2.63,
+   "vegas_margin": 2.5,
+   "spread": -7.5
   }
  ]
 }
