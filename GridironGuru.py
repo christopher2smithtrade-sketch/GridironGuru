@@ -2194,6 +2194,18 @@ LEAGUE_AVG_PLAYS   = 63.0    # plays per game
 # regression in the BASELINE, not the multipliers, and needs a separate fix.
 PROJ_SHRINK = 0.3
 
+# Per-position bias correction, measured on live results. The actual/called
+# ratio has been remarkably stable week to week (wk3/4/5/6):
+#   QB 1.12 1.13 1.10 1.07  -> under-called every week
+#   RB 0.87 0.91 0.89 0.80  -> over-called every week
+#   WR 1.02 0.99 0.90 0.93      TE 1.00 0.92 1.01 0.95
+# Four consecutive weeks in the same direction for QB and RB is systematic,
+# not noise. Quarterback production is the least variable thing on the board
+# (one man takes every snap) so regressing it as hard as a rotational back was
+# always suspect; running backs are the opposite -- committees split work in
+# ways last season's share does not capture.
+POS_CALIBRATION = {"QB": 1.10, "RB": 0.87, "WR": 0.96, "TE": 0.97}
+
 # Baseline regression strength: w = games / (games + REGRESS_K), i.e. K is
 # "games worth of prior". Fitted JOINTLY with PROJ_SHRINK on Week 1 2026:
 #   shrink .4, K 0  -> MAE 29.2, A+ +23%, C -24%   (what was live)
@@ -2346,7 +2358,7 @@ def project_player(p):
     # adjustment is pulled toward 1.0 by PROJ_SHRINK, fitted on Week 1 actuals.
     raw_mult = pace_mult * match_mult * env_mult
     mult     = 1.0 + (raw_mult - 1.0) * PROJ_SHRINK
-    proj     = base * mult
+    proj     = base * mult * POS_CALIBRATION.get(pos, 1.0)
     if p.get("inj_status") in ("Out", "IR", "PUP"):
         return None
 
