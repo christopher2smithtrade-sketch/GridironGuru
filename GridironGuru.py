@@ -2265,14 +2265,17 @@ ROOKIE_BASELINE = {
 # a real rate of 23.9%.
 TD_BASE = {"QB": 1.62, "RB": 0.51, "WR": 0.27, "TE": 0.27}
 
-# Residual scale on expected TDs, refitted on THREE weeks (235 actual scorers).
-# Raw model runs 1.19x hot overall, but the weekly ratio swings hard --
-# 1.29 / 1.37 / 0.95 -- because total TDs scored is itself volatile (87/64/84
-# on ~300 players). 0.70 was fitted on the first two weeks alone and promptly
-# under-called Week 3 by 26%. Fitting all three jointly lands on 0.80
-# (239.9 expected vs 235 actual = 1.02x). Refit on the full sample, never a
-# single week.
-TD_CALIBRATION = 0.80
+# Residual scale on expected TDs.
+#
+# History worth keeping: the raw model once ran 1.3x hot, so this was set to
+# 0.70, then 0.80. But the real cause was the zero-usage bug (players with no
+# history inheriting a starter's TD rate) -- once THAT was fixed the multiplier
+# was double-counting the same correction, and weeks 4-6 under-called by 17%.
+# Refitted on weeks 4-6 only (the regime with the usage fix in force, 230
+# actual scorers): 1.05 gives 231.0 vs 230 = 1.00x.
+# Lesson: after fixing a root cause, re-fit the fudge factor that was
+# compensating for it -- do not leave both in place.
+TD_CALIBRATION = 1.05
 
 # Typical usage share at each position, used to scale a player up or down
 # from that positional average
