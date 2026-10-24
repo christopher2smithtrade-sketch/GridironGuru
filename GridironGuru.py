@@ -1616,10 +1616,17 @@ def get_current_season_form(season=CURRENT_SEASON):
             continue
         pos = r.get("position") or ""
         t = NFLVERSE_TO_ESPN.get(r["team"], r["team"])
-        a = agg.setdefault(nm, {"yards": 0.0, "games": 0, "tds": 0,
+        a = agg.setdefault(nm, {"yards": 0.0, "games": 0, "tds": 0, "rush": 0.0,
                                 "shares": [], "pos": pos, "team": t})
         if pos == "QB":
-            yds = (r.get("passing_yards") or 0) + (r.get("rushing_yards") or 0)
+            a["rush"] += r.get("rushing_yards") or 0
+        if pos == "QB":
+            # PASSING only here. build_pool stores avg3 as passing yards and
+            # project_player adds rush_ypg on top, so blending a pass+rush
+            # figure into avg3 would count a running QB's legs twice --
+            # Lamar Jackson's 36 rush yds/gm were being added on top of a
+            # baseline that already contained them.
+            yds = r.get("passing_yards") or 0
             own, field = (r.get("attempts") or 0), "att"
         elif pos == "RB":
             yds, own, field = (r.get("rushing_yards") or 0), (r.get("carries") or 0), "car"
@@ -1637,6 +1644,7 @@ def get_current_season_form(season=CURRENT_SEASON):
     for nm, a in agg.items():
         g = max(1, a["games"])
         out[nm] = {"ypg": a["yards"] / g, "games": a["games"], "tds": a["tds"],
+                   "rush_ypg": a["rush"] / g,
                    "usage": (sum(a["shares"]) / len(a["shares"])) if a["shares"] else 0.0}
     return out
 
@@ -1707,6 +1715,8 @@ def blend_current_season(defense_stats, offense_stats, pool, recent_form,
             f["trend"] = _form_trend(p["position"], f["avg3"])
             f["cur_games"] = c["games"]
             f["cur_ypg"] = round(c["ypg"], 1)
+        if p["position"] == "QB" and c.get("rush_ypg") is not None:
+            p["rush_ypg"] = round((p.get("rush_ypg") or 0) * (1 - w) + c["rush_ypg"] * w, 1)
         if c["usage"] > 0 and p.get("usage_share") is not None:
             p["usage_share"] = round(p["usage_share"] * (1 - w) + c["usage"] * w, 4)
         pblend += 1
@@ -2320,8 +2330,10 @@ def project_player(p):
     # than pocket passers he is actually competitive with.
     # Applied to every QB, not just the runners, so the column stays one
     # comparable number. A pocket passer's rushing is simply near zero.
+    qb_rush = 0.0
     if pos == "QB":
-        base += p.get("rush_ypg", 0.0)
+        qb_rush = p.get("rush_ypg", 0.0)
+        base += qb_rush
         label = "Total Yds"
 
     gp = p.get("form_games") or 0
@@ -2392,8 +2404,18 @@ def project_player(p):
     exp_td = max(0.0, rate * env_mult) * TD_CALIBRATION
     td_pct = round((1 - pow(2.71828, -exp_td)) * 100)
 
+    # Split the QB number so it can be compared to a passing prop, which is
+    # what the books actually post.
+    pass_part = rush_part = None
+    if pos == "QB" and base > 0:
+        share = qb_rush / base
+        rush_part = round(proj * share)
+        pass_part = round(proj) - rush_part
+
     return {
         "yards":     round(proj),
+        "pass_yards": pass_part,
+        "rush_yards": rush_part,
         "estimated": est,
         "td_pct":    min(td_pct, 95),
         "label":     label,
@@ -2688,6 +2710,9 @@ def log_predictions(season, week, scored, games):
             if pr:
                 row.update({"proj_yards": pr["yards"], "td_pct": pr["td_pct"],
                             "stat": pr["label"], "estimated": pr["estimated"]})
+                if pr.get("pass_yards") is not None:
+                    row["proj_pass_yards"] = pr["pass_yards"]
+                    row["proj_rush_yards"] = pr["rush_yards"]
         rows.append(row)
 
     # Game leans, logged directly so they can be scored against the winner
@@ -2909,6 +2934,11 @@ def render_html(week, season, games, players_by_pos, timestamp, previews=None, h
                                                      and p.get("qb_starter") is False) else ""
         depth_tag = (f'<span style="color:#8b949e;font-size:11px;margin-left:6px">'
                      f'{p["position"]}{dr}{backup}</span>') if dr and dr <= 4 else ""
+        # A QB's production figure is PASSING only; his rushing is added in the
+        # projection, so say so rather than leaving two numbers unexplained.
+        qb_rush_note = ""
+        if p["position"] == "QB" and p.get("rush_ypg"):
+            qb_rush_note = f" &bull; +{p['rush_ypg']:.0f} rush yds/gm"
         st, gp = p.get("form_total"), p.get("form_games")
         last3_str  = (f"{st:,} total over {gp} games" if st and gp
                       else "No 2025 stats -- rookie or did not play")
@@ -2950,7 +2980,7 @@ def render_html(week, season, games, players_by_pos, timestamp, previews=None, h
               <div class="stat-block">
                 <div class="stat-label">Production ({STAT_SEASON} season avg)</div>
                 <div class="stat-val">{bar(p['form_score'], trend_clr)} {p['form_avg']:.0f} avg {p['form_label']} &nbsp;<span style="color:{trend_clr};font-weight:bold">{p['form_trend']}</span></div>
-                <div class="stat-sub">{p['form_label']}: {last3_str}</div>
+                <div class="stat-sub">{p['form_label']}: {last3_str}{qb_rush_note}</div>
               </div>
               <div class="stat-block">
                 <div class="stat-label">Usage ({STAT_SEASON} season)</div>
@@ -3202,7 +3232,10 @@ def render_html(week, season, games, players_by_pos, timestamp, previews=None, h
                 f'<span class="pl-rank" style="color:{pl["grade_color"]}">{i+1}</span>'
                 f'<span class="pl-name"><strong>{pl["name"]}</strong>{est}'
                 f'<small>{pl["team"]} vs {pl["opp"]}</small></span>'
-                f'<span class="pl-proj">{pr["yards"]}<small>proj {pr["label"].lower()}</small></span>'
+                f'<span class="pl-proj">{pr["yards"]}<small>'
+                + (f'{pr["pass_yards"]} pass &middot; {pr["rush_yards"]} rush'
+                   if pr.get("pass_yards") is not None else f'proj {pr["label"].lower()}')
+                + '</small></span>'
                 f'<span class="pl-td">{pr["td_pct"]}%<small>TD chance</small></span>'
                 f'<span class="pl-grade" style="color:{pl["grade_color"]}">{pl["grade"]}</span>'
                 f'</div>')
