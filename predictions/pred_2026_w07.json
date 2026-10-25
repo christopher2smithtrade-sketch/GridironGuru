@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 7,
- "logged_at": "2026-10-25T17:40:23",
+ "logged_at": "2026-10-25T19:17:04",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1143,7 +1143,7 @@
    "team": "DEN",
    "opp": "ARI",
    "grade": "B",
-   "composite": 4.79,
+   "composite": 5.19,
    "proj_yards": 11,
    "td_pct": 13,
    "stat": "Rush Yds",
@@ -1475,7 +1475,7 @@
    "team": "GB",
    "opp": "DET",
    "grade": "B",
-   "composite": 5.06,
+   "composite": 5.46,
    "proj_yards": 17,
    "td_pct": 8,
    "stat": "Rec Yds",
@@ -1983,7 +1983,7 @@
    "team": "LAR",
    "opp": "LV",
    "grade": "A+",
-   "composite": 7.52,
+   "composite": 7.92,
    "proj_yards": 100,
    "td_pct": 51,
    "stat": "Rec Yds",
@@ -4188,8 +4188,8 @@
    "away": "LAR",
    "favorite": "LAR",
    "strength": "strong lean",
-   "margin": -1.86,
-   "model_margin": -2.89,
+   "margin": -1.88,
+   "model_margin": -2.95,
    "vegas_margin": -1.17,
    "spread": 3.5
   },
