@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 7,
- "logged_at": "2026-10-25T16:56:29",
+ "logged_at": "2026-10-25T17:40:23",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -3819,24 +3819,6 @@
    "estimated": false
   },
   {
-   "name": "NO Defense",
-   "position": "DEF",
-   "team": "NO",
-   "opp": "PIT",
-   "grade": "A",
-   "composite": 7.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "PIT Defense",
-   "position": "DEF",
-   "team": "PIT",
-   "opp": "NO",
-   "grade": "A+",
-   "composite": 9.3,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "ATL Defense",
    "position": "DEF",
    "team": "ATL",
@@ -3963,6 +3945,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "NO Defense",
+   "position": "DEF",
+   "team": "NO",
+   "opp": "PIT",
+   "grade": "A",
+   "composite": 7.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "PIT Defense",
+   "position": "DEF",
+   "team": "PIT",
+   "opp": "NO",
+   "grade": "A+",
+   "composite": 9.3,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "ARI Defense",
    "position": "DEF",
    "team": "ARI",
@@ -4073,17 +4073,6 @@
  ],
  "leans": [
   {
-   "game_id": "401873011",
-   "home": "NO",
-   "away": "PIT",
-   "favorite": "PIT",
-   "strength": "clear lean",
-   "margin": -0.93,
-   "model_margin": -0.83,
-   "vegas_margin": -1.0,
-   "spread": 3.0
-  },
-  {
    "game_id": "401873017",
    "home": "ATL",
    "away": "SF",
@@ -4159,6 +4148,17 @@
    "model_margin": 1.68,
    "vegas_margin": 3.33,
    "spread": -10.0
+  },
+  {
+   "game_id": "401873011",
+   "home": "NO",
+   "away": "PIT",
+   "favorite": "PIT",
+   "strength": "clear lean",
+   "margin": -0.93,
+   "model_margin": -0.83,
+   "vegas_margin": -1.0,
+   "spread": 3.0
   },
   {
    "game_id": "401873019",
