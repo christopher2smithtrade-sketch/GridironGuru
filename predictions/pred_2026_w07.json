@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 7,
- "logged_at": "2026-10-25T22:50:06",
+ "logged_at": "2026-10-25T23:15:08",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -3266,6 +3266,14 @@
   },
   {
    "name": "Drew Lock",
+   "position": "QB",
+   "team": "SEA",
+   "opp": "KC",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Jalen Milroe",
    "position": "QB",
    "team": "SEA",
    "opp": "KC",
