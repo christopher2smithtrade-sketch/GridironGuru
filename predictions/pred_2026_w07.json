@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 7,
- "logged_at": "2026-10-26T23:07:52",
+ "logged_at": "2026-10-27T00:05:11",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -1009,10 +1009,18 @@
    "position": "RB",
    "team": "DAL",
    "opp": "PHI",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Malik Davis",
+   "position": "RB",
+   "team": "DAL",
+   "opp": "PHI",
    "grade": "B",
-   "composite": 5.28,
-   "proj_yards": 22,
-   "td_pct": 11,
+   "composite": 5.38,
+   "proj_yards": 29,
+   "td_pct": 18,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -4064,7 +4072,7 @@
    "favorite": "DAL",
    "strength": "slight lean",
    "margin": -0.75,
-   "model_margin": 0.39,
+   "model_margin": 0.38,
    "vegas_margin": -1.5,
    "spread": 4.5
   },
