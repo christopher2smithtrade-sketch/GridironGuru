@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 8,
- "logged_at": "2026-10-31T00:49:07",
+ "logged_at": "2026-10-31T01:38:14",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -2357,8 +2357,8 @@
    "position": "QB",
    "team": "MIA",
    "opp": "NE",
-   "grade": "B",
-   "composite": 4.93,
+   "grade": "B+",
+   "composite": 6.13,
    "proj_yards": 189,
    "td_pct": 69,
    "stat": "Total Yds",
@@ -2371,8 +2371,8 @@
    "position": "QB",
    "team": "MIA",
    "opp": "NE",
-   "grade": "D",
-   "composite": 3.03
+   "grade": "C",
+   "composite": 4.23
   },
   {
    "name": "Ollie Gordon II",
@@ -2415,8 +2415,8 @@
    "position": "TE",
    "team": "MIA",
    "opp": "NE",
-   "grade": "C",
-   "composite": 4.13,
+   "grade": "B",
+   "composite": 5.33,
    "proj_yards": 32,
    "td_pct": 11,
    "stat": "Rec Yds",
@@ -2427,8 +2427,8 @@
    "position": "TE",
    "team": "MIA",
    "opp": "NE",
-   "grade": "D",
-   "composite": 3.43,
+   "grade": "B",
+   "composite": 4.63,
    "proj_yards": 12,
    "td_pct": 6,
    "stat": "Rec Yds",
@@ -2439,8 +2439,8 @@
    "position": "WR",
    "team": "MIA",
    "opp": "NE",
-   "grade": "C",
-   "composite": 3.92,
+   "grade": "B",
+   "composite": 5.12,
    "proj_yards": 36,
    "td_pct": 21,
    "stat": "Rec Yds",
@@ -2451,8 +2451,8 @@
    "position": "WR",
    "team": "MIA",
    "opp": "NE",
-   "grade": "D",
-   "composite": 3.41,
+   "grade": "B",
+   "composite": 4.61,
    "proj_yards": 38,
    "td_pct": 11,
    "stat": "Rec Yds",
@@ -2463,8 +2463,8 @@
    "position": "WR",
    "team": "MIA",
    "opp": "NE",
-   "grade": "D",
-   "composite": 3.37,
+   "grade": "B",
+   "composite": 4.57,
    "proj_yards": 24,
    "td_pct": 10,
    "stat": "Rec Yds",
@@ -2475,8 +2475,8 @@
    "position": "WR",
    "team": "MIA",
    "opp": "NE",
-   "grade": "D",
-   "composite": 3.43,
+   "grade": "B",
+   "composite": 4.63,
    "proj_yards": 14,
    "td_pct": 11,
    "stat": "Rec Yds",
@@ -2617,8 +2617,8 @@
    "position": "QB",
    "team": "NE",
    "opp": "MIA",
-   "grade": "A",
-   "composite": 6.79,
+   "grade": "A+",
+   "composite": 7.99,
    "proj_yards": 313,
    "td_pct": 89,
    "stat": "Total Yds",
@@ -2631,8 +2631,8 @@
    "position": "QB",
    "team": "NE",
    "opp": "MIA",
-   "grade": "C",
-   "composite": 4.42
+   "grade": "B+",
+   "composite": 5.62
   },
   {
    "name": "Rhamondre Stevenson",
@@ -2675,8 +2675,8 @@
    "position": "TE",
    "team": "NE",
    "opp": "MIA",
-   "grade": "A",
-   "composite": 6.63,
+   "grade": "A+",
+   "composite": 7.83,
    "proj_yards": 43,
    "td_pct": 33,
    "stat": "Rec Yds",
@@ -2687,8 +2687,8 @@
    "position": "TE",
    "team": "NE",
    "opp": "MIA",
-   "grade": "B+",
-   "composite": 5.6,
+   "grade": "A",
+   "composite": 6.8,
    "proj_yards": 15,
    "td_pct": 10,
    "stat": "Rec Yds",
@@ -2699,8 +2699,8 @@
    "position": "WR",
    "team": "NE",
    "opp": "MIA",
-   "grade": "B",
-   "composite": 4.61,
+   "grade": "B+",
+   "composite": 5.81,
    "proj_yards": 50,
    "td_pct": 39,
    "stat": "Rec Yds",
@@ -2711,8 +2711,8 @@
    "position": "WR",
    "team": "NE",
    "opp": "MIA",
-   "grade": "C",
-   "composite": 3.82,
+   "grade": "B",
+   "composite": 5.02,
    "proj_yards": 36,
    "td_pct": 20,
    "stat": "Rec Yds",
@@ -2723,8 +2723,8 @@
    "position": "WR",
    "team": "NE",
    "opp": "MIA",
-   "grade": "D",
-   "composite": 3.18,
+   "grade": "C",
+   "composite": 4.38,
    "proj_yards": 28,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -2735,8 +2735,8 @@
    "position": "WR",
    "team": "NE",
    "opp": "MIA",
-   "grade": "D",
-   "composite": 3.31,
+   "grade": "B",
+   "composite": 4.51,
    "proj_yards": 25,
    "td_pct": 15,
    "stat": "Rec Yds",
@@ -3712,7 +3712,7 @@
    "team": "BUF",
    "opp": "BAL",
    "grade": "B",
-   "composite": 5.2,
+   "composite": 5.4,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3721,7 +3721,7 @@
    "team": "BAL",
    "opp": "BUF",
    "grade": "D",
-   "composite": 1.9,
+   "composite": 2.2,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3739,7 +3739,7 @@
    "team": "TEN",
    "opp": "CIN",
    "grade": "D",
-   "composite": 2.7,
+   "composite": 3.0,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3747,8 +3747,8 @@
    "position": "DEF",
    "team": "DAL",
    "opp": "ARI",
-   "grade": "C",
-   "composite": 4.4,
+   "grade": "B",
+   "composite": 4.6,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3757,7 +3757,7 @@
    "team": "ARI",
    "opp": "DAL",
    "grade": "D",
-   "composite": 0.5,
+   "composite": 0.9,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3775,7 +3775,7 @@
    "team": "MIN",
    "opp": "DET",
    "grade": "C",
-   "composite": 4.1,
+   "composite": 4.3,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3784,7 +3784,7 @@
    "team": "NYJ",
    "opp": "LV",
    "grade": "B+",
-   "composite": 6.3,
+   "composite": 6.4,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3793,7 +3793,7 @@
    "team": "LV",
    "opp": "NYJ",
    "grade": "B+",
-   "composite": 5.8,
+   "composite": 5.9,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3802,7 +3802,7 @@
    "team": "PIT",
    "opp": "CLE",
    "grade": "A+",
-   "composite": 9.9,
+   "composite": 9.8,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3811,7 +3811,7 @@
    "team": "CLE",
    "opp": "PIT",
    "grade": "B+",
-   "composite": 6.3,
+   "composite": 6.4,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3829,7 +3829,7 @@
    "team": "ATL",
    "opp": "TB",
    "grade": "A",
-   "composite": 6.6,
+   "composite": 6.7,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3838,7 +3838,7 @@
    "team": "JAX",
    "opp": "IND",
    "grade": "A",
-   "composite": 6.6,
+   "composite": 6.7,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3847,7 +3847,7 @@
    "team": "IND",
    "opp": "JAX",
    "grade": "D",
-   "composite": 3.0,
+   "composite": 3.3,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3856,7 +3856,7 @@
    "team": "LAR",
    "opp": "LAC",
    "grade": "A+",
-   "composite": 9.9,
+   "composite": 9.8,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3865,7 +3865,7 @@
    "team": "LAC",
    "opp": "LAR",
    "grade": "C",
-   "composite": 3.8,
+   "composite": 4.1,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3874,7 +3874,7 @@
    "team": "DEN",
    "opp": "KC",
    "grade": "A",
-   "composite": 6.6,
+   "composite": 6.7,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3883,7 +3883,7 @@
    "team": "KC",
    "opp": "DEN",
    "grade": "B+",
-   "composite": 6.3,
+   "composite": 6.4,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3891,8 +3891,8 @@
    "position": "DEF",
    "team": "MIA",
    "opp": "NE",
-   "grade": "C",
-   "composite": 3.6,
+   "grade": "D",
+   "composite": 2.7,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3901,7 +3901,7 @@
    "team": "NE",
    "opp": "MIA",
    "grade": "A+",
-   "composite": 8.6,
+   "composite": 7.5,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3910,7 +3910,7 @@
    "team": "WSH",
    "opp": "PHI",
    "grade": "B+",
-   "composite": 5.8,
+   "composite": 5.9,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3918,8 +3918,8 @@
    "position": "DEF",
    "team": "PHI",
    "opp": "WSH",
-   "grade": "A",
-   "composite": 7.4,
+   "grade": "A+",
+   "composite": 7.5,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3937,7 +3937,7 @@
    "team": "CHI",
    "opp": "SEA",
    "grade": "B",
-   "composite": 5.2,
+   "composite": 5.4,
    "proj_pts_allowed": 22.0
   }
  ],
@@ -3959,8 +3959,8 @@
    "away": "BAL",
    "favorite": "BUF",
    "strength": "clear lean",
-   "margin": 0.89,
-   "model_margin": 0.72,
+   "margin": 0.88,
+   "model_margin": 0.7,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
@@ -3970,8 +3970,8 @@
    "away": "TEN",
    "favorite": "CIN",
    "strength": "strong lean",
-   "margin": 3.43,
-   "model_margin": 2.33,
+   "margin": 3.41,
+   "model_margin": 2.26,
    "vegas_margin": 4.17,
    "spread": -12.5
   },
@@ -3981,8 +3981,8 @@
    "away": "ARI",
    "favorite": "DAL",
    "strength": "strong lean",
-   "margin": 1.82,
-   "model_margin": 1.05,
+   "margin": 1.8,
+   "model_margin": 1.01,
    "vegas_margin": 2.33,
    "spread": -7.0
   },
@@ -3992,8 +3992,8 @@
    "away": "MIN",
    "favorite": "DET",
    "strength": "slight lean",
-   "margin": 0.49,
-   "model_margin": -0.28,
+   "margin": 0.47,
+   "model_margin": -0.33,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
@@ -4014,8 +4014,8 @@
    "away": "CLE",
    "favorite": "PIT",
    "strength": "clear lean",
-   "margin": 0.95,
-   "model_margin": 0.63,
+   "margin": 0.93,
+   "model_margin": 0.59,
    "vegas_margin": 1.17,
    "spread": -3.5
   },
@@ -4025,8 +4025,8 @@
    "away": "ATL",
    "favorite": "TB",
    "strength": "slight lean",
-   "margin": 0.74,
-   "model_margin": 0.6,
+   "margin": 0.73,
+   "model_margin": 0.58,
    "vegas_margin": 0.83,
    "spread": -2.5
   },
@@ -4036,8 +4036,8 @@
    "away": "IND",
    "favorite": "JAX",
    "strength": "strong lean",
-   "margin": 2.64,
-   "model_margin": 1.59,
+   "margin": 2.62,
+   "model_margin": 1.54,
    "vegas_margin": 3.33,
    "spread": -10.0
   },
@@ -4047,8 +4047,8 @@
    "away": "LAC",
    "favorite": "LAR",
    "strength": "strong lean",
-   "margin": 2.18,
-   "model_margin": 2.19,
+   "margin": 2.14,
+   "model_margin": 2.1,
    "vegas_margin": 2.17,
    "spread": -6.5
   },
@@ -4069,8 +4069,8 @@
    "away": "NE",
    "favorite": "NE",
    "strength": "strong lean",
-   "margin": -2.34,
-   "model_margin": -2.36,
+   "margin": -2.33,
+   "model_margin": -2.32,
    "vegas_margin": -2.33,
    "spread": 7.0
   },
@@ -4091,8 +4091,8 @@
    "away": "CHI",
    "favorite": "SEA",
    "strength": "clear lean",
-   "margin": 1.3,
-   "model_margin": 1.74,
+   "margin": 1.28,
+   "model_margin": 1.7,
    "vegas_margin": 1.0,
    "spread": -3.0
   }
