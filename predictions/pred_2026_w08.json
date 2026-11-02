@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 8,
- "logged_at": "2026-11-01T23:56:52",
+ "logged_at": "2026-11-02T00:44:22",
  "predictions": [
   {
    "name": "Jacoby Brissett",
@@ -2762,6 +2762,19 @@
    "estimated": true
   },
   {
+   "name": "Cameron Latu",
+   "position": "TE",
+   "team": "NE",
+   "opp": "MIA",
+   "grade": "B+",
+   "composite": 5.62,
+   "late": true,
+   "proj_yards": 6,
+   "td_pct": 2,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "A.J. Brown",
    "position": "WR",
    "team": "NE",
@@ -3077,7 +3090,7 @@
    "team": "PHI",
    "opp": "WSH",
    "grade": "B+",
-   "composite": 6.18,
+   "composite": 6.21,
    "proj_yards": 26,
    "td_pct": 14,
    "stat": "Rec Yds",
@@ -3089,7 +3102,7 @@
    "team": "PHI",
    "opp": "WSH",
    "grade": "B",
-   "composite": 5.29,
+   "composite": 5.31,
    "proj_yards": 25,
    "td_pct": 3,
    "stat": "Rec Yds",
@@ -3101,7 +3114,7 @@
    "team": "PHI",
    "opp": "WSH",
    "grade": "B+",
-   "composite": 6.43,
+   "composite": 6.46,
    "proj_yards": 38,
    "td_pct": 21,
    "stat": "Rec Yds",
@@ -3113,7 +3126,7 @@
    "team": "PHI",
    "opp": "WSH",
    "grade": "B",
-   "composite": 5.15,
+   "composite": 5.17,
    "proj_yards": 23,
    "td_pct": 8,
    "stat": "Rec Yds",
@@ -3334,7 +3347,7 @@
    "team": "SEA",
    "opp": "CHI",
    "grade": "B+",
-   "composite": 5.93,
+   "composite": 5.96,
    "proj_yards": 27,
    "td_pct": 32,
    "stat": "Rec Yds",
@@ -3345,8 +3358,8 @@
    "position": "TE",
    "team": "SEA",
    "opp": "CHI",
-   "grade": "C",
-   "composite": 4.48,
+   "grade": "B",
+   "composite": 4.51,
    "proj_yards": 9,
    "td_pct": 3,
    "stat": "Rec Yds",
@@ -3358,7 +3371,7 @@
    "team": "SEA",
    "opp": "CHI",
    "grade": "A+",
-   "composite": 7.81,
+   "composite": 7.83,
    "proj_yards": 106,
    "td_pct": 48,
    "stat": "Rec Yds",
@@ -3378,7 +3391,7 @@
    "team": "SEA",
    "opp": "CHI",
    "grade": "B+",
-   "composite": 6.01,
+   "composite": 6.04,
    "proj_yards": 36,
    "td_pct": 16,
    "stat": "Rec Yds",
@@ -3390,8 +3403,8 @@
    "team": "SEA",
    "opp": "CHI",
    "grade": "B",
-   "composite": 5.29,
-   "proj_yards": 30,
+   "composite": 5.32,
+   "proj_yards": 31,
    "td_pct": 38,
    "stat": "Rec Yds",
    "estimated": false
@@ -3402,7 +3415,7 @@
    "team": "SEA",
    "opp": "CHI",
    "grade": "B",
-   "composite": 5.41
+   "composite": 5.44
   },
   {
    "name": "Baker Mayfield",
@@ -3690,7 +3703,7 @@
    "team": "WSH",
    "opp": "PHI",
    "grade": "A",
-   "composite": 6.72,
+   "composite": 6.69,
    "proj_yards": 239,
    "td_pct": 80,
    "stat": "Total Yds",
@@ -3704,7 +3717,7 @@
    "team": "WSH",
    "opp": "PHI",
    "grade": "C",
-   "composite": 4.48
+   "composite": 4.45
   },
   {
    "name": "Rachaad White",
@@ -3795,8 +3808,8 @@
    "position": "WR",
    "team": "WSH",
    "opp": "PHI",
-   "grade": "B",
-   "composite": 5.48,
+   "grade": "B+",
+   "composite": 5.88,
    "proj_yards": 35,
    "td_pct": 13,
    "stat": "Rec Yds",
@@ -3815,24 +3828,6 @@
    "estimated": false
   },
   {
-   "name": "LAR Defense",
-   "position": "DEF",
-   "team": "LAR",
-   "opp": "LAC",
-   "grade": "A+",
-   "composite": 9.8,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "LAC Defense",
-   "position": "DEF",
-   "team": "LAC",
-   "opp": "LAR",
-   "grade": "C",
-   "composite": 4.1,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "DEN Defense",
    "position": "DEF",
    "team": "DEN",
@@ -3848,24 +3843,6 @@
    "opp": "DEN",
    "grade": "B+",
    "composite": 6.4,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "MIA Defense",
-   "position": "DEF",
-   "team": "MIA",
-   "opp": "NE",
-   "grade": "D",
-   "composite": 2.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NE Defense",
-   "position": "DEF",
-   "team": "NE",
-   "opp": "MIA",
-   "grade": "A+",
-   "composite": 7.5,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4013,6 +3990,42 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "LAR Defense",
+   "position": "DEF",
+   "team": "LAR",
+   "opp": "LAC",
+   "grade": "A+",
+   "composite": 9.8,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "LAC Defense",
+   "position": "DEF",
+   "team": "LAC",
+   "opp": "LAR",
+   "grade": "C",
+   "composite": 4.1,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "MIA Defense",
+   "position": "DEF",
+   "team": "MIA",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 2.7,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NE Defense",
+   "position": "DEF",
+   "team": "NE",
+   "opp": "MIA",
+   "grade": "A+",
+   "composite": 7.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "WSH Defense",
    "position": "DEF",
    "team": "WSH",
@@ -4069,17 +4082,6 @@
  ],
  "leans": [
   {
-   "game_id": "401873032",
-   "home": "LAR",
-   "away": "LAC",
-   "favorite": "LAR",
-   "strength": "strong lean",
-   "margin": 2.15,
-   "model_margin": 2.12,
-   "vegas_margin": 2.17,
-   "spread": -6.5
-  },
-  {
    "game_id": "401873033",
    "home": "DEN",
    "away": "KC",
@@ -4089,17 +4091,6 @@
    "model_margin": -0.26,
    "vegas_margin": 0.5,
    "spread": -1.5
-  },
-  {
-   "game_id": "401873034",
-   "home": "MIA",
-   "away": "NE",
-   "favorite": "NE",
-   "strength": "strong lean",
-   "margin": -2.26,
-   "model_margin": -2.14,
-   "vegas_margin": -2.33,
-   "spread": 7.0
   },
   {
    "game_id": "401873026",
@@ -4190,13 +4181,35 @@
    "spread": -10.0
   },
   {
+   "game_id": "401873032",
+   "home": "LAR",
+   "away": "LAC",
+   "favorite": "LAR",
+   "strength": "strong lean",
+   "margin": 2.15,
+   "model_margin": 2.12,
+   "vegas_margin": 2.17,
+   "spread": -6.5
+  },
+  {
+   "game_id": "401873034",
+   "home": "MIA",
+   "away": "NE",
+   "favorite": "NE",
+   "strength": "strong lean",
+   "margin": -2.26,
+   "model_margin": -2.14,
+   "vegas_margin": -2.33,
+   "spread": 7.0
+  },
+  {
    "game_id": "401873035",
    "home": "WSH",
    "away": "PHI",
    "favorite": "WSH",
    "strength": "clear lean",
    "margin": 0.92,
-   "model_margin": -0.69,
+   "model_margin": -0.71,
    "vegas_margin": 2.0,
    "spread": -6.0
   },
@@ -4217,8 +4230,8 @@
    "away": "CHI",
    "favorite": "SEA",
    "strength": "clear lean",
-   "margin": 1.3,
-   "model_margin": 1.76,
+   "margin": 1.31,
+   "model_margin": 1.77,
    "vegas_margin": 1.0,
    "spread": -3.0
   }
