@@ -1960,6 +1960,36 @@ ROLE_BY_DEPTH = {"RB": {1: 6.0, 2: 3.5, 3: 1.5}, "WR": {1: 6.0, 2: 4.5, 3: 3.0, 
 #   weight 0.30 -> corr 0.522, top-5 48.4       (becomes a volume list)
 ROLE_WEIGHT = 0.20
 
+# Composite weights per position. The default is the original split with
+# ROLE_WEIGHT carved out and the rest kept in its old proportions.
+#
+# QUARTERBACK IS DIFFERENT and has its own row. Measured over weeks 4-8, QB
+# grades barely ranked outcomes at all (Spearman .18 vs .40-.48 for the skill
+# positions; an A+ QB averaged 260.7 yds against a B+'s 231.8). The reason is
+# structural: matchup, pace, environment and offence quality are all TEAM-level,
+# so both quarterbacks in a game get near-identical inputs, and role_score is a
+# flat 10 for every starter -- a fifth of the grade carrying no information at
+# all. For QBs the weight is moved onto the two things that actually separate
+# them: their own production, and how the opponent defends the pass.
+_rest = 1.0 - ROLE_WEIGHT
+COMPOSITE_WEIGHTS = {
+    "DEFAULT": {"role": ROLE_WEIGHT, "matchup": 0.35 * _rest, "env": 0.20 * _rest,
+                "form": 0.20 * _rest, "pace": 0.12 * _rest, "off": 0.08 * _rest,
+                "home": 0.05 * _rest},
+    # Fitted by rebuilding weeks 5-8 (104 starting QBs) and ranking each
+    # candidate against actual yards. Rank correlation improved in EVERY week:
+    #   weighting            wk5    wk6    wk7    wk8   mean
+    #   current (shared)    .305   .295   .531   .313   .361
+    #   form .40            .491   .399   .570   .406   .467
+    #   form .50  <-chosen  .498   .408   .567   .426   .475
+    #   form .65            .525   .399   .525   .409   .465
+    # The curve is flat from .40 to .65, so .50 sits on a plateau rather than
+    # a spike. Pure form alone is much worse (.216 on wk8), so the opponent's
+    # pass defence genuinely matters -- it just should not outweigh the man.
+    "QB":      {"role": 0.00, "matchup": 0.28, "env": 0.14,
+                "form": 0.50, "pace": 0.03, "off": 0.04, "home": 0.01},
+}
+
 
 def role_score(player):
     """
@@ -2095,16 +2125,16 @@ def matchup_grade(player, game, defense_stats, offense_stats, vegas_totals, game
     # ── Weighted composite ───────────────────────────────────
     # Role/usage gets ROLE_WEIGHT; the original six factors share the rest in
     # their old proportions, so their relative importance is unchanged.
-    rs   = role_score(player)
-    rest = 1.0 - ROLE_WEIGHT
+    rs = role_score(player)
+    w  = COMPOSITE_WEIGHTS.get(pos, COMPOSITE_WEIGHTS["DEFAULT"])
     composite = round(
-        rs            * ROLE_WEIGHT +
-        matchup_score * 0.35 * rest +
-        env_score     * 0.20 * rest +
-        recent_score  * 0.20 * rest +
-        pace_score    * 0.12 * rest +
-        off_score     * 0.08 * rest +
-        home_score    * 0.05 * rest,
+        rs            * w["role"] +
+        matchup_score * w["matchup"] +
+        env_score     * w["env"] +
+        recent_score  * w["form"] +
+        pace_score    * w["pace"] +
+        off_score     * w["off"] +
+        home_score    * w["home"],
         2
     )
     composite = max(0, round(composite - wind_penalty, 2))
