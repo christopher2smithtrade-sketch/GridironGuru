@@ -2204,17 +2204,17 @@ LEAGUE_AVG_PLAYS   = 63.0    # plays per game
 # regression in the BASELINE, not the multipliers, and needs a separate fix.
 PROJ_SHRINK = 0.3
 
-# Per-position bias correction, measured on live results. The actual/called
-# ratio has been remarkably stable week to week (wk3/4/5/6):
-#   QB 1.12 1.13 1.10 1.07  -> under-called every week
-#   RB 0.87 0.91 0.89 0.80  -> over-called every week
-#   WR 1.02 0.99 0.90 0.93      TE 1.00 0.92 1.01 0.95
-# Four consecutive weeks in the same direction for QB and RB is systematic,
-# not noise. Quarterback production is the least variable thing on the board
-# (one man takes every snap) so regressing it as hard as a rotational back was
-# always suspect; running backs are the opposite -- committees split work in
-# ways last season's share does not capture.
-POS_CALIBRATION = {"QB": 1.10, "RB": 0.87, "WR": 0.96, "TE": 0.97}
+# Per-position bias correction, refitted on FIVE weeks (4-8) with the applied
+# calibration backed out, so this is the model's true underlying bias:
+#            wk4   wk5   wk6   wk7   wk8    5-week
+#   QB      1.13  1.10  1.07  1.09  1.04     1.089   <- stable every week
+#   RB      0.91  0.89  0.80  1.07  1.00     0.932   <- FLIPPED SIGN in wk7
+#   WR      0.99  0.90  0.93  0.85  0.86     0.909   <- consistently over-called
+#   TE      0.92  1.01  0.95  1.04  1.16     1.012   <- noisy, averages ~1
+# Only QB and WR are stable enough to correct at full strength. The first fit
+# used weeks 4-6 alone and set RB to 0.87; it promptly under-called running
+# backs by 14-23% once the sign flipped. RB and TE are now held near neutral.
+POS_CALIBRATION = {"QB": 1.09, "RB": 0.95, "WR": 0.91, "TE": 1.00}
 
 # Baseline regression strength: w = games / (games + REGRESS_K), i.e. K is
 # "games worth of prior". Fitted JOINTLY with PROJ_SHRINK on Week 1 2026:
