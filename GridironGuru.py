@@ -1988,6 +1988,22 @@ COMPOSITE_WEIGHTS = {
     # pass defence genuinely matters -- it just should not outweigh the man.
     "QB":      {"role": 0.00, "matchup": 0.28, "env": 0.14,
                 "form": 0.50, "pace": 0.03, "off": 0.04, "home": 0.01},
+    # Skill positions, fitted the same way over weeks 5-8 and re-checked with
+    # the 2026 blend DISABLED so no future information could leak in:
+    #                  RB     WR     TE
+    #   current       .387   .322   .327
+    #   role.40/.35   .477   .445   .473   <- chosen, better in all 12 checks
+    #   matchup ONLY  .041   .059   .002   <- near zero ranking power
+    # Matchup was carrying 28% of the grade while ranking outcomes at ~.04.
+    # Yards-allowed is noisy and the spread between defences in any given week
+    # is small next to the spread in how much work a player actually gets.
+    # Usage is the strongest single signal, own production second.
+    "RB":      {"role": 0.40, "matchup": 0.10, "env": 0.06,
+                "form": 0.35, "pace": 0.04, "off": 0.03, "home": 0.02},
+    "WR":      {"role": 0.40, "matchup": 0.10, "env": 0.06,
+                "form": 0.35, "pace": 0.04, "off": 0.03, "home": 0.02},
+    "TE":      {"role": 0.40, "matchup": 0.10, "env": 0.06,
+                "form": 0.35, "pace": 0.04, "off": 0.03, "home": 0.02},
 }
 
 
