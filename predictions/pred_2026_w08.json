@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 8,
- "logged_at": "2026-11-03T18:28:52",
+ "logged_at": "2026-11-04T00:22:35",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -53,6 +53,19 @@
    "composite": 6.5,
    "proj_yards": 35,
    "td_pct": 33,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "Evan Hull",
+   "position": "RB",
+   "team": "ARI",
+   "opp": "DAL",
+   "grade": "B+",
+   "composite": 5.7,
+   "late": true,
+   "proj_yards": 25,
+   "td_pct": 6,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2021,6 +2034,19 @@
    "td_pct": 15,
    "stat": "Rush Yds",
    "estimated": true
+  },
+  {
+   "name": "Ronnie Rivers",
+   "position": "RB",
+   "team": "LAR",
+   "opp": "LAC",
+   "grade": "C",
+   "composite": 4.1,
+   "late": true,
+   "proj_yards": 17,
+   "td_pct": 6,
+   "stat": "Rush Yds",
+   "estimated": false
   },
   {
    "name": "Tyler Higbee",
