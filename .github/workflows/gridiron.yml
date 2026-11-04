@@ -1,55 +1,58 @@
 name: Gridiron Guru
 
-# Times are UTC. NFL season runs in Eastern time (EDT = UTC-4 until Nov 1 2026,
-# then EST = UTC-5 -- bump every hour below by +1 when DST ends).
+# Times are UTC. EASTERN STANDARD TIME is in effect (EST = UTC-5) from
+# Nov 1 2026 until Mar 2027 -- when DST returns in March, subtract 1 from
+# every hour below.
 #
-# GitHub's free cron ran 1h50m-2h50m LATE on every scheduled slot in Week 2
-# (Sun 11:00 fired at 1:49 PM, after the 1:00 kickoffs). No single aim point
-# survives that, so each window gets several crons spaced 30 min apart, aimed
-# ~2-3 h ahead. Whatever lands, lands. The script handles the pile-up:
-#   - a scheduled run exits in seconds if the board is <20 min old
-#   - a quiet refresh (nothing newly OUT, board <2 h old) sends no phone push
-#   - a "fresh after X?" check is booked once per window, not once per cron
-# Minutes are :17 / :47 -- GitHub's queue jams at :00 and :30 (H-Bomb lesson).
+# Two things forced this rewrite on 2026-11-03:
+#   1. DST ended, so the old UTC crons began firing an hour earlier in ET.
+#   2. GitHub's free cron lag has grown: median 4.3 h now, vs 2.7 h in
+#      September. On Nov 1 the first Sunday run landed at 1:57 PM EST --
+#      after the 1:00 kickoffs.
+# So each window is now fed by a wide fan of crons aimed 2-6 h early. The
+# script discards the surplus: a scheduled run exits in seconds if the board
+# is under 20 min old, and a quiet refresh sends no phone push.
 #
-#   Sun 11:30 inactives (1:00 kick)  crons 9:17 / 9:47 / 10:17 / 10:47 ET
-#   Sun  2:55 inactives (4:25 kick)  crons 12:47 / 1:17 / 1:47 ET
-#   Sun  6:50 inactives (8:20 kick)  crons 4:47 / 5:17 / 5:47 ET
-#   Thu + Mon 6:45 inactives          crons 4:47 / 5:17 / 5:47 ET
-#   Fri final designations            crons 5:17 / 6:17 ET
-#   Wed TNF final report              cron  3:17 PM ET
-#   Tue score the finished week       cron  7:17 AM ET
-#
-# Or tap "Run workflow" in the GitHub app any time -- nothing here is metered.
+# Target landing windows (ET):
+#   Sun 11:30 AM - 1:00 PM   early-slate inactives -> kickoff
+#   Sun  2:55 PM - 4:25 PM   late slate
+#   Sun  6:50 PM - 8:20 PM   SNF
+#   Thu/Mon 6:45 - 8:15 PM   TNF / MNF
 on:
   schedule:
-    # Sunday early slate (UTC = ET + 4)
+    # ---- Sunday early slate (target land 11:30 AM - 1:00 PM EST) ----
+    - cron: '47 10 * * 0'
+    - cron: '17 11 * * 0'
+    - cron: '47 11 * * 0'
+    - cron: '17 12 * * 0'
+    - cron: '47 12 * * 0'
     - cron: '17 13 * * 0'
-    - cron: '47 13 * * 0'
-    - cron: '17 14 * * 0'
+    # ---- Sunday late slate (target 2:55 - 4:25 PM) ----
     - cron: '47 14 * * 0'
-    # Sunday late slate
-    - cron: '47 16 * * 0'
-    - cron: '17 17 * * 0'
-    - cron: '47 17 * * 0'
-    # Sunday night
-    - cron: '47 20 * * 0'
-    - cron: '17 21 * * 0'
-    - cron: '47 21 * * 0'
-    # Thursday night
-    - cron: '47 20 * * 4'
-    - cron: '17 21 * * 4'
-    - cron: '47 21 * * 4'
-    # Monday night
-    - cron: '47 20 * * 1'
-    - cron: '17 21 * * 1'
-    - cron: '47 21 * * 1'
-    # Friday designations
-    - cron: '17 21 * * 5'
-    - cron: '17 22 * * 5'
-    # Wednesday TNF report
-    - cron: '17 19 * * 3'
-    # Tuesday scoring
+    - cron: '17 15 * * 0'
+    - cron: '47 15 * * 0'
+    - cron: '17 16 * * 0'
+    # ---- Sunday night (target 6:50 - 8:20 PM) ----
+    - cron: '17 18 * * 0'
+    - cron: '47 18 * * 0'
+    - cron: '17 19 * * 0'
+    - cron: '47 19 * * 0'
+    # ---- Thursday night ----
+    - cron: '17 18 * * 4'
+    - cron: '47 18 * * 4'
+    - cron: '17 19 * * 4'
+    - cron: '47 19 * * 4'
+    # ---- Monday night ----
+    - cron: '17 18 * * 1'
+    - cron: '47 18 * * 1'
+    - cron: '17 19 * * 1'
+    - cron: '47 19 * * 1'
+    # ---- Friday final injury designations (target late afternoon) ----
+    - cron: '17 17 * * 5'
+    - cron: '17 19 * * 5'
+    # ---- Wednesday TNF report ----
+    - cron: '17 16 * * 3'
+    # ---- Tuesday: score the finished week, roll to the next ----
     - cron: '17 11 * * 2'
   workflow_dispatch:
 
@@ -84,8 +87,8 @@ jobs:
         run: python GridironGuru.py
 
       # The script pushes index.html and the prediction log through the API.
-      # The season-stat cache (and the run-check state) is committed here so
-      # the next run is warm.
+      # The season cache and run-check state are committed here so the next
+      # run starts warm.
       - name: Commit refreshed cache
         run: |
           git config user.name  "gridiron-bot"
