@@ -198,6 +198,21 @@ def get_current_week():
         yr = int(r.get("season", {}).get("year") or 0)
         stype = int(r.get("season", {}).get("type") or 2)
         if yr and wk and stype == 2:
+            # ESPN leaves its week pointer on a finished slate for a day or
+            # two after Monday night. Taken literally that leaves the board
+            # showing last week's completed games right when people open it
+            # on Tuesday/Wednesday. If every game in ESPN's week is final and
+            # the next week has a real unplayed schedule, move on.
+            if wk < 18:
+                try:
+                    cur = get_games(yr, wk)
+                    if cur and all(g.get("completed") for g in cur):
+                        nxt = get_games(yr, wk + 1)
+                        if nxt and any(not g.get("completed") for g in nxt):
+                            print(f"  Week {wk} is complete -- advancing to Week {wk + 1}")
+                            return yr, wk + 1
+                except Exception as e:
+                    print(f"  [!] Week rollover check: {e}")
             return yr, wk
     except Exception as e:
         print(f"  [!] ESPN week lookup failed ({e}) -- falling back to date math")
