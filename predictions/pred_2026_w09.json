@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 9,
- "logged_at": "2026-11-05T23:40:56",
+ "logged_at": "2026-11-06T00:19:19",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -277,7 +277,7 @@
    "team": "BAL",
    "opp": "JAX",
    "grade": "B",
-   "composite": 5.23,
+   "composite": 5.24,
    "proj_yards": 219,
    "td_pct": 74,
    "stat": "Total Yds",
@@ -290,8 +290,16 @@
    "position": "QB",
    "team": "BAL",
    "opp": "JAX",
-   "grade": "D",
-   "composite": 2.73
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Jacoby Brissett",
+   "position": "QB",
+   "team": "BAL",
+   "opp": "JAX",
+   "grade": "B+",
+   "composite": 5.89
   },
   {
    "name": "Derrick Henry",
@@ -311,7 +319,7 @@
    "team": "BAL",
    "opp": "JAX",
    "grade": "D",
-   "composite": 2.38,
+   "composite": 2.39,
    "proj_yards": 21,
    "td_pct": 18,
    "stat": "Rush Yds",
@@ -359,7 +367,7 @@
    "team": "BAL",
    "opp": "JAX",
    "grade": "A+",
-   "composite": 7.73,
+   "composite": 7.74,
    "proj_yards": 66,
    "td_pct": 28,
    "stat": "Rec Yds",
@@ -1857,12 +1865,12 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "A",
-   "composite": 7.23,
-   "proj_yards": 283,
+   "composite": 7.22,
+   "proj_yards": 281,
    "td_pct": 90,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 266,
+   "proj_pass_yards": 264,
    "proj_rush_yards": 17
   },
   {
@@ -1871,7 +1879,7 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "B+",
-   "composite": 5.53
+   "composite": 5.52
   },
   {
    "name": "Bhayshul Tuten",
@@ -1879,7 +1887,7 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "B",
-   "composite": 4.87,
+   "composite": 5.26,
    "proj_yards": 50,
    "td_pct": 44,
    "stat": "Rush Yds",
@@ -1891,9 +1899,9 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "C",
-   "composite": 3.8,
-   "proj_yards": 34,
-   "td_pct": 37,
+   "composite": 3.79,
+   "proj_yards": 33,
+   "td_pct": 36,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1903,7 +1911,7 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "D",
-   "composite": 1.84,
+   "composite": 1.83,
    "proj_yards": 10,
    "td_pct": 6,
    "stat": "Rush Yds",
@@ -1917,7 +1925,7 @@
    "grade": "B+",
    "composite": 6.32,
    "proj_yards": 42,
-   "td_pct": 25,
+   "td_pct": 24,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1929,7 +1937,7 @@
    "grade": "C",
    "composite": 3.85,
    "proj_yards": 14,
-   "td_pct": 8,
+   "td_pct": 7,
    "stat": "Rec Yds",
    "estimated": true
   },
@@ -1939,9 +1947,9 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "A",
-   "composite": 6.57,
-   "proj_yards": 58,
-   "td_pct": 31,
+   "composite": 6.56,
+   "proj_yards": 57,
+   "td_pct": 30,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1963,7 +1971,7 @@
    "team": "JAX",
    "opp": "BAL",
    "grade": "B",
-   "composite": 5.17,
+   "composite": 5.16,
    "proj_yards": 33,
    "td_pct": 21,
    "stat": "Rec Yds",
@@ -4225,10 +4233,10 @@
    "away": "JAX",
    "favorite": "JAX",
    "strength": "strong lean",
-   "margin": -2.37,
-   "model_margin": -0.91,
-   "vegas_margin": -3.33,
-   "spread": 10.0
+   "margin": -2.21,
+   "model_margin": -0.77,
+   "vegas_margin": -3.17,
+   "spread": 9.5
   },
   {
    "game_id": "401873038",
