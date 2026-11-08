@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 9,
- "logged_at": "2026-11-08T19:40:34",
+ "logged_at": "2026-11-08T20:32:19",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -1368,6 +1368,19 @@
    "estimated": false
   },
   {
+   "name": "Marvin Mims Jr.",
+   "position": "WR",
+   "team": "DEN",
+   "opp": "CAR",
+   "grade": "D",
+   "composite": 3.3,
+   "late": true,
+   "proj_yards": 23,
+   "td_pct": 14,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "Jared Goff",
    "position": "QB",
    "team": "DET",
@@ -1540,12 +1553,8 @@
    "position": "RB",
    "team": "GB",
    "opp": "NE",
-   "grade": "C",
-   "composite": 4.23,
-   "proj_yards": 26,
-   "td_pct": 27,
-   "stat": "Rush Yds",
-   "estimated": true
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Pierre Strong Jr.",
@@ -1558,6 +1567,18 @@
    "td_pct": 13,
    "stat": "Rush Yds",
    "estimated": true
+  },
+  {
+   "name": "Kaleb Johnson",
+   "position": "RB",
+   "team": "GB",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 2.46,
+   "proj_yards": 20,
+   "td_pct": 9,
+   "stat": "Rush Yds",
+   "estimated": false
   },
   {
    "name": "Tucker Kraft",
@@ -2551,10 +2572,18 @@
    "position": "WR",
    "team": "LV",
    "opp": "SF",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Dareke Young",
+   "position": "WR",
+   "team": "LV",
+   "opp": "SF",
    "grade": "D",
-   "composite": 2.9,
-   "proj_yards": 17,
-   "td_pct": 4,
+   "composite": 1.72,
+   "proj_yards": 19,
+   "td_pct": 3,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2906,7 +2935,7 @@
    "team": "NE",
    "opp": "GB",
    "grade": "B+",
-   "composite": 5.7,
+   "composite": 6.1,
    "proj_yards": 38,
    "td_pct": 32,
    "stat": "Rec Yds",
@@ -2950,7 +2979,7 @@
    "team": "NE",
    "opp": "GB",
    "grade": "B",
-   "composite": 4.9,
+   "composite": 5.3,
    "proj_yards": 43,
    "td_pct": 17,
    "stat": "Rec Yds",
@@ -4461,8 +4490,8 @@
    "away": "GB",
    "favorite": "NE",
    "strength": "slight lean",
-   "margin": 0.6,
-   "model_margin": -0.01,
+   "margin": 0.65,
+   "model_margin": 0.12,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
