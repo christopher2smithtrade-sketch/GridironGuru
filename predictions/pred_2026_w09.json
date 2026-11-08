@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 9,
- "logged_at": "2026-11-08T17:58:08",
+ "logged_at": "2026-11-08T18:20:30",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -2434,12 +2434,12 @@
    "team": "LV",
    "opp": "SF",
    "grade": "B+",
-   "composite": 6.4,
-   "proj_yards": 241,
-   "td_pct": 72,
+   "composite": 6.42,
+   "proj_yards": 243,
+   "td_pct": 73,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 240,
+   "proj_pass_yards": 242,
    "proj_rush_yards": 1
   },
   {
@@ -2448,7 +2448,7 @@
    "team": "LV",
    "opp": "SF",
    "grade": "B",
-   "composite": 5.45
+   "composite": 5.47
   },
   {
    "name": "Ashton Jeanty",
@@ -2456,9 +2456,9 @@
    "team": "LV",
    "opp": "SF",
    "grade": "B+",
-   "composite": 6.07,
+   "composite": 6.08,
    "proj_yards": 40,
-   "td_pct": 47,
+   "td_pct": 48,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2468,9 +2468,9 @@
    "team": "LV",
    "opp": "SF",
    "grade": "C",
-   "composite": 4.28,
+   "composite": 4.29,
    "proj_yards": 26,
-   "td_pct": 24,
+   "td_pct": 25,
    "stat": "Rush Yds",
    "estimated": true
   },
@@ -2480,7 +2480,7 @@
    "team": "LV",
    "opp": "SF",
    "grade": "D",
-   "composite": 1.16,
+   "composite": 1.17,
    "proj_yards": 8,
    "td_pct": 5,
    "stat": "Rush Yds",
@@ -2492,9 +2492,9 @@
    "team": "LV",
    "opp": "SF",
    "grade": "A+",
-   "composite": 8.43,
-   "proj_yards": 64,
-   "td_pct": 39,
+   "composite": 8.44,
+   "proj_yards": 65,
+   "td_pct": 40,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2504,7 +2504,7 @@
    "team": "LV",
    "opp": "SF",
    "grade": "B+",
-   "composite": 5.5,
+   "composite": 5.51,
    "proj_yards": 35,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -2516,8 +2516,8 @@
    "team": "LV",
    "opp": "SF",
    "grade": "B+",
-   "composite": 5.8,
-   "proj_yards": 47,
+   "composite": 5.81,
+   "proj_yards": 48,
    "td_pct": 24,
    "stat": "Rec Yds",
    "estimated": false
@@ -2542,7 +2542,7 @@
    "grade": "D",
    "composite": 3.18,
    "proj_yards": 22,
-   "td_pct": 4,
+   "td_pct": 5,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2552,8 +2552,8 @@
    "team": "LV",
    "opp": "SF",
    "grade": "D",
-   "composite": 2.89,
-   "proj_yards": 16,
+   "composite": 2.9,
+   "proj_yards": 17,
    "td_pct": 4,
    "stat": "Rec Yds",
    "estimated": false
@@ -3684,7 +3684,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "A",
-   "composite": 7.4,
+   "composite": 7.38,
    "proj_yards": 293,
    "td_pct": 94,
    "stat": "Total Yds",
@@ -3698,7 +3698,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "B+",
-   "composite": 5.95
+   "composite": 5.93
   },
   {
    "name": "Christian McCaffrey",
@@ -3730,7 +3730,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "D",
-   "composite": 2.24,
+   "composite": 2.23,
    "proj_yards": 30,
    "td_pct": 6,
    "stat": "Rush Yds",
@@ -3754,7 +3754,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "D",
-   "composite": 2.73,
+   "composite": 2.72,
    "proj_yards": 10,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -3774,7 +3774,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "B+",
-   "composite": 5.79,
+   "composite": 5.78,
    "proj_yards": 46,
    "td_pct": 34,
    "stat": "Rec Yds",
@@ -3786,7 +3786,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "C",
-   "composite": 4.32,
+   "composite": 4.31,
    "proj_yards": 35,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -3798,7 +3798,7 @@
    "team": "SF",
    "opp": "LV",
    "grade": "D",
-   "composite": 3.29,
+   "composite": 3.28,
    "proj_yards": 42,
    "td_pct": 4,
    "stat": "Rec Yds",
@@ -3809,8 +3809,8 @@
    "position": "WR",
    "team": "SF",
    "opp": "LV",
-   "grade": "C",
-   "composite": 3.5,
+   "grade": "D",
+   "composite": 3.49,
    "proj_yards": 22,
    "td_pct": 5,
    "stat": "Rec Yds",
@@ -4085,24 +4085,6 @@
    "estimated": false
   },
   {
-   "name": "ATL Defense",
-   "position": "DEF",
-   "team": "ATL",
-   "opp": "CIN",
-   "grade": "B",
-   "composite": 4.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CIN Defense",
-   "position": "DEF",
-   "team": "CIN",
-   "opp": "ATL",
-   "grade": "B+",
-   "composite": 5.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "IND Defense",
    "position": "DEF",
    "team": "IND",
@@ -4226,6 +4208,24 @@
    "opp": "CAR",
    "grade": "A+",
    "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ATL Defense",
+   "position": "DEF",
+   "team": "ATL",
+   "opp": "CIN",
+   "grade": "B",
+   "composite": 4.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "CIN Defense",
+   "position": "DEF",
+   "team": "CIN",
+   "opp": "ATL",
+   "grade": "B+",
+   "composite": 5.7,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4357,17 +4357,6 @@
  ],
  "leans": [
   {
-   "game_id": "401873038",
-   "home": "ATL",
-   "away": "CIN",
-   "favorite": "CIN",
-   "strength": "slight lean",
-   "margin": -0.65,
-   "model_margin": -0.11,
-   "vegas_margin": -1.0,
-   "spread": 3.0
-  },
-  {
    "game_id": "401873040",
    "home": "IND",
    "away": "DAL",
@@ -4445,6 +4434,17 @@
    "spread": 3.0
   },
   {
+   "game_id": "401873038",
+   "home": "ATL",
+   "away": "CIN",
+   "favorite": "CIN",
+   "strength": "slight lean",
+   "margin": -0.65,
+   "model_margin": -0.11,
+   "vegas_margin": -1.0,
+   "spread": 3.0
+  },
+  {
    "game_id": "401873046",
    "home": "LAC",
    "away": "HOU",
@@ -4472,10 +4472,10 @@
    "away": "LV",
    "favorite": "SF",
    "strength": "strong lean",
-   "margin": 2.58,
-   "model_margin": 1.7,
-   "vegas_margin": 3.17,
-   "spread": -9.5
+   "margin": 2.37,
+   "model_margin": 1.68,
+   "vegas_margin": 2.83,
+   "spread": -8.5
   },
   {
    "game_id": "401873048",
