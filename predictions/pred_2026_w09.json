@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 9,
- "logged_at": "2026-11-08T20:32:19",
+ "logged_at": "2026-11-08T22:05:50",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -703,12 +703,12 @@
    "team": "CHI",
    "opp": "TB",
    "grade": "B+",
-   "composite": 6.18,
-   "proj_yards": 287,
+   "composite": 6.27,
+   "proj_yards": 288,
    "td_pct": 89,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 259,
+   "proj_pass_yards": 260,
    "proj_rush_yards": 28
   },
   {
@@ -717,7 +717,7 @@
    "team": "CHI",
    "opp": "TB",
    "grade": "C",
-   "composite": 3.78
+   "composite": 3.87
   },
   {
    "name": "D'Andre Swift",
@@ -761,7 +761,7 @@
    "team": "CHI",
    "opp": "TB",
    "grade": "B+",
-   "composite": 6.36,
+   "composite": 6.39,
    "proj_yards": 39,
    "td_pct": 34,
    "stat": "Rec Yds",
@@ -773,8 +773,8 @@
    "team": "CHI",
    "opp": "TB",
    "grade": "C",
-   "composite": 3.62,
-   "proj_yards": 14,
+   "composite": 3.65,
+   "proj_yards": 15,
    "td_pct": 8,
    "stat": "Rec Yds",
    "estimated": true
@@ -1364,19 +1364,6 @@
    "composite": 3.85,
    "proj_yards": 24,
    "td_pct": 26,
-   "stat": "Rec Yds",
-   "estimated": false
-  },
-  {
-   "name": "Marvin Mims Jr.",
-   "position": "WR",
-   "team": "DEN",
-   "opp": "CAR",
-   "grade": "D",
-   "composite": 3.3,
-   "late": true,
-   "proj_yards": 23,
-   "td_pct": 14,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2739,7 +2726,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "B+",
-   "composite": 5.51,
+   "composite": 5.57,
    "proj_yards": 204,
    "td_pct": 72,
    "stat": "Total Yds",
@@ -2753,7 +2740,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "D",
-   "composite": 3.26
+   "composite": 3.31
   },
   {
    "name": "Jordan Mason",
@@ -2761,7 +2748,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "B+",
-   "composite": 5.62,
+   "composite": 5.61,
    "proj_yards": 44,
    "td_pct": 34,
    "stat": "Rush Yds",
@@ -2773,7 +2760,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "B+",
-   "composite": 6.37,
+   "composite": 6.36,
    "proj_yards": 51,
    "td_pct": 31,
    "stat": "Rush Yds",
@@ -2785,7 +2772,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "D",
-   "composite": 1.87,
+   "composite": 1.86,
    "proj_yards": 18,
    "td_pct": 5,
    "stat": "Rush Yds",
@@ -2797,7 +2784,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "B+",
-   "composite": 6.36,
+   "composite": 6.37,
    "proj_yards": 34,
    "td_pct": 19,
    "stat": "Rec Yds",
@@ -2809,7 +2796,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "C",
-   "composite": 4.0,
+   "composite": 4.01,
    "proj_yards": 13,
    "td_pct": 6,
    "stat": "Rec Yds",
@@ -3851,12 +3838,12 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "B",
-   "composite": 5.32,
-   "proj_yards": 197,
+   "composite": 5.43,
+   "proj_yards": 198,
    "td_pct": 79,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 177,
+   "proj_pass_yards": 178,
    "proj_rush_yards": 20
   },
   {
@@ -3864,8 +3851,8 @@
    "position": "QB",
    "team": "TB",
    "opp": "CHI",
-   "grade": "B",
-   "composite": 5.42
+   "grade": "B+",
+   "composite": 5.53
   },
   {
    "name": "Bucky Irving",
@@ -3873,7 +3860,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "A",
-   "composite": 6.95,
+   "composite": 6.94,
    "proj_yards": 65,
    "td_pct": 39,
    "stat": "Rush Yds",
@@ -3885,7 +3872,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "C",
-   "composite": 3.73,
+   "composite": 3.72,
    "proj_yards": 33,
    "td_pct": 31,
    "stat": "Rush Yds",
@@ -3897,7 +3884,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "D",
-   "composite": 2.71,
+   "composite": 2.7,
    "proj_yards": 22,
    "td_pct": 29,
    "stat": "Rush Yds",
@@ -3909,7 +3896,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "B+",
-   "composite": 5.72,
+   "composite": 5.73,
    "proj_yards": 28,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -3921,7 +3908,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "D",
-   "composite": 2.16,
+   "composite": 2.17,
    "proj_yards": 6,
    "td_pct": 3,
    "stat": "Rec Yds",
@@ -3933,7 +3920,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "B+",
-   "composite": 5.97,
+   "composite": 6.0,
    "proj_yards": 42,
    "td_pct": 30,
    "stat": "Rec Yds",
@@ -3945,7 +3932,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "B",
-   "composite": 5.3,
+   "composite": 5.33,
    "proj_yards": 36,
    "td_pct": 21,
    "stat": "Rec Yds",
@@ -3957,7 +3944,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "B",
-   "composite": 4.86,
+   "composite": 4.89,
    "proj_yards": 25,
    "td_pct": 15,
    "stat": "Rec Yds",
@@ -3969,7 +3956,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "C",
-   "composite": 3.62,
+   "composite": 3.65,
    "proj_yards": 25,
    "td_pct": 20,
    "stat": "Rec Yds",
@@ -4114,6 +4101,96 @@
    "estimated": false
   },
   {
+   "name": "LAC Defense",
+   "position": "DEF",
+   "team": "LAC",
+   "opp": "HOU",
+   "grade": "A",
+   "composite": 6.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "HOU Defense",
+   "position": "DEF",
+   "team": "HOU",
+   "opp": "LAC",
+   "grade": "A+",
+   "composite": 9.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NE Defense",
+   "position": "DEF",
+   "team": "NE",
+   "opp": "GB",
+   "grade": "B+",
+   "composite": 5.7,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "GB Defense",
+   "position": "DEF",
+   "team": "GB",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 3.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "SF Defense",
+   "position": "DEF",
+   "team": "SF",
+   "opp": "LV",
+   "grade": "A+",
+   "composite": 7.8,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "LV Defense",
+   "position": "DEF",
+   "team": "LV",
+   "opp": "SF",
+   "grade": "D",
+   "composite": 1.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "SEA Defense",
+   "position": "DEF",
+   "team": "SEA",
+   "opp": "ARI",
+   "grade": "A+",
+   "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ARI Defense",
+   "position": "DEF",
+   "team": "ARI",
+   "opp": "SEA",
+   "grade": "C",
+   "composite": 3.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ATL Defense",
+   "position": "DEF",
+   "team": "ATL",
+   "opp": "CIN",
+   "grade": "B",
+   "composite": 4.6,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "CIN Defense",
+   "position": "DEF",
+   "team": "CIN",
+   "opp": "ATL",
+   "grade": "B+",
+   "composite": 5.7,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "IND Defense",
    "position": "DEF",
    "team": "IND",
@@ -4240,102 +4317,12 @@
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "ATL Defense",
-   "position": "DEF",
-   "team": "ATL",
-   "opp": "CIN",
-   "grade": "B",
-   "composite": 4.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CIN Defense",
-   "position": "DEF",
-   "team": "CIN",
-   "opp": "ATL",
-   "grade": "B+",
-   "composite": 5.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "LAC Defense",
-   "position": "DEF",
-   "team": "LAC",
-   "opp": "HOU",
-   "grade": "A",
-   "composite": 6.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "HOU Defense",
-   "position": "DEF",
-   "team": "HOU",
-   "opp": "LAC",
-   "grade": "A+",
-   "composite": 9.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NE Defense",
-   "position": "DEF",
-   "team": "NE",
-   "opp": "GB",
-   "grade": "B+",
-   "composite": 5.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "GB Defense",
-   "position": "DEF",
-   "team": "GB",
-   "opp": "NE",
-   "grade": "D",
-   "composite": 3.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "SF Defense",
-   "position": "DEF",
-   "team": "SF",
-   "opp": "LV",
-   "grade": "A+",
-   "composite": 7.8,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "LV Defense",
-   "position": "DEF",
-   "team": "LV",
-   "opp": "SF",
-   "grade": "D",
-   "composite": 1.6,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "SEA Defense",
-   "position": "DEF",
-   "team": "SEA",
-   "opp": "ARI",
-   "grade": "A+",
-   "composite": 8.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "ARI Defense",
-   "position": "DEF",
-   "team": "ARI",
-   "opp": "SEA",
-   "grade": "C",
-   "composite": 3.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "CHI Defense",
    "position": "DEF",
    "team": "CHI",
    "opp": "TB",
    "grade": "A",
-   "composite": 6.6,
+   "composite": 6.8,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4344,7 +4331,7 @@
    "team": "TB",
    "opp": "CHI",
    "grade": "C",
-   "composite": 4.1,
+   "composite": 4.2,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4371,7 +4358,7 @@
    "team": "MIN",
    "opp": "BUF",
    "grade": "C",
-   "composite": 3.9,
+   "composite": 4.0,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4379,12 +4366,67 @@
    "position": "DEF",
    "team": "BUF",
    "opp": "MIN",
-   "grade": "A",
-   "composite": 7.3,
+   "grade": "A+",
+   "composite": 7.5,
    "proj_pts_allowed": 22.0
   }
  ],
  "leans": [
+  {
+   "game_id": "401873046",
+   "home": "LAC",
+   "away": "HOU",
+   "favorite": "HOU",
+   "strength": "clear lean",
+   "margin": -1.39,
+   "model_margin": -0.71,
+   "vegas_margin": -1.83,
+   "spread": 5.5
+  },
+  {
+   "game_id": "401873049",
+   "home": "NE",
+   "away": "GB",
+   "favorite": "NE",
+   "strength": "slight lean",
+   "margin": 0.65,
+   "model_margin": 0.12,
+   "vegas_margin": 1.0,
+   "spread": -3.0
+  },
+  {
+   "game_id": "401873047",
+   "home": "SF",
+   "away": "LV",
+   "favorite": "SF",
+   "strength": "strong lean",
+   "margin": 2.37,
+   "model_margin": 1.68,
+   "vegas_margin": 2.83,
+   "spread": -8.5
+  },
+  {
+   "game_id": "401873048",
+   "home": "SEA",
+   "away": "ARI",
+   "favorite": "SEA",
+   "strength": "strong lean",
+   "margin": 2.53,
+   "model_margin": 2.08,
+   "vegas_margin": 2.83,
+   "spread": -8.5
+  },
+  {
+   "game_id": "401873038",
+   "home": "ATL",
+   "away": "CIN",
+   "favorite": "CIN",
+   "strength": "slight lean",
+   "margin": -0.65,
+   "model_margin": -0.11,
+   "vegas_margin": -1.0,
+   "spread": 3.0
+  },
   {
    "game_id": "401873040",
    "home": "IND",
@@ -4463,68 +4505,13 @@
    "spread": 3.0
   },
   {
-   "game_id": "401873038",
-   "home": "ATL",
-   "away": "CIN",
-   "favorite": "CIN",
-   "strength": "slight lean",
-   "margin": -0.65,
-   "model_margin": -0.11,
-   "vegas_margin": -1.0,
-   "spread": 3.0
-  },
-  {
-   "game_id": "401873046",
-   "home": "LAC",
-   "away": "HOU",
-   "favorite": "HOU",
-   "strength": "clear lean",
-   "margin": -1.39,
-   "model_margin": -0.71,
-   "vegas_margin": -1.83,
-   "spread": 5.5
-  },
-  {
-   "game_id": "401873049",
-   "home": "NE",
-   "away": "GB",
-   "favorite": "NE",
-   "strength": "slight lean",
-   "margin": 0.65,
-   "model_margin": 0.12,
-   "vegas_margin": 1.0,
-   "spread": -3.0
-  },
-  {
-   "game_id": "401873047",
-   "home": "SF",
-   "away": "LV",
-   "favorite": "SF",
-   "strength": "strong lean",
-   "margin": 2.37,
-   "model_margin": 1.68,
-   "vegas_margin": 2.83,
-   "spread": -8.5
-  },
-  {
-   "game_id": "401873048",
-   "home": "SEA",
-   "away": "ARI",
-   "favorite": "SEA",
-   "strength": "strong lean",
-   "margin": 2.53,
-   "model_margin": 2.08,
-   "vegas_margin": 2.83,
-   "spread": -8.5
-  },
-  {
    "game_id": "401873050",
    "home": "CHI",
    "away": "TB",
    "favorite": "CHI",
    "strength": "strong lean",
-   "margin": 1.53,
-   "model_margin": 0.84,
+   "margin": 1.54,
+   "model_margin": 0.85,
    "vegas_margin": 2.0,
    "spread": -6.0
   },
@@ -4546,7 +4533,7 @@
    "favorite": "BUF",
    "strength": "clear lean",
    "margin": -0.89,
-   "model_margin": -0.71,
+   "model_margin": -0.72,
    "vegas_margin": -1.0,
    "spread": 3.0
   }
