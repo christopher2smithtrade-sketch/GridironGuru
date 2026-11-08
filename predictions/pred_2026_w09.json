@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 9,
- "logged_at": "2026-11-08T17:15:44",
+ "logged_at": "2026-11-08T17:58:08",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -971,12 +971,12 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "C",
-   "composite": 4.0,
-   "proj_yards": 145,
-   "td_pct": 67,
+   "composite": 4.03,
+   "proj_yards": 146,
+   "td_pct": 68,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 132,
+   "proj_pass_yards": 133,
    "proj_rush_yards": 13
   },
   {
@@ -985,7 +985,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "C",
-   "composite": 3.85
+   "composite": 3.88
   },
   {
    "name": "Quinshon Judkins",
@@ -993,9 +993,9 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "A",
-   "composite": 6.63,
+   "composite": 6.65,
    "proj_yards": 48,
-   "td_pct": 41,
+   "td_pct": 42,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1005,7 +1005,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "D",
-   "composite": 3.18,
+   "composite": 3.19,
    "proj_yards": 20,
    "td_pct": 12,
    "stat": "Rush Yds",
@@ -1017,7 +1017,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "D",
-   "composite": 2.92,
+   "composite": 2.94,
    "proj_yards": 26,
    "td_pct": 11,
    "stat": "Rush Yds",
@@ -1029,7 +1029,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "A",
-   "composite": 7.05,
+   "composite": 7.06,
    "proj_yards": 44,
    "td_pct": 29,
    "stat": "Rec Yds",
@@ -1041,7 +1041,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "D",
-   "composite": 2.49,
+   "composite": 2.5,
    "proj_yards": 10,
    "td_pct": 2,
    "stat": "Rec Yds",
@@ -1053,9 +1053,9 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "B",
-   "composite": 5.17,
+   "composite": 5.19,
    "proj_yards": 49,
-   "td_pct": 18,
+   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": true
   },
@@ -1065,7 +1065,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "B",
-   "composite": 5.09,
+   "composite": 5.11,
    "proj_yards": 37,
    "td_pct": 18,
    "stat": "Rec Yds",
@@ -1077,7 +1077,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "B",
-   "composite": 4.68,
+   "composite": 4.69,
    "proj_yards": 28,
    "td_pct": 13,
    "stat": "Rec Yds",
@@ -1089,7 +1089,7 @@
    "team": "CLE",
    "opp": "NO",
    "grade": "D",
-   "composite": 1.89,
+   "composite": 1.9,
    "proj_yards": 13,
    "td_pct": 6,
    "stat": "Rec Yds",
@@ -1101,12 +1101,12 @@
    "team": "DAL",
    "opp": "IND",
    "grade": "A",
-   "composite": 7.3,
-   "proj_yards": 311,
+   "composite": 7.27,
+   "proj_yards": 310,
    "td_pct": 90,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 296,
+   "proj_pass_yards": 295,
    "proj_rush_yards": 15
   },
   {
@@ -1115,7 +1115,7 @@
    "team": "DAL",
    "opp": "IND",
    "grade": "B+",
-   "composite": 6.1
+   "composite": 6.07
   },
   {
    "name": "Javonte Williams",
@@ -1507,7 +1507,7 @@
    "team": "GB",
    "opp": "NE",
    "grade": "B+",
-   "composite": 6.41,
+   "composite": 6.38,
    "proj_yards": 262,
    "td_pct": 78,
    "stat": "Total Yds",
@@ -1521,7 +1521,7 @@
    "team": "GB",
    "opp": "NE",
    "grade": "C",
-   "composite": 4.01
+   "composite": 3.99
   },
   {
    "name": "Josh Jacobs",
@@ -1775,7 +1775,7 @@
    "team": "IND",
    "opp": "DAL",
    "grade": "A",
-   "composite": 7.24,
+   "composite": 7.21,
    "proj_yards": 246,
    "td_pct": 85,
    "stat": "Total Yds",
@@ -1789,7 +1789,7 @@
    "team": "IND",
    "opp": "DAL",
    "grade": "C",
-   "composite": 4.39
+   "composite": 4.36
   },
   {
    "name": "Jonathan Taylor",
@@ -2986,12 +2986,12 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "B",
-   "composite": 4.98,
-   "proj_yards": 241,
-   "td_pct": 77,
+   "composite": 5.0,
+   "proj_yards": 242,
+   "td_pct": 78,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 224,
+   "proj_pass_yards": 225,
    "proj_rush_yards": 17
   },
   {
@@ -3000,7 +3000,7 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "C",
-   "composite": 4.08
+   "composite": 4.11
   },
   {
    "name": "Alvin Kamara",
@@ -3008,7 +3008,7 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "B",
-   "composite": 4.9,
+   "composite": 4.91,
    "proj_yards": 33,
    "td_pct": 20,
    "stat": "Rush Yds",
@@ -3028,8 +3028,8 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "C",
-   "composite": 3.62,
-   "proj_yards": 34,
+   "composite": 3.63,
+   "proj_yards": 35,
    "td_pct": 14,
    "stat": "Rush Yds",
    "estimated": false
@@ -3040,9 +3040,9 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "D",
-   "composite": 2.23,
+   "composite": 2.24,
    "proj_yards": 22,
-   "td_pct": 5,
+   "td_pct": 6,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3052,9 +3052,9 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "B+",
-   "composite": 6.05,
-   "proj_yards": 38,
-   "td_pct": 19,
+   "composite": 6.06,
+   "proj_yards": 39,
+   "td_pct": 20,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3064,7 +3064,7 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "D",
-   "composite": 3.39,
+   "composite": 3.41,
    "proj_yards": 18,
    "td_pct": 16,
    "stat": "Rec Yds",
@@ -3076,9 +3076,9 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "A",
-   "composite": 7.33,
-   "proj_yards": 68,
-   "td_pct": 42,
+   "composite": 7.34,
+   "proj_yards": 69,
+   "td_pct": 43,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3088,7 +3088,7 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "B",
-   "composite": 4.65,
+   "composite": 4.66,
    "proj_yards": 38,
    "td_pct": 20,
    "stat": "Rec Yds",
@@ -3100,9 +3100,9 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "C",
-   "composite": 4.46,
-   "proj_yards": 38,
-   "td_pct": 18,
+   "composite": 4.47,
+   "proj_yards": 39,
+   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3112,9 +3112,9 @@
    "team": "NO",
    "opp": "CLE",
    "grade": "C",
-   "composite": 3.69,
+   "composite": 3.7,
    "proj_yards": 14,
-   "td_pct": 9,
+   "td_pct": 10,
    "stat": "Rec Yds",
    "estimated": true
   },
@@ -3124,7 +3124,7 @@
    "team": "NYG",
    "opp": "PHI",
    "grade": "B",
-   "composite": 5.12,
+   "composite": 5.09,
    "proj_yards": 193,
    "td_pct": 78,
    "stat": "Total Yds",
@@ -3138,7 +3138,7 @@
    "team": "NYG",
    "opp": "PHI",
    "grade": "B",
-   "composite": 5.17
+   "composite": 5.14
   },
   {
    "name": "Cam Skattebo",
@@ -4407,7 +4407,7 @@
    "favorite": "NO",
    "strength": "clear lean",
    "margin": 1.16,
-   "model_margin": 0.65,
+   "model_margin": 0.64,
    "vegas_margin": 1.5,
    "spread": -4.5
   },
@@ -4418,7 +4418,7 @@
    "favorite": "NYG",
    "strength": "slight lean",
    "margin": -0.68,
-   "model_margin": -0.2,
+   "model_margin": -0.19,
    "vegas_margin": -1.0,
    "spread": 3.0
   },
@@ -4461,8 +4461,8 @@
    "away": "GB",
    "favorite": "NE",
    "strength": "slight lean",
-   "margin": 0.59,
-   "model_margin": -0.02,
+   "margin": 0.6,
+   "model_margin": -0.01,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
