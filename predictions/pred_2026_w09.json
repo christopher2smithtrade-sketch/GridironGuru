@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 9,
- "logged_at": "2026-11-10T01:30:59",
+ "logged_at": "2026-11-10T02:07:32",
  "predictions": [
   {
    "name": "Gardner Minshew II",
@@ -1192,6 +1192,28 @@
    "estimated": false
   },
   {
+   "name": "Luke Schoonmaker",
+   "position": "TE",
+   "team": "DAL",
+   "opp": "IND",
+   "grade": "OUT",
+   "composite": 0,
+   "late": true
+  },
+  {
+   "name": "James Mitchell",
+   "position": "TE",
+   "team": "DAL",
+   "opp": "IND",
+   "grade": "D",
+   "composite": 2.18,
+   "late": true,
+   "proj_yards": 16,
+   "td_pct": 3,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
    "name": "CeeDee Lamb",
    "position": "WR",
    "team": "DAL",
@@ -1580,6 +1602,19 @@
    "td_pct": 13,
    "stat": "Rush Yds",
    "estimated": true
+  },
+  {
+   "name": "Chris Brooks",
+   "position": "RB",
+   "team": "GB",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 2.44,
+   "late": true,
+   "proj_yards": 17,
+   "td_pct": 7,
+   "stat": "Rush Yds",
+   "estimated": false
   },
   {
    "name": "Tucker Kraft",
