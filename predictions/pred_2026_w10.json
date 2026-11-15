@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 10,
- "logged_at": "2026-11-15T22:47:43",
+ "logged_at": "2026-11-15T23:11:40",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -1418,6 +1418,19 @@
    "composite": 2.08,
    "proj_yards": 9,
    "td_pct": 9,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "British Brooks",
+   "position": "RB",
+   "team": "HOU",
+   "opp": "CLE",
+   "grade": "D",
+   "composite": 2.1,
+   "late": true,
+   "proj_yards": 13,
+   "td_pct": 6,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3345,6 +3358,15 @@
    "td_pct": 12,
    "stat": "Rush Yds",
    "estimated": false
+  },
+  {
+   "name": "Emanuel Wilson",
+   "position": "RB",
+   "team": "SEA",
+   "opp": "LV",
+   "grade": "OUT",
+   "composite": 0,
+   "late": true
   },
   {
    "name": "AJ Barner",
