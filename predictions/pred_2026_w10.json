@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 10,
- "logged_at": "2026-11-15T19:58:50",
+ "logged_at": "2026-11-15T20:24:43",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -2132,12 +2132,8 @@
    "position": "WR",
    "team": "LAC",
    "opp": "BAL",
-   "grade": "B",
-   "composite": 5.41,
-   "proj_yards": 44,
-   "td_pct": 23,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Quentin Johnston",
@@ -2172,6 +2168,26 @@
    "composite": 3.21,
    "proj_yards": 24,
    "td_pct": 8,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Brenen Thompson",
+   "position": "WR",
+   "team": "LAC",
+   "opp": "BAL",
+   "grade": "D",
+   "composite": 2.74
+  },
+  {
+   "name": "Derius Davis",
+   "position": "WR",
+   "team": "LAC",
+   "opp": "BAL",
+   "grade": "D",
+   "composite": 2.22,
+   "proj_yards": 14,
+   "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2298,10 +2314,18 @@
    "position": "WR",
    "team": "LV",
    "opp": "SEA",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Dareke Young",
+   "position": "WR",
+   "team": "LV",
+   "opp": "SEA",
    "grade": "D",
-   "composite": 2.05,
-   "proj_yards": 14,
-   "td_pct": 3,
+   "composite": 1.27,
+   "proj_yards": 16,
+   "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3112,6 +3136,15 @@
    "td_pct": 4,
    "stat": "Rec Yds",
    "estimated": false
+  },
+  {
+   "name": "Malik McClain",
+   "position": "WR",
+   "team": "NYJ",
+   "opp": "BUF",
+   "grade": "D",
+   "composite": 3.41,
+   "late": true
   },
   {
    "name": "Aaron Rodgers",
@@ -4198,8 +4231,8 @@
    "away": "LAC",
    "favorite": "BAL",
    "strength": "clear lean",
-   "margin": 1.11,
-   "model_margin": 0.52,
+   "margin": 1.12,
+   "model_margin": 0.56,
    "vegas_margin": 1.5,
    "spread": -4.5
   }
