@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 10,
- "logged_at": "2026-11-15T20:24:43",
+ "logged_at": "2026-11-15T21:04:14",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -943,12 +943,12 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "A",
-   "composite": 7.0,
-   "proj_yards": 296,
+   "composite": 7.02,
+   "proj_yards": 298,
    "td_pct": 88,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 283,
+   "proj_pass_yards": 285,
    "proj_rush_yards": 13
   },
   {
@@ -957,7 +957,7 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "B+",
-   "composite": 5.7
+   "composite": 5.72
   },
   {
    "name": "Javonte Williams",
@@ -966,8 +966,8 @@
    "opp": "SF",
    "grade": "A",
    "composite": 6.8,
-   "proj_yards": 60,
-   "td_pct": 62,
+   "proj_yards": 61,
+   "td_pct": 63,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -977,7 +977,7 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "C",
-   "composite": 4.3,
+   "composite": 4.31,
    "proj_yards": 27,
    "td_pct": 30,
    "stat": "Rush Yds",
@@ -989,9 +989,9 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "D",
-   "composite": 2.4,
+   "composite": 2.41,
    "proj_yards": 24,
-   "td_pct": 8,
+   "td_pct": 9,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1002,7 +1002,7 @@
    "opp": "SF",
    "grade": "D",
    "composite": 2.7,
-   "proj_yards": 28,
+   "proj_yards": 29,
    "td_pct": 19,
    "stat": "Rush Yds",
    "estimated": false
@@ -1021,7 +1021,7 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "D",
-   "composite": 3.21,
+   "composite": 3.22,
    "proj_yards": 16,
    "td_pct": 8,
    "stat": "Rec Yds",
@@ -1033,7 +1033,7 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "D",
-   "composite": 2.91,
+   "composite": 2.92,
    "proj_yards": 13,
    "td_pct": 3,
    "stat": "Rec Yds",
@@ -1059,7 +1059,7 @@
    "grade": "A",
    "composite": 6.7,
    "proj_yards": 62,
-   "td_pct": 41,
+   "td_pct": 42,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -1081,7 +1081,7 @@
    "team": "DAL",
    "opp": "SF",
    "grade": "D",
-   "composite": 2.76,
+   "composite": 2.77,
    "proj_yards": 20,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -1418,6 +1418,19 @@
    "composite": 2.08,
    "proj_yards": 9,
    "td_pct": 9,
+   "stat": "Rush Yds",
+   "estimated": false
+  },
+  {
+   "name": "British Brooks",
+   "position": "RB",
+   "team": "HOU",
+   "opp": "CLE",
+   "grade": "D",
+   "composite": 2.18,
+   "late": true,
+   "proj_yards": 13,
+   "td_pct": 6,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -1922,11 +1935,11 @@
    "opp": "ARI",
    "grade": "A+",
    "composite": 7.7,
-   "proj_yards": 297,
+   "proj_yards": 298,
    "td_pct": 92,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 295,
+   "proj_pass_yards": 296,
    "proj_rush_yards": 2
   },
   {
@@ -3420,7 +3433,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "A+",
-   "composite": 8.04,
+   "composite": 8.01,
    "proj_yards": 304,
    "td_pct": 94,
    "stat": "Total Yds",
@@ -3434,7 +3447,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "B+",
-   "composite": 6.24
+   "composite": 6.21
   },
   {
    "name": "Christian McCaffrey",
@@ -3442,7 +3455,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "A+",
-   "composite": 7.53,
+   "composite": 7.52,
    "proj_yards": 64,
    "td_pct": 67,
    "stat": "Rush Yds",
@@ -3454,7 +3467,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "B",
-   "composite": 5.48,
+   "composite": 5.46,
    "proj_yards": 33,
    "td_pct": 30,
    "stat": "Rush Yds",
@@ -3466,7 +3479,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "D",
-   "composite": 2.47,
+   "composite": 2.46,
    "proj_yards": 31,
    "td_pct": 6,
    "stat": "Rush Yds",
@@ -3478,7 +3491,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "A+",
-   "composite": 7.78,
+   "composite": 7.76,
    "proj_yards": 55,
    "td_pct": 48,
    "stat": "Rec Yds",
@@ -3490,7 +3503,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "D",
-   "composite": 2.76,
+   "composite": 2.75,
    "proj_yards": 10,
    "td_pct": 12,
    "stat": "Rec Yds",
@@ -3510,7 +3523,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "B+",
-   "composite": 5.96,
+   "composite": 5.95,
    "proj_yards": 47,
    "td_pct": 34,
    "stat": "Rec Yds",
@@ -3522,7 +3535,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "B+",
-   "composite": 6.32,
+   "composite": 6.3,
    "proj_yards": 48,
    "td_pct": 30,
    "stat": "Rec Yds",
@@ -3534,7 +3547,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "B",
-   "composite": 4.58,
+   "composite": 4.57,
    "proj_yards": 35,
    "td_pct": 13,
    "stat": "Rec Yds",
@@ -3546,7 +3559,7 @@
    "team": "SF",
    "opp": "DAL",
    "grade": "C",
-   "composite": 3.87,
+   "composite": 3.86,
    "proj_yards": 46,
    "td_pct": 5,
    "stat": "Rec Yds",
@@ -3865,24 +3878,6 @@
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "GB Defense",
-   "position": "DEF",
-   "team": "GB",
-   "opp": "MIN",
-   "grade": "A+",
-   "composite": 8.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "MIN Defense",
-   "position": "DEF",
-   "team": "MIN",
-   "opp": "GB",
-   "grade": "B+",
-   "composite": 5.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "TEN Defense",
    "position": "DEF",
    "team": "TEN",
@@ -3970,6 +3965,24 @@
    "opp": "DET",
    "grade": "B",
    "composite": 4.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "GB Defense",
+   "position": "DEF",
+   "team": "GB",
+   "opp": "MIN",
+   "grade": "A+",
+   "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "MIN Defense",
+   "position": "DEF",
+   "team": "MIN",
+   "opp": "GB",
+   "grade": "B+",
+   "composite": 5.5,
    "proj_pts_allowed": 22.0
   },
   {
@@ -4105,17 +4118,6 @@
    "spread": 4.5
   },
   {
-   "game_id": "401873060",
-   "home": "GB",
-   "away": "MIN",
-   "favorite": "GB",
-   "strength": "clear lean",
-   "margin": 1.08,
-   "model_margin": 1.44,
-   "vegas_margin": 0.83,
-   "spread": -2.5
-  },
-  {
    "game_id": "401873057",
    "home": "TEN",
    "away": "JAX",
@@ -4171,6 +4173,17 @@
    "spread": -2.5
   },
   {
+   "game_id": "401873060",
+   "home": "GB",
+   "away": "MIN",
+   "favorite": "GB",
+   "strength": "clear lean",
+   "margin": 1.08,
+   "model_margin": 1.44,
+   "vegas_margin": 0.83,
+   "spread": -2.5
+  },
+  {
    "game_id": "401873062",
    "home": "LV",
    "away": "SEA",
@@ -4187,10 +4200,10 @@
    "away": "LAR",
    "favorite": "LAR",
    "strength": "strong lean",
-   "margin": -2.9,
+   "margin": -3.0,
    "model_margin": -2.51,
-   "vegas_margin": -3.17,
-   "spread": 9.5
+   "vegas_margin": -3.33,
+   "spread": 10.0
   },
   {
    "game_id": "401873063",
@@ -4198,10 +4211,10 @@
    "away": "SF",
    "favorite": "SF",
    "strength": "clear lean",
-   "margin": -1.24,
-   "model_margin": -0.85,
-   "vegas_margin": -1.5,
-   "spread": 4.5
+   "margin": -1.03,
+   "model_margin": -0.83,
+   "vegas_margin": -1.17,
+   "spread": 3.5
   },
   {
    "game_id": "401873064",
