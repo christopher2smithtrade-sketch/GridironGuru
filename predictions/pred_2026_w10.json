@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 10,
- "logged_at": "2026-11-15T18:00:33",
+ "logged_at": "2026-11-15T18:51:54",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -3796,24 +3796,6 @@
    "estimated": false
   },
   {
-   "name": "DET Defense",
-   "position": "DEF",
-   "team": "DET",
-   "opp": "NE",
-   "grade": "D",
-   "composite": 3.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NE Defense",
-   "position": "DEF",
-   "team": "NE",
-   "opp": "DET",
-   "grade": "B",
-   "composite": 4.5,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "ATL Defense",
    "position": "DEF",
    "team": "ATL",
@@ -3940,6 +3922,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "DET Defense",
+   "position": "DEF",
+   "team": "DET",
+   "opp": "NE",
+   "grade": "D",
+   "composite": 3.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NE Defense",
+   "position": "DEF",
+   "team": "NE",
+   "opp": "DET",
+   "grade": "B",
+   "composite": 4.5,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "LV Defense",
    "position": "DEF",
    "team": "LV",
@@ -4050,17 +4050,6 @@
  ],
  "leans": [
   {
-   "game_id": "401873053",
-   "home": "DET",
-   "away": "NE",
-   "favorite": "DET",
-   "strength": "slight lean",
-   "margin": 0.5,
-   "model_margin": -0.0,
-   "vegas_margin": 0.83,
-   "spread": -2.5
-  },
-  {
    "game_id": "401873058",
    "home": "ATL",
    "away": "KC",
@@ -4136,6 +4125,17 @@
    "model_margin": -1.64,
    "vegas_margin": -2.83,
    "spread": 8.5
+  },
+  {
+   "game_id": "401873053",
+   "home": "DET",
+   "away": "NE",
+   "favorite": "DET",
+   "strength": "slight lean",
+   "margin": 0.5,
+   "model_margin": -0.0,
+   "vegas_margin": 0.83,
+   "spread": -2.5
   },
   {
    "game_id": "401873062",
