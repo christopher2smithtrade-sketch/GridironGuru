@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 11,
- "logged_at": "2026-11-22T21:50:12",
+ "logged_at": "2026-11-22T23:37:24",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -765,7 +765,7 @@
    "team": "CIN",
    "opp": "WSH",
    "grade": "A+",
-   "composite": 8.49,
+   "composite": 8.48,
    "proj_yards": 89,
    "td_pct": 46,
    "stat": "Rec Yds",
@@ -777,7 +777,7 @@
    "team": "CIN",
    "opp": "WSH",
    "grade": "A",
-   "composite": 7.37,
+   "composite": 7.36,
    "proj_yards": 78,
    "td_pct": 52,
    "stat": "Rec Yds",
@@ -789,7 +789,7 @@
    "team": "CIN",
    "opp": "WSH",
    "grade": "B",
-   "composite": 4.52,
+   "composite": 4.51,
    "proj_yards": 29,
    "td_pct": 11,
    "stat": "Rec Yds",
@@ -801,7 +801,7 @@
    "team": "CIN",
    "opp": "WSH",
    "grade": "C",
-   "composite": 3.84,
+   "composite": 3.83,
    "proj_yards": 16,
    "td_pct": 8,
    "stat": "Rec Yds",
@@ -2164,12 +2164,12 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "A",
-   "composite": 6.5,
-   "proj_yards": 237,
-   "td_pct": 73,
+   "composite": 6.58,
+   "proj_yards": 234,
+   "td_pct": 71,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 235,
+   "proj_pass_yards": 232,
    "proj_rush_yards": 2
   },
   {
@@ -2186,7 +2186,7 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "B+",
-   "composite": 5.75
+   "composite": 5.83
   },
   {
    "name": "Jordan Mason",
@@ -2194,9 +2194,9 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "B",
-   "composite": 5.13,
-   "proj_yards": 41,
-   "td_pct": 37,
+   "composite": 5.12,
+   "proj_yards": 40,
+   "td_pct": 35,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2206,9 +2206,9 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "B+",
-   "composite": 5.54,
+   "composite": 5.53,
    "proj_yards": 45,
-   "td_pct": 32,
+   "td_pct": 30,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -2218,7 +2218,7 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "D",
-   "composite": 1.26,
+   "composite": 1.25,
    "proj_yards": 17,
    "td_pct": 5,
    "stat": "Rush Yds",
@@ -2231,8 +2231,8 @@
    "opp": "SF",
    "grade": "B+",
    "composite": 6.44,
-   "proj_yards": 35,
-   "td_pct": 21,
+   "proj_yards": 34,
+   "td_pct": 19,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2243,7 +2243,7 @@
    "opp": "SF",
    "grade": "C",
    "composite": 4.32,
-   "proj_yards": 14,
+   "proj_yards": 13,
    "td_pct": 8,
    "stat": "Rec Yds",
    "estimated": true
@@ -2254,9 +2254,9 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "A",
-   "composite": 7.0,
-   "proj_yards": 48,
-   "td_pct": 21,
+   "composite": 6.98,
+   "proj_yards": 47,
+   "td_pct": 20,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2274,9 +2274,9 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "C",
-   "composite": 4.45,
+   "composite": 4.43,
    "proj_yards": 24,
-   "td_pct": 35,
+   "td_pct": 33,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2286,9 +2286,9 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "D",
-   "composite": 2.15,
+   "composite": 2.12,
    "proj_yards": 14,
-   "td_pct": 3,
+   "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2298,7 +2298,7 @@
    "team": "MIN",
    "opp": "SF",
    "grade": "D",
-   "composite": 2.41,
+   "composite": 2.39,
    "proj_yards": 16,
    "td_pct": 3,
    "stat": "Rec Yds",
@@ -2984,12 +2984,12 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "B",
-   "composite": 5.29,
-   "proj_yards": 256,
+   "composite": 5.28,
+   "proj_yards": 254,
    "td_pct": 92,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 233,
+   "proj_pass_yards": 231,
    "proj_rush_yards": 23
   },
   {
@@ -2998,7 +2998,7 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "D",
-   "composite": 2.89
+   "composite": 2.88
   },
   {
    "name": "Christian McCaffrey",
@@ -3006,9 +3006,9 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "A",
-   "composite": 6.79,
+   "composite": 6.78,
    "proj_yards": 55,
-   "td_pct": 63,
+   "td_pct": 62,
    "stat": "Rush Yds",
    "estimated": false
   },
@@ -3020,7 +3020,7 @@
    "grade": "B",
    "composite": 4.89,
    "proj_yards": 28,
-   "td_pct": 29,
+   "td_pct": 28,
    "stat": "Rush Yds",
    "estimated": true
   },
@@ -3030,7 +3030,7 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "D",
-   "composite": 1.33,
+   "composite": 1.32,
    "proj_yards": 27,
    "td_pct": 6,
    "stat": "Rush Yds",
@@ -3042,9 +3042,9 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "A",
-   "composite": 7.32,
+   "composite": 7.31,
    "proj_yards": 49,
-   "td_pct": 45,
+   "td_pct": 44,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3054,7 +3054,7 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "D",
-   "composite": 2.15,
+   "composite": 2.14,
    "proj_yards": 8,
    "td_pct": 11,
    "stat": "Rec Yds",
@@ -3068,7 +3068,7 @@
    "grade": "B",
    "composite": 5.25,
    "proj_yards": 51,
-   "td_pct": 33,
+   "td_pct": 32,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3079,8 +3079,8 @@
    "opp": "MIN",
    "grade": "B",
    "composite": 4.81,
-   "proj_yards": 38,
-   "td_pct": 31,
+   "proj_yards": 37,
+   "td_pct": 30,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -3090,8 +3090,8 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "B",
-   "composite": 5.32,
-   "proj_yards": 41,
+   "composite": 5.31,
+   "proj_yards": 40,
    "td_pct": 27,
    "stat": "Rec Yds",
    "estimated": false
@@ -3102,7 +3102,7 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "D",
-   "composite": 2.91,
+   "composite": 2.9,
    "proj_yards": 39,
    "td_pct": 5,
    "stat": "Rec Yds",
@@ -3382,12 +3382,12 @@
    "team": "WSH",
    "opp": "CIN",
    "grade": "B+",
-   "composite": 6.19,
-   "proj_yards": 249,
+   "composite": 6.3,
+   "proj_yards": 251,
    "td_pct": 82,
    "stat": "Total Yds",
    "estimated": false,
-   "proj_pass_yards": 204,
+   "proj_pass_yards": 206,
    "proj_rush_yards": 45
   },
   {
@@ -3396,7 +3396,7 @@
    "team": "WSH",
    "opp": "CIN",
    "grade": "B",
-   "composite": 5.19
+   "composite": 5.3
   },
   {
    "name": "Rachaad White",
@@ -3858,10 +3858,10 @@
    "away": "MIN",
    "favorite": "SF",
    "strength": "clear lean",
-   "margin": 0.85,
-   "model_margin": 0.37,
-   "vegas_margin": 1.17,
-   "spread": -3.5
+   "margin": 1.04,
+   "model_margin": 0.35,
+   "vegas_margin": 1.5,
+   "spread": -4.5
   },
   {
    "game_id": "401873066",
@@ -3880,8 +3880,8 @@
    "away": "CIN",
    "favorite": "CIN",
    "strength": "strong lean",
-   "margin": -1.85,
-   "model_margin": -1.62,
+   "margin": -1.84,
+   "model_margin": -1.59,
    "vegas_margin": -2.0,
    "spread": 6.0
   }
