@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 11,
- "logged_at": "2026-11-22T20:19:03",
+ "logged_at": "2026-11-22T20:50:44",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -3588,24 +3588,6 @@
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "KC Defense",
-   "position": "DEF",
-   "team": "KC",
-   "opp": "ARI",
-   "grade": "A+",
-   "composite": 8.2,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "ARI Defense",
-   "position": "DEF",
-   "team": "ARI",
-   "opp": "KC",
-   "grade": "C",
-   "composite": 3.7,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "PHI Defense",
    "position": "DEF",
    "team": "PHI",
@@ -3639,6 +3621,24 @@
    "opp": "CAR",
    "grade": "B+",
    "composite": 6.3,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "KC Defense",
+   "position": "DEF",
+   "team": "KC",
+   "opp": "ARI",
+   "grade": "A+",
+   "composite": 8.2,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "ARI Defense",
+   "position": "DEF",
+   "team": "ARI",
+   "opp": "KC",
+   "grade": "C",
+   "composite": 3.7,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3796,17 +3796,6 @@
    "spread": -3.5
   },
   {
-   "game_id": "401873067",
-   "home": "KC",
-   "away": "ARI",
-   "favorite": "KC",
-   "strength": "strong lean",
-   "margin": 4.15,
-   "model_margin": 2.63,
-   "vegas_margin": 5.17,
-   "spread": -15.5
-  },
-  {
    "game_id": "401873076",
    "home": "PHI",
    "away": "PIT",
@@ -3827,6 +3816,17 @@
    "model_margin": 0.07,
    "vegas_margin": 0.83,
    "spread": -2.5
+  },
+  {
+   "game_id": "401873067",
+   "home": "KC",
+   "away": "ARI",
+   "favorite": "KC",
+   "strength": "strong lean",
+   "margin": 4.15,
+   "model_margin": 2.63,
+   "vegas_margin": 5.17,
+   "spread": -15.5
   },
   {
    "game_id": "401873074",
