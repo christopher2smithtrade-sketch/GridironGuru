@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 11,
- "logged_at": "2026-11-22T21:18:03",
+ "logged_at": "2026-11-22T21:50:12",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -604,15 +604,6 @@
    "td_pct": 6,
    "stat": "Rush Yds",
    "estimated": false
-  },
-  {
-   "name": "Salvon Ahmed",
-   "position": "RB",
-   "team": "CHI",
-   "opp": "NO",
-   "grade": "C",
-   "composite": 3.99,
-   "late": true
   },
   {
    "name": "Colston Loveland",
@@ -3516,60 +3507,6 @@
    "estimated": false
   },
   {
-   "name": "DET Defense",
-   "position": "DEF",
-   "team": "DET",
-   "opp": "TB",
-   "grade": "B+",
-   "composite": 6.3,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "TB Defense",
-   "position": "DEF",
-   "team": "TB",
-   "opp": "DET",
-   "grade": "D",
-   "composite": 3.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "PHI Defense",
-   "position": "DEF",
-   "team": "PHI",
-   "opp": "PIT",
-   "grade": "A",
-   "composite": 7.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "PIT Defense",
-   "position": "DEF",
-   "team": "PIT",
-   "opp": "PHI",
-   "grade": "A",
-   "composite": 6.8,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "CAR Defense",
-   "position": "DEF",
-   "team": "CAR",
-   "opp": "BAL",
-   "grade": "B",
-   "composite": 5.4,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "BAL Defense",
-   "position": "DEF",
-   "team": "BAL",
-   "opp": "CAR",
-   "grade": "B+",
-   "composite": 6.3,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "LAC Defense",
    "position": "DEF",
    "team": "LAC",
@@ -3585,6 +3522,42 @@
    "opp": "LAC",
    "grade": "B",
    "composite": 5.1,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "DEN Defense",
+   "position": "DEF",
+   "team": "DEN",
+   "opp": "LV",
+   "grade": "A+",
+   "composite": 9.9,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "LV Defense",
+   "position": "DEF",
+   "team": "LV",
+   "opp": "DEN",
+   "grade": "C",
+   "composite": 4.4,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYG Defense",
+   "position": "DEF",
+   "team": "NYG",
+   "opp": "JAX",
+   "grade": "D",
+   "composite": 3.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "JAX Defense",
+   "position": "DEF",
+   "team": "JAX",
+   "opp": "NYG",
+   "grade": "B+",
+   "composite": 6.3,
    "proj_pts_allowed": 22.0
   },
   {
@@ -3642,6 +3615,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "DET Defense",
+   "position": "DEF",
+   "team": "DET",
+   "opp": "TB",
+   "grade": "B+",
+   "composite": 6.3,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "TB Defense",
+   "position": "DEF",
+   "team": "TB",
+   "opp": "DET",
+   "grade": "D",
+   "composite": 3.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "KC Defense",
    "position": "DEF",
    "team": "KC",
@@ -3660,37 +3651,37 @@
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "DEN Defense",
+   "name": "PHI Defense",
    "position": "DEF",
-   "team": "DEN",
-   "opp": "LV",
-   "grade": "A+",
-   "composite": 9.9,
+   "team": "PHI",
+   "opp": "PIT",
+   "grade": "A",
+   "composite": 7.0,
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "LV Defense",
+   "name": "PIT Defense",
    "position": "DEF",
-   "team": "LV",
-   "opp": "DEN",
-   "grade": "C",
-   "composite": 4.4,
+   "team": "PIT",
+   "opp": "PHI",
+   "grade": "A",
+   "composite": 6.8,
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "NYG Defense",
+   "name": "CAR Defense",
    "position": "DEF",
-   "team": "NYG",
-   "opp": "JAX",
-   "grade": "D",
-   "composite": 3.0,
+   "team": "CAR",
+   "opp": "BAL",
+   "grade": "B",
+   "composite": 5.4,
    "proj_pts_allowed": 22.0
   },
   {
-   "name": "JAX Defense",
+   "name": "BAL Defense",
    "position": "DEF",
-   "team": "JAX",
-   "opp": "NYG",
+   "team": "BAL",
+   "opp": "CAR",
    "grade": "B+",
    "composite": 6.3,
    "proj_pts_allowed": 22.0
@@ -3752,39 +3743,6 @@
  ],
  "leans": [
   {
-   "game_id": "401873072",
-   "home": "DET",
-   "away": "TB",
-   "favorite": "DET",
-   "strength": "clear lean",
-   "margin": 1.15,
-   "model_margin": 1.13,
-   "vegas_margin": 1.17,
-   "spread": -3.5
-  },
-  {
-   "game_id": "401873076",
-   "home": "PHI",
-   "away": "PIT",
-   "favorite": "PIT",
-   "strength": "slight lean",
-   "margin": -0.72,
-   "model_margin": -0.05,
-   "vegas_margin": -1.17,
-   "spread": 3.5
-  },
-  {
-   "game_id": "401873068",
-   "home": "CAR",
-   "away": "BAL",
-   "favorite": "CAR",
-   "strength": "slight lean",
-   "margin": 0.53,
-   "model_margin": 0.07,
-   "vegas_margin": 0.83,
-   "spread": -2.5
-  },
-  {
    "game_id": "401873074",
    "home": "LAC",
    "away": "NYJ",
@@ -3794,6 +3752,28 @@
    "model_margin": 0.47,
    "vegas_margin": 1.0,
    "spread": -3.0
+  },
+  {
+   "game_id": "401873075",
+   "home": "DEN",
+   "away": "LV",
+   "favorite": "DEN",
+   "strength": "strong lean",
+   "margin": 3.09,
+   "model_margin": 1.97,
+   "vegas_margin": 3.83,
+   "spread": -11.5
+  },
+  {
+   "game_id": "401873069",
+   "home": "NYG",
+   "away": "JAX",
+   "favorite": "JAX",
+   "strength": "strong lean",
+   "margin": -1.58,
+   "model_margin": -0.95,
+   "vegas_margin": -2.0,
+   "spread": 6.0
   },
   {
    "game_id": "401873070",
@@ -3829,6 +3809,17 @@
    "spread": -7.5
   },
   {
+   "game_id": "401873072",
+   "home": "DET",
+   "away": "TB",
+   "favorite": "DET",
+   "strength": "clear lean",
+   "margin": 1.15,
+   "model_margin": 1.13,
+   "vegas_margin": 1.17,
+   "spread": -3.5
+  },
+  {
    "game_id": "401873067",
    "home": "KC",
    "away": "ARI",
@@ -3840,26 +3831,26 @@
    "spread": -15.5
   },
   {
-   "game_id": "401873075",
-   "home": "DEN",
-   "away": "LV",
-   "favorite": "DEN",
-   "strength": "strong lean",
-   "margin": 3.09,
-   "model_margin": 1.97,
-   "vegas_margin": 3.83,
-   "spread": -11.5
+   "game_id": "401873076",
+   "home": "PHI",
+   "away": "PIT",
+   "favorite": "PIT",
+   "strength": "slight lean",
+   "margin": -0.72,
+   "model_margin": -0.05,
+   "vegas_margin": -1.17,
+   "spread": 3.5
   },
   {
-   "game_id": "401873069",
-   "home": "NYG",
-   "away": "JAX",
-   "favorite": "JAX",
-   "strength": "strong lean",
-   "margin": -1.58,
-   "model_margin": -0.95,
-   "vegas_margin": -2.0,
-   "spread": 6.0
+   "game_id": "401873068",
+   "home": "CAR",
+   "away": "BAL",
+   "favorite": "CAR",
+   "strength": "slight lean",
+   "margin": 0.53,
+   "model_margin": 0.07,
+   "vegas_margin": 0.83,
+   "spread": -2.5
   },
   {
    "game_id": "401873077",
