@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 11,
- "logged_at": "2026-11-22T19:41:19",
+ "logged_at": "2026-11-22T20:19:03",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -604,6 +604,15 @@
    "td_pct": 6,
    "stat": "Rush Yds",
    "estimated": false
+  },
+  {
+   "name": "Salvon Ahmed",
+   "position": "RB",
+   "team": "CHI",
+   "opp": "NO",
+   "grade": "C",
+   "composite": 3.99,
+   "late": true
   },
   {
    "name": "Colston Loveland",
@@ -1816,7 +1825,7 @@
    "team": "LAC",
    "opp": "NYJ",
    "grade": "C",
-   "composite": 3.93,
+   "composite": 4.33,
    "proj_yards": 20,
    "td_pct": 13,
    "stat": "Rec Yds",
@@ -1839,8 +1848,8 @@
    "position": "WR",
    "team": "LAC",
    "opp": "NYJ",
-   "grade": "B",
-   "composite": 5.14,
+   "grade": "B+",
+   "composite": 5.54,
    "proj_yards": 45,
    "td_pct": 29,
    "stat": "Rec Yds",
@@ -1945,12 +1954,8 @@
    "position": "TE",
    "team": "LV",
    "opp": "DEN",
-   "grade": "A+",
-   "composite": 8.05,
-   "proj_yards": 62,
-   "td_pct": 34,
-   "stat": "Rec Yds",
-   "estimated": false
+   "grade": "OUT",
+   "composite": 0
   },
   {
    "name": "Michael Mayer",
@@ -1961,6 +1966,18 @@
    "composite": 5.55,
    "proj_yards": 33,
    "td_pct": 10,
+   "stat": "Rec Yds",
+   "estimated": false
+  },
+  {
+   "name": "Ian Thomas",
+   "position": "TE",
+   "team": "LV",
+   "opp": "DEN",
+   "grade": "D",
+   "composite": 2.89,
+   "proj_yards": 15,
+   "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2005,10 +2022,18 @@
    "position": "WR",
    "team": "LV",
    "opp": "DEN",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Dareke Young",
+   "position": "WR",
+   "team": "LV",
+   "opp": "DEN",
    "grade": "D",
-   "composite": 2.55,
-   "proj_yards": 15,
-   "td_pct": 3,
+   "composite": 1.37,
+   "proj_yards": 16,
+   "td_pct": 2,
    "stat": "Rec Yds",
    "estimated": false
   },
@@ -2473,12 +2498,20 @@
    "position": "RB",
    "team": "NYG",
    "opp": "JAX",
+   "grade": "OUT",
+   "composite": 0
+  },
+  {
+   "name": "Phil Mafah",
+   "position": "RB",
+   "team": "NYG",
+   "opp": "JAX",
    "grade": "D",
-   "composite": 3.36,
-   "proj_yards": 10,
-   "td_pct": 11,
+   "composite": 1.86,
+   "proj_yards": 35,
+   "td_pct": 45,
    "stat": "Rush Yds",
-   "estimated": true
+   "estimated": false
   },
   {
    "name": "Isaiah Likely",
@@ -3801,8 +3834,8 @@
    "away": "NYJ",
    "favorite": "LAC",
    "strength": "slight lean",
-   "margin": 0.76,
-   "model_margin": 0.39,
+   "margin": 0.79,
+   "model_margin": 0.47,
    "vegas_margin": 1.0,
    "spread": -3.0
   },
@@ -3812,8 +3845,8 @@
    "away": "LV",
    "favorite": "DEN",
    "strength": "strong lean",
-   "margin": 2.76,
-   "model_margin": 1.64,
+   "margin": 2.88,
+   "model_margin": 1.95,
    "vegas_margin": 3.5,
    "spread": -10.5
   },
@@ -3823,8 +3856,8 @@
    "away": "JAX",
    "favorite": "JAX",
    "strength": "strong lean",
-   "margin": -1.57,
-   "model_margin": -0.93,
+   "margin": -1.58,
+   "model_margin": -0.95,
    "vegas_margin": -2.0,
    "spread": 6.0
   },
