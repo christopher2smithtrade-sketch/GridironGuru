@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 11,
- "logged_at": "2026-11-22T23:37:24",
+ "logged_at": "2026-11-23T00:21:27",
  "predictions": [
   {
    "name": "Carson Beck",
@@ -2998,7 +2998,7 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "D",
-   "composite": 2.88
+   "composite": 3.28
   },
   {
    "name": "Christian McCaffrey",
@@ -3030,7 +3030,7 @@
    "team": "SF",
    "opp": "MIN",
    "grade": "D",
-   "composite": 1.32,
+   "composite": 1.72,
    "proj_yards": 27,
    "td_pct": 6,
    "stat": "Rush Yds",
@@ -3065,8 +3065,8 @@
    "position": "WR",
    "team": "SF",
    "opp": "MIN",
-   "grade": "B",
-   "composite": 5.25,
+   "grade": "B+",
+   "composite": 5.65,
    "proj_yards": 51,
    "td_pct": 32,
    "stat": "Rec Yds",
@@ -3507,24 +3507,6 @@
    "estimated": false
   },
   {
-   "name": "LAC Defense",
-   "position": "DEF",
-   "team": "LAC",
-   "opp": "NYJ",
-   "grade": "A+",
-   "composite": 8.0,
-   "proj_pts_allowed": 22.0
-  },
-  {
-   "name": "NYJ Defense",
-   "position": "DEF",
-   "team": "NYJ",
-   "opp": "LAC",
-   "grade": "B",
-   "composite": 5.1,
-   "proj_pts_allowed": 22.0
-  },
-  {
    "name": "DEN Defense",
    "position": "DEF",
    "team": "DEN",
@@ -3687,6 +3669,24 @@
    "proj_pts_allowed": 22.0
   },
   {
+   "name": "LAC Defense",
+   "position": "DEF",
+   "team": "LAC",
+   "opp": "NYJ",
+   "grade": "A+",
+   "composite": 8.0,
+   "proj_pts_allowed": 22.0
+  },
+  {
+   "name": "NYJ Defense",
+   "position": "DEF",
+   "team": "NYJ",
+   "opp": "LAC",
+   "grade": "B",
+   "composite": 5.1,
+   "proj_pts_allowed": 22.0
+  },
+  {
    "name": "SF Defense",
    "position": "DEF",
    "team": "SF",
@@ -3742,17 +3742,6 @@
   }
  ],
  "leans": [
-  {
-   "game_id": "401873074",
-   "home": "LAC",
-   "away": "NYJ",
-   "favorite": "LAC",
-   "strength": "slight lean",
-   "margin": 0.79,
-   "model_margin": 0.47,
-   "vegas_margin": 1.0,
-   "spread": -3.0
-  },
   {
    "game_id": "401873075",
    "home": "DEN",
@@ -3853,13 +3842,24 @@
    "spread": -2.5
   },
   {
+   "game_id": "401873074",
+   "home": "LAC",
+   "away": "NYJ",
+   "favorite": "LAC",
+   "strength": "slight lean",
+   "margin": 0.79,
+   "model_margin": 0.47,
+   "vegas_margin": 1.0,
+   "spread": -3.0
+  },
+  {
    "game_id": "401873077",
    "home": "SF",
    "away": "MIN",
    "favorite": "SF",
    "strength": "clear lean",
-   "margin": 1.04,
-   "model_margin": 0.35,
+   "margin": 1.06,
+   "model_margin": 0.4,
    "vegas_margin": 1.5,
    "spread": -4.5
   },
